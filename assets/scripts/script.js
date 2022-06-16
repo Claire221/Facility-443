@@ -210,3 +210,113 @@ function cutStrap() {
 
     console.log("Cut Strap")
 }
+
+function searchRoom() {
+    // button1.removeEventListener("click", searchRoom);
+
+    gameScreen.style.backgroundImage="url(assets/img/room1_search.jpg)";
+
+    gameText.innerText = "Standing up you finally get to look at the room from a vertical position and its just as grubby and grimy as it \
+                          was from when you were lying down. You now need to decide if your going to search the room for anything useful \
+                          or get out of there as fast as you can?"; 
+
+    button1.classList.remove("hidden")
+    button2.classList.remove("hidden")
+
+    button1.innerText= "Search the room, you dont know what you might find";
+    button2.innerText= "You've waisted long enough, lets get out of here";
+
+    button1.addEventListener("click", lookForSupplies, {once : true});
+
+    button2.addEventListener("click", leaveRoomOne, {once : true});
+
+    console.log("Search Room")
+};
+
+function lookForSupplies() {
+    // button1.removeEventListener("click", lookForSupplies);
+
+    gameText.innerText = "You scan the room, its pretty empty and only contains the two beds, a wardrobe, a counter with cupboards \
+                          underneath and the trolley next to your bed where you found the scalpel.\n\nWhere do you start first?"; 
+    
+    button1.classList.remove("hidden")
+    button2.classList.remove("hidden")
+    button3.classList.remove("hidden")
+
+    button1.innerText= "Look inside the wardrobe for anything userful";
+    button2.innerText= "The cupboards might have something in them, check there";
+    button3.innerText= "Check the trolley by the bed";
+
+    button1.addEventListener("click", checkWardrobe, {once : true});
+    button2.addEventListener("click", checkCupboards, {once : true});
+    button3.addEventListener("click", checkTrolley, {once : true});
+
+    console.log("Look for supplies")
+}
+
+
+function checkWardrobe() {
+    gameScreen.style.backgroundImage="url(assets/img/wardrobe.jpg)";
+
+    gameText.innerText = "You reach out and slowly pull the wardrobe door open, the hinge gives out a low wine as you do so, the \
+                          wardrobe consitst of a metal railing with a shelf underneath on the railing there are a few metal hangers \
+                          and one white lab coat, you not how striking the white is against the grubbiness of the surrounding area. \
+                          on the shelf below is an old cardboard box, the lid warbed from water damage and thers a small hole in the \
+                          left corner from what you presume is mice"; 
+    
+    button3.innerText= "Inspect the items";
+    button3.addEventListener("click", wardrobeItems, {once : true});
+
+    button1.classList.add("hidden")
+    button2.classList.add("hidden")
+                          
+}
+
+function wardrobeItems() {
+    gameText.innerText = "You find.. Click on item to add to inventory"; 
+    gameScreen.style.backgroundImage="none";
+    gameScreen.style.backgroundColor = "black";
+
+    let itemsContainer = document.createElement("div");
+    let shoeItem = document.createElement("img");
+    let keyCardItem = document.createElement("img");
+    let PaperItem = document.createElement("img");
+    let inventoryDisplay = document.createElement("p")
+
+    shoeItem.src="assets/img/shoe.jpg";
+    keyCardItem.src="assets/img/keycard.jpg";
+    PaperItem.src="assets/img/paper.jpg";
+    
+    shoeItem.alt="Shoe";
+    keyCardItem.alt="Key Card";
+    PaperItem.alt="Paper";
+
+    itemsContainer.classList.add("items-container")
+    shoeItem.classList.add("wardrobe-tems-img", "shoe")
+    keyCardItem.classList.add("wardrobe-tems-img", "key-card")
+    PaperItem.classList.add("wardrobe-tems-img", "paper")
+    inventoryDisplay.classList.add("inventory-list")
+
+
+    itemsContainer.appendChild(shoeItem)
+    itemsContainer.appendChild(keyCardItem)
+    itemsContainer.appendChild(PaperItem)
+    gameScreen.appendChild(itemsContainer)
+    gameScreen.appendChild(inventoryDisplay)
+
+    inventoryDisplay.innerHTML = "Test";
+
+    shoeItem.addEventListener("click", function(){
+        this.classList.toggle("inventory-add")
+        addToInventory()
+    });
+    keyCardItem.addEventListener("click", function(){
+        this.classList.toggle("inventory-add")
+        addToInventory()
+    });
+    PaperItem.addEventListener("click", function(){
+        this.classList.toggle("inventory-add")
+        addToInventory()
+    });
+
+};
