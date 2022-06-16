@@ -211,6 +211,8 @@ function cutStrap() {
     console.log("Cut Strap")
 }
 
+
+
 function searchRoom() {
     // button1.removeEventListener("click", searchRoom);
 
@@ -320,3 +322,50 @@ function wardrobeItems() {
     });
 
 };
+
+function addToInventory() {
+    // Get elements that have inventory-add class
+    let inventory = document.getElementsByClassName("inventory-add")
+    let inventoryList = document.getElementsByClassName("inventory-list")[0];
+
+    if (inventory.length > 0) {
+        for(let i = 0; i < inventory.length; i++) {
+            if (inventory[i].classList.contains("shoe")){
+                pockets.push("Shoe")
+                inventoryList.innerHTML = pockets
+                console.log(pockets)
+            } else if (inventory[i].classList.contains("key-card")) {
+                pockets.push("Key Card")
+                console.log(pockets)
+                inventoryList.innerText = pockets
+            } else if (inventory[i].classList.contains("paper")) {
+                pockets.push("Paper")
+                console.log(pockets)
+                inventoryList.innerText = pockets
+            }
+        }
+    } else if (inventory) {
+        console.log("no inventory")
+    }
+
+    // add clicked item to inventory array
+    
+    // display message saying " item added to inventory"
+
+    // remove item if its clicked again
+
+    // display message saying " item removed to inventory"
+
+};
+
+function checkCupboards() {
+    console.log("check Cupboards")
+}
+
+function checkTrolley() {
+    console.log("check trolley")
+}
+
+function leaveRoomOne() {
+    console.log("leave")
+}
