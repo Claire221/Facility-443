@@ -6,24 +6,70 @@ let gameText = document.getElementById("game-paragraph");
 let button1 = document.getElementsByClassName("btn-1")[0];
 let button2 = document.getElementsByClassName("btn-2")[0];
 let button3 = document.getElementsByClassName("btn-3")[0];
+let glitch = document.getElementsByClassName("box");
+
+
 let health = document.getElementsByClassName("health-info")[0];
-let injuries = [];
 let time = 0;
+let injuries = [];
 let pockets = [];
 
-let button1Click = false;
-let button2Click = false
+
 
 window.addEventListener("load", function(){newGame()});
 
-
-function newGame() {
-    gameScreen.style.backgroundImage="url(assets/img/background_01.jpg)";
-    health.classList.add("hidden")
+// function glitch() {
+//     for (let i = 0; i < count; i++){
+//         let glitchBox = document.createElement("div");
+//         glitchBox.className = "box";
+//         gameScreen.appendChild(glitchBox);
+//         }
     
+//         let glitch = document.getElementsByClassName("box");
+    
+//         setInterval(function(){
+//         for (let i = 0; i < glitch.length; i++){
+//             glitch[i].style.left = Math.floor(Math.random() * 50) + "vw";
+//             glitch[i].style.top = Math.floor(Math.random() * 75) + "vh";
+//             glitch[i].style.width = Math.floor(Math.random() * 200) + "px";
+//             glitch[i].style.height = Math.floor(Math.random() * 50) + "px";
+//             glitch[i].style.backgroundPosition = Math.floor(Math.random() * 50) + "px";
+//         }
+//         }, 200)
+// }
+
+let count = 10;
+function newGame() {
+    // gameScreen.style.backgroundImage="url(assets/img/background_01.jpg)";
+    health.classList.add("hidden")
+ 
+
+    for (let i = 0; i < count; i++){
+    let glitchBox = document.createElement("div");
+    glitchBox.className = "box";
+    gameScreen.appendChild(glitchBox);
+    }
+
+    // let glitch = document.getElementsByClassName("box");
+
+    setInterval(function(){
+    for (let i = 0; i < glitch.length; i++){
+        glitch[i].style.left = Math.floor(Math.random() * 50) + "vw";
+        glitch[i].style.top = Math.floor(Math.random() * 75) + "vh";
+        glitch[i].style.width = Math.floor(Math.random() * 200) + "px";
+        glitch[i].style.height = Math.floor(Math.random() * 50) + "px";
+        glitch[i].style.backgroundPosition = Math.floor(Math.random() * 50) + "px";
+    }
+    }, 200)
 };
 
 startBtn.addEventListener("click", function(){
+    for (let i = 0; i < glitch.length; i++){
+        glitch[i].classList.add("hidden")
+        console.log(glitch[i])
+    }
+    console.log(glitch)
+    glitch = 0;
     titlePage.style.display = "none";
 
     gameScreen.style.backgroundImage="url(assets/img/starting_room.jpg)";
@@ -31,8 +77,11 @@ startBtn.addEventListener("click", function(){
 });
 
 function startGame(){
+    glitch = 0;
     injuries = [];
     time = 0;
+
+
     gameText.classList.add("game-text")
     gameText.innerText = "You wake up dazed and confused, you look around and see that your in a small dimly lit room. \
                         Looking at the ceiling there white tiles.. well you assume they use to be white but they are more grey now \

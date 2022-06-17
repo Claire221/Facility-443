@@ -4,6 +4,18 @@ body {
     padding: 0;
 }
 
+/* Glitch effect styles */
+.box {
+    position: absolute;
+    background: #000;
+    background: url("/assets/img/background_01.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    overflow:hidden: 
+}
 
 /* index page styles */
 
@@ -25,6 +37,7 @@ body {
     justify-content: center;
     align-items: center;
 
+    background: url("/assets/img/background_01.jpg");
     background-position:  center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -34,6 +47,7 @@ body {
 .title-page {
     text-align: center;
     font-family: 'Cinzel', serif;
+    z-index: 50;
 }
 
 .title {
@@ -79,6 +93,7 @@ body {
 
     margin-bottom: 2%;
     width: 100%;
+    z-index: 50;
 }
 
 #game-paragraph {
