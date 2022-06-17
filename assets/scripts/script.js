@@ -1,3 +1,4 @@
+// Game scene variables
 let gameScreen = document.getElementsByClassName("container")[0];
 let gameSection = document.getElementsByClassName("game-section")[0];
 let startBtn = document.getElementsByClassName("btn")[0];
@@ -8,13 +9,17 @@ let button2 = document.getElementsByClassName("btn-2")[0];
 let button3 = document.getElementsByClassName("btn-3")[0];
 let glitch = document.getElementsByClassName("box");
 
-
+// Player variables
 let health = document.getElementsByClassName("health-info")[0];
 let time = 0;
 let injuries = [];
 let pockets = [];
 
-
+// Audio variables
+let heelsShortSound = new Audio("assets/sound/heels_short.mp4");
+let heelsLongSound = new Audio("assets/sound/heels_short.mp4");
+let doorCreek = new Audio("assets/sound/door_creek.mp4");
+let doorUnlock = new Audio("assets/sound/door_unlock.mp4");
 
 window.addEventListener("load", function(){newGame()});
 
@@ -84,6 +89,7 @@ function startGame(){
     button2.addEventListener("click", leave, {once : true});
 
     console.log("Start Game")
+
 }
 
 
@@ -103,6 +109,12 @@ function stay() {
     button2.addEventListener("click", leave, {once : true});
 
     console.log("Stay")
+
+    setTimeout(function(){
+        heelsShortSound.play()
+        heelsShortSound.volume = 0.3
+    }, 800)
+    
 };
 
 function wait() {
@@ -117,6 +129,11 @@ function wait() {
 
     button1.addEventListener("click", finalStay, {once : true});
     button2.addEventListener("click", tryToEscape, {once : true});
+
+    setTimeout(function(){
+        heelsLongSound.play()
+        heelsLongSound.volume = 0.7;
+    }, 800)
 
     console.log("Wait")
 }
@@ -148,6 +165,16 @@ function finalStay() {
     button2.classList.add("hidden")
 
     console.log("Final Stay")
+
+    setTimeout(function(){
+        doorCreek.play()
+        doorCreek.volume = 0.2;
+    }, 1000)
+
+    setTimeout(function(){
+        doorUnlock.play()
+        doorUnlock.volume = 0.2;
+    }, 1400)
 }
 
 
