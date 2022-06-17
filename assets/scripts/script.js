@@ -31,7 +31,7 @@ window.addEventListener("load", function(){newGame()});
 glitch = 0;
 let count = 10;
 function newGame() {
-    // gameScreen.style.backgroundImage="url(assets/img/background_01.jpg)";
+    gameScreen.style.backgroundImage="url(assets/img/background_01.jpg)";
     health.classList.add("hidden")
  
     // Link for glitch effect tutorial used https://www.youtube.com/watch?v=CtmHKGX754s
