@@ -14,10 +14,32 @@ body {
     background-position: center;
     background-size: cover;
 
-    overflow:hidden: 
+    overflow: hidden;  
 }
 
 /* index page styles */
+
+.volume-container {
+    color: rgb(2, 100, 117);
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    z-index: 50;
+    cursor: pointer;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.volume-container:hover  {
+    font-size:60px;
+    cursor: pointer;
+
+    color: rgb(73, 186, 206);
+}
+
 
 .container {
     border: solid 2px black;

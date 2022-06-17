@@ -8,6 +8,7 @@ let button1 = document.getElementsByClassName("btn-1")[0];
 let button2 = document.getElementsByClassName("btn-2")[0];
 let button3 = document.getElementsByClassName("btn-3")[0];
 let glitch = document.getElementsByClassName("box");
+let volumeUp = document.getElementsByClassName("volume-container")[0]
 
 // Player variables
 let health = document.getElementsByClassName("health-info")[0];
@@ -21,8 +22,13 @@ let heelsLongSound = new Audio("assets/sound/heels_short.mp4");
 let doorCreek = new Audio("assets/sound/door_creek.mp4");
 let doorUnlock = new Audio("assets/sound/door_unlock.mp4");
 
+let audio = document.getElementsByTagName("audio")
+
+
+
 window.addEventListener("load", function(){newGame()});
 
+glitch = 0;
 let count = 10;
 function newGame() {
     // gameScreen.style.backgroundImage="url(assets/img/background_01.jpg)";
@@ -44,6 +50,8 @@ function newGame() {
         glitch[i].style.backgroundPosition = Math.floor(Math.random() * 50) + "px";
     }
     }, 200)
+
+    volumeUp.addEventListener("click", soundToggle);
 };
 
 startBtn.addEventListener("click", function(){
@@ -92,6 +100,42 @@ function startGame(){
 
 }
 
+function soundToggle(){
+    let soundUp = document.getElementsByClassName("fa-volume-up")[0];
+    let soundDown = document.getElementsByClassName("fa-volume-off")[0];
+    console.log(soundUp)
+
+    soundUp.addEventListener("click", function(){
+        soundUp.classList.remove("fa-volume-up")
+        soundUp.classList.add("fa-volume-off")
+
+        soundUp.style.display = "none";
+        soundDown.style.display = "block";
+    });
+
+    soundDown.addEventListener("click", function(){
+        soundDown.classList.remove("fa-volume-off")
+        soundDown.classList.add("fa-volume-up")
+
+        soundDown.style.display = "none";
+        soundUp.style.display = "block";
+    });
+    // if (soundUp.classList.contains('fa-volume-up')) {
+    //     soundUp.classList.remove("fa-volume-up")
+    //     soundUp.classList.add("fa-volume-off")
+
+    //     soundUp.style.display = "none";
+    //     soundDown.style.display = "block";
+    // } 
+    // if (soundDown.classList.contains('fa-volume-off')){
+    //     soundDown.classList.remove("fa-volume-off")
+    //     soundDown.classList.add("fa-volume-up")
+
+    //     soundDown.style.display = "none";
+    //     soundUp.style.display = "block";
+    // }
+
+}
 
 function stay() {
     // button1.removeEventListener("click", stay)
@@ -113,6 +157,7 @@ function stay() {
     setTimeout(function(){
         heelsShortSound.play()
         heelsShortSound.volume = 0.3
+        console.log(heelsShortSound)
     }, 800)
     
 };
