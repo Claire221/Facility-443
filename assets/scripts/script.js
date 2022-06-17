@@ -31,7 +31,7 @@ window.addEventListener("load", function(){newGame()});
 // glitch = 0;
 let count = 10;
 function newGame() {
-    gameScreen.style.backgroundImage="url(assets/img/background_01.jpg)";
+    gameScreen.style.backgroundImage="url(/assets/img/background_01.jpg)";
     health.classList.add("hidden")
  
     // Link for glitch effect tutorial used https://www.youtube.com/watch?v=CtmHKGX754s
@@ -57,9 +57,7 @@ function newGame() {
 startBtn.addEventListener("click", function(){
     for (let i = 0; i < glitch.length; i++){
         glitch[i].classList.add("hidden")
-        console.log(glitch[i])
     }
-    console.log(glitch)
     glitch = 0;
     titlePage.style.display = "none";
 
@@ -95,15 +93,12 @@ function startGame(){
         
     button1.addEventListener("click", stay, {once : true});
     button2.addEventListener("click", leave, {once : true});
-
-    console.log("Start Game")
-
 }
 
 function soundToggle(){
     let soundUp = document.getElementsByClassName("fa-volume-up")[0];
     let soundDown = document.getElementsByClassName("fa-volume-off")[0];
-    console.log(soundUp)
+
 
     soundUp.addEventListener("click", function(){
         soundUp.classList.remove("fa-volume-up")
@@ -138,33 +133,38 @@ function soundToggle(){
 }
 
 function stay() {
-    // button1.removeEventListener("click", stay)
-
     gameText.innerText = "You decide to stay where you are, you lie back down starting up at the ceiling you take a few minutes to compose yourself. \
                           Through sheer stubbornness you manage to slow your heart rate back down and bring your breathing under control. You try and remember where you \
                           are and how you got here but every time you try you get a sharp intense pain in the side of your head, so you soon stop trying. After a couple \
                           of minutes, you hear a sound, you sit up and strain your ears to try and figure out where its coming from, you realize its footsteps and they \
                           sound like they are coming in this direction. You sit up, heart pounding and hears vibrating with the blood rushing to them.. \n\nWhat do you do?" 
 
-    button1.innerText= "Wait and see who it is, You might get answers";
-    button2.innerText= "Look for an escape, You dont feel good about this";
+    button1.classList.add("hidden")
+    button2.classList.add("hidden")
 
     button1.addEventListener("click", wait, {once : true});
     button2.addEventListener("click", leave, {once : true});
-
-    console.log("Stay")
 
     setTimeout(function(){
         heelsShortSound.play()
         heelsShortSound.volume = 0.3
         console.log(heelsShortSound)
-    }, 800)
+    }, 100)
+
+    
+    setTimeout(function(){
+        button1.classList.remove("hidden")
+        button2.classList.remove("hidden")
+
+        
+        button1.innerText= "Wait and see who it is, You might get answers";
+        button2.innerText= "Look for an escape, You dont feel good about this";
+    }, 4000)
     
 };
 
 function wait() {
-    // button1.removeEventListener("click", stay);
-
+    heelsShortSound.pause()
     gameText.innerText = "You decide to wait and see who it is, hoping they will give you answers as to why you’re here. \
                           As you lay there you can hear the footsteps getting closer, your palms start to sweat.  Are you sure this was the best decision? \
                           \n\nWhat do you do?" 
@@ -175,17 +175,25 @@ function wait() {
     button1.addEventListener("click", finalStay, {once : true});
     button2.addEventListener("click", tryToEscape, {once : true});
 
+    button1.classList.add("hidden")
+    button2.classList.add("hidden")
+
     setTimeout(function(){
         heelsLongSound.play()
         heelsLongSound.volume = 0.7;
     }, 800)
 
-    console.log("Wait")
+    setTimeout(function(){
+        button1.innerText= "You've made up your mind to wait, you dont know if its any better outside anyway";
+        button2.innerText= "Maybe it wasnt the best decision to stay, try and break free before they get here";
+
+        button1.classList.remove("hidden")
+        button2.classList.remove("hidden")
+    }, 4000)
 }
 
 function finalStay() {
-    // button1.removeEventListener("click", wait);
-
+    heelsLongSound.pause()
     gameText.innerText = "You made the decision to stay and that’s what you’ll do. You sit up and get ready to face whatever is coming through that door. \
                           The footsteps get louder until they stop outside your door, there’s a jingling sound then a key is inserted into a lock. \
                           You cant take your eyes away from the door, they’re stinging, screaming at you to blink but you cant make yourself do it. \
@@ -209,11 +217,9 @@ function finalStay() {
     button1.classList.add("hidden")
     button2.classList.add("hidden")
 
-    console.log("Final Stay")
-
     setTimeout(function(){
         doorCreek.play()
-        doorCreek.volume = 0.2;
+        doorCreek.volume = 0.4;
     }, 1000)
 
     setTimeout(function(){
@@ -242,8 +248,6 @@ function tryToEscape() {
 }
 
 function leave() {
-    // button1.removeEventListener("click", stay);
-
     gameText.innerText = "As you sit there something in your gut is screaming at you to get out, not one to ignore your instincts, \
                           You frantically look around the room in search of anything that can help you. Your eyes land on the metal tray next to you and \
                           the scalpel that’s on there, it doesn’t look very sharp but it might just be sharp enough to cut through the leather. \
@@ -255,13 +259,9 @@ function leave() {
     button1.addEventListener("click", injuryRoll, {once : true});
 
     button2.addEventListener("click", cutStrap, {once : true});
-
-    console.log("leave")
 }
 
 function injuryRoll(){
-    // button1.removeEventListener("click", injuryRoll);
-
     let roll = Math.random() 
     health.classList.remove("hidden")
 
@@ -283,13 +283,9 @@ function injuryRoll(){
     button1.innerText= "Move on";
 
     button1.addEventListener("click", searchRoom, {once : true});
-
-    console.log("Injury Roll")
 }
 
 function cutStrap() {
-    // button1.removeEventListener("click", cutStrap);
-
     time = Math.floor(Math.random() * 10) + 2 ;
     
     gameText.innerText = `You decide to avoid potential injury and cut through the straps restraining your wrists. Using your right hand, \
@@ -306,15 +302,11 @@ function cutStrap() {
     button1.innerText= "Move on";
                      
     button1.addEventListener("click", searchRoom, {once : true});
-
-    console.log("Cut Strap")
 }
 
 
 
 function searchRoom() {
-    // button1.removeEventListener("click", searchRoom);
-
     gameScreen.style.backgroundImage="url(assets/img/room1_search.jpg)";
 
     gameText.innerText = "Standing up you finally get to look at the room from a vertical position and its just as grubby and grimy as it \
@@ -331,12 +323,9 @@ function searchRoom() {
 
     button2.addEventListener("click", leaveRoomOne, {once : true});
 
-    console.log("Search Room")
 };
 
 function lookForSupplies() {
-    // button1.removeEventListener("click", lookForSupplies);
-
     gameText.innerText = "You scan the room, its pretty empty and only contains the two beds, a wardrobe, a counter with cupboards \
                           underneath and the trolley next to your bed where you found the scalpel.\n\nWhere do you start first?"; 
     
@@ -351,8 +340,6 @@ function lookForSupplies() {
     button1.addEventListener("click", checkWardrobe, {once : true});
     button2.addEventListener("click", checkCupboards, {once : true});
     button3.addEventListener("click", checkTrolley, {once : true});
-
-    console.log("Look for supplies")
 }
 
 
@@ -423,7 +410,6 @@ function wardrobeItems() {
 };
 
 function addToInventory() {
-    // Get elements that have inventory-add class
     let inventory = document.getElementsByClassName("inventory-add")
     let inventoryList = document.getElementsByClassName("inventory-list")[0];
 
