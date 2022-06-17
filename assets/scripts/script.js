@@ -18,39 +18,17 @@ let pockets = [];
 
 window.addEventListener("load", function(){newGame()});
 
-// function glitch() {
-//     for (let i = 0; i < count; i++){
-//         let glitchBox = document.createElement("div");
-//         glitchBox.className = "box";
-//         gameScreen.appendChild(glitchBox);
-//         }
-    
-//         let glitch = document.getElementsByClassName("box");
-    
-//         setInterval(function(){
-//         for (let i = 0; i < glitch.length; i++){
-//             glitch[i].style.left = Math.floor(Math.random() * 50) + "vw";
-//             glitch[i].style.top = Math.floor(Math.random() * 75) + "vh";
-//             glitch[i].style.width = Math.floor(Math.random() * 200) + "px";
-//             glitch[i].style.height = Math.floor(Math.random() * 50) + "px";
-//             glitch[i].style.backgroundPosition = Math.floor(Math.random() * 50) + "px";
-//         }
-//         }, 200)
-// }
-
 let count = 10;
 function newGame() {
     // gameScreen.style.backgroundImage="url(assets/img/background_01.jpg)";
     health.classList.add("hidden")
  
-
+    // Link for glitch effect tutorial used https://www.youtube.com/watch?v=CtmHKGX754s
     for (let i = 0; i < count; i++){
     let glitchBox = document.createElement("div");
     glitchBox.className = "box";
     gameScreen.appendChild(glitchBox);
     }
-
-    // let glitch = document.getElementsByClassName("box");
 
     setInterval(function(){
     for (let i = 0; i < glitch.length; i++){
