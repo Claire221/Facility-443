@@ -32,6 +32,8 @@ let count = 10;
 
 // Function to set the scene for a new game
 function newGame() {
+    console.log("New game")
+
     gameScreen.style.backgroundImage="url(/assets/img/background_01.jpg)";
     health.classList.add("hidden")
  
@@ -92,6 +94,8 @@ function soundToggle(){
 
 // First game scene - gives the player a choice wether to try to escape or wait and see what happens
 function startGame(){
+    console.log("start game")
+
     glitch = 0;
     injuries = [];
     time = 0;
@@ -155,14 +159,12 @@ function stay() {
 
 //Wait function - Gives the player one last chance to try and escape, if they stay it leads to the end screen and game over
 function wait() {
+    console.log("wait")
     heelsShortSound.pause()
     gameText.innerText = "You decide to wait and see who it is, hoping they will give you answers as to why you’re here. \
                           As you lay there you can hear the footsteps getting closer, your palms start to sweat.  Are you sure this was the best decision? \
                           \n\nWhat do you do?" 
-
-    button1.innerText= "You've made up your mind to wait, you dont know if its any better outside anyway";
-    button2.innerText= "Maybe it wasnt the best decision to stay, try and break free before they get here";
-
+                          
     button1.addEventListener("click", finalStay, {once : true});
     button2.addEventListener("click", tryToEscape, {once : true});
 
@@ -185,6 +187,7 @@ function wait() {
 
 //Final stay function - function runs when the player has decided to stay for the final time, ends the game
 function finalStay() {
+    console.log("Final Stay")
     heelsLongSound.pause()
     gameText.innerText = "You made the decision to stay and that’s what you’ll do. You sit up and get ready to face whatever is coming through that door. \
                           The footsteps get louder until they stop outside your door, there’s a jingling sound then a key is inserted into a lock. \
@@ -223,7 +226,7 @@ function finalStay() {
 
 //Function that runs if the player chooses to escape
 function tryToEscape() {
-    // let survival = 0.6;
+    // let survival = Math.random();
     // if (survival > 0.5) {
     //     gameText.innerText = "Luck was on your side today and you manage to get away"; 
     //     button2.innerText = "RUN!" 
@@ -241,6 +244,7 @@ function tryToEscape() {
 
 //leave room function - allows the player to decide if want to cut the straps or try and break free
 function leave() {
+    console.log("Leave")
     gameText.innerText = "As you sit there something in your gut is screaming at you to get out, not one to ignore your instincts, \
                           You frantically look around the room in search of anything that can help you. Your eyes land on the metal tray next to you and \
                           the scalpel that’s on there, it doesn’t look very sharp but it might just be sharp enough to cut through the leather. \
@@ -256,6 +260,8 @@ function leave() {
 
 //Function that runs to determine if the player gets an injury from trying to escape or not
 function injuryRoll(){
+    console.log("Injury Roll")
+
     let roll = Math.random() 
     health.classList.remove("hidden")
 
@@ -281,7 +287,8 @@ function injuryRoll(){
 
 //Function that runs if the player chooses to cut the strap, adds time to countdown
 function cutStrap() {
-    
+      console.log("Cut strap")
+
     time = Math.floor(Math.random() * 10) + 2 ;
     
     gameText.innerText = `You decide to avoid potential injury and cut through the straps restraining your wrists. Using your right hand, \
@@ -304,7 +311,7 @@ function cutStrap() {
 //Search room function - alows the player to decide if they want to search the room theyre in or leave to move on
 function searchRoom() {
     // stay function firing here
-    console.log("search room")
+    console.log("Search room")
 
     gameScreen.style.backgroundImage="url(assets/img/room1_search.jpg)";
 
@@ -326,6 +333,8 @@ function searchRoom() {
 
 //Look for supplies function - Lets the player choose where they want to search for supplies
 function lookForSupplies() {
+    console.log("Look for supplies")
+
     gameText.innerText = "You scan the room, its pretty empty and only contains the two beds, a wardrobe, a counter with cupboards \
                           underneath and the trolley next to your bed where you found the scalpel.\n\nWhere do you start first?"; 
     
@@ -344,6 +353,8 @@ function lookForSupplies() {
 
 //Check wardrobe function - changes the scene to the wardrobe background
 function checkWardrobe() {
+    console.log("Check wardrobe")
+
     gameScreen.style.backgroundImage="url(assets/img/wardrobe.jpg)";
 
     gameText.innerText = "You reach out and slowly pull the wardrobe door open, the hinge gives out a low wine as you do so, the \
@@ -362,6 +373,8 @@ function checkWardrobe() {
 
 //Wardrobe items function - Adds 3 images to the screen, the player can click on them to run the "inventory-add" function
 function wardrobeItems() {
+    console.log("Wardrobe items")
+
     gameText.innerText = "You find.. Click on item to add to inventory"; 
     gameScreen.style.backgroundImage="none";
     gameScreen.style.backgroundColor = "black";
@@ -413,6 +426,8 @@ function wardrobeItems() {
 /* Basic inventory system - If a player clicks on an eligible item it will change colour and a message will display saying its been added to inventory. If they click it again it will go back to
 its normal display and be removed from the inventory */ 
 function addToInventory() {
+    console.log("Add to inventory")
+
     let inventory = document.getElementsByClassName("inventory-add")
     let inventoryList = document.getElementsByClassName("inventory-list")[0];
 
