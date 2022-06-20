@@ -21,7 +21,6 @@ let heelsShortSound = new Audio("assets/sound/heels_short.mp4");
 let heelsLongSound = new Audio("assets/sound/heels_short.mp4");
 let doorCreek = new Audio("assets/sound/door_creek.mp4");
 let doorUnlock = new Audio("assets/sound/door_unlock.mp4");
-
 let audio = document.getElementsByTagName("audio")
 
 
@@ -30,6 +29,8 @@ window.addEventListener("load", function(){newGame()});
 
 // glitch = 0;
 let count = 10;
+
+// Function to set the scene for a new game
 function newGame() {
     gameScreen.style.backgroundImage="url(/assets/img/background_01.jpg)";
     health.classList.add("hidden")
@@ -54,6 +55,7 @@ function newGame() {
     volumeUp.addEventListener("click", soundToggle);
 };
 
+// Fuction to start the game
 startBtn.addEventListener("click", function(){
     for (let i = 0; i < glitch.length; i++){
         glitch[i].classList.add("hidden")
@@ -65,6 +67,30 @@ startBtn.addEventListener("click", function(){
     startGame()
 });
 
+// Function to allow the player to toggle the sound on and off
+function soundToggle(){
+    let soundUp = document.getElementsByClassName("fa-volume-up")[0];
+    let soundDown = document.getElementsByClassName("fa-volume-off")[0];
+
+
+    soundUp.addEventListener("click", function(){
+        soundUp.classList.remove("fa-volume-up")
+        soundUp.classList.add("fa-volume-off")
+
+        soundUp.style.display = "none";
+        soundDown.style.display = "block";
+    });
+
+    soundDown.addEventListener("click", function(){
+        soundDown.classList.remove("fa-volume-off")
+        soundDown.classList.add("fa-volume-up")
+
+        soundDown.style.display = "none";
+        soundUp.style.display = "block";
+    });
+}
+
+// First game scene - gives the player a choice wether to try to escape or wait and see what happens
 function startGame(){
     glitch = 0;
     injuries = [];
@@ -95,44 +121,9 @@ function startGame(){
     button2.addEventListener("click", leave, {once : true});
 }
 
-function soundToggle(){
-    let soundUp = document.getElementsByClassName("fa-volume-up")[0];
-    let soundDown = document.getElementsByClassName("fa-volume-off")[0];
-
-
-    soundUp.addEventListener("click", function(){
-        soundUp.classList.remove("fa-volume-up")
-        soundUp.classList.add("fa-volume-off")
-
-        soundUp.style.display = "none";
-        soundDown.style.display = "block";
-    });
-
-    soundDown.addEventListener("click", function(){
-        soundDown.classList.remove("fa-volume-off")
-        soundDown.classList.add("fa-volume-up")
-
-        soundDown.style.display = "none";
-        soundUp.style.display = "block";
-    });
-    // if (soundUp.classList.contains('fa-volume-up')) {
-    //     soundUp.classList.remove("fa-volume-up")
-    //     soundUp.classList.add("fa-volume-off")
-
-    //     soundUp.style.display = "none";
-    //     soundDown.style.display = "block";
-    // } 
-    // if (soundDown.classList.contains('fa-volume-off')){
-    //     soundDown.classList.remove("fa-volume-off")
-    //     soundDown.classList.add("fa-volume-up")
-
-    //     soundDown.style.display = "none";
-    //     soundUp.style.display = "block";
-    // }
-
-}
-
+//stay function - after the player decides to wait this is the first chance they get to chaine their mind and still leave
 function stay() {
+    console.log("Stay")
     gameText.innerText = "You decide to stay where you are, you lie back down starting up at the ceiling you take a few minutes to compose yourself. \
                           Through sheer stubbornness you manage to slow your heart rate back down and bring your breathing under control. You try and remember where you \
                           are and how you got here but every time you try you get a sharp intense pain in the side of your head, so you soon stop trying. After a couple \
@@ -145,24 +136,24 @@ function stay() {
     button1.addEventListener("click", wait, {once : true});
     button2.addEventListener("click", leave, {once : true});
 
-    setTimeout(function(){
-        heelsShortSound.play()
-        heelsShortSound.volume = 0.3
-        console.log(heelsShortSound)
-    }, 100)
-
+    // setTimeout(function(){
+    //     heelsShortSound.play()
+    //     heelsShortSound.volume = 0.3
+    //     console.log(heelsShortSound)
+    //     setTimeout(function(){
+    //         button1.classList.remove("hidden")
+    //         button2.classList.remove("hidden")
     
-    setTimeout(function(){
-        button1.classList.remove("hidden")
-        button2.classList.remove("hidden")
+            
+    //         button1.innerText= "Wait and see who it is, You might get answers";
+    //         button2.innerText= "Look for an escape, You dont feel good about this";
+    //     }, 4000)
+    // }, 100)
 
-        
-        button1.innerText= "Wait and see who it is, You might get answers";
-        button2.innerText= "Look for an escape, You dont feel good about this";
-    }, 4000)
     
 };
 
+//Wait function - Gives the player one last chance to try and escape, if they stay it leads to the end screen and game over
 function wait() {
     heelsShortSound.pause()
     gameText.innerText = "You decide to wait and see who it is, hoping they will give you answers as to why you’re here. \
@@ -181,17 +172,18 @@ function wait() {
     setTimeout(function(){
         heelsLongSound.play()
         heelsLongSound.volume = 0.7;
+        setTimeout(function(){
+            button1.innerText= "You've made up your mind to wait, you dont know if its any better outside anyway";
+            button2.innerText= "Maybe it wasnt the best decision to stay, try and break free before they get here";
+    
+            button1.classList.remove("hidden")
+            button2.classList.remove("hidden")
+        }, 4000)
     }, 800)
-
-    setTimeout(function(){
-        button1.innerText= "You've made up your mind to wait, you dont know if its any better outside anyway";
-        button2.innerText= "Maybe it wasnt the best decision to stay, try and break free before they get here";
-
-        button1.classList.remove("hidden")
-        button2.classList.remove("hidden")
-    }, 4000)
 }
 
+
+//Final stay function - function runs when the player has decided to stay for the final time, ends the game
 function finalStay() {
     heelsLongSound.pause()
     gameText.innerText = "You made the decision to stay and that’s what you’ll do. You sit up and get ready to face whatever is coming through that door. \
@@ -220,16 +212,16 @@ function finalStay() {
     setTimeout(function(){
         doorCreek.play()
         doorCreek.volume = 0.4;
+        setTimeout(function(){
+            doorUnlock.play()
+            doorUnlock.volume = 0.2;
+        }, 1400)
     }, 1000)
 
-    setTimeout(function(){
-        doorUnlock.play()
-        doorUnlock.volume = 0.2;
-    }, 1400)
 }
 
 
-
+//Function that runs if the player chooses to escape
 function tryToEscape() {
     // let survival = 0.6;
     // if (survival > 0.5) {
@@ -247,6 +239,7 @@ function tryToEscape() {
     
 }
 
+//leave room function - allows the player to decide if want to cut the straps or try and break free
 function leave() {
     gameText.innerText = "As you sit there something in your gut is screaming at you to get out, not one to ignore your instincts, \
                           You frantically look around the room in search of anything that can help you. Your eyes land on the metal tray next to you and \
@@ -261,6 +254,7 @@ function leave() {
     button2.addEventListener("click", cutStrap, {once : true});
 }
 
+//Function that runs to determine if the player gets an injury from trying to escape or not
 function injuryRoll(){
     let roll = Math.random() 
     health.classList.remove("hidden")
@@ -285,7 +279,9 @@ function injuryRoll(){
     button1.addEventListener("click", searchRoom, {once : true});
 }
 
+//Function that runs if the player chooses to cut the strap, adds time to countdown
 function cutStrap() {
+    
     time = Math.floor(Math.random() * 10) + 2 ;
     
     gameText.innerText = `You decide to avoid potential injury and cut through the straps restraining your wrists. Using your right hand, \
@@ -305,8 +301,11 @@ function cutStrap() {
 }
 
 
-
+//Search room function - alows the player to decide if they want to search the room theyre in or leave to move on
 function searchRoom() {
+    // stay function firing here
+    console.log("search room")
+
     gameScreen.style.backgroundImage="url(assets/img/room1_search.jpg)";
 
     gameText.innerText = "Standing up you finally get to look at the room from a vertical position and its just as grubby and grimy as it \
@@ -325,6 +324,7 @@ function searchRoom() {
 
 };
 
+//Look for supplies function - Lets the player choose where they want to search for supplies
 function lookForSupplies() {
     gameText.innerText = "You scan the room, its pretty empty and only contains the two beds, a wardrobe, a counter with cupboards \
                           underneath and the trolley next to your bed where you found the scalpel.\n\nWhere do you start first?"; 
@@ -342,7 +342,7 @@ function lookForSupplies() {
     button3.addEventListener("click", checkTrolley, {once : true});
 }
 
-
+//Check wardrobe function - changes the scene to the wardrobe background
 function checkWardrobe() {
     gameScreen.style.backgroundImage="url(assets/img/wardrobe.jpg)";
 
@@ -360,6 +360,7 @@ function checkWardrobe() {
                           
 }
 
+//Wardrobe items function - Adds 3 images to the screen, the player can click on them to run the "inventory-add" function
 function wardrobeItems() {
     gameText.innerText = "You find.. Click on item to add to inventory"; 
     gameScreen.style.backgroundImage="none";
@@ -409,6 +410,8 @@ function wardrobeItems() {
 
 };
 
+/* Basic inventory system - If a player clicks on an eligible item it will change colour and a message will display saying its been added to inventory. If they click it again it will go back to
+its normal display and be removed from the inventory */ 
 function addToInventory() {
     let inventory = document.getElementsByClassName("inventory-add")
     let inventoryList = document.getElementsByClassName("inventory-list")[0];
