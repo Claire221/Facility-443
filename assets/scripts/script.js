@@ -1,12 +1,15 @@
-// Game scene variables
-let gameScreen = document.getElementsByClassName("container")[0];
-let gameSection = document.getElementsByClassName("game-section")[0];
-let startBtn = document.getElementsByClassName("btn")[0];
-let titlePage = document.getElementsByClassName("title-page")[0]
-let gameText = document.getElementById("game-paragraph");
-let button1 = document.getElementsByClassName("btn-1")[0];
-let button2 = document.getElementsByClassName("btn-2")[0];
-let button3 = document.getElementsByClassName("btn-3")[0];
+let loadScreen = document.getElementsByClassName("container")[0];
+const startScreen = document.getElementsByClassName("title-page")[0]
+const startBtn = document.getElementsByClassName("start-btn")[0]
+const gameContainer = document.getElementsByClassName("game-section")[0]
+const gameParagraph = document.getElementsByClassName("game-paragraph")[0]
+const startTitle = document.getElementsByClassName("title")[0]
+const subTitle = document.getElementsByClassName("sub-title")[0]
+
+
+let option1; 
+let option2;
+
 let glitch = document.getElementsByClassName("box");
 let volumeUp = document.getElementsByClassName("volume-container")[0]
 
@@ -17,128 +20,147 @@ let injuries = [];
 let pockets = [];
 
 // Audio variables
-let heelsShortSound = new Audio("assets/sound/heels_short.mp4");
-let heelsLongSound = new Audio("assets/sound/heels_short.mp4");
-let doorCreek = new Audio("assets/sound/door_creek.mp4");
-let doorUnlock = new Audio("assets/sound/door_unlock.mp4");
-let audio = document.getElementsByTagName("audio")
+// let heelsShortSound = new Audio("assets/sound/heels_short.mp4");
+// let heelsLongSound = new Audio("assets/sound/heels_short.mp4");
+// let doorCreek = new Audio("assets/sound/door_creek.mp4");
+// let doorUnlock = new Audio("assets/sound/door_unlock.mp4");
+// let audio = document.getElementsByTagName("audio")
 
 
+function removeBtn(){
+    let oldbtn1 = document.getElementsByClassName("option1")[0];
+    let oldbtn2 = document.getElementsByClassName("option2")[0];
+
+    oldbtn1.remove()
+    oldbtn2.remove()
+}
+
+function createNewBtn(){
+    option1 = document.createElement("button");
+    option2 = document.createElement("button");
+
+    gameContainer.appendChild(option1)
+    gameContainer.appendChild(option2)
+
+    option1.classList.add("option1", "game-btn")
+    option2.classList.add("option2", "game-btn")
+
+    option1.innerText = "test"
+    option2.innerText = "test"
+
+}
 
 window.addEventListener("load", function(){newGame()});
 
 // glitch = 0;
-let count = 10;
+// let count = 10;
 
 // Function to set the scene for a new game
 function newGame() {
     console.log("New game")
-
-    gameScreen.style.backgroundImage="url(/assets/img/background_01.jpg)";
-    health.classList.add("hidden")
+    loadScreen.style.backgroundImage="url(/assets/img/background_01.jpg)";
+    // health.classList.add("hidden")
  
     // Link for glitch effect tutorial used https://www.youtube.com/watch?v=CtmHKGX754s
-    for (let i = 0; i < count; i++){
-    let glitchBox = document.createElement("div");
-    glitchBox.className = "box";
-    gameScreen.appendChild(glitchBox);
-    }
+    // for (let i = 0; i < count; i++){
+    // let glitchBox = document.createElement("div");
+    // glitchBox.className = "box";
+    // gameScreen.appendChild(glitchBox);
+    // }
 
-    setInterval(function(){
-    for (let i = 0; i < glitch.length; i++){
-        glitch[i].style.left = Math.floor(Math.random() * 50) + "vw";
-        glitch[i].style.top = Math.floor(Math.random() * 75) + "vh";
-        glitch[i].style.width = Math.floor(Math.random() * 200) + "px";
-        glitch[i].style.height = Math.floor(Math.random() * 50) + "px";
-        glitch[i].style.backgroundPosition = Math.floor(Math.random() * 50) + "px";
-    }
-    }, 200)
+    // setInterval(function(){
+    // for (let i = 0; i < glitch.length; i++){
+    //     glitch[i].style.left = Math.floor(Math.random() * 50) + "vw";
+    //     glitch[i].style.top = Math.floor(Math.random() * 75) + "vh";
+    //     glitch[i].style.width = Math.floor(Math.random() * 200) + "px";
+    //     glitch[i].style.height = Math.floor(Math.random() * 50) + "px";
+    //     glitch[i].style.backgroundPosition = Math.floor(Math.random() * 50) + "px";
+    // }
+    // }, 200)
 
-    volumeUp.addEventListener("click", soundToggle);
+    // volumeUp.addEventListener("click", soundToggle);
 };
 
 // Fuction to start the game
 startBtn.addEventListener("click", function(){
-    for (let i = 0; i < glitch.length; i++){
-        glitch[i].classList.add("hidden")
-    }
-    glitch = 0;
-    titlePage.style.display = "none";
-
-    gameScreen.style.backgroundImage="url(assets/img/starting_room.jpg)";
+    // for (let i = 0; i < glitch.length; i++){
+    //     glitch[i].classList.add("hidden")
+    // }
+    // glitch = 0;
+    startScreen.classList.add("hidden")
+    loadScreen.style.backgroundImage="url(assets/img/starting_room.jpg)";
     startGame()
 });
 
 // Function to allow the player to toggle the sound on and off
-function soundToggle(){
-    let soundUp = document.getElementsByClassName("fa-volume-up")[0];
-    let soundDown = document.getElementsByClassName("fa-volume-off")[0];
+// function soundToggle(){
+//     let soundUp = document.getElementsByClassName("fa-volume-up")[0];
+//     let soundDown = document.getElementsByClassName("fa-volume-off")[0];
 
 
-    soundUp.addEventListener("click", function(){
-        soundUp.classList.remove("fa-volume-up")
-        soundUp.classList.add("fa-volume-off")
+//     soundUp.addEventListener("click", function(){
+//         soundUp.classList.remove("fa-volume-up")
+//         soundUp.classList.add("fa-volume-off")
 
-        soundUp.style.display = "none";
-        soundDown.style.display = "block";
-    });
+//         soundUp.style.display = "none";
+//         soundDown.style.display = "block";
+//     });
 
-    soundDown.addEventListener("click", function(){
-        soundDown.classList.remove("fa-volume-off")
-        soundDown.classList.add("fa-volume-up")
+//     soundDown.addEventListener("click", function(){
+//         soundDown.classList.remove("fa-volume-off")
+//         soundDown.classList.add("fa-volume-up")
 
-        soundDown.style.display = "none";
-        soundUp.style.display = "block";
-    });
-}
+//         soundDown.style.display = "none";
+//         soundUp.style.display = "block";
+//     });
+// }
 
 // First game scene - gives the player a choice wether to try to escape or wait and see what happens
 function startGame(){
-    console.log("start game")
-
     glitch = 0;
     injuries = [];
     time = 0;
 
+    console.log("The game has started")
+    gameParagraph.innerText = "You wake up dazed and confused, you look around and see that your in a small dimly lit room. \
+    Looking at the ceiling there white tiles.. well you assume they use to be white but they are more grey now \
+    with some mould growing in the cracks, taking in a deep breath your nostrils fill with an antiseptic smell \
+    and your head begins to thud. After waiting a minute for your head to clear you sit up and get a clear view \
+    of the room your in. Your in one of two single size beds, the other is empty but the covers aren’t made, has \
+    someone been there recently? Looking around the room you see the walls and floor match the tiles of the ceiling \
+    giving the room a sterile feel. In the middle of the wall opposite you is a solid metal door. Turning to your left \
+    you see a counter with a sink and to the right a wardrobe is tucked away in the corner. You try to stand but you \
+    realise that your arms are tied to either side of the bed by thick leather straps, your can feel your heartbeat \
+    speed up in your chest and you start to find it hard to catch your breath and a feeling of dread has settled in your stomach, \
+    you notice there is a small metal trolly next to the bed on it there is a small pad of paper, a pen, a scaple and a pair of tweezers \
+    \n\nWhat do you do?"
 
-    gameText.classList.add("game-text")
-    gameText.innerText = "You wake up dazed and confused, you look around and see that your in a small dimly lit room. \
-                        Looking at the ceiling there white tiles.. well you assume they use to be white but they are more grey now \
-                        with some mould growing in the cracks, taking in a deep breath your nostrils fill with an antiseptic smell \
-                        and your head begins to thud. After waiting a minute for your head to clear you sit up and get a clear view \
-                        of the room your in. Your in one of two single size beds, the other is empty but the covers aren’t made, has \
-                        someone been there recently? Looking around the room you see the walls and floor match the tiles of the ceiling \
-                        giving the room a sterile feel. In the middle of the wall opposite you is a solid metal door. Turning to your left \
-                        you see a counter with a sink and to the right a wardrobe is tucked away in the corner. You try to stand but you \
-                        realise that your arms are tied to either side of the bed by thick leather straps, your can feel your heartbeat \
-                        speed up in your chest and you start to find it hard to catch your breath and a feeling of dread has settled in your stomach, \
-                        you notice there is a small metal trolly next to the bed on it there is a small pad of paper, a pen, a scaple and a pair of tweezers \
-                        \n\nWhat do you do?"
+    createNewBtn();
 
-    button1.classList.remove("hidden")
-    button1.innerText = "Stay where you are, what if your here for a reason?";
+    option1.innerText = "Stay where you are, what if your here for a reason?"
+    option2.innerText = "This doesnt feel right, try and break out."
 
-    button2.classList.remove("hidden")
-    button2.innerText = "This doesnt feel right, try and break out.";
-        
-    button1.addEventListener("click", stay, {once : true});
-    button2.addEventListener("click", leave, {once : true});
+    option1.addEventListener("click", stay)
+    option2.addEventListener("click", leave)
 }
 
 //stay function - after the player decides to wait this is the first chance they get to chaine their mind and still leave
 function stay() {
     console.log("Stay")
-    gameText.innerText = "You decide to stay where you are, you lie back down starting up at the ceiling you take a few minutes to compose yourself. \
+    removeBtn()
+    createNewBtn()
+
+    gameParagraph.innerText = "You decide to stay where you are, you lie back down starting up at the ceiling you take a few minutes to compose yourself. \
                           Through sheer stubbornness you manage to slow your heart rate back down and bring your breathing under control. You try and remember where you \
                           are and how you got here but every time you try you get a sharp intense pain in the side of your head, so you soon stop trying. After a couple \
                           of minutes, you hear a sound, you sit up and strain your ears to try and figure out where its coming from, you realize its footsteps and they \
                           sound like they are coming in this direction. You sit up, heart pounding and hears vibrating with the blood rushing to them.. \n\nWhat do you do?" 
 
-    button1.classList.add("hidden")
-    button2.classList.add("hidden")
+    option1.innerText = "Wait and see who it is, You might get answers"
+    option2.innerText = "Look for an escape, You dont feel good about this"
 
-    button1.addEventListener("click", wait, {once : true});
-    button2.addEventListener("click", leave, {once : true});
+    option1.addEventListener("click", wait);
+    option2.addEventListener("click", leave);
 
     // setTimeout(function(){
     //     heelsShortSound.play()
@@ -160,36 +182,41 @@ function stay() {
 //Wait function - Gives the player one last chance to try and escape, if they stay it leads to the end screen and game over
 function wait() {
     console.log("wait")
-    heelsShortSound.pause()
-    gameText.innerText = "You decide to wait and see who it is, hoping they will give you answers as to why you’re here. \
+    removeBtn()
+    createNewBtn()
+
+    gameParagraph.innerText = "You decide to wait and see who it is, hoping they will give you answers as to why you’re here. \
                           As you lay there you can hear the footsteps getting closer, your palms start to sweat.  Are you sure this was the best decision? \
                           \n\nWhat do you do?" 
-                          
-    button1.addEventListener("click", finalStay, {once : true});
-    button2.addEventListener("click", tryToEscape, {once : true});
-
-    button1.classList.add("hidden")
-    button2.classList.add("hidden")
-
-    setTimeout(function(){
-        heelsLongSound.play()
-        heelsLongSound.volume = 0.7;
-        setTimeout(function(){
-            button1.innerText= "You've made up your mind to wait, you dont know if its any better outside anyway";
-            button2.innerText= "Maybe it wasnt the best decision to stay, try and break free before they get here";
     
-            button1.classList.remove("hidden")
-            button2.classList.remove("hidden")
-        }, 4000)
-    }, 800)
+    option1.innerText = "You've made up your mind to wait, you dont know if its any better outside anyway"
+    option2.innerText = "Maybe it wasnt the best decision to stay, try and break free before they get here"
+                          
+    option1.addEventListener("click", finalStay, {once : true});
+    option1.addEventListener("click", tryToEscape, {once : true});
+
+
+    // setTimeout(function(){
+    //     heelsLongSound.play()
+    //     heelsLongSound.volume = 0.7;
+    //     setTimeout(function(){
+    //         button1.innerText= "You've made up your mind to wait, you dont know if its any better outside anyway";
+    //         button2.innerText= "Maybe it wasnt the best decision to stay, try and break free before they get here";
+    
+    //         button1.classList.remove("hidden")
+    //         button2.classList.remove("hidden")
+    //     }, 4000)
+    // }, 800)
 }
 
 
 //Final stay function - function runs when the player has decided to stay for the final time, ends the game
 function finalStay() {
     console.log("Final Stay")
-    heelsLongSound.pause()
-    gameText.innerText = "You made the decision to stay and that’s what you’ll do. You sit up and get ready to face whatever is coming through that door. \
+    removeBtn()
+    createNewBtn()
+    
+    gameParagraph.innerText = "You made the decision to stay and that’s what you’ll do. You sit up and get ready to face whatever is coming through that door. \
                           The footsteps get louder until they stop outside your door, there’s a jingling sound then a key is inserted into a lock. \
                           You cant take your eyes away from the door, they’re stinging, screaming at you to blink but you cant make yourself do it. \
                           With a click of a lock the door starts to open and in comes a Woman. She’s wearing a black skirt suit, her ginger hair is \
@@ -209,17 +236,17 @@ function finalStay() {
                           “Don’t worry, we will have this all figured out in a Jiffy” she raises the syringe and presses the plunger to a small amount of liquid leaks \
                           out of the top of the needle and runs down the side..."; 
 
-    button1.classList.add("hidden")
-    button2.classList.add("hidden")
+    option1.classList.add("hidden")
+    option2.classList.add("hidden")
 
-    setTimeout(function(){
-        doorCreek.play()
-        doorCreek.volume = 0.4;
-        setTimeout(function(){
-            doorUnlock.play()
-            doorUnlock.volume = 0.2;
-        }, 1400)
-    }, 1000)
+    // setTimeout(function(){
+    //     doorCreek.play()
+    //     doorCreek.volume = 0.4;
+    //     setTimeout(function(){
+    //         doorUnlock.play()
+    //         doorUnlock.volume = 0.2;
+    //     }, 1400)
+    // }, 1000)
 
 }
 
@@ -245,53 +272,62 @@ function tryToEscape() {
 //leave room function - allows the player to decide if want to cut the straps or try and break free
 function leave() {
     console.log("Leave")
-    gameText.innerText = "As you sit there something in your gut is screaming at you to get out, not one to ignore your instincts, \
+    removeBtn()
+    createNewBtn()
+
+    gameParagraph.innerText = "As you sit there something in your gut is screaming at you to get out, not one to ignore your instincts, \
                           You frantically look around the room in search of anything that can help you. Your eyes land on the metal tray next to you and \
                           the scalpel that’s on there, it doesn’t look very sharp but it might just be sharp enough to cut through the leather. \
                           \n\nWhat do you do?"; 
     
-    button1.innerText= "The restraints might just be lose enough for you to squeeze your hand through, It might hurt ";
-    button2.innerText= "Use the scaple to cut through, it will take longer though.";
+    option1.innerText= "The restraints might just be lose enough for you to squeeze your hand through, It might hurt ";
+    option2.innerText= "Use the scaple to cut through, it will take longer though.";
 
-    button1.addEventListener("click", injuryRoll, {once : true});
+    option1.addEventListener("click", injuryRoll, {once : true});
+    option2.addEventListener("click", cutStrap, {once : true});
 
-    button2.addEventListener("click", cutStrap, {once : true});
 }
 
 //Function that runs to determine if the player gets an injury from trying to escape or not
 function injuryRoll(){
     console.log("Injury Roll")
+    removeBtn()
+    createNewBtn()
+
 
     let roll = Math.random() 
-    health.classList.remove("hidden")
+    // health.classList.remove("hidden")
 
     if(roll < 0.5) {
         injuries.push("No injury")
-        health.innerText=injuries
+        // health.innerText=injuries
     } else {
         injuries.push("left Hand - Sprained wrist ")
-        health.innerText=injuries
+        // health.innerText=injuries
     }
     
 
-    gameText.innerText = `You decide to free your left hand first, thinking that once you’ve done that you can undo the restrains on your right one. \
+    gameParagraph.innerText = `You decide to free your left hand first, thinking that once you’ve done that you can undo the restrains on your right one. \
                           You twist, pull and bend your hand trying to get it through the strap. After some tugging you realise your slowly getting \
                           somewhere and it only takes you a few minutes to free your hand from the strap. Once free you quickly untie your other hand \
                           and are able to finally stand up from the bed. Taking a look at your left hand you inspect for an inury \n\n ${injuries}`;
                           
-    button2.classList.add("hidden")
-    button1.innerText= "Move on";
+    option1.classList.add("hidden")
+    option2.innerText= "Move on";
 
-    button1.addEventListener("click", searchRoom, {once : true});
+    option2.addEventListener("click", searchRoom, {once : true});
 }
 
 //Function that runs if the player chooses to cut the strap, adds time to countdown
 function cutStrap() {
-      console.log("Cut strap")
+    console.log("Cut strap")
+
+    removeBtn()
+    createNewBtn()
 
     time = Math.floor(Math.random() * 10) + 2 ;
     
-    gameText.innerText = `You decide to avoid potential injury and cut through the straps restraining your wrists. Using your right hand, \
+    gameParagraph.innerText = `You decide to avoid potential injury and cut through the straps restraining your wrists. Using your right hand, \
                          you reach towards the tray your fingertips brush against the scalpel handle. You try and extend your arm as far \
                          as it can go, the leather straps biting into your wrists. Managing to gain an extra crucial few millimetre your \
                          fingertips just extend over the handle of the scalpel. A sweat has broken out over your brow you start to move \
@@ -301,33 +337,35 @@ function cutStrap() {
                          Finally, you have it in your hand, you flip it around and slot the blade along your wrist inside of the restraint. \
                          You slowly start moving the knife back and forth along the strap, you can hear the leather creaking as the blade runs \
                          along it and after a few minutes you start to see a grove appear. \n\n It took ${time} minutes's`; 
-    button2.classList.add("hidden")
-    button1.innerText= "Move on";
+    option1.classList.add("hidden")
+    option2.innerText= "Move on";
                      
-    button1.addEventListener("click", searchRoom, {once : true});
+    option2.addEventListener("click", searchRoom, {once : true});
 }
 
 
 //Search room function - alows the player to decide if they want to search the room theyre in or leave to move on
 function searchRoom() {
-    // stay function firing here
     console.log("Search room")
 
-    gameScreen.style.backgroundImage="url(assets/img/room1_search.jpg)";
+    removeBtn()
+    createNewBtn()
 
-    gameText.innerText = "Standing up you finally get to look at the room from a vertical position and its just as grubby and grimy as it \
+    // gameScreen.style.backgroundImage="url(assets/img/room1_search.jpg)";
+
+    gameParagraph.innerText = "Standing up you finally get to look at the room from a vertical position and its just as grubby and grimy as it \
                           was from when you were lying down. You now need to decide if your going to search the room for anything useful \
                           or get out of there as fast as you can?"; 
 
-    button1.classList.remove("hidden")
-    button2.classList.remove("hidden")
+    option1.classList.remove("hidden")
+    option2.classList.remove("hidden")
 
-    button1.innerText= "Search the room, you dont know what you might find";
-    button2.innerText= "You've waisted long enough, lets get out of here";
+    option1.innerText= "Search the room, you dont know what you might find";
+    option2.innerText= "You've waisted long enough, lets get out of here";
 
-    button1.addEventListener("click", lookForSupplies, {once : true});
+    option1.addEventListener("click", lookForSupplies, {once : true});
 
-    button2.addEventListener("click", leaveRoomOne, {once : true});
+    option2.addEventListener("click", leaveRoomOne, {once : true});
 
 };
 
@@ -335,49 +373,56 @@ function searchRoom() {
 function lookForSupplies() {
     console.log("Look for supplies")
 
-    gameText.innerText = "You scan the room, its pretty empty and only contains the two beds, a wardrobe, a counter with cupboards \
+    removeBtn()
+    createNewBtn()
+
+    gameParagraph.innerText = "You scan the room, its pretty empty and only contains the two beds, a wardrobe, a counter with cupboards \
                           underneath and the trolley next to your bed where you found the scalpel.\n\nWhere do you start first?"; 
     
-    button1.classList.remove("hidden")
-    button2.classList.remove("hidden")
-    button3.classList.remove("hidden")
+    // button1.classList.remove("hidden")
+    // button2.classList.remove("hidden")
+    // button3.classList.remove("hidden")
 
-    button1.innerText= "Look inside the wardrobe for anything userful";
-    button2.innerText= "The cupboards might have something in them, check there";
-    button3.innerText= "Check the trolley by the bed";
+    option1.innerText= "Look inside the wardrobe for anything userful";
+    option2.innerText= "The cupboards might have something in them, check there";
+    // button3.innerText= "Check the trolley by the bed";
 
-    button1.addEventListener("click", checkWardrobe, {once : true});
-    button2.addEventListener("click", checkCupboards, {once : true});
-    button3.addEventListener("click", checkTrolley, {once : true});
+    option1.addEventListener("click", checkWardrobe, {once : true});
+    option2.addEventListener("click", checkCupboards, {once : true});
+    // button3.addEventListener("click", checkTrolley, {once : true});
 }
 
 //Check wardrobe function - changes the scene to the wardrobe background
 function checkWardrobe() {
     console.log("Check wardrobe")
+    removeBtn()
+    createNewBtn()
 
-    gameScreen.style.backgroundImage="url(assets/img/wardrobe.jpg)";
+    loadScreen.style.backgroundImage="url(assets/img/wardrobe.jpg)";
 
-    gameText.innerText = "You reach out and slowly pull the wardrobe door open, the hinge gives out a low wine as you do so, the \
+    gameParagraph.innerText = "You reach out and slowly pull the wardrobe door open, the hinge gives out a low wine as you do so, the \
                           wardrobe consitst of a metal railing with a shelf underneath on the railing there are a few metal hangers \
                           and one white lab coat, you not how striking the white is against the grubbiness of the surrounding area. \
                           on the shelf below is an old cardboard box, the lid warbed from water damage and thers a small hole in the \
                           left corner from what you presume is mice"; 
     
-    button3.innerText= "Inspect the items";
-    button3.addEventListener("click", wardrobeItems, {once : true});
+    option1.innerText= "Inspect the items";
+    option1.addEventListener("click", wardrobeItems, {once : true});
 
-    button1.classList.add("hidden")
-    button2.classList.add("hidden")
+    // option1.classList.add("hidden")
+    // option2.classList.add("hidden")
                           
 }
 
 //Wardrobe items function - Adds 3 images to the screen, the player can click on them to run the "inventory-add" function
 function wardrobeItems() {
     console.log("Wardrobe items")
+    removeBtn()
+    createNewBtn()
 
-    gameText.innerText = "You find.. Click on item to add to inventory"; 
-    gameScreen.style.backgroundImage="none";
-    gameScreen.style.backgroundColor = "black";
+    gameParagraph.innerText = "You find.. Click on item to add to inventory"; 
+    gameContainer.style.backgroundImage="none";
+    gameContainer.style.backgroundColor = "black";
 
     let itemsContainer = document.createElement("div");
     let shoeItem = document.createElement("img");
@@ -403,8 +448,8 @@ function wardrobeItems() {
     itemsContainer.appendChild(shoeItem)
     itemsContainer.appendChild(keyCardItem)
     itemsContainer.appendChild(PaperItem)
-    gameScreen.appendChild(itemsContainer)
-    gameScreen.appendChild(inventoryDisplay)
+    gameContainer.appendChild(itemsContainer)
+    gameContainer.appendChild(inventoryDisplay)
 
     inventoryDisplay.innerHTML = "Test";
 
@@ -427,6 +472,8 @@ function wardrobeItems() {
 its normal display and be removed from the inventory */ 
 function addToInventory() {
     console.log("Add to inventory")
+    removeBtn()
+    createNewBtn()
 
     let inventory = document.getElementsByClassName("inventory-add")
     let inventoryList = document.getElementsByClassName("inventory-list")[0];

@@ -87,7 +87,7 @@ body {
     text-shadow: -1px -1px 5px rgba(41, 223, 255, 0.5), 1px -1px 5px rgba(41, 223, 255, 0.5), -1px 1px 5px rgba(41, 223, 255, 0.5), 1px 1px 5px rgba(41, 223, 255, 0.5);
 }
 
-.btn {
+.start-btn {
     padding: 1% 2%;
     font-size: 1.5rem;
     border-radius: 10px;
@@ -98,7 +98,7 @@ body {
     margin: 2% 0;
 }
 
-.btn:hover, .brn:focus {
+.start-btn:hover, .start-btn:focus {
     background-color: rgba(41, 223, 255, .5);
     border: solid 2px rgb(2, 100, 117);
     color: rgb(12, 60, 68);
