@@ -58,7 +58,7 @@ window.addEventListener("load", function(){newGame()});
 // Function to set the scene for a new game
 function newGame() {
     console.log("New game")
-    loadScreen.style.backgroundImage="url(/assets/img/background_01.jpg)";
+    loadScreen.style.backgroundImage="url(assets/img/background_01.jpg)";
     // health.classList.add("hidden")
  
     // Link for glitch effect tutorial used https://www.youtube.com/watch?v=CtmHKGX754s
