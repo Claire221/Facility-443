@@ -24,12 +24,12 @@ let glitch = document.getElementsByClassName("box");
 let volumeUp = document.getElementsByClassName("volume-container")[0]
 
 // Player variables
-let health = document.getElementsByClassName("health-info")[0];
+let health = document.getElementById("health-info");
 let time = 0;
 let injuries = [];
 let pockets = [""];
 
-
+// Function to remove old buttons
 function removeBtn(){
     let oldbtn1 = document.getElementsByClassName("option1")[0];
     let oldbtn2 = document.getElementsByClassName("option2")[0];
@@ -38,6 +38,7 @@ function removeBtn(){
     oldbtn2.remove()
 }
 
+// Function to create new buttons
 function createNewBtn(){
     option1 = document.createElement("button");
     option2 = document.createElement("button");
@@ -53,12 +54,24 @@ function createNewBtn(){
 
 }
 
+// Function to check if screen is too small to play
+
+function checkScreen(){
+    if (window.attachEvent) {
+        window.attachEvent('onresize', function() {
+          if (window.innerWidth < 760)
+            console.log("Less than 760");
+          else
+            console.log("More than 760");
+        });
+      }
+}
 
 // Function to allow the player to toggle the sound on and off
 function soundToggle(){
     let audio = document.getElementsByTagName("audio")
     let soundToggle = document.getElementById("sound-toggle");
-
+    console.log(soundToggle)
     for (sound in audio) {
         audioLevel = audio.muted = false
     }
@@ -78,7 +91,10 @@ function soundToggle(){
     });
 }
 
-window.addEventListener("load", function(){newGame()});
+window.addEventListener("load", function(){
+    checkScreen()
+    newGame()
+});
 
 let count = 10;
 
@@ -88,6 +104,7 @@ function newGame() {
     loadScreen.style.backgroundImage="url(assets/img/background_01.jpg)";
     health.classList.add("hidden")
     soundToggle()
+    checkScreen()
     // Link for glitch effect tutorial used https://www.youtube.com/watch?v=CtmHKGX754s
     // for (let i = 0; i < count; i++){
     // let glitchBox = document.createElement("div");
