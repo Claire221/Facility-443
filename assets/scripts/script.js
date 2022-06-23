@@ -192,7 +192,7 @@ function wait() {
     option2.innerText = "Maybe it wasnt the best decision to stay, try and break free before they get here"
                           
     option1.addEventListener("click", finalStay, {once : true});
-    option1.addEventListener("click", tryToEscape, {once : true});
+    option2.addEventListener("click", tryToEscape, {once : true});
 
 
     // setTimeout(function(){
@@ -213,7 +213,6 @@ function wait() {
 function finalStay() {
     console.log("Final Stay")
     removeBtn()
-    createNewBtn()
     
     gameParagraph.innerText = "You made the decision to stay and that’s what you’ll do. You sit up and get ready to face whatever is coming through that door. \
                           The footsteps get louder until they stop outside your door, there’s a jingling sound then a key is inserted into a lock. \
@@ -235,8 +234,12 @@ function finalStay() {
                           “Don’t worry, we will have this all figured out in a Jiffy” she raises the syringe and presses the plunger to a small amount of liquid leaks \
                           out of the top of the needle and runs down the side..."; 
 
-    option1.classList.add("hidden")
-    option2.classList.add("hidden")
+    // option1.classList.add("hidden")
+    // option2.classList.add("hidden")
+
+    setTimeout(function(){
+        window.location.reload();
+    }, 6000)
 
     // setTimeout(function(){
     //     doorCreek.play()
@@ -252,18 +255,24 @@ function finalStay() {
 
 //Function that runs if the player chooses to escape
 function tryToEscape() {
-    // let survival = Math.random();
-    // if (survival > 0.5) {
-    //     gameText.innerText = "Luck was on your side today and you manage to get away"; 
-    //     button2.innerText = "RUN!" 
-    //     button1.classList.add("hidden")
-    //     button1.addEventListener("click", leave, {once : true});
-    // } else {
-    //     setInterval(function(){
-    //         console.log("you get caught")
-    //     },3000);
-    // }
-    // gameText.innerText = ""; 
+    removeBtn()
+    createNewBtn()
+
+    gameParagraph.innerText = " You have decided to try and escape.."
+    let survival = Math.random();
+    if (survival > 0.5) {
+        gameParagraph.innerText = "Luck was on your side today and you manage to get away"; 
+        option1.innerText = "RUN!" 
+        option2.classList.add("hidden")
+        option1.addEventListener("click", leave, {once : true});
+    } else {
+        gameParagraph.innerText = "You get caught..."; 
+        removeBtn()
+        setInterval(function(){
+            window.location.reload();
+        },3000);
+    }
+
 
     
 }
