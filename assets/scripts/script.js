@@ -446,8 +446,9 @@ function wardrobeItems() {
     createNewBtn()
 
     gameParagraph.innerText = "You find.. Click on item to add to inventory"; 
-    // gameContainer.style.backgroundImage="none";
-    // gameContainer.style.backgroundColor = "black";
+
+    option1.innerText= "Return to search room";
+    option1.addEventListener("click", lookForSupplies)
 
     let itemsContainer = document.createElement("div");
     let shoeItem = document.createElement("img");
@@ -472,7 +473,7 @@ function wardrobeItems() {
     itemsContainer.appendChild(shoeItem)
     itemsContainer.appendChild(keyCardItem)
     itemsContainer.appendChild(PaperItem)
-    gameContainer.appendChild(itemsContainer)
+    loadScreen.appendChild(itemsContainer)
 
     shoeItem.addEventListener("click", function(){
         this.classList.toggle("inventory-add")
@@ -501,7 +502,7 @@ function addToInventory(item) {
             console.log(pockets)
         } else {
             pockets.push(item)
-            console.log(`${item} added to your pockets, they now contain ${pockets}`)
+            console.log(`${item} added to your pockets, Press B to view inventory`)
             console.log(pockets)
         }
     } 
