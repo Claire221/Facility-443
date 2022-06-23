@@ -1,11 +1,20 @@
-let loadScreen = document.getElementsByClassName("container")[0];
-const startScreen = document.getElementsByClassName("title-page")[0]
-const startBtn = document.getElementsByClassName("start-btn")[0]
-const gameContainer = document.getElementsByClassName("game-section")[0]
-const gameParagraph = document.getElementsByClassName("game-paragraph")[0]
-const startTitle = document.getElementsByClassName("title")[0]
-const subTitle = document.getElementsByClassName("sub-title")[0]
+/* jshint esversion: 11 */
 
+let loadScreen = document.getElementById("container");
+let startScreen = document.getElementById("title-page");
+let startBtn = document.getElementById("start-btn");
+let gameContainer = document.getElementById("game-section");
+let gameParagraph = document.getElementById("game-paragraph");
+let startTitle = document.getElementById("title");
+let subTitle = document.getElementById("sub-title");
+
+// Audio file variables
+let doorCreek = document.getElementById("door_creek");
+let doorUnlock = document.getElementById("door_unlock");
+let heels = document.getElementById("heels");
+let heelsLong = document.getElementById("heels_long");
+let heelsShort = document.getElementById("heels_short");
+let audioLevel = true;
 
 let option1; 
 let option2;
@@ -18,13 +27,6 @@ let health = document.getElementsByClassName("health-info")[0];
 let time = 0;
 let injuries = [];
 let pockets = [];
-
-// Audio variables
-// let heelsShortSound = new Audio("assets/sound/heels_short.mp4");
-// let heelsLongSound = new Audio("assets/sound/heels_short.mp4");
-// let doorCreek = new Audio("assets/sound/door_creek.mp4");
-// let doorUnlock = new Audio("assets/sound/door_unlock.mp4");
-// let audio = document.getElementsByTagName("audio")
 
 
 function removeBtn(){
@@ -50,6 +52,35 @@ function createNewBtn(){
 
 }
 
+// Function to allow the player to toggle the sound on and off
+function soundToggle(){
+    let audio = document.getElementsByTagName("audio")
+    let soundToggle = document.getElementById("sound-toggle");
+
+    for (sound in audio) {
+        audioLevel = audio.muted = false
+    }
+
+    soundToggle.addEventListener("click", function() {
+        if (this.classList.contains("fa-volume-mute")) {
+            this.classList.remove("fa-volume-mute");
+            this.classList.add("fa-volume-up");
+            audioLevel = audio.muted = true
+            console.log(audioLevel)
+        } else {
+            this.classList.add("fa-volume-mute");
+            this.classList.remove("fa-volume-up");
+            audioLevel = audio.muted = false
+            console.log(audioLevel)
+        }
+});
+
+
+if (audioLevel) {
+    heelsShortSound.play();
+}
+}
+
 window.addEventListener("load", function(){newGame()});
 
 let count = 10;
@@ -59,7 +90,7 @@ function newGame() {
     console.log("New game")
     loadScreen.style.backgroundImage="url(assets/img/background_01.jpg)";
     health.classList.add("hidden")
- 
+    soundToggle()
     // Link for glitch effect tutorial used https://www.youtube.com/watch?v=CtmHKGX754s
     // for (let i = 0; i < count; i++){
     // let glitchBox = document.createElement("div");
@@ -90,29 +121,6 @@ startBtn.addEventListener("click", function(){
     loadScreen.style.backgroundImage="url(assets/img/starting_room.jpg)";
     startGame()
 });
-
-// Function to allow the player to toggle the sound on and off
-// function soundToggle(){
-//     let soundUp = document.getElementsByClassName("fa-volume-up")[0];
-//     let soundDown = document.getElementsByClassName("fa-volume-off")[0];
-
-
-//     soundUp.addEventListener("click", function(){
-//         soundUp.classList.remove("fa-volume-up")
-//         soundUp.classList.add("fa-volume-off")
-
-//         soundUp.style.display = "none";
-//         soundDown.style.display = "block";
-//     });
-
-//     soundDown.addEventListener("click", function(){
-//         soundDown.classList.remove("fa-volume-off")
-//         soundDown.classList.add("fa-volume-up")
-
-//         soundDown.style.display = "none";
-//         soundUp.style.display = "block";
-//     });
-// }
 
 // First game scene - gives the player a choice wether to try to escape or wait and see what happens
 function startGame(){
@@ -149,33 +157,40 @@ function stay() {
     removeBtn()
     createNewBtn()
 
+    option1.classList.add("hidden")
+    option2.classList.add("hidden")
+    
+
     gameParagraph.innerText = "You decide to stay where you are, you lie back down starting up at the ceiling you take a few minutes to compose yourself. \
                           Through sheer stubbornness you manage to slow your heart rate back down and bring your breathing under control. You try and remember where you \
                           are and how you got here but every time you try you get a sharp intense pain in the side of your head, so you soon stop trying. After a couple \
                           of minutes, you hear a sound, you sit up and strain your ears to try and figure out where its coming from, you realize its footsteps and they \
                           sound like they are coming in this direction. You sit up, heart pounding and hears vibrating with the blood rushing to them.. \n\nWhat do you do?" 
 
-    option1.innerText = "Wait and see who it is, You might get answers"
-    option2.innerText = "Look for an escape, You dont feel good about this"
+    // option1.innerText = "Wait and see who it is, You might get answers"
+    // option2.innerText = "Look for an escape, You dont feel good about this"
 
-    option1.addEventListener("click", wait);
-    option2.addEventListener("click", leave);
+    // option1.addEventListener("click", wait);
+    // option2.addEventListener("click", leave);
 
-    // setTimeout(function(){
-    //     heelsShortSound.play()
-    //     heelsShortSound.volume = 0.3
-    //     console.log(heelsShortSound)
-    //     setTimeout(function(){
-    //         button1.classList.remove("hidden")
-    //         button2.classList.remove("hidden")
+    if (audioLevel === true) {
+        setTimeout(function(){
+            heelsShort.play();
+        },1000)
+    }
     
-            
-    //         button1.innerText= "Wait and see who it is, You might get answers";
-    //         button2.innerText= "Look for an escape, You dont feel good about this";
-    //     }, 4000)
-    // }, 100)
+    setTimeout(function(){
+        option1.classList.remove("hidden")
+        option2.classList.remove("hidden")
 
-    
+        
+        option1.innerText= "Wait and see who it is, You might get answers";
+        option2.innerText= "Look for an escape, You dont feel good about this";
+
+        option1.addEventListener("click", wait);
+        option2.addEventListener("click", leave);
+    }, 4000)
+
 };
 
 //Wait function - Gives the player one last chance to try and escape, if they stay it leads to the end screen and game over
