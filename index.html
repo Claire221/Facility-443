@@ -23,20 +23,20 @@
 </head>
 <body>
 
-    <div class="container">
+    <div id="container">
         <span class="volume-container">
             <i class="fa fa-volume-up up" style="font-size:25px;"></i>
             <i class="fa fa-regular fa-volume-off hidden"style="font-size:25px;"></i>
         </span>
-        <div class="title-page">
-            <h1 class="title">Faculty 443</h1>
-            <h2 class="sub-title">Where all is not as it seems</h2>
-            <button class="start-btn">New Game</button>
+        <div id="title-page">
+            <h1 id="title">Faculty 443</h1>
+            <h2 id="sub-title">Where all is not as it seems</h2>
+            <button id="start-btn">New Game</button>
         </div>
-        <div class="health-bar">
-            <h2 class="health-info">Sprained Wrist</h2>
+        <div id="health-bar">
+            <h2 id="health-info">Sprained Wrist</h2>
         </div>
-        <div class="game-section">
+        <div id="game-section">
             <p id="game-paragraph" class="game-paragraph">For the best playing experience we recomend using headphones</p> 
             <!-- <button class="btn-1 game-btn hidden"></button>
             <button class="btn-2 game-btn hidden"></button>
@@ -44,6 +44,12 @@
         </div>
     </div>
 
+    <!-- Audio files -->
+    <audio src="assets/sound/door_creek.mp4" id="door_creek"></audio>
+    <audio src="assets/sound/door_unlock.mp4" id="door_unlock"></audio>
+    <audio src="assets/sound/heels.mp4" id="heels"></audio>
+    <audio src="assets/sound/heels_long.mp4" id="heels_long"></audio>
+    <audio src="assets/sound/heels_short.mp4" id="heels_short"></audio>
     <!-- javascript link -->
     <script src="assets/scripts/script.js"></script>
 </body>

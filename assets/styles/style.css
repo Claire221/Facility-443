@@ -36,11 +36,11 @@ body {
 }
 
 
-.container {
+#container {
     border: solid 2px black;
     border-radius: 10px;
     width: 60vw;
-   
+    height: 90vh;
     position: absolute;
     top:0;
     bottom: 0;
@@ -60,13 +60,13 @@ body {
     box-shadow: 0px 0px 3px 3px rgb(15, 15, 15);
 }
 
-.title-page {
+#title-page {
     text-align: center;
     font-family: 'Cinzel', serif;
     z-index: 50;
 }
 
-.title {
+#title {
     text-shadow: -1px -1px 5px rgba(41, 223, 255, 1), 1px -1px 5px rgba(41, 223, 255, 1), -1px 1px 5px rgba(41, 223, 255, 1), 1px 1px 5px rgba(41, 223, 255, 1);
     font-weight: 900;
     font-size: 6rem;
@@ -74,13 +74,13 @@ body {
     margin-bottom: 3%;
 }
 
-.sub-title {
+#sub-title {
     font-size: 2rem;
     margin: 1% 0 ;
     text-shadow: -1px -1px 5px rgba(41, 223, 255, 0.5), 1px -1px 5px rgba(41, 223, 255, 0.5), -1px 1px 5px rgba(41, 223, 255, 0.5), 1px 1px 5px rgba(41, 223, 255, 0.5);
 }
 
-.start-btn {
+#start-btn {
     padding: 1% 2%;
     font-size: 1.5rem;
     border-radius: 10px;
@@ -91,13 +91,13 @@ body {
     margin: 2% 0;
 }
 
-.start-btn:hover, .start-btn:focus {
+#start-btn:hover, #start-btn:focus {
     background-color: rgba(41, 223, 255, .5);
     border: solid 2px rgb(2, 100, 117);
     color: rgb(12, 60, 68);
 }
 
-.game-section {
+#game-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -183,6 +183,41 @@ body {
 
     margin: 0; 
     padding: 0;
+}
+
+.inventory-screen {
+    color: #fff;
+    border: solid 2px #fff;
+    box-shadow: 0px 0px 2px 3px rgb(107, 107, 107);
+    z-index : 10;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30%;
+    z-index: 50;
+    background: rgb(92, 92, 92);
+}
+
+.inventory-list {
+    font-size: 1.5rem;
+    color: #fff;
+    justify-content: space-evenly;
+    max-width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 1% 0 1% 2%;
+}
+
+li.inventory-item {
+    font-size: 1.5rem;
+    color: #fff;
+    min-width: 100%;
+    list-style: none;
+}
+
+li.inventory-item:hover {
+    color: rgb(2, 100, 117);
+    cursor: pointer;
 }
 
 @media screen and (max-width: 1200px) { 

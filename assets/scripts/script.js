@@ -7,6 +7,7 @@ let gameContainer = document.getElementById("game-section");
 let gameParagraph = document.getElementById("game-paragraph");
 let startTitle = document.getElementById("title");
 let subTitle = document.getElementById("sub-title");
+let inventoryScreen;
 
 // Audio file variables
 let doorCreek = document.getElementById("door_creek");
@@ -26,7 +27,7 @@ let volumeUp = document.getElementsByClassName("volume-container")[0]
 let health = document.getElementsByClassName("health-info")[0];
 let time = 0;
 let injuries = [];
-let pockets = [];
+let pockets = [""];
 
 
 function removeBtn(){
@@ -52,6 +53,7 @@ function createNewBtn(){
 
 }
 
+
 // Function to allow the player to toggle the sound on and off
 function soundToggle(){
     let audio = document.getElementsByTagName("audio")
@@ -73,12 +75,7 @@ function soundToggle(){
             audioLevel = audio.muted = false
             console.log(audioLevel)
         }
-});
-
-
-if (audioLevel) {
-    heelsShortSound.play();
-}
+    });
 }
 
 window.addEventListener("load", function(){newGame()});
@@ -130,17 +127,17 @@ function startGame(){
 
     console.log("The game has started")
     gameParagraph.innerText = "You wake up dazed and confused, you look around and see that your in a small dimly lit room. \
-    Looking at the ceiling there white tiles.. well you assume they use to be white but they are more grey now \
-    with some mould growing in the cracks, taking in a deep breath your nostrils fill with an antiseptic smell \
-    and your head begins to thud. After waiting a minute for your head to clear you sit up and get a clear view \
-    of the room your in. Your in one of two single size beds, the other is empty but the covers aren’t made, has \
-    someone been there recently? Looking around the room you see the walls and floor match the tiles of the ceiling \
-    giving the room a sterile feel. In the middle of the wall opposite you is a solid metal door. Turning to your left \
-    you see a counter with a sink and to the right a wardrobe is tucked away in the corner. You try to stand but you \
-    realise that your arms are tied to either side of the bed by thick leather straps, your can feel your heartbeat \
-    speed up in your chest and you start to find it hard to catch your breath and a feeling of dread has settled in your stomach, \
-    you notice there is a small metal trolly next to the bed on it there is a small pad of paper, a pen, a scaple and a pair of tweezers \
-    \n\nWhat do you do?"
+                               Looking at the ceiling there white tiles.. well you assume they use to be white but they are more grey now \
+                               with some mould growing in the cracks, taking in a deep breath your nostrils fill with an antiseptic smell \
+                               and your head begins to thud. After waiting a minute for your head to clear you sit up and get a clear view \
+                               of the room your in. Your in one of two single size beds, the other is empty but the covers aren’t made, has \
+                               someone been there recently? Looking around the room you see the walls and floor match the tiles of the ceiling \
+                               giving the room a sterile feel. In the middle of the wall opposite you is a solid metal door. Turning to your left \
+                               you see a counter with a sink and to the right a wardrobe is tucked away in the corner. You try to stand but you \
+                               realise that your arms are tied to either side of the bed by thick leather straps, your can feel your heartbeat \
+                               speed up in your chest and you start to find it hard to catch your breath and a feeling of dread has settled in your stomach, \
+                               you notice there is a small metal trolly next to the bed on it there is a small pad of paper, a pen, a scaple and a pair of tweezers \
+                               \n\nWhat do you do?"
 
     createNewBtn();
 
@@ -176,7 +173,8 @@ function stay() {
     if (audioLevel === true) {
         setTimeout(function(){
             heelsShort.play();
-        },1000)
+            heelsShort.volume = 0.7;
+        },6000)
     }
     
     setTimeout(function(){
@@ -189,7 +187,7 @@ function stay() {
 
         option1.addEventListener("click", wait);
         option2.addEventListener("click", leave);
-    }, 4000)
+    }, 13000)
 
 };
 
@@ -200,27 +198,31 @@ function wait() {
     createNewBtn()
 
     gameParagraph.innerText = "You decide to wait and see who it is, hoping they will give you answers as to why you’re here. \
-                          As you lay there you can hear the footsteps getting closer, your palms start to sweat.  Are you sure this was the best decision? \
-                          \n\nWhat do you do?" 
+                              As you lay there you can hear the footsteps getting closer, your palms start to sweat.  Are you sure this was the best decision? \
+                             \n\nWhat do you do?" 
     
-    option1.innerText = "You've made up your mind to wait, you dont know if its any better outside anyway"
-    option2.innerText = "Maybe it wasnt the best decision to stay, try and break free before they get here"
-                          
-    option1.addEventListener("click", finalStay, {once : true});
-    option2.addEventListener("click", tryToEscape, {once : true});
+    option1.classList.add("hidden")
+    option2.classList.add("hidden")
 
 
-    // setTimeout(function(){
-    //     heelsLongSound.play()
-    //     heelsLongSound.volume = 0.7;
-    //     setTimeout(function(){
-    //         button1.innerText= "You've made up your mind to wait, you dont know if its any better outside anyway";
-    //         button2.innerText= "Maybe it wasnt the best decision to stay, try and break free before they get here";
+    if (audioLevel === true) {
+        setTimeout(function(){
+            heelsShort.play();
+            heelsShort.volume = 0.8;
+        },500)
+    }
+
+    setTimeout(function(){
+        option1.innerText= "You've made up your mind to wait, you dont know if its any better outside anyway";
+        option2.innerText= "Maybe it wasnt the best decision to stay, try and break free before they get here";
     
-    //         button1.classList.remove("hidden")
-    //         button2.classList.remove("hidden")
-    //     }, 4000)
-    // }, 800)
+        option1.classList.remove("hidden")
+        option2.classList.remove("hidden")
+
+        option1.addEventListener("click", finalStay)
+        option2.addEventListener("click", tryToEscape)
+
+    }, 8000)
 }
 
 
@@ -254,17 +256,17 @@ function finalStay() {
 
     setTimeout(function(){
         window.location.reload();
-    }, 6000)
+    }, 40000)
 
-    // setTimeout(function(){
-    //     doorCreek.play()
-    //     doorCreek.volume = 0.4;
-    //     setTimeout(function(){
-    //         doorUnlock.play()
-    //         doorUnlock.volume = 0.2;
-    //     }, 1400)
-    // }, 1000)
+    setTimeout(function(){
+        doorCreek.play()
+        doorCreek.volume = 0.4;
+    }, 1000)
 
+    setTimeout(function(){
+        doorUnlock.play()
+        doorUnlock.volume = 0.2;
+    }, 1400)
 }
 
 
@@ -451,7 +453,6 @@ function wardrobeItems() {
     let shoeItem = document.createElement("img");
     let keyCardItem = document.createElement("img");
     let PaperItem = document.createElement("img");
-    let inventoryDisplay = document.createElement("p")
 
     shoeItem.src="assets/img/shoe.jpg";
     keyCardItem.src="assets/img/keycard.jpg";
@@ -465,71 +466,77 @@ function wardrobeItems() {
     shoeItem.classList.add("wardrobe-items-img", "shoe")
     keyCardItem.classList.add("wardrobe-items-img", "key-card")
     PaperItem.classList.add("wardrobe-items-img", "paper")
-    inventoryDisplay.classList.add("inventory-list")
+
 
 
     itemsContainer.appendChild(shoeItem)
     itemsContainer.appendChild(keyCardItem)
     itemsContainer.appendChild(PaperItem)
     gameContainer.appendChild(itemsContainer)
-    gameContainer.appendChild(inventoryDisplay)
-
-    inventoryDisplay.innerHTML = "Test";
 
     shoeItem.addEventListener("click", function(){
         this.classList.toggle("inventory-add")
-        addToInventory()
+        addToInventory("Shoe")
+        showInventory()
     });
     keyCardItem.addEventListener("click", function(){
         this.classList.toggle("inventory-add")
-        addToInventory()
+        addToInventory("Key Card")
+        showInventory()
     });
     PaperItem.addEventListener("click", function(){
         this.classList.toggle("inventory-add")
-        addToInventory()
+        addToInventory("Paper")
+        showInventory()
     });
 
 };
-
 /* Basic inventory system - If a player clicks on an eligible item it will change colour and a message will display saying its been added to inventory. If they click it again it will go back to
 its normal display and be removed from the inventory */ 
-function addToInventory() {
-    console.log("Add to inventory")
-    removeBtn()
-    createNewBtn()
-
-    let inventory = document.getElementsByClassName("inventory-add")
-    let inventoryList = document.getElementsByClassName("inventory-list")[0];
-
-    if (inventory.length > 0) {
-        for(let i = 0; i < inventory.length; i++) {
-            if (inventory[i].classList.contains("shoe")){
-                pockets.push("Shoe")
-                inventoryList.innerHTML = pockets
-                console.log(pockets)
-            } else if (inventory[i].classList.contains("key-card")) {
-                pockets.push("Key Card")
-                console.log(pockets)
-                inventoryList.innerText = pockets
-            } else if (inventory[i].classList.contains("paper")) {
-                pockets.push("Paper")
-                console.log(pockets)
-                inventoryList.innerText = pockets
-            }
+function addToInventory(item) {
+    if (pockets.length > 0){
+        if (pockets.includes(item)){
+            pockets.pop(item)
+            console.log(`${item} removed to your pockets, they now contain ${pockets}`)
+            console.log(pockets)
+        } else {
+            pockets.push(item)
+            console.log(`${item} added to your pockets, they now contain ${pockets}`)
+            console.log(pockets)
         }
-    } else if (inventory) {
-        console.log("no inventory")
-    }
-
-    // add clicked item to inventory array
-    
-    // display message saying " item added to inventory"
-
-    // remove item if its clicked again
-
-    // display message saying " item removed to inventory"
+    } 
 
 };
+
+window.addEventListener("keydown", function(event) {
+    if (event.key == "b" && pockets.length > 0){
+        inventoryScreen.classList.toggle("hidden")
+    } else {
+        console.log("no inventory")
+    }
+});
+showInventory()
+
+function showInventory(){
+    inventoryScreen = document.createElement("div");
+    inventoryScreen.classList.add("inventory-screen")
+    for (let i = 0; i < pockets.length; i++) {
+        let inventoryList = document.createElement("ul");
+        let inventoryItem = document.createElement("li")
+        
+        inventoryItem.innerText = pockets[i]
+
+        inventoryList.classList.add("inventory-list")
+        inventoryItem.classList.add("inventory-item")
+
+        inventoryList.appendChild(inventoryItem)
+        inventoryScreen.appendChild(inventoryList)
+        loadScreen.appendChild(inventoryScreen)
+
+        console.log(inventoryList)
+    }
+    inventoryScreen.classList.add("hidden")
+}
 
 function checkCupboards() {
     console.log("check Cupboards")
