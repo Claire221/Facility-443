@@ -8,7 +8,7 @@ body {
 .box {
     position: absolute;
     background: #000;
-    background: url("assets/img/background_01.jpg");
+    background: url("../img/background_01.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
@@ -18,26 +18,21 @@ body {
 }
 
 /* index page styles */
+.fa-volume-up, .fa-volume-mute {
+    font-size: 25px;
+    color: rgb(2, 100, 117);
+    cursor: pointer;
+}
+.fa-volume-up:hover, .fa-volume-up:focus,
+.fa-volume-mute:hover, .fa-volume-mute:focus  {
+    color: rgb(73, 186, 206);;
+}
 
 .volume-container {
-    color: rgb(2, 100, 117);
     position: absolute;
     bottom: 5px;
     left: 5px;
-    z-index: 50;
     cursor: pointer;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.volume-container:hover  {
-    font-size:60px;
-    cursor: pointer;
-
-    color: rgb(73, 186, 206);
 }
 
 
@@ -45,7 +40,6 @@ body {
     border: solid 2px black;
     border-radius: 10px;
     width: 60vw;
-    height: 40vw;
    
     position: absolute;
     top:0;
@@ -59,7 +53,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    background: url("assets/img/background_01.jpg");
+    background: url("../img/background_01.jpg");
     background-position:  center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -78,7 +72,6 @@ body {
     font-size: 6rem;
     padding: 0;
     margin-bottom: 3%;
-
 }
 
 .sub-title {
