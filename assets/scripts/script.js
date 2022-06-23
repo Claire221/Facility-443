@@ -52,20 +52,19 @@ function createNewBtn(){
 
 window.addEventListener("load", function(){newGame()});
 
-// glitch = 0;
-// let count = 10;
+let count = 10;
 
 // Function to set the scene for a new game
 function newGame() {
     console.log("New game")
     loadScreen.style.backgroundImage="url(assets/img/background_01.jpg)";
-    // health.classList.add("hidden")
+    health.classList.add("hidden")
  
     // Link for glitch effect tutorial used https://www.youtube.com/watch?v=CtmHKGX754s
     // for (let i = 0; i < count; i++){
     // let glitchBox = document.createElement("div");
     // glitchBox.className = "box";
-    // gameScreen.appendChild(glitchBox);
+    // loadScreen.appendChild(glitchBox);
     // }
 
     // setInterval(function(){
@@ -421,8 +420,8 @@ function wardrobeItems() {
     createNewBtn()
 
     gameParagraph.innerText = "You find.. Click on item to add to inventory"; 
-    gameContainer.style.backgroundImage="none";
-    gameContainer.style.backgroundColor = "black";
+    // gameContainer.style.backgroundImage="none";
+    // gameContainer.style.backgroundColor = "black";
 
     let itemsContainer = document.createElement("div");
     let shoeItem = document.createElement("img");
@@ -439,9 +438,9 @@ function wardrobeItems() {
     PaperItem.alt="Paper";
 
     itemsContainer.classList.add("items-container")
-    shoeItem.classList.add("wardrobe-tems-img", "shoe")
-    keyCardItem.classList.add("wardrobe-tems-img", "key-card")
-    PaperItem.classList.add("wardrobe-tems-img", "paper")
+    shoeItem.classList.add("wardrobe-items-img", "shoe")
+    keyCardItem.classList.add("wardrobe-items-img", "key-card")
+    PaperItem.classList.add("wardrobe-items-img", "paper")
     inventoryDisplay.classList.add("inventory-list")
 
 

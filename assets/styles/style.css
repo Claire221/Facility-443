@@ -147,6 +147,38 @@ body {
     display: none;
 }
 
+.items-container {
+    background-color: #000;
+    border: solid 2px #fff;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 98%;
+    min-height: 60%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 2px #000;
+
+    position: absolute;
+    top: -150%;
+}
+
+.wardrobe-items-img {
+    height: 300px;
+    border-radius: 10px;
+    margin: 1%;
+}
+
+.shoe {
+    width: 400px;
+}
+
+.inventory-add {
+    border: solid 2px rgb(41, 223, 255);
+    box-shadow: 0px 0px 2px 2px rgb(71, 71, 71);
+    background-blend-mode: multiply;
+}
+
 
 /* Styles added through javascript */
 .health-info {
