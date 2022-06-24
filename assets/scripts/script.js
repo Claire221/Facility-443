@@ -10,6 +10,7 @@ let subTitle = document.getElementById("sub-title");
 let inventoryScreen;
 
 // Audio file variables
+let audioContainer = document.getElementById("volume-container");
 let doorCreek = document.getElementById("door_creek");
 let doorUnlock = document.getElementById("door_unlock");
 let heels = document.getElementById("heels");
@@ -132,6 +133,7 @@ startBtn.addEventListener("click", function(){
     // }
     // glitch = 0;
     startScreen.classList.add("hidden")
+    audioContainer.classList.add("hidden")
     loadScreen.style.backgroundImage="url(assets/img/starting_room.jpg)";
     startGame()
 });

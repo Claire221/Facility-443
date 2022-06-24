@@ -28,7 +28,7 @@ body {
     color: rgb(73, 186, 206);;
 }
 
-.volume-container {
+#volume-container {
     position: absolute;
     bottom: 5px;
     left: 5px;
