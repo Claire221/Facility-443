@@ -3,9 +3,14 @@
 
 ## Site Overview
     
-   Facility 443 is a fully immersive choose your own adventure horror game. 
-    You wake up in a room you don’t recognize daze and confused and its your choices that will determine if you get out alive or not. While you explore the environment you can pick up items that will help you determine what’s going on and help you break out of the facility. 
-    Do you focus on getting answers and figuring out what’s going on or do you get out as fast as possible? With danger behind every corner, footsteps chasing you and a menacing voice counting down to an event that you’re not sure you want to stick around to see one wrong decision could end it all. 
+Facility 443 is a fully immersive choose your own adventure horror game. 
+You wake up in a room you don’t recognize daze and confused and its your choices that will determine if you get out alive or not. While you explore the environment you can pick up items that will help you determine what’s going on and help you break out of the facility. 
+Do you focus on getting answers and figuring out what’s going on or do you get out as fast as possible? With danger behind every corner, footsteps chasing you and a menacing voice counting down to an event that you’re not sure you want to stick around to see one wrong decision could end it all. 
+
+    
+![Responsive](/documentation/testing/responsive.jpg)
+
+Live site [Live Site](https://claire221.github.io/Facility-443/).
 
 
 ## UX
@@ -25,6 +30,8 @@ For the text and buttons Im keeping them simple so they don’t distract from th
 ### Colour Scheme
 
  Because the game is a horror game I wanted to stick to that theme for the colour scheme, so use a lot of dark colours. For the text I want to keep the colours simple so they don’t distract from the imagery on the screen. For the story text I used a white colour so it stands out from the background and is easy to read and for the buttons I used the same blue colour that’s in the loading screen. 
+
+ ![Color Scheme](/documentation/testing/color_pallete.jpg)
 
 
 ### Typography
