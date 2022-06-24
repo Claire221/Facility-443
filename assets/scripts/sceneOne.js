@@ -48,7 +48,6 @@ function checkScreenSize(){
     let width = window.innerWidth;
 
     if (width < 900) {
-        console.log("too small")
         mobileScreen.classList.remove("hidden")
         startScreen.classList.add("hidden")
         audioContainer.classList.add("hidden")
@@ -86,7 +85,7 @@ function createNewBtn(){
 function soundToggle(){
     let audio = document.getElementsByTagName("audio")
     let soundToggle = document.getElementById("sound-toggle");
-    console.log(soundToggle)
+
     for (sound in audio) {
         audioMute = audio.muted = false
     }
@@ -96,12 +95,10 @@ function soundToggle(){
             this.classList.remove("fa-volume-mute");
             this.classList.add("fa-volume-up");
             audioMute = audio.muted = false
-            console.log(audioMute)
         } else {
             this.classList.add("fa-volume-mute");
             this.classList.remove("fa-volume-up");
             audioMute = audio.muted = true
-            console.log(audioMute)
         }
     });
 }
@@ -111,7 +108,6 @@ let count = 10;
 
 // Function to set the scene for a new game
 function newGame() {
-    console.log("New game")
     loadScreen.style.backgroundImage="url(assets/img/background_01.jpg)";
     startScreen.classList.remove("hidden")
     soundToggle()
@@ -153,7 +149,6 @@ function startGame(){
     injuries = [];
     time = 0;
 
-    console.log("The game has started")
     gameParagraph.innerText = "You wake up dazed and confused, you look around and see that your in a small dimly lit room. \
                                Looking at the ceiling there white tiles.. well you assume they use to be white but they are more grey now \
                                with some mould growing in the cracks, taking in a deep breath your nostrils fill with an antiseptic smell \
@@ -178,7 +173,6 @@ function startGame(){
 
 //stay function - after the player decides to wait this is the first chance they get to chaine their mind and still leave
 function stay() {
-    console.log("Stay")
     removeBtn()
     createNewBtn()
 
@@ -192,13 +186,6 @@ function stay() {
                           of minutes, you hear a sound, you sit up and strain your ears to try and figure out where its coming from, you realize its footsteps and they \
                           sound like they are coming in this direction. You sit up, heart pounding and ears are vibrating with the blood rushing to them.. \n\nWhat do you do?" 
 
-    // option1.innerText = "Wait and see who it is, You might get answers"
-    // option2.innerText = "Look for an escape, You dont feel good about this"
-
-    // option1.addEventListener("click", wait);
-    // option2.addEventListener("click", leave);
-
-    console.log(audioMute)
     if (audioMute === false) {
         setTimeout(function(){
             heelsShort.play();
@@ -222,7 +209,6 @@ function stay() {
 
 //Final stay function - function runs when the player has decided to stay for the final time, ends the game
 function finalStay() {
-    console.log("Final Stay")
     removeBtn()
     
     gameParagraph.innerText = "You sit up and get ready to face whatever is coming through that door. \
@@ -267,7 +253,6 @@ function finalStay() {
 
 //leave room function - allows the player to decide if want to cut the straps or try and break free
 function leave() {
-    console.log("Leave")
     removeBtn()
     createNewBtn()
 
@@ -286,7 +271,6 @@ function leave() {
 
 //Function that runs to determine if the player gets an injury from trying to escape or not
 function injuryRoll(){
-    console.log("Injury Roll")
     removeBtn()
     createNewBtn()
 
@@ -316,8 +300,6 @@ function injuryRoll(){
 
 //Function that runs if the player chooses to cut the strap, adds time to countdown
 function cutStrap() {
-    console.log("Cut strap")
-
     removeBtn()
     createNewBtn()
 
@@ -342,8 +324,6 @@ function cutStrap() {
 
 //Search room function - alows the player to decide if they want to search the room theyre in or leave to move on
 function searchRoom() {
-    console.log("Search room")
-
     removeBtn()
     createNewBtn()
 
@@ -367,8 +347,6 @@ function searchRoom() {
 
 //Look for supplies function - Lets the player choose where they want to search for supplies
 function lookForSupplies() {
-    console.log("Look for supplies")
-
     removeBtn()
     createNewBtn()
 
@@ -387,7 +365,6 @@ function lookForSupplies() {
 
 //Check wardrobe function - changes the scene to the wardrobe background
 function checkWardrobe() {
-    console.log("Check wardrobe")
     removeBtn()
     createNewBtn()
 
@@ -409,7 +386,6 @@ function checkWardrobe() {
 
 //Wardrobe items function - Adds 3 images to the screen, the player can click on them to run the "inventory-add" function
 function wardrobeItems() {
-    console.log("Wardrobe items")
     removeBtn()
     createNewBtn()
 
@@ -507,9 +483,8 @@ function showInventory(){
         inventoryList.appendChild(inventoryItem)
         inventoryScreen.appendChild(inventoryList)
         loadScreen.appendChild(inventoryScreen)
-
-        console.log(inventoryList)
     }
+
     inventoryScreen.classList.add("hidden")
 }
 
@@ -518,7 +493,6 @@ function clearScreen() {
 }
 
 function checkCupboard() {
-    console.log("Check cupboards")
     removeBtn()
     createNewBtn()
 
@@ -540,7 +514,6 @@ function checkCupboard() {
 
 
 function checkCupboardItems() {
-    console.log("check Cupboards")
     removeBtn()
     createNewBtn()
 
