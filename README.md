@@ -33,7 +33,15 @@ For the Typography I wanted to play on the facility side of the game, so I focus
 
 ### Wireframes
 
-    include screenshots of your wireframes (consider the markdown table format)
+My first step for this project was to sketch out a basic plan for what I wanted the game screen to look like. I decided to use Balsamiq to create some rough wireframes so that I could refer back to them throughout the design process.
+
+#### Load Screen Wireframes
+
+![Load page wireframes](/documentation/wireframes/loadScreen_Wireframe.jpg).
+
+#### Game Screen Wireframes
+
+![Load page wireframes](/documentation/wireframes/gameScreen_Wireframe.jpg).
 
 ## Features
 
