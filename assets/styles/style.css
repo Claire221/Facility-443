@@ -250,6 +250,27 @@ li.inventory-item:hover {
     cursor: pointer;
 }
 
+@media screen and (max-width: 400px) { 
+    #small_screen{
+        max-width: 95%;
+        top: 0;
+        left: 5%;
+    }
+
+      .small_screen_title {
+        font-size: 2rem;
+        padding: 0;
+        margin-bottom: 3%; 
+    }
+
+    .small_screen_p {
+        font-size: 1rem;
+        width: 98%;
+        margin: 3% auto;
+    }
+    
+}
+
 @media screen and (max-width: 1200px) { 
     #title {
         font-size: 5rem;
@@ -290,3 +311,5 @@ li.inventory-item:hover {
         font-size: 1.3rem;
     }
 }
+
+
