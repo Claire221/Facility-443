@@ -17,7 +17,7 @@ let doorUnlock = document.getElementById("door_unlock");
 let heels = document.getElementById("heels");
 let heelsLong = document.getElementById("heels_long");
 let heelsShort = document.getElementById("heels_short");
-let audioLevel = true;
+let audioMute = false;
 
 let option1; 
 let option2;
@@ -88,20 +88,20 @@ function soundToggle(){
     let soundToggle = document.getElementById("sound-toggle");
     console.log(soundToggle)
     for (sound in audio) {
-        audioLevel = audio.muted = false
+        audioMute = audio.muted = false
     }
 
     soundToggle.addEventListener("click", function() {
         if (this.classList.contains("fa-volume-mute")) {
             this.classList.remove("fa-volume-mute");
             this.classList.add("fa-volume-up");
-            audioLevel = audio.muted = true
-            console.log(audioLevel)
+            audioMute = audio.muted = false
+            console.log(audioMute)
         } else {
             this.classList.add("fa-volume-mute");
             this.classList.remove("fa-volume-up");
-            audioLevel = audio.muted = false
-            console.log(audioLevel)
+            audioMute = audio.muted = true
+            console.log(audioMute)
         }
     });
 }
@@ -116,31 +116,30 @@ function newGame() {
     startScreen.classList.remove("hidden")
     soundToggle()
     // Link for glitch effect tutorial used https://www.youtube.com/watch?v=CtmHKGX754s
-    // for (let i = 0; i < count; i++){
-    // let glitchBox = document.createElement("div");
-    // glitchBox.className = "box";
-    // loadScreen.appendChild(glitchBox);
-    // }
+    for (let i = 0; i < count; i++){
+    let glitchBox = document.createElement("div");
+    glitchBox.className = "box";
+    loadScreen.appendChild(glitchBox);
+    }
 
-    // setInterval(function(){
-    // for (let i = 0; i < glitch.length; i++){
-    //     glitch[i].style.left = Math.floor(Math.random() * 50) + "vw";
-    //     glitch[i].style.top = Math.floor(Math.random() * 75) + "vh";
-    //     glitch[i].style.width = Math.floor(Math.random() * 200) + "px";
-    //     glitch[i].style.height = Math.floor(Math.random() * 50) + "px";
-    //     glitch[i].style.backgroundPosition = Math.floor(Math.random() * 50) + "px";
-    // }
-    // }, 200)
-
-    // volumeUp.addEventListener("click", soundToggle);
+    setInterval(function(){
+    for (let i = 0; i < glitch.length; i++){
+        glitch[i].style.left = Math.floor(Math.random() * 50) + "vw";
+        glitch[i].style.top = Math.floor(Math.random() * 75) + "vh";
+        glitch[i].style.width = Math.floor(Math.random() * 200) + "px";
+        glitch[i].style.height = Math.floor(Math.random() * 50) + "px";
+        glitch[i].style.backgroundPosition = Math.floor(Math.random() * 50) + "px";
+    }
+    }, 200)
+    glitch = 0;
 };
 
 // Fuction to start the game
 startBtn.addEventListener("click", function(){
-    // for (let i = 0; i < glitch.length; i++){
-    //     glitch[i].classList.add("hidden")
-    // }
-    // glitch = 0;
+    for (let i = 0; i < glitch.length; i++){
+        glitch[i].classList.add("hidden")
+    }
+    glitch = 0;
     startScreen.classList.add("hidden")
     loadScreen.style.backgroundImage="url(assets/img/starting_room.jpg)";
     audioContainer.classList.add("hidden")
@@ -199,10 +198,11 @@ function stay() {
     // option1.addEventListener("click", wait);
     // option2.addEventListener("click", leave);
 
-    if (audioLevel === true) {
+    console.log(audioMute)
+    if (audioMute === false) {
         setTimeout(function(){
             heelsShort.play();
-            heelsShort.volume = 0.8;
+            heelsShort.volume = 0.3;
         },6000)
     }
     
@@ -250,17 +250,18 @@ function finalStay() {
 
     setTimeout(function(){
         window.location.reload();
-    }, 40000)
+    }, 50000)
 
-    setTimeout(function(){
-        doorCreek.play()
-        doorCreek.volume = 0.4;
-    }, 1000)
-
-    setTimeout(function(){
-        doorUnlock.play()
-        doorUnlock.volume = 0.2;
-    }, 1400)
+    if (audioMute === false) {
+        setTimeout(function(){
+            doorCreek.play()
+            doorCreek.volume = 0.4;
+        }, 3000)
+        setTimeout(function(){
+            doorUnlock.play()
+            doorUnlock.volume = 0.2;
+        }, 3400)
+    }
 }
 
 
@@ -543,7 +544,7 @@ function checkCupboardItems() {
     removeBtn()
     createNewBtn()
 
-    gameParagraph.innerText = "Inside you find some old rope,  "; 
+    gameParagraph.innerText = "Inside you find on old bent key, a padlock and a protien bar,  "; 
 
     option1.innerText= "Leave Room";
     option1.addEventListener("click", leaveRoomOne)
