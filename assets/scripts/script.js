@@ -7,6 +7,7 @@ let gameContainer = document.getElementById("game-section");
 let gameParagraph = document.getElementById("game-paragraph");
 let startTitle = document.getElementById("title");
 let subTitle = document.getElementById("sub-title");
+let mobileScreen = document.getElementById("small_screen")
 let inventoryScreen;
 
 // Audio file variables
@@ -29,6 +30,28 @@ let health = document.getElementById("health-info");
 let time = 0;
 let injuries = [];
 let pockets = [""];
+
+// Function that runs on page load to check if screen is too small and if not set game page
+window.addEventListener("load", function(){
+    newGame()
+    checkScreenSize()
+});
+
+
+// Function to check if screen is too small to play
+
+function checkScreenSize(){
+    let width = window.innerWidth;
+
+    if (width < 900) {
+        console.log("too small")
+        mobileScreen.classList.remove("hidden")
+        startScreen.classList.add("hidden")
+        audioContainer.classList.add("hidden")
+        gameParagraph.classList.add("hidden")
+    }
+}
+
 
 // Function to remove old buttons
 function removeBtn(){
@@ -55,19 +78,6 @@ function createNewBtn(){
 
 }
 
-// Function to check if screen is too small to play
-
-function checkScreen(){
-    if (window.attachEvent) {
-        window.attachEvent('onresize', function() {
-          if (window.innerWidth < 760)
-            console.log("Less than 760");
-          else
-            console.log("More than 760");
-        });
-      }
-}
-
 // Function to allow the player to toggle the sound on and off
 function soundToggle(){
     let audio = document.getElementsByTagName("audio")
@@ -92,10 +102,6 @@ function soundToggle(){
     });
 }
 
-window.addEventListener("load", function(){
-    checkScreen()
-    newGame()
-});
 
 let count = 10;
 
@@ -103,7 +109,8 @@ let count = 10;
 function newGame() {
     console.log("New game")
     loadScreen.style.backgroundImage="url(assets/img/background_01.jpg)";
-    health.classList.add("hidden")
+    loadScreen.classList.remove("hidden")
+    checkScreenSize()
     soundToggle()
     checkScreen()
     // Link for glitch effect tutorial used https://www.youtube.com/watch?v=CtmHKGX754s
@@ -133,7 +140,6 @@ startBtn.addEventListener("click", function(){
     // }
     // glitch = 0;
     startScreen.classList.add("hidden")
-    audioContainer.classList.add("hidden")
     loadScreen.style.backgroundImage="url(assets/img/starting_room.jpg)";
     startGame()
 });

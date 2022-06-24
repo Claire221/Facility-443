@@ -172,6 +172,36 @@ body {
     background-blend-mode: multiply;
 }
 
+/* style for screens 900px or less */
+
+#small_screen{
+    max-width: 90%;
+    height: auto;
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    margin-top: 10%;
+    text-align: center;
+    background-color: rgb(0, 0, 0, 0.8);
+    border-radius: 10px;
+    box-shadow: 0px 0px 2px 5px #000;
+}
+
+.small_screen_title {
+    text-shadow: -1px -1px 5px rgba(41, 223, 255, 1), 1px -1px 5px rgba(41, 223, 255, 1), -1px 1px 5px rgba(41, 223, 255, 1), 1px 1px 5px rgba(41, 223, 255, 1);
+    font-weight: 900;
+    font-size: 4rem;
+    padding: 0;
+    margin-bottom: 3%; 
+}
+
+.small_screen_p {
+    font-size: 1.5rem;
+    color: #fff;
+    width: 90%;
+    margin: 3% auto;
+}
+
 
 /* Styles added through javascript */
 .health-info {
