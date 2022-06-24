@@ -109,10 +109,8 @@ let count = 10;
 function newGame() {
     console.log("New game")
     loadScreen.style.backgroundImage="url(assets/img/background_01.jpg)";
-    loadScreen.classList.remove("hidden")
-    checkScreenSize()
+    startScreen.classList.remove("hidden")
     soundToggle()
-    checkScreen()
     // Link for glitch effect tutorial used https://www.youtube.com/watch?v=CtmHKGX754s
     // for (let i = 0; i < count; i++){
     // let glitchBox = document.createElement("div");
@@ -187,7 +185,7 @@ function stay() {
                           Through sheer stubbornness you manage to slow your heart rate back down and bring your breathing under control. You try and remember where you \
                           are and how you got here but every time you try you get a sharp intense pain in the side of your head, so you soon stop trying. After a couple \
                           of minutes, you hear a sound, you sit up and strain your ears to try and figure out where its coming from, you realize its footsteps and they \
-                          sound like they are coming in this direction. You sit up, heart pounding and hears vibrating with the blood rushing to them.. \n\nWhat do you do?" 
+                          sound like they are coming in this direction. You sit up, heart pounding and ears are vibrating with the blood rushing to them.. \n\nWhat do you do?" 
 
     // option1.innerText = "Wait and see who it is, You might get answers"
     // option2.innerText = "Look for an escape, You dont feel good about this"
@@ -198,7 +196,7 @@ function stay() {
     if (audioLevel === true) {
         setTimeout(function(){
             heelsShort.play();
-            heelsShort.volume = 0.7;
+            heelsShort.volume = 0.8;
         },6000)
     }
     
@@ -210,53 +208,18 @@ function stay() {
         option1.innerText= "Wait and see who it is, You might get answers";
         option2.innerText= "Look for an escape, You dont feel good about this";
 
-        option1.addEventListener("click", wait);
+        option1.addEventListener("click", finalStay);
         option2.addEventListener("click", leave);
     }, 13000)
 
 };
-
-//Wait function - Gives the player one last chance to try and escape, if they stay it leads to the end screen and game over
-function wait() {
-    console.log("wait")
-    removeBtn()
-    createNewBtn()
-
-    gameParagraph.innerText = "You decide to wait and see who it is, hoping they will give you answers as to why you’re here. \
-                              As you lay there you can hear the footsteps getting closer, your palms start to sweat.  Are you sure this was the best decision? \
-                             \n\nWhat do you do?" 
-    
-    option1.classList.add("hidden")
-    option2.classList.add("hidden")
-
-
-    if (audioLevel === true) {
-        setTimeout(function(){
-            heelsShort.play();
-            heelsShort.volume = 0.8;
-        },500)
-    }
-
-    setTimeout(function(){
-        option1.innerText= "You've made up your mind to wait, you dont know if its any better outside anyway";
-        option2.innerText= "Maybe it wasnt the best decision to stay, try and break free before they get here";
-    
-        option1.classList.remove("hidden")
-        option2.classList.remove("hidden")
-
-        option1.addEventListener("click", finalStay)
-        option2.addEventListener("click", tryToEscape)
-
-    }, 8000)
-}
-
 
 //Final stay function - function runs when the player has decided to stay for the final time, ends the game
 function finalStay() {
     console.log("Final Stay")
     removeBtn()
     
-    gameParagraph.innerText = "You made the decision to stay and that’s what you’ll do. You sit up and get ready to face whatever is coming through that door. \
+    gameParagraph.innerText = "You sit up and get ready to face whatever is coming through that door. \
                           The footsteps get louder until they stop outside your door, there’s a jingling sound then a key is inserted into a lock. \
                           You cant take your eyes away from the door, they’re stinging, screaming at you to blink but you cant make yourself do it. \
                           With a click of a lock the door starts to open and in comes a Woman. She’s wearing a black skirt suit, her ginger hair is \
@@ -294,30 +257,6 @@ function finalStay() {
     }, 1400)
 }
 
-
-//Function that runs if the player chooses to escape
-function tryToEscape() {
-    removeBtn()
-    createNewBtn()
-
-    gameParagraph.innerText = " You have decided to try and escape.."
-    let survival = Math.random();
-    if (survival > 0.5) {
-        gameParagraph.innerText = "Luck was on your side today and you manage to get away"; 
-        option1.innerText = "RUN!" 
-        option2.classList.add("hidden")
-        option1.addEventListener("click", leave, {once : true});
-    } else {
-        gameParagraph.innerText = "You get caught..."; 
-        removeBtn()
-        setInterval(function(){
-            window.location.reload();
-        },3000);
-    }
-
-
-    
-}
 
 //leave room function - allows the player to decide if want to cut the straps or try and break free
 function leave() {
@@ -429,17 +368,13 @@ function lookForSupplies() {
     gameParagraph.innerText = "You scan the room, its pretty empty and only contains the two beds, a wardrobe, a counter with cupboards \
                           underneath and the trolley next to your bed where you found the scalpel.\n\nWhere do you start first?"; 
     
-    // button1.classList.remove("hidden")
-    // button2.classList.remove("hidden")
-    // button3.classList.remove("hidden")
 
     option1.innerText= "Look inside the wardrobe for anything userful";
     option2.innerText= "The cupboards might have something in them, check there";
-    // button3.innerText= "Check the trolley by the bed";
+
 
     option1.addEventListener("click", checkWardrobe, {once : true});
     option2.addEventListener("click", checkCupboards, {once : true});
-    // button3.addEventListener("click", checkTrolley, {once : true});
 }
 
 //Check wardrobe function - changes the scene to the wardrobe background
@@ -566,10 +501,6 @@ function showInventory(){
 
 function checkCupboards() {
     console.log("check Cupboards")
-}
-
-function checkTrolley() {
-    console.log("check trolley")
 }
 
 function leaveRoomOne() {
