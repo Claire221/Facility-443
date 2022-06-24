@@ -32,10 +32,15 @@ let injuries = [];
 let pockets = [""];
 
 // Function that runs on page load to check if screen is too small and if not set game page
-window.addEventListener("load", function(){
+// window.addEventListener("load", function(){
+//     newGame()
+//     checkScreenSize()
+// });
+
+window.onload= function(){
     newGame()
     checkScreenSize()
-});
+}
 
 
 // Function to check if screen is too small to play
@@ -138,6 +143,8 @@ startBtn.addEventListener("click", function(){
     // glitch = 0;
     startScreen.classList.add("hidden")
     loadScreen.style.backgroundImage="url(assets/img/starting_room.jpg)";
+    audioContainer.classList.add("hidden")
+    
     startGame()
 });
 
@@ -514,7 +521,7 @@ function checkCupboard() {
     removeBtn()
     createNewBtn()
 
-    loadScreen.style.backgroundImage="url(assets/img/cupboard_background.jpg)";
+    loadScreen.style.backgroundImage="url(assets/img/kitchen.jpg)";
 
     gameParagraph.innerText = "You make your way over to side of the room where the counter and cupboards are, you quickly\
                                scan the top of the counter but appart from a bit of dust its empty. Moving onto the cupboards\
@@ -587,8 +594,4 @@ function checkCupboardItems() {
         showInventory()
     });
 
-}
-
-function leaveRoomOne() {
-    console.log("leave")
 }
