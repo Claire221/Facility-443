@@ -39,7 +39,6 @@ window.addEventListener("load", function(){
 
 
 // Function to check if screen is too small to play
-
 function checkScreenSize(){
     let width = window.innerWidth;
 
@@ -438,16 +437,19 @@ function wardrobeItems() {
     shoeItem.addEventListener("click", function(){
         this.classList.toggle("inventory-add")
         addToInventory("Shoe")
+        inventoryScreen.classList.add("hidden")
         showInventory()
     });
     keyCardItem.addEventListener("click", function(){
         this.classList.toggle("inventory-add")
         addToInventory("Key Card")
+        inventoryScreen.classList.add("hidden")
         showInventory()
     });
     PaperItem.addEventListener("click", function(){
         this.classList.toggle("inventory-add")
         addToInventory("Paper")
+        inventoryScreen.classList.add("hidden")
         showInventory()
     });
 
