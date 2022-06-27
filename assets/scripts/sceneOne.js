@@ -127,7 +127,6 @@ function newGame() {
         glitch[i].style.backgroundPosition = Math.floor(Math.random() * 50) + "px";
     }
     }, 200)
-    glitch = 0;
 };
 
 // Fuction to start the game
