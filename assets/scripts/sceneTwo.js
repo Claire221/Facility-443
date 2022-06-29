@@ -144,13 +144,45 @@ function getCaught() {
 
 
 function goLeft() {
+    console.log("go left")
 
+    removeBtn()
+    createNewBtn()
+
+    
+    gameParagraph.innerText = "You go left.. it leads to an atrium style building.. is a person if your wearing a lab coat (need to add it in) then they ignore you else they chase you"; 
+
+    option1.innerText = "Try the lift"
+    option2.innerText = "Keep going you dont need to worry about other people right now"
+
+    option1.addEventListener("click", tryDoors, {once : true});
+    option2.addEventListener("click", keepGoing, {once : true});
 }
 
 function keepGoing() {
+    console.log("run")
 
+    removeBtn()
+    createNewBtn()
+
+    
+    gameParagraph.innerText = "dont try the doors and walk down the corridor, you hear people aproaching so you.. you turn a corner and bump into a group of people who imediately grab you, they inject you and you pass out - game restarts "; 
+
+    setTimeout(function(){
+        window.location.reload();
+    }, 10000) 
 }
 
 function run(){
+    console.log("run")
 
+    removeBtn()
+    createNewBtn()
+
+    
+    gameParagraph.innerText = "decide to run.. you turn a corner and bump into a group of people who imediately grab you, they inject you and you pass out - game restarts "; 
+
+    setTimeout(function(){
+        window.location.reload();
+    }, 10000) 
 }
