@@ -208,46 +208,81 @@ function stay() {
 
 //Final stay function - function runs when the player has decided to stay for the final time, ends the game
 function finalStay() {
+    console.log("final stay")
     removeBtn()
+    createNewBtn()
+    gameParagraph.innerText = "You sit up and get ready to face whatever is coming through that door.  The footsteps get louder until they stop outside your door, theres a jingling sound then a \
+                                key is inserted into a lock. You cant take your eyes away from the door, theyre stinging, screaming at you to blink but you cant make yourself do it. With a click of \
+                                a lock the door starts to open…" 
     
-    gameParagraph.innerText = "You sit up and get ready to face whatever is coming through that door. \
-                          The footsteps get louder until they stop outside your door, there’s a jingling sound then a key is inserted into a lock. \
-                          You cant take your eyes away from the door, they’re stinging, screaming at you to blink but you cant make yourself do it. \
-                          With a click of a lock the door starts to open and in comes a Woman. She’s wearing a black skirt suit, her ginger hair is \
-                          pulled up in a bun on top of her head, you scan your eyes downward and see that she is wearing black high heels, and think \
-                          to yourself that the sound of them will haunt your nightmares for years to come.\
-                          Scanning back to her face her lips part and she gives you an almost feral looking smile. \
-                          “Hello, we didn’t expect for you to be awake so soon” \
-                          She says as she starts walking over to the bed side. Your head turns to track her movements and subconsciously you scoot to the \
-                          edge of your bed, your wrists screaming in protest as the leather digs in. \
-                          “Never mind we can soon fix that”\
-                          She says with a short laugh that could almost be disguised as an exhale, she reaches into her suit pocket and pulls out a \
-                          syringe containing a purple iridescent liquid.\
-                          You finally find your voice, “Who are you? Why am I here?” you ask her, your eyes repeatedly darting from the syringe in her hand to her face. \
-                          “Who am I? you mean to say that after spending all this time together you have forgotten who I am” her voice is sickly sweet she’s looking at \
-                          you the way a mother might look at their child after they have stolen some sweets from the cupboard, like she’s holding back a smile. She starts \
-                          tapping the syringe to get rid of any bubbles.\
-                          “Don’t worry, we will have this all figured out in a Jiffy” she raises the syringe and presses the plunger to a small amount of liquid leaks \
-                          out of the top of the needle and runs down the side..."; 
+    const paragraphArray = [
+        "In comes a Woman. Shes wearing a black skirt suit with a white lab coat over the top, her ginger hair is pulled up in a bun on top of her head, you scan your eyes downward\
+         and see that she is wearing black high heels, and think to yourself that the sound of them hitting the tile floor will haunt your nightmares for years to come. Scanning back\
+         to her face her lips part and she gives you an almost feral looking smile. ..She says something to you but you dont understand what shes saying, its in a language youve never heard \
+         before. You frown at her but she doesnt seem to notice your confusion and continues to talk as she makes her way to the side of the bed. She comes to a stop so shes facing the bed. \
+         Shes holding some sort of device against her chest, shes looking at \you expectantly so you assume she asked you a question.. ",
 
-    // option1.classList.add("hidden")
-    // option2.classList.add("hidden")
+        "'I dont know what your saying' Your not even sure she can understand you since you cant understand her but she seems to know what your saying because she says something before tapping\
+         on the device shes holding. 'There is that better' She say smiling down at you. You dont know what you expected but it definitely wasnt that 'What just happened? How come I can understand you?'\
+        …Its the chip silly, they must have given you more juice than usual its really fried your brain.. well never mind nothing a good sleep wont cure  as shes talking she reaches down into her lab \
+        coat pocket and pulls out a syringe containing a purple iridescent liquid.  You move back to the edge of your bed, your wrists screaming in protest as the leather digs in.\
+        'Whats going on? Why am I here' You say as you frantically look around the room hoping to spot an escape route that you missed before, but you know its too late maybe you should have taken the chance\
+         while you had it …",
 
-    setTimeout(function(){
-        window.location.reload();
-    }, 50000)
+        "The woman looked at you and sighed, 'Fine' She let out a small huff before lowering the syringe and siting on the edge of the bed. 'I dont know why Im explaining this since youll remember everything\
+        again once youve had a little nap.. I guess I have time to kill and you seem to think im the bad guy so…' She said held up the syringe and waved wiggled it between her fingers… So the government from\
+        my planet, this one your on sent out a spaceship to look for life on other planets. It was supposed to be a routine mission, one that they conduct a couple of times each year just to explore the galaxy.\
+        Well on this one particular mission they ended up finding something new, your home planet. The astronauts landed and were instructed to try and make contact with your people, well that went about as \
+        well as you can figure when none of us speak the same language. The story goes though that your people became hostile and started trying to attack our people so they were given orders to fight back. \
+        Thats when they discovered that your people…",
 
-    if (audioMute === false) {
-        setTimeout(function(){
-            doorCreek.play()
-            doorCreek.volume = 0.4;
-        }, 3000)
-        setTimeout(function(){
-            doorUnlock.play()
-            doorUnlock.volume = 0.2;
-        }, 3400)
-    }
-}
+        "'But while you look like us you have one very big difference, you guys are special you see..' She leaned in closer so her face was only a few inches from mine  'You guys have powers' she whisperers. \
+        She straightens back up and you let out a sigh of relief as there is now some distance between you two. 'So they were given orders to take a few of you back home with them, the government couldnt just \
+        leave a potential weapon like that behind right' She asks you and you can tell from her face that she expects you to agree with her, that she isnt being totally ridiculous right now by wanting you to side \
+        with her on the fact that they took your people as prisoners to be used as some sort of weapon…",
+
+        "'Your crazy, I dont know what game your trying to play.. but I want to get out of here right now' you reply as you pull on your wrist straps praying that they come lose. 'Sorry no can do, you need to stay \
+        here until we unlock the key to whatever it is that grants you guys your powers so that we can replicate it and give it to our people… Right im bored' the woman stands up suddenly and brushes her lab coat \
+        down. 'Storytimes over, and anyway youll remember it all once you wake up, Night night' She says as she brings the syringe toward you. You try to move out of the way but its useless and you feel the prick of \
+        the needle in your arm. The room goes slightly fuzzy and then everything turns black.."
+
+    ];
+
+    option2.classList.add("hidden")
+    option1.innerText = "Continue.."; 
+
+    let textIndex = 0;
+
+    option1.addEventListener("click", function(){
+        gameParagraph.innerText = paragraphArray[textIndex];
+        textIndex++;
+
+        if(textIndex === paragraphArray.length) {
+            console.log("last")
+            setTimeout(function(){
+                    removeBtn()
+                    window.location.reload();
+            }, 10000)
+        }
+    });
+
+    
+    // setTimeout(function(){
+    //     window.location.reload();
+    // }, 50000)
+
+    // if (audioMute === false) {
+    //     setTimeout(function(){
+    //         doorCreek.play()
+    //         doorCreek.volume = 0.4;
+    //     }, 3000)
+    //     setTimeout(function(){
+    //         doorUnlock.play()
+    //         doorUnlock.volume = 0.2;
+    //     }, 3400)
+    // }
+
+};
 
 
 //leave room function - allows the player to decide if want to cut the straps or try and break free
