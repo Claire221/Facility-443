@@ -253,7 +253,7 @@ function getCaught(){
                                 in some kind of military gear. You decide that if your going down your going down fighting so you dont slow down as you hit the wall of people head on, your wriggle and push at them trying to find a \
                                 gap big enough to squeese through but they are like a solid force and nothing you do is making them move... And then its too late, you feel a pinch in your neck and a cool sensation running down your throat \
                                 the room starts to spin and your vision is going blury... someone grabs your arm just before your start to fall and the world turns black..";
-                                
+
     setTimeout(function(){
     window.location.reload();
     }, 30000) 
@@ -282,23 +282,4 @@ function keepGoing() {
     setTimeout(function(){
         window.location.reload();
     }, 30000) 
-}
-
-
-function goLeft() {
-    console.log("go left")
-
-    createNewBtn()
-    if (option1) {
-        removeBtn
-    }
-
-    
-    gameParagraph.innerText = "You go left.. it leads to an atrium style building.. is a person if your wearing a lab coat (need to add it in) then they ignore you else they chase you"; 
-
-    option1.innerText = "Try the lift"
-    option2.innerText = "Keep going you dont need to worry about other people right now"
-
-    option1.addEventListener("click", tryDoors, {once : true});
-    option2.addEventListener("click", keepGoing, {once : true});
 }
