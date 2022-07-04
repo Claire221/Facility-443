@@ -1,5 +1,9 @@
 
 function goLeft() {
+    removeBtn()
+    createNewBtn()
+
+    loadScreen.style.backgroundImage="url(assets/img/atrium.jpg)";
     console.log("go left")
 
     createNewBtn()

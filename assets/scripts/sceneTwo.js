@@ -28,7 +28,7 @@ function leaveRoomOne() {
 
 function goRight() {
     console.log("goRight")
-
+    loadScreen.style.backgroundImage="url(assets/img/corridor_doors.jpg)";
     removeBtn()
     createNewBtn()
 
@@ -46,7 +46,6 @@ function goRight() {
 
 function tryDoors() {
     console.log("Try Doors")
-
     removeBtn()
     createNewBtn()
 

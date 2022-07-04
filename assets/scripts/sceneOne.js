@@ -400,9 +400,23 @@ function lookForSupplies() {
 //Check wardrobe function - changes the scene to the wardrobe background
 function checkWardrobe() {
     removeBtn()
-    createNewBtn()
 
-    loadScreen.style.backgroundImage="url(assets/img/wardrobe.jpg)";
+    loadScreen.style.backgroundImage="url(assets/img/wardrobe_closed.jpg)";
+
+    gameParagraph.innerText = "You walk over to the wardrobe, its rusted from the years spent in this damp room.. \
+                                there is a faint metalic scent radiating from it.. \n\n Click wardrobe to open"; 
+    
+    setTimeout(function(){
+        loadScreen.addEventListener("click", openWardrobe)
+    },1000)
+
+    // option1.classList.add("hidden")
+    // option2.classList.add("hidden")
+                          
+}
+
+function openWardrobe() {
+    loadScreen.style.backgroundImage="url(assets/img/wardrobe_open.jpg)";
 
     gameParagraph.innerText = "You reach out and slowly pull the wardrobe door open, the hinge gives out a low wine as you do so, the \
                           wardrobe consitst of a metal railing with a shelf underneath on the railing there are a few metal hangers \
@@ -413,9 +427,6 @@ function checkWardrobe() {
     option1.innerText= "Inspect the items";
     option1.addEventListener("click", wardrobeItems, {once : true});
 
-    // option1.classList.add("hidden")
-    // option2.classList.add("hidden")
-                          
 }
 
 //Wardrobe items function - Adds 3 images to the screen, the player can click on them to run the "inventory-add" function
