@@ -77,7 +77,7 @@ function run(){
                                 free because you know if they send you back to that room you might never get out. Your struggling with all your might, you use your other hand to try and pry the lab coats fingers \
                                 from your arm but their grip is like steel.. You feel a sharp prick in your neck and you whip your head around and realise that while you were busy with lab coat one, it gave lab \
                                 coat two the opportunity to come behind you and inject you with something.. Your not sure what it was but it acts fast, the corridor begins to spin and the lab coats faces start to\
-                                swirland blur and before you know it all you see is darkness.."; 
+                                swirl and blur and before you know it all you see is darkness.."; 
 
     setTimeout(function(){
         labCoatDecision() 
@@ -202,8 +202,6 @@ function hideInCupboard() {
 }
 
 function labCoatDecision() {
-
-    // removeBtn()
     createNewBtn()
 
     
@@ -248,7 +246,17 @@ function chooseLabCoat() {
 
 function getCaught(){
     removeBtn()
-    gameParagraph.innerText = "Luck mustnt be on your side because next thing you know...";
+    gameParagraph.innerText = "Luck mustnt be on your side because next thing you know your standing face to face with the person who just walked in, they pull out a radio and say something into it. You look around \
+                                the room looking for an escape but your only option is to go out of the door you came in. You look over to the woman on the bed and shes looking at you with wide eyes, she gives a small \
+                                not as if she knows your plan and thats the only permission you need. You rush toward the person who just walked in at full speed barging into their shoulder as your run past. You grab the \
+                                door handle and pull the door open. You get a breif glimpse of the corridor before your vision is obsucred by a wall of black. Confused you look up and are confrunted by a wall of peeople dressed \
+                                in some kind of military gear. You decide that if your going down your going down fighting so you dont slow down as you hit the wall of people head on, your wriggle and push at them trying to find a \
+                                gap big enough to squeese through but they are like a solid force and nothing you do is making them move... And then its too late, you feel a pinch in your neck and a cool sensation running down your throat \
+                                the room starts to spin and your vision is going blury... someone grabs your arm just before your start to fall and the world turns black..";
+                                
+    setTimeout(function(){
+    window.location.reload();
+    }, 30000) 
 }
 
 
