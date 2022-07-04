@@ -428,7 +428,6 @@ function wardrobeItems() {
     option1.innerText= "Leave Room";
     option1.addEventListener("click", leaveRoomOne)
 
-    option2.classList.add("hidden")
 
     let itemsContainer = document.createElement("div");
     let shoeItem = document.createElement("img");
@@ -474,8 +473,8 @@ function wardrobeItems() {
         showInventory()
     });
 
-};
-
+    option2.classList.add("hidden")
+}
 /* Basic inventory system - If a player clicks on an eligible item it will change colour and a message will display saying its been added to inventory. If they click it again it will go back to
 its normal display and be removed from the inventory */ 
 function addToInventory(item) {

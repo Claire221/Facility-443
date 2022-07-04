@@ -1,7 +1,12 @@
-
+let labCoat;
 
 function leaveRoomOne() {
     console.log("leave")
+
+    let itemsContainer = document.getElementsByClassName("items-container")[0];
+    if (itemsContainer) {
+        itemsContainer.style.display = "none";
+    }
 
     removeBtn()
     createNewBtn()
@@ -46,7 +51,7 @@ function tryDoors() {
     createNewBtn()
 
     
-    gameParagraph.innerText = "As you walk past the next door you grab the handle and give one quick downward tug.. it does budge. you quickly move to the \
+    gameParagraph.innerText = "As you walk past the next door you grab the handle and give one quick downward tug.. it doesnt budge. You quickly move to the \
                                 next door and do the same but its also locked. You let out a huff but dont let it dishearten you, moveing from one door to the next \
                                 you repeat the action are just starting to think that they must all be locked. You grab the next handle expecting the same outcome \
                                 but this time instead of resistance the handle pushes all the way down. You take a couple of deep breaths and are debating your next move \
@@ -60,6 +65,25 @@ function tryDoors() {
     option1.addEventListener("click", lookInside, {once : true});
     option2.addEventListener("click", run, {once : true});
 }
+
+function run(){
+    removeBtn()
+    gameParagraph.innerText = "You decide to run because who knows whats in that room and it could lead to you getting cornered. you take off down the corridor at a full sprint, you come to a corner and skid \
+                                round it and bump into something solid. You fall back and land on your back, the impact taking the wind out of you. Dazed you look up and see two people in lab coats staring down \
+                                at you, they are saying something but you dont understand the language their using and you dont stop to ask questions. You quickly scramble to get your arms and legs under you so \
+                                you can stand up and run in the opposite direction only to be confronted by another group of people. This time they are wearing what looks to be military uniforms and are holding \
+                                weapons you dont want to be introduced to, you turn back around to face the lab coats again figuring you have a better chance of getting past them. You try to rush past them but \
+                                they are stronger than they look, one of them grabs you by your upper arm… You try to pull your arm free, not caring if your hurting yourself in the process you just want to get \
+                                free because you know if they send you back to that room you might never get out. Your struggling with all your might, you use your other hand to try and pry the lab coats fingers \
+                                from your arm but their grip is like steel.. You feel a sharp prick in your neck and you whip your head around and realise that while you were busy with lab coat one, it gave lab \
+                                coat two the opportunity to come behind you and inject you with something.. Your not sure what it was but it acts fast, the corridor begins to spin and the lab coats faces start to\
+                                swirland blur and before you know it all you see is darkness.."; 
+
+    setTimeout(function(){
+        labCoatDecision() 
+    },3000)
+}
+
 function lookInside() {
     console.log("Look Inside")
     loadScreen.style.backgroundImage="url(assets/img/starting_room.jpg)";
@@ -124,30 +148,142 @@ function lookInside() {
             option1.innerText = "Hide under the bed"; 
             option2.innerText = "Hide in the cupboard"; 
 
-            option1.addEventListener("click", getCaught)
-            option2.addEventListener("click", getCaught)
+            option1.addEventListener("click", hideUnderBed)
+            option2.addEventListener("click", hideInCupboard)
         }
 
     });
 
 }
 
-function getCaught() {
+function hideUnderBed() {
     removeBtn()
+    gameParagraph.innerText = "Heart pounding you run and drop to the floor, you manage to squeeze yourself into the small gap under the bed and with barely a second to spare you hear the door opening.\
+                               Someone walks and stops at the end of the bed. You cant see what they look like the only thing you can see is a pair of shiny black high heel shoes. They start talking to \
+                               the woman but you cant understand what theyre saying. Your so scared you think you might throw up, you close your eyes and send a silent prayer out to the universe begging \
+                               for person to just leave again…"; 
+
+    
+    let fate = Math.floor(Math.random() * 2)
+
+    if (fate >= 0 && fate <1) {
+        setTimeout(function(){
+            getCaught()
+            console.log(fate)
+        },3000)
+    } else {
+        setTimeout(function(){
+            labCoatDecision() 
+        },3000)
+    }
+}
+
+function hideInCupboard() {
+    removeBtn()
+    gameParagraph.innerText = "Heart pounding you cross the room and throw the cupboard doors open, you cram yourself inside and pull the door closed behind you leaving a small gap that you can look out through \
+                               You see the door open and in walks a Woman, she cant be much older than the one sat on the bed. Shes wearing light green scrubs and a white lab coat that comes down to her knees \
+                               she starts talking to the woman sat on the bed but you dont understand what shes saying. A bead of sweat starts to slide down your face but your too scared to move incase you make \
+                               a sound. The new woman is pressing the screen of the device as shes talking to the woman on the bed who is currently shaking her head. Suddenly the woman on the bed gets up and starts walking \
+                               towards the door as she passes the cupboard your in she quietly whispers 'get help' your eyes flick over to the woman in the lab coat but shes distracted with the device and thankfully didnt hear..."; 
+
+    
+    let fate = Math.floor(Math.random() * 2)
+
+    if (fate >= 0 && fate <1) {
+        setTimeout(function(){
+            getCaught()
+            console.log(fate)
+        },3000)
+    } else {
+        setTimeout(function(){
+            labCoatDecision() 
+        },3000)
+    }
+}
+
+function labCoatDecision() {
+
+    // removeBtn()
     createNewBtn()
 
-    gameParagraph.innerText = "Heart pounding you run and hide, with barely a second to spare you hear the door opening \n\n 'See I told you I wouldnt be long.. Now before we "; 
+    
+    gameParagraph.innerText = "After a few more minutes both the woman and the person in high heels leave the room. \
+                                You let out a breath of relief, you stay still an extra few seconds to make sure they arent coming back before you slide out from under the bed. As you get \
+                                up you notice that someone has left a lab coat on the bed.. Do you put it on? "; 
 
-    option1.innerText = "Go inside the room, you might find answers in there and if not atlease you can hide."
-    option2.innerText = "Run! forget whats in the room, those people might be heading there and you dont want to get cornered. "
+    option1.innerText = "Put the lab coat on"
+    option2.innerText = "Leave it where it is"
+ 
+    option1.addEventListener("click", function(){
+        labCoat = true
+        chooseLabCoat()
+    });
+    option2.addEventListener("click", function(){
+        labCoat = false
+        chooseLabCoat()
+    });
+}
+
+function chooseLabCoat() {
+    removeBtn()
+    if (labCoat === true) {
+        gameParagraph.innerText = "You put the lab coat on, its heavier than you expected and the material is slightly itchy against your skin. You put your hands in the pockets on either side but they \
+        are both empty..."; 
+    }
+    else {
+        gameParagraph.innerText = "You decide to leave the labcoat where it is, who knows if whoever left it there and and will happen if they come back and its missing.."; 
+    }
+
+    setTimeout(function(){
+        gameParagraph.innerText = "You walk over to the door and rest your ear against the cool metal surface, you strain your hearing to see if you can hear anyone in the corridor outside but you cant hear anything \
+                            Your not sure if the resons is because they have left or if the metal is too thick to let sounds through but you figure you cant stay where you are so you have no choice but to go out \
+                            there. You reach out and grab the handle, taking a few deep breaths to settle your nerves you then quickly push the handle down and fling the door open before you can chicken out... The corridor is empty.. ";   
+    }, 3000)
+
+    setTimeout(function(){
+        goLeft()    
+    }, 6000)
+}
+
+
+function getCaught(){
+    removeBtn()
+    gameParagraph.innerText = "Luck mustnt be on your side because next thing you know...";
+}
+
+
+function keepGoing() {
+    console.log("run")
+
+    removeBtn()
+    
+    gameParagraph.innerText = "You decide that your top priority right now is getting the hell out of here. You walk down the planning what to do next, if you could just find a phone maybe \
+                                you could call for help?.. but you dont know where you are.. maybe find a computer then? Then you can find out where you are.. As your planning your next moves \
+                                you realise that you can hear a noise in the distance. Your freeze and ice runs down your spine as you realise that you can hear people and they are heading in this \
+                                direction. Throwing your plan out the window you take off down the corridor at a full sprint, you come to a corner and skid round it and bump into something solid. \
+                                You fall back and land on your back, the impact taking the wind out of you. Dazed you look up and see two people in lab coats staring down at you, they are saying something \
+                                but you dont understand the language their using and you dont stop to ask questions. You quickly scramble to get your arms and legs under you so you can stand up and run in \
+                                the opposite direction only to be confronted by another group of people. This time they are wearing what looks to be military uniforms and are holding weapons you dont want to\
+                                be introduced to, you turn back around to face the lab coats again figuring you have a better chance of getting past them. You try to rush past them but they are stronger than \
+                                they look, one of them grabs you by your upper arm… You try to pull your arm free, not caring if your hurting yourself in the process you just want to get free because you know \
+                                if they send you back to that room you might never get out. Your struggling with all your might, you use your other hand to try and pry the lab coats fingers from your arm but \
+                                their grip is like steel.. You feel a sharp prick in your neck and you whip your head around and realise that while you were busy with lab coat one, it gave lab coat two the \
+                                opportunity to come behind you and inject you with something.. Your not sure what it was but it acts fast, the corridor begins to spin and the lab coats faces start to swirl \
+                                and blur and before you know it all you see is darkness.."; 
+
+    setTimeout(function(){
+        window.location.reload();
+    }, 30000) 
 }
 
 
 function goLeft() {
     console.log("go left")
 
-    removeBtn()
     createNewBtn()
+    if (option1) {
+        removeBtn
+    }
 
     
     gameParagraph.innerText = "You go left.. it leads to an atrium style building.. is a person if your wearing a lab coat (need to add it in) then they ignore you else they chase you"; 
@@ -157,32 +293,4 @@ function goLeft() {
 
     option1.addEventListener("click", tryDoors, {once : true});
     option2.addEventListener("click", keepGoing, {once : true});
-}
-
-function keepGoing() {
-    console.log("run")
-
-    removeBtn()
-    createNewBtn()
-
-    
-    gameParagraph.innerText = "dont try the doors and walk down the corridor, you hear people aproaching so you.. you turn a corner and bump into a group of people who imediately grab you, they inject you and you pass out - game restarts "; 
-
-    setTimeout(function(){
-        window.location.reload();
-    }, 10000) 
-}
-
-function run(){
-    console.log("run")
-
-    removeBtn()
-    createNewBtn()
-
-    
-    gameParagraph.innerText = "decide to run.. you turn a corner and bump into a group of people who imediately grab you, they inject you and you pass out - game restarts "; 
-
-    setTimeout(function(){
-        window.location.reload();
-    }, 10000) 
 }
