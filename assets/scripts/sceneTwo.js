@@ -1,4 +1,4 @@
-let labCoat;
+let labCoat = false;
 
 function leaveRoomOne() {
     console.log("leave")
