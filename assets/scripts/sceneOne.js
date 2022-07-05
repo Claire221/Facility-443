@@ -71,10 +71,15 @@ function createNewBtn(){
     option2 = document.createElement("button");
 
     gameContainer.appendChild(option1)
-    gameContainer.appendChild(option2)
+    // gameContainer.appendChild(option2)
 
-    option1.classList.add("option1", "game-btn")
+    option1.classList.add("option1", "game-btn", "btn-fade")
     option2.classList.add("option2", "game-btn")
+
+    setTimeout(function(){
+        option2.classList.add("btn-fade")
+        gameContainer.appendChild(option2)
+    },1000)
 
     option1.innerText = "test"
     option2.innerText = "test"
@@ -138,7 +143,7 @@ startBtn.addEventListener("click", function(){
     startScreen.classList.add("hidden")
     loadScreen.style.backgroundImage="url(assets/img/starting_room.jpg)";
     audioContainer.classList.add("hidden")
-    
+    gameParagraph.classList.add("game-paragraph-background")
     startGame()
 });
 

@@ -118,8 +118,14 @@ body {
     padding: 1%;
     text-align: center;
     font-size: 1.25rem;
+    font-family: 'Cinzel', serif;
+    font-family: 'Finlandica', sans-serif;
     color: #fff;
-    background-color: rgba(24, 24, 24, 0.5);
+
+}
+
+.game-paragraph-background {
+    background-color: rgba(24, 24, 24, 0.7);
     border: 2px solid #000;
     box-shadow: 0px 0px 2px 3px rgb(12, 12, 12);
 }
@@ -252,6 +258,22 @@ li.inventory-item {
 li.inventory-item:hover {
     color: rgb(2, 100, 117);
     cursor: pointer;
+}
+
+/* Button animation styles */
+.btn-fade {
+    animation: btnFadeAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes btnFadeAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
 }
 
 @media screen and (max-width: 400px) { 
