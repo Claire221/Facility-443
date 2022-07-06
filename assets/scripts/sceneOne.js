@@ -9,6 +9,7 @@ let startTitle = document.getElementById("title");
 let subTitle = document.getElementById("sub-title");
 let mobileScreen = document.getElementById("small_screen")
 let inventoryScreen;
+let labCoat = false;
 
 // Audio file variables
 let audioContainer = document.getElementById("volume-container");
@@ -459,11 +460,11 @@ function checkWardrobe() {
 
     gameParagraph.innerText = "You walk over to the wardrobe, its rusted from the years spent in this damp room.. \
                             there is a faint metalic scent radiating from it..You reach out and slowly pull the wardrobe door open,\
-                             the hinge gives out a low wine as you do so, the \
-                          wardrobe consitst of a metal railing with a shelf underneath on the railing there are a few metal hangers \
-                          and one white lab coat, you not how striking the white is against the grubbiness of the surrounding area. \
-                          on the shelf below is an old cardboard box, the lid warbed from water damage and thers a small hole in the \
-                          left corner from what you presume is mice"; 
+                            the hinge gives out a low wine as you do so, the \
+                            wardrobe consitst of a metal railing with a shelf underneath on the railing there are a few metal hangers \
+                            and one white lab coat, you not how striking the white is against the grubbiness of the surrounding area. \
+                            on the shelf below is an old cardboard box, the lid warbed from water damage and thers a small hole in the \
+                            left corner from what you presume is mice"; 
     
     option1.innerText= "Inspect the items";
     option1.addEventListener("click", wardrobeItems, {once : true});
@@ -475,7 +476,7 @@ function wardrobeItems() {
     removeBtn()
     createNewBtn()
 
-    gameParagraph.innerText = "Inside you find an old shoe, a scrunched up peice of paper which you pick up and flatten out then realize its blank and a Key Card"; 
+    gameParagraph.innerText = "Inside you find an old shoe, and a Key Card, handing up one the back of one of the doors is an old labcoat. "; 
 
     option1.innerText= "Leave Room";
     option1.addEventListener("click", leaveRoomOne)
@@ -484,26 +485,27 @@ function wardrobeItems() {
     let itemsContainer = document.createElement("div");
     let shoeItem = document.createElement("img");
     let keyCardItem = document.createElement("img");
-    let PaperItem = document.createElement("img");
+    let labCoatItem = document.createElement("img");
 
     shoeItem.src="assets/img/shoe.jpg";
     keyCardItem.src="assets/img/keycard.jpg";
-    PaperItem.src="assets/img/paper.jpg";
+    labCoatItem.src = "assets/img/labcoat.jpg"
     
     shoeItem.alt="Shoe";
     keyCardItem.alt="Key Card";
-    PaperItem.alt="Paper";
+    labCoatItem.alt="Lab Coar";
 
     itemsContainer.classList.add("items-container")
     shoeItem.classList.add("wardrobe-items-img", "shoe")
     keyCardItem.classList.add("wardrobe-items-img", "key-card")
-    PaperItem.classList.add("wardrobe-items-img", "paper")
+    labCoatItem.classList.add("wardrobe-items-img", "labcoat")
 
 
 
     itemsContainer.appendChild(shoeItem)
     itemsContainer.appendChild(keyCardItem)
-    itemsContainer.appendChild(PaperItem)
+    // itemsContainer.appendChild(PaperItem)
+    itemsContainer.appendChild(labCoatItem)
     loadScreen.appendChild(itemsContainer)
 
     shoeItem.addEventListener("click", function(){
@@ -518,10 +520,17 @@ function wardrobeItems() {
         inventoryScreen.classList.add("hidden")
         showInventory()
     });
-    PaperItem.addEventListener("click", function(){
+    // PaperItem.addEventListener("click", function(){
+    //     this.classList.toggle("inventory-add")
+    //     addToInventory("Paper")
+    //     inventoryScreen.classList.add("hidden")
+    //     showInventory()
+    // });
+    labCoatItem.addEventListener("click", function(){
         this.classList.toggle("inventory-add")
-        addToInventory("Paper")
+        addToInventory("Lab Coat")
         inventoryScreen.classList.add("hidden")
+        labCoat = true;
         showInventory()
     });
 
@@ -533,10 +542,10 @@ function addToInventory(item) {
     if (pockets.length > 0){
         if (pockets.includes(item)){
             pockets.pop(item)
-            gameParagraph.innerText = `${item} removed to your pockets`
+            gameParagraph.innerText = `${item} removed to your inventory`
         } else {
             pockets.push(item)
-            gameParagraph.innerText = `${item} added to your pockets, Press B to view inventory`
+            gameParagraph.innerText = `${item} added to your inventory, Press B to view inventory`
         }
     } 
 
@@ -602,7 +611,8 @@ function checkCupboardItems() {
     removeBtn()
     createNewBtn()
 
-    gameParagraph.innerText = "Inside you find on old bent key, a padlock and a protien bar,  "; 
+    gameParagraph.innerText = "Inside you find on old bent key and a protien bar.. their is also what looks to be a pile of cloths folded on one of the shelves \
+                                pulling them out to take a closer look you see that its infact an old labcoat.  "; 
 
     option1.innerText= "Leave Room";
     option1.addEventListener("click", leaveRoomOne)
@@ -611,27 +621,27 @@ function checkCupboardItems() {
 
     let itemsContainer = document.createElement("div");
     let keyItem = document.createElement("img");
-    let padlockItem = document.createElement("img");
+    let labCoatItem = document.createElement("img");
     let protienBarItem = document.createElement("img");
 
     keyItem.src="assets/img/key.jpg";
-    padlockItem.src="assets/img/padlock.jpg";
+    labCoatItem.src="assets/img/labcoat.jpg";
     protienBarItem.src="assets/img/protien_bar.jpg";
     
     keyItem.alt="Ket";
-    padlockItem.alt="Padlock";
+    labCoatItem.alt="Lab Coat";
     protienBarItem.alt="Protien Bar";
 
     itemsContainer.classList.add("items-container")
-    keyItem.classList.add("wardrobe-items-img", "key")
-    padlockItem.classList.add("wardrobe-items-img", "padlock")
-    protienBarItem.classList.add("wardrobe-items-img", "protien-bar")
+    keyItem.classList.add("cupboard-items-img", "key")
+    labCoatItem.classList.add("cupboard-items-img", "lab-coat")
+    protienBarItem.classList.add("cupboard-items-img", "protien-bar")
 
 
 
     itemsContainer.appendChild(protienBarItem)
     itemsContainer.appendChild(keyItem)
-    itemsContainer.appendChild(padlockItem)
+    itemsContainer.appendChild(labCoatItem)
     loadScreen.appendChild(itemsContainer)
 
     keyItem.addEventListener("click", function(){
@@ -640,11 +650,12 @@ function checkCupboardItems() {
         inventoryScreen.classList.add("hidden")
         showInventory()
     });
-    padlockItem.addEventListener("click", function(){
+    labCoatItem.addEventListener("click", function(){
         this.classList.toggle("inventory-add")
-        addToInventory("Padlcok")
+        addToInventory("Lab Coat")
         inventoryScreen.classList.add("hidden")
         showInventory()
+        labCoat = true;
     });
     protienBarItem.addEventListener("click", function(){
         this.classList.toggle("inventory-add")

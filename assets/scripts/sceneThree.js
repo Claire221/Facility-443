@@ -53,7 +53,7 @@ function chaseFunction() {
     gameParagraph.innerText = " You spin on your heal and are about to double back but the path is blocked, for the first time your come face to face with whoever it was that was hunting you down \
                                 You cant see their faces because they are wearing some kind of military gear that includes a helmet that covers their face. They all have weapons though, which are curently pointed at you.. You look down and \
                                 see half a dozen red dots all over your body... \n\n 'Move out of the way I can handle this' You hear a voice shout out and the wall of military people parts to allow them through. Out walks a man wearing a lab coat \
-                                you note that this is a different man to the one that came out of the lift.. You dont know where he went. 'Lets all just calm down and take a minute shall we' He says raising his hands in teh air palms pointing at you \
+                                you note that this is a different man to the one that came out of the lift.. You dont know where he went. 'Lets all just calm down and take a minute shall we' He says raising his hands in the air palms pointing at you \
                                 in a reasuring motion. 'Just come with me and I can get you back to your room.. Nobody needs to get hurt' He says as he slowly starts walking towards you. \n\n You dont understand, why are they acting like your the threat \
                                 when theyre the ones who locked you up and currently have guns pointed at your head. 'I just want to go home' You say, you take a step back and hit into the doors behind you. 'We know that cant happen, you have an imporant \
                                 job to do here and you cant leave until you finish it, Lets get you back to your room hey? Im sure youll feel more settled then' The man says, hes still walking towards you and he is now within reaching distance. \n\n You look \
@@ -65,7 +65,7 @@ function chaseFunction() {
 
     setTimeout(function(){
         window.location.reload();
-    }, 55000)
+    }, 60000)
 }
 
 function followLabCoat(){
