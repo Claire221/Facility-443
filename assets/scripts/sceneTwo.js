@@ -168,7 +168,7 @@ function hideUnderBed() {
                                 you close your eyes and send a silent prayer out to the universe begging  for person to just leave again… "; 
 
     
-    let fate = Math.floor(Math.random() * 2)
+    let fate = Math.floor(Math.random() * 3)
 
     if (fate >= 0 && fate <1) {
         setTimeout(function(){
@@ -202,7 +202,7 @@ function hideInCupboard() {
                                 walking towards the door as she passes the cupboard your in she quietly whispers 'get help' your eyes flick over to the woman in the lab coat but shes distracted with the device and \
                                 thankfully didnt hear...";
     
-    let fate = Math.floor(Math.random() * 2)
+    let fate = Math.floor(Math.random() * 3)
 
     if (fate <1) {
         setTimeout(function(){
@@ -245,6 +245,8 @@ function labCoatDecision() {
 }
 
 function chooseLabCoat() {
+    option1.classList.add("hidden")
+    option2.classList.add("hidden")
 
     if (labCoat === true) {
         gameParagraph.innerText = "You put the lab coat on, its heavier than you expected and the material is slightly itchy against your skin. You put your hands in the pockets on either side but they \
@@ -256,13 +258,14 @@ function chooseLabCoat() {
 
     setTimeout(function(){
         gameParagraph.innerText = "You walk over to the door and rest your ear against the cool metal surface, you strain your hearing to see if you can hear anyone in the corridor outside but you cant hear anything \
-                            Your not sure if the resons is because they have left or if the metal is too thick to let sounds through but you figure you cant stay where you are so you have no choice but to go out \
-                            there. You reach out and grab the handle, taking a few deep breaths to settle your nerves you then quickly push the handle down and fling the door open before you can chicken out... The corridor is empty.. ";   
+                            Your not sure if the reason is because they have left or if the metal is too thick to let sounds through but you figure you cant stay where you are so you have no choice but to go out \
+                            there. \n\n You reach out and grab the handle, taking a few deep breaths to settle your nerves you then quickly push the handle down and fling the door open before you can chicken out... The corridor is empty.. ";
+                            
+            setTimeout(function(){
+                goLeft()    
+            }, 20000)                    
     }, 6000)
 
-    setTimeout(function(){
-        goLeft()    
-    }, 6000)
 }
 
 

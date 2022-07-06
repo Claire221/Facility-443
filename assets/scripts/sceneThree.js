@@ -22,12 +22,17 @@ function goLeft() {
                 gameParagraph.innerText = "Out walks a man hes wearing a white lab coat and is holding a device in his hand which he is tapping away at, he steps out of the lift and into the atrium \
                                            he lifts his head and his eyes lock with yours across the room. 'Hey what are you doing out of your room?' He shouts and takes a couple of steps forward. Before \
                                            you have time to react he does something on his device and an alarm starts blaring 'Alert. Alert. Subject has breached containemnt.. Alert. Alert. Subject has \
-                                           breached containemnt.."
+                                           breached containemnt.. \n\n You quickly turn and sprint down the corridor back the way you just came, your feet slapping on the floor with each step. Your heart is racing, sweat is dripping down your back but you push on \
+                                           you need to go faster.. Your legs are burning and you blindly follow the coridor and skid round corners attempting to get away.. You can hear footsteps behind you and they are slowly gaining on you \
+                                           The alarm is still going off and you know its bringing more people to the chase. \n\n You feel helpless, you dont know where your going you just know you dont want to get caught.. you skid round a corner \
+                                           into a new corridor which is empty appart from a set of doors at the end. Your pray that they are unlocked and you dont slow down as you go bareling into them.. Only to be knocked to the floor dazed \
+                                           and winded, you dont take a second to get your breath back before jumping up and grabing the handle. You push the door but nothing.. You pull the door and nothing happens, you then use all your strength to shoulder \
+                                           barge them but they dont move. Locked."
                 setTimeout(function(){
                     chaseFunction()
                     console.log("chase")
-                }, 4000)
-            }, 3000)
+                },35000)
+            }, 5000)
         } else {
             gameParagraph.innerText = "Out walks a man hes wearing a white lab coat and is holding a device in his hand which he is tapping away at, as he steps into the atrium he lifts his head and looks at \
                                         you before quickly dismissing you and walking across the floor and disapearing behind a wall. You poke your head around and see that to the left of the room is a set of \
@@ -40,33 +45,27 @@ function goLeft() {
             option1.addEventListener("click", followLabCoat, {once : true});
             option2.addEventListener("click", dontfollowLabCoat, {once : true});              
         }
-    }, 2000)
+    }, 4000)
 }
 
 function chaseFunction() {
     
-    gameParagraph.innerText = "You quickly turn and sprint down the corridor back the way you just came, your feet slapping on the floor with each step. Your heart is racing, sweat is dripping down your back but you push on \
-                                you need to go faster.. Your legs are burning and you blindly follow the coridor and skid round corners attempting to get away.. You can hear footsteps behind you and they are slowly gaining on you \
-                                The alarm is still going off and you know its bringing more people to the chase. You feel helpless, you dont know where your going you just know you dont want to get caught.. you skid round a corner \
-                                into a new corridor which is empty appart from a set of doors at the end. Your pray that they are unlocked and you dont slow down as you go bareling into them.. Only to be knocked to the floor dazed \
-                                and winded, you dont take a second to get your breath back before jumping up and grabing the handle. You push the door but nothing.. You pull the door and nothing happens, you then use all your strengt to shoulder \
-                                barge them but they dont move. Locked. You spin on your heal and are about to double back but the path is blocked, for the first time your come face to face with whoever it was that was hunting you down \
+    gameParagraph.innerText = " You spin on your heal and are about to double back but the path is blocked, for the first time your come face to face with whoever it was that was hunting you down \
                                 You cant see their faces because they are wearing some kind of military gear that includes a helmet that covers their face. They all have weapons though, which are curently pointed at you.. You look down and \
-                                see half a dozen red dots all over your body... 'Move out of the way I can handle this' You hear a voice shout out and the wall of military people parts to allow them through. Out walks a man wearing a lab coat \
+                                see half a dozen red dots all over your body... \n\n 'Move out of the way I can handle this' You hear a voice shout out and the wall of military people parts to allow them through. Out walks a man wearing a lab coat \
                                 you note that this is a different man to the one that came out of the lift.. You dont know where he went. 'Lets all just calm down and take a minute shall we' He says raising his hands in teh air palms pointing at you \
-                                in a reasuring motion. 'Just come with me and I can get you back to your room.. Nobody needs to get hurt' He says as he slowly starts walking towards you. You dont understand, why are they acting like your the threat \
+                                in a reasuring motion. 'Just come with me and I can get you back to your room.. Nobody needs to get hurt' He says as he slowly starts walking towards you. \n\n You dont understand, why are they acting like your the threat \
                                 when theyre the ones who locked you up and currently have guns pointed at your head. 'I just want to go home' You say, you take a step back and hit into the doors behind you. 'We know that cant happen, you have an imporant \
-                                job to do here and you cant leave until you finish it, Lets get you back to your room hey? im sure youll feel more settled then' The man says, hes still walking towards you and he is now within reaching distance. You look \
+                                job to do here and you cant leave until you finish it, Lets get you back to your room hey? Im sure youll feel more settled then' The man says, hes still walking towards you and he is now within reaching distance. \n\n You look \
                                 to the left and right of him and realise that there is a gap and if your quick you might be able to dodge around him. Youve just started to move, one foot is off the ground when you feel a grip around the top of your arm \
-                                'I dont think so, why does it alway have to be the hard option with your kind..' the man has grabed hold of your arm and there is no way to get free, you look at him. Hes middle aged with slightly thinning black hair \
-                                under his lab coat he is wearing some kind of scrubs, he has a small brown stain on the front of the top just below the collar. As your taking in his appearence you feel a sharp pain in the side of your kneck, you turn \
+                                'I dont think so, why does it always have to be the hard option with your kind..' The man has grabed hold of your arm and there is no way to get free, you look at him. Hes middle aged with slightly thinning black hair \
+                                under his lab coat he is wearing some kind of scrubs, he has a small brown stain on the front of the top just below the collar. \n\n As your taking in his appearence you feel a sharp pain in the side of your kneck, you turn \
                                 your head to the side and see the man pulling away a needle from your kneck 'There, that will make you feel bette' he says to you before turning his head to address the guards behind you.. You notice that they have \
                                 been working their way down the corridor and only stand a few feet away from you now 'Get them back to their room, and make sure sure they dont get out again'.. thats the last thing you hear before everything goes black... ";
 
     setTimeout(function(){
-        removeBtn()
         window.location.reload();
-    }, 10000)
+    }, 55000)
 }
 
 function followLabCoat(){

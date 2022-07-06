@@ -79,7 +79,7 @@ function createNewBtn(){
     setTimeout(function(){
         option2.classList.add("btn-fade")
         gameContainer.appendChild(option2)
-    },1000)
+    },500)
 
     option1.innerText = "test"
     option2.innerText = "test"
