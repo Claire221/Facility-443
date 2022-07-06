@@ -38,6 +38,14 @@ For the text and buttons Im keeping them simple so they don’t distract from th
     
 For the Typography I wanted to play on the facility side of the game, so I focused on finding something with clean lines that looked clinical. 
 
+For the landing page titles I used a thick bold font to make them stand out on the page.
+
+![Title Fonts](/documentation/testing/title_fonts.jpg)
+
+
+For the rest of the text throughout the game I went with a light weight simple font. I wanted something that was easy to read and wouldnt be too distracting from the story.
+![TExt Fonts](/documentation/testing/text_fonts.jpg)
+
 ### Wireframes
 
 My first step for this project was to sketch out a basic plan for what I wanted the game screen to look like. I decided to use Balsamiq to create some rough wireframes so that I could refer back to them throughout the design process.
@@ -52,7 +60,7 @@ My first step for this project was to sketch out a basic plan for what I wanted 
 
 ## Features
 
-briefly explain the project
+The aim of this project was to make a fully immersive choose your own adventure game. I wanted to incorporate both visual and audio elements to help bring the story to life and make the player feel like they are living through the story.
 
 ### Existing Features
 
@@ -89,9 +97,6 @@ Alternatively, if using Gitpod, you can click below to create your own workspace
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Claire221/Code-Institute-Milestone-Project-1)
 
-## Credits
-
-explain about any particular places you took inspiration from
 
 ### Content
 
