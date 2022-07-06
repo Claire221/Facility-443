@@ -67,20 +67,21 @@ function tryDoors() {
 
 function run(){
     removeBtn()
-    gameParagraph.innerText = "You decide to run because who knows whats in that room and it could lead to you getting cornered. you take off down the corridor at a full sprint, you come to a corner and skid \
+    gameParagraph.innerText = "You decide to run because who knows whats in that room and it could lead to you getting cornered. you take off down the corridor at a full sprint, You come to a corner and skid \
                                 round it and bump into something solid. You fall back and land on your back, the impact taking the wind out of you. Dazed you look up and see two people in lab coats staring down \
-                                at you, they are saying something but you dont understand the language their using and you dont stop to ask questions. You quickly scramble to get your arms and legs under you so \
-                                you can stand up and run in the opposite direction only to be confronted by another group of people. This time they are wearing what looks to be military uniforms and are holding \
-                                weapons you dont want to be introduced to, you turn back around to face the lab coats again figuring you have a better chance of getting past them. You try to rush past them but \
-                                they are stronger than they look, one of them grabs you by your upper arm… You try to pull your arm free, not caring if your hurting yourself in the process you just want to get \
-                                free because you know if they send you back to that room you might never get out. Your struggling with all your might, you use your other hand to try and pry the lab coats fingers \
-                                from your arm but their grip is like steel.. You feel a sharp prick in your neck and you whip your head around and realise that while you were busy with lab coat one, it gave lab \
-                                coat two the opportunity to come behind you and inject you with something.. Your not sure what it was but it acts fast, the corridor begins to spin and the lab coats faces start to\
-                                swirl and blur and before you know it all you see is darkness.."; 
+                                at you. \n\n 'What the hell' the smaller of the two shouts in shock stumbling slight 'Where are you meant to be right now' The bigger asks sternly 'Doesnt Mike have transport duties now?' \
+                                He says dissmissing you and looking at his watch. Ignoring their questions You quickly scramble to get your arms and legs under you so you can stand up and run in the opposite direction \
+                                causing the two scientists to jump back in fright.. \n\n Only to be confronted by another group of people. This time they are wearing what looks to be military uniforms and are holding weapons \
+                                you dont want to be introduced to, you turn back around to face the lab coats again figuring you have a better chance of getting past them. You try to rush past them but they are stronger than\
+                                they look, one of them grabs you by your upper arm… \n\n You try to pull your arm free, not caring if your hurting yourself in the process you just want to get free because you know if they \
+                                send you back to that room you might never get out. Your struggling with all your might, you use your other hand to try and pry the lab coats fingers from your arm but their grip is like \
+                                steel.. \n\n You feel a sharp prick in your neck and you whip your head around and realise that while you were busy trying to get away, it gave the other scientist the opportunity to come behind \
+                                you and inject you with something.. Your not sure what it was but it acts fast, the corridor begins to spin and the lab coats faces start to swirl and blur and before you know it all you see \
+                                is darkness.."; 
 
     setTimeout(function(){
-        labCoatDecision() 
-    },3000)
+        window.location.reload();
+    }, 50000) 
 }
 
 function lookInside() {
@@ -113,14 +114,14 @@ function lookInside() {
                                 the floor. \n\n 'Found us where? what do you mean we go against nature?' You ask her, subconsciously you have reached out and grasped the womans forearm you slightly shake it out of \
                                 desperation as you talk to her",
 
-                                "'Home' replies the woman \n 'Home? isnt this out home?' you ask, your eyes pleading with her to give you answers but by the way your heart rate has picked up you already know them, you \
-                                just havent admitted it to yourself yet \n 'No, this isnt out home.. Well maybe for some of us who might have grown up here, but for the rest of us we were stolen. The people from this \
-                                planet arrived at ours in a space ship, they came with their guns and their explosions when we fought back and they realized what we can do they stole us away. Said that they couldn’t leave \
+                                "'Home' replies the woman \n\n 'Home? isnt this out home?' you ask, your eyes pleading with her to give you answers but by the way your heart rate has picked up you already know them, you \
+                                just havent admitted it to yourself yet \n\n 'No, this isnt out home.. Well maybe for some of us who might have grown up here, but for the rest of us we were stolen. \n The people from this \
+                                planet arrived at ours in a space ship, they came with their guns and their explosions when we fought back and they realized what we can do they stole us away. Said that they couldnt leave \
                                 a weapon like that behind, think of how they can use us. So they brought us here, they are trying to replicate the gene that gives us our gifts to use on their people. Not having much luck though\
-                                /n/n She lets out a small laugh as she says the last sentence but you hardly notice, you can hardly hear anything except the blood rushing to your ears. How can it be? You were stollen? Why cant \
+                                \n\n She lets out a small laugh as she says the last sentence but you hardly notice, you can hardly hear anything except the blood rushing to your ears. How can it be? You were stollen? Why cant \
                                 you remember that? and how can you be from another planet when you've recognized the words the people here are saying? ",
 
-                                "'Why dont I remember any of that? and how come I can understand what theyre saying when I hear them in the corridor?' /n/n She doesnt say anything but she turns her head to the side \
+                                "'Why dont I remember any of that? and how come I can understand what theyre saying when I hear them in the corridor?' \n\n She doesnt say anything but she turns her head to the side \
                                 and you straighten in shock. The side of her head just above her ear a small patch of her hair is completely shaved, you hadnt noticed it before because the hair on top is long enough to \
                                 cover it. You lean forward slightly to have a better look and see that there is a small pink scar running through the centre of the patch. \n\n 'This is why you dont remember who you are \
                                 and this is why you can understand them' As shes talking she lets go of her hair and it covers the patch back up so you would never know its there",
@@ -157,53 +158,75 @@ function lookInside() {
 
 function hideUnderBed() {
     removeBtn()
-    gameParagraph.innerText = "Heart pounding you run and drop to the floor, you manage to squeeze yourself into the small gap under the bed and with barely a second to spare you hear the door opening.\
-                               Someone walks and stops at the end of the bed. You cant see what they look like the only thing you can see is a pair of shiny black high heel shoes. They start talking to \
-                               the woman but you cant understand what theyre saying. Your so scared you think you might throw up, you close your eyes and send a silent prayer out to the universe begging \
-                               for person to just leave again…"; 
+    createNewBtn()
+    option1.classList.add("hidden")
+    option2.classList.add("hidden")
+
+    gameParagraph.innerText = "Heart pounding you run and drop to the floor and manage to squeeze yourself into the small gap under the bed and with barely a second to spare you hear the door opening. \n Someone walks \
+                                and stops at the end of the bed. You cant see what they look like the only thing you can see is a pair of shiny black high heel shoes. \n\n 'Good morning subject 530 I hope you had a good \
+                                sleep because youve got a busy day ahead of you' You hear the woman on the bed reply something but you cant quite make out what she says. Your so scared you think you might throw up, \
+                                you close your eyes and send a silent prayer out to the universe begging  for person to just leave again… "; 
 
     
     let fate = Math.floor(Math.random() * 2)
 
     if (fate >= 0 && fate <1) {
         setTimeout(function(){
-            getCaught()
+            option1.innerText = "Continue.."
+            option1.classList.remove("hidden")
             console.log(fate)
-        },3000)
+        },17000)
     } else {
         setTimeout(function(){
-            labCoatDecision() 
-        },3000)
+            option2.innerText = "Continue.."
+            option2.classList.remove("hidden")
+        },17000)
     }
+
+    option1.addEventListener("click", getCaught)
+    option2.addEventListener("click", labCoatDecision)
 }
 
 function hideInCupboard() {
     removeBtn()
-    gameParagraph.innerText = "Heart pounding you cross the room and throw the cupboard doors open, you cram yourself inside and pull the door closed behind you leaving a small gap that you can look out through \
-                               You see the door open and in walks a Woman, she cant be much older than the one sat on the bed. Shes wearing light green scrubs and a white lab coat that comes down to her knees \
-                               she starts talking to the woman sat on the bed but you dont understand what shes saying. A bead of sweat starts to slide down your face but your too scared to move incase you make \
-                               a sound. The new woman is pressing the screen of the device as shes talking to the woman on the bed who is currently shaking her head. Suddenly the woman on the bed gets up and starts walking \
-                               towards the door as she passes the cupboard your in she quietly whispers 'get help' your eyes flick over to the woman in the lab coat but shes distracted with the device and thankfully didnt hear..."; 
+    createNewBtn()
+    option1.classList.add("hidden")
+    option2.classList.add("hidden")
 
+
+    gameParagraph.innerText = "Heart pounding you cross the room and throw the cupboard doors open, not caring about the mold growing inside the cupboard you cram yourself inside and pull the door closed behind you \
+                                leaving a small gap that you can look out through. \n\n You see the door open and in walks a Woman, she cant be much older than the one sat on the bed. Shes wearing light green scrubs and a \
+                                white lab coat that comes down to her knees. She walks into the room and comes to a stop at the foot of the bed. \n\n 'Good morning subject 530 I hope you had a good sleep because youve got \
+                                a busy day ahead of you' she says smiling down at the woman sat on it. \n\n A bead of sweat starts to slide down your face but your too scared to move in case you make a sound. You can hear \
+                                them talking but your brain isnt processing what theyre saying, your too focused on trying to steady your breathing so you dont pass out.Suddenly the woman on the bed gets up and starts \
+                                walking towards the door as she passes the cupboard your in she quietly whispers 'get help' your eyes flick over to the woman in the lab coat but shes distracted with the device and \
+                                thankfully didnt hear...";
     
     let fate = Math.floor(Math.random() * 2)
 
-    if (fate >= 0 && fate <1) {
+    if (fate <1) {
         setTimeout(function(){
-            getCaught()
+            option1.innerText = "Continue.."
+            option1.classList.remove("hidden")
             console.log(fate)
-        },3000)
+        },17000)
     } else {
         setTimeout(function(){
-            labCoatDecision() 
-        },3000)
+            option2.innerText = "Continue.."
+            option2.classList.remove("hidden")
+        },17000)
     }
-}
-
-function labCoatDecision() {
-    createNewBtn()
 
     
+    option1.addEventListener("click", getCaught)
+    option2.addEventListener("click", labCoatDecision)
+}
+
+
+function labCoatDecision() {
+    removeBtn()
+    createNewBtn()
+
     gameParagraph.innerText = "After a few more minutes both the woman and the person in high heels leave the room. \
                                 You let out a breath of relief, you stay still an extra few seconds to make sure they arent coming back before you slide out from under the bed. As you get \
                                 up you notice that someone has left a lab coat on the bed.. Do you put it on? "; 
@@ -222,7 +245,7 @@ function labCoatDecision() {
 }
 
 function chooseLabCoat() {
-    removeBtn()
+
     if (labCoat === true) {
         gameParagraph.innerText = "You put the lab coat on, its heavier than you expected and the material is slightly itchy against your skin. You put your hands in the pockets on either side but they \
         are both empty..."; 
@@ -235,7 +258,7 @@ function chooseLabCoat() {
         gameParagraph.innerText = "You walk over to the door and rest your ear against the cool metal surface, you strain your hearing to see if you can hear anyone in the corridor outside but you cant hear anything \
                             Your not sure if the resons is because they have left or if the metal is too thick to let sounds through but you figure you cant stay where you are so you have no choice but to go out \
                             there. You reach out and grab the handle, taking a few deep breaths to settle your nerves you then quickly push the handle down and fling the door open before you can chicken out... The corridor is empty.. ";   
-    }, 3000)
+    }, 6000)
 
     setTimeout(function(){
         goLeft()    
@@ -245,17 +268,21 @@ function chooseLabCoat() {
 
 function getCaught(){
     removeBtn()
-    gameParagraph.innerText = "Luck mustnt be on your side because next thing you know your standing face to face with the person who just walked in, they pull out a radio and say something into it. You look around \
-                                the room looking for an escape but your only option is to go out of the door you came in. You look over to the woman on the bed and shes looking at you with wide eyes, she gives a small \
-                                not as if she knows your plan and thats the only permission you need. You rush toward the person who just walked in at full speed barging into their shoulder as your run past. You grab the \
-                                door handle and pull the door open. You get a breif glimpse of the corridor before your vision is obsucred by a wall of black. Confused you look up and are confrunted by a wall of peeople dressed \
-                                in some kind of military gear. You decide that if your going down your going down fighting so you dont slow down as you hit the wall of people head on, your wriggle and push at them trying to find a \
-                                gap big enough to squeese through but they are like a solid force and nothing you do is making them move... And then its too late, you feel a pinch in your neck and a cool sensation running down your throat \
-                                the room starts to spin and your vision is going blury... someone grabs your arm just before your start to fall and the world turns black..";
+    gameParagraph.innerText = "Luck mustnt be on your side because next thing you know your standing face to face with the person who just walked in.. \n 'Now what do we have here' she says smiling menacingly down at\
+                                you. Your completely frozen, your not sure you could move even if you wanted to.. 'Your somewhere you shouldnt be' She says in an almost sing song voice as she reaches to grab a radio \
+                                that is clipped to the waistband of her trousers. 'Hello boss, we have a subject out of containment...' She says into it as she reaches out one finger and strokes it down the side of your face \n\n \
+                                Hearing that back up is on the way is the jolt you need, you jump up and knocking the women out of the way, looking around the room for an escape you realize your only option is to go \
+                                out of the door you came in. You look over to the woman on the bed whos looking at you with wide eyes, she gives a small nod as if she knows your plan and thats the only permission you \
+                                need. You rush toward the door hand outstretched ready to grab the handle and wrench the door open. \n\n You rush out into the corridor 'Its too late, theyre already on their way!' you \
+                                hear the scientist shout behind you, Your heart beat is pounding with the rhythm of your feet slapping against the tile floors. \n\n It doesnt take long for the sound of heavy boots to \
+                                join in, You had hoped you would have had more time.. Suddenly from around a corner ahead a group of people wearing military gear appear.. you take them in and decide that if your going \
+                                down your going down fighting so you dont slow down as you hit the wall of people head on, your wriggle and push at them trying to find a gap big enough to squeeze through but they are \
+                                like a solid force and nothing you do is making them move... And then its too late, you feel a pinch in your neck and a cool sensation running down your throat the room starts to spin \
+                                and your vision is going blurry... someone grabs your arm just before your start to fall and the world turns black..";
 
     setTimeout(function(){
     window.location.reload();
-    }, 30000) 
+    }, 55000) 
 }
 
 
@@ -264,21 +291,22 @@ function keepGoing() {
 
     removeBtn()
     
-    gameParagraph.innerText = "You decide that your top priority right now is getting the hell out of here. You walk down the planning what to do next, if you could just find a phone maybe \
-                                you could call for help?.. but you dont know where you are.. maybe find a computer then? Then you can find out where you are.. As your planning your next moves \
-                                you realise that you can hear a noise in the distance. Your freeze and ice runs down your spine as you realise that you can hear people and they are heading in this \
-                                direction. Throwing your plan out the window you take off down the corridor at a full sprint, you come to a corner and skid round it and bump into something solid. \
-                                You fall back and land on your back, the impact taking the wind out of you. Dazed you look up and see two people in lab coats staring down at you, they are saying something \
-                                but you dont understand the language their using and you dont stop to ask questions. You quickly scramble to get your arms and legs under you so you can stand up and run in \
-                                the opposite direction only to be confronted by another group of people. This time they are wearing what looks to be military uniforms and are holding weapons you dont want to\
-                                be introduced to, you turn back around to face the lab coats again figuring you have a better chance of getting past them. You try to rush past them but they are stronger than \
-                                they look, one of them grabs you by your upper arm… You try to pull your arm free, not caring if your hurting yourself in the process you just want to get free because you know \
-                                if they send you back to that room you might never get out. Your struggling with all your might, you use your other hand to try and pry the lab coats fingers from your arm but \
-                                their grip is like steel.. You feel a sharp prick in your neck and you whip your head around and realise that while you were busy with lab coat one, it gave lab coat two the \
-                                opportunity to come behind you and inject you with something.. Your not sure what it was but it acts fast, the corridor begins to spin and the lab coats faces start to swirl \
-                                and blur and before you know it all you see is darkness.."; 
+    gameParagraph.innerText = "You decide that your top priority right now is getting the hell out of here. \n You walk down the planning what to do next, if you could just find a phone maybe you could call for \
+                                help?.. but you dont know where you are.. maybe find a computer then? You could then find out where you are.. As your planning your next moves you realise that you can hear a noise \
+                                in the distance. \n\n You freeze and ice runs down your spine as you realise that you can hear people and they are heading in this direction. Throwing your plan out the window you \
+                                take off down the corridor at a full sprint, you come to a corner and skid round it and bump into something solid. You fall back and land on your back, the impact taking the wind \
+                                out of you. \n\n Dazed you look up and see two people in lab coats staring down at you 'Hey watch…'They start to say but then shock takes over their face as they realize that they didnt \
+                                bump into another lab coat person 'Hey what are you doing!' They shout as you quickly scramble to get your arms and legs under you so you can stand up and run in the opposite direction\
+                                only to be confronted by another group of people who are stood in the corridor talking amongst themselves. \n\n They are wearing what looks to be military uniforms at the sound of your \
+                                approaching steps one of them has turned in your direction 'Hey!' They shout and raise their weapon in your direction.. This alerts the others to your presents and they quickly follow \
+                                suit filling the corridor with the sounds of weapons being pointed in your direction. Not hanging around you turn back around to face the lab coats again figuring you have a better chance of getting past them. \n You try to rush past them but they are stronger than \
+                                they look, one of them grabs you by your upper arm as you try to get past… You try to pull your arm free, not caring if your hurting yourself in the process you just want to get free because \
+                                you know if they send you back to that room you might never get out. \n\n You can hear a commotion behind you but your too focused on trying to get away to listen to what theyre saying.. Your \
+                                struggling with all your might, you use your other hand to try and pry the lab coats fingers from your arm but their grip is like steel.. You feel a sharp prick in your neck and you whip\
+                                your head around and realise that while you were busy trying to get away it gave the other lab coat person the opportunity to come behind you and inject you with something.. Your not sure\
+                                what it was but it acts fast, the corridor begins to spin and the lab coats faces start to swirl and blur and before you know it all you see is darkness.."; 
 
     setTimeout(function(){
         window.location.reload();
-    }, 30000) 
+    }, 80000) 
 }

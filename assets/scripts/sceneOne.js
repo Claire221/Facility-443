@@ -591,7 +591,7 @@ function checkCupboard() {
     option1.addEventListener("click", checkCupboardItems, {once : true});
 
     // option1.classList.add("hidden")
-    // option2.classList.add("hidden")
+    option2.classList.add("hidden")
                           
 }
 
