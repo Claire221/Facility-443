@@ -27,17 +27,12 @@ let glitch = document.getElementsByClassName("box");
 let volumeUp = document.getElementsByClassName("volume-container")[0]
 
 // Player variables
-let health = document.getElementById("health-info");
+let healthBar = document.getElementById("health-info");
 let time = 0;
 let injuries = [];
 let pockets = [""];
 
 // Function that runs on page load to check if screen is too small and if not set game page
-// window.addEventListener("load", function(){
-//     newGame()
-//     checkScreenSize()
-// });
-
 window.onload= function(){
     newGame()
     checkScreenSize()
@@ -117,6 +112,7 @@ function newGame() {
     loadScreen.style.backgroundImage="url(assets/img/background_01.jpg)";
     startScreen.classList.remove("hidden")
     soundToggle()
+    healthBar.classList.add("hidden")
     // Link for glitch effect tutorial used https://www.youtube.com/watch?v=CtmHKGX754s
     for (let i = 0; i < count; i++){
     let glitchBox = document.createElement("div");
@@ -354,10 +350,15 @@ function injuryRoll(){
 
     if(roll < 0.5) {
         injuries.push("No injury")
-        // health.innerText=injuries
+        healthBar.innerText=injuries
+        healthBar.classList.remove("hidden")
+        setTimeout(function(){
+            healthBar.classList.add("hidden")
+        }, 2000)
     } else {
-        injuries.push("left Hand - Sprained wrist ")
-        // health.innerText=injuries
+        injuries.push("Left Hand - Sprained wrist ")
+        healthBar.innerText=injuries
+        healthBar.classList.remove("hidden")
     }
     
 
