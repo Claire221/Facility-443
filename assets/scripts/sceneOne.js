@@ -116,8 +116,8 @@ function newGame() {
     // Link for glitch effect tutorial used https://www.youtube.com/watch?v=CtmHKGX754s
     for (let i = 0; i < count; i++){
     let glitchBox = document.createElement("div");
-    glitchBox.className = "box";
-    loadScreen.appendChild(glitchBox);
+        glitchBox.className = "box";
+        loadScreen.appendChild(glitchBox);
     }
 
     setInterval(function(){
@@ -328,7 +328,7 @@ function leave() {
 
     gameParagraph.innerText = "As you sit there something in your gut is screaming at you to get out, not one to ignore your instincts, \
                           You frantically look around the room in search of anything that can help you. Your eyes land on the metal tray next to you and \
-                          the scalpel that’s on there, it doesn’t look very sharp but it might just be sharp enough to cut through the leather. \
+                          the scalpel thats on there, it doesnt look very sharp but it might just be sharp enough to cut through the leather. \
                           \n\nWhat do you do?"; 
     
     option1.innerText= "The restraints might just be lose enough for you to squeeze your hand through, It might hurt ";
@@ -554,7 +554,7 @@ function addToInventory(item) {
 
 // Adds event listener to B key to open and close inventory
 window.addEventListener("keydown", function(event) {
-    if (event.key == "b" && pockets.length > 0){
+    if (event.key == "i" && pockets.length > 0){
         inventoryScreen.classList.toggle("hidden")
     } else {
         console.log("no inventory")
