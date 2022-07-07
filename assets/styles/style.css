@@ -295,6 +295,8 @@ li.inventory-item:hover {
      }
 }
 
+/* Media Queries */
+
 @media screen and (max-width: 400px) { 
     #small_screen{
         max-width: 95%;
