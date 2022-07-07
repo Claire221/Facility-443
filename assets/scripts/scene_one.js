@@ -208,12 +208,13 @@ function stay() {
 
         option1.addEventListener("click", finalStay);
         option2.addEventListener("click", leave);
-    }, 13000)
+    }, 6500)
 
 };
 
 //Final stay function - function runs when the player has decided to stay for the final time, ends the game
 function finalStay() {
+    heelsShort.pause()
     console.log("final stay")
     removeBtn()
     createNewBtn()
@@ -296,12 +297,6 @@ function finalStay() {
             option2.addEventListener("click", function(){
                 window.location.reload();
             })
-            // setTimeout(function(){
-            //     option1.innerText = "Restart Game"; 
-            //     option1.addEventListener("click", function(){
-            //         window.location.reload();
-            //     })
-            // }, 10000)
         }
     });
 
@@ -323,6 +318,7 @@ function finalStay() {
 
 //leave room function - allows the player to decide if want to cut the straps or try and break free
 function leave() {
+    heelsShort.pause()
     removeBtn()
     createNewBtn()
 
@@ -437,24 +433,6 @@ function lookForSupplies() {
     option1.addEventListener("click", checkWardrobe, {once : true});
     option2.addEventListener("click", checkCupboard, {once : true});
 }
-
-// //Check wardrobe function - changes the scene to the wardrobe background
-// function checkWardrobe() {
-//     removeBtn()
-
-//     loadScreen.style.backgroundImage="url(assets/img/wardrobe_closed.jpg)";
-
-//     gameParagraph.innerText = "You walk over to the wardrobe, its rusted from the years spent in this damp room.. \
-//                                 there is a faint metalic scent radiating from it.. \n\n Click wardrobe to open"; 
-    
-//     setTimeout(function(){
-//         loadScreen.addEventListener("click", openWardrobe)
-//     },1000)
-
-//     // option1.classList.add("hidden")
-//     // option2.classList.add("hidden")
-                          
-// }
 
 function checkWardrobe() {
     loadScreen.style.backgroundImage="url(assets/img/wardrobe_open.jpg)";

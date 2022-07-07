@@ -65,6 +65,11 @@ function tryDoors() {
 
 function run(){
     removeBtn()
+    createNewBtn()
+
+    option1.classList.add("hidden")
+    option2.classList.add("hidden")
+
     gameParagraph.innerText = "You decide to run because who knows whats in that room and it could lead to you getting cornered. you take off down the corridor at a full sprint, You come to a corner and skid \
                                 round it and bump into something solid. You fall back and land on your back, the impact taking the wind out of you. Dazed you look up and see two people in lab coats staring down \
                                 at you. \n\n 'What the hell' the smaller of the two shouts in shock stumbling slight 'Where are you meant to be right now' The bigger asks sternly 'Doesnt Mike have transport duties now?' \
@@ -78,8 +83,12 @@ function run(){
                                 is darkness.."; 
 
     setTimeout(function(){
-        window.location.reload();
-    }, 50000) 
+        option1.classList.remove("hidden");
+        option1.innerText = "Game over.. Click to researt";
+        option1.addEventListener("click", function(){
+            window.location.reload();
+        })
+    }, 30000) 
 }
 
 function lookInside() {
@@ -173,12 +182,12 @@ function hideUnderBed() {
             option1.innerText = "Continue.."
             option1.classList.remove("hidden")
             console.log(fate)
-        },17000)
+        },1000)
     } else {
         setTimeout(function(){
             option2.innerText = "Continue.."
             option2.classList.remove("hidden")
-        },17000)
+        },1000)
     }
 
     option1.addEventListener("click", getCaught)
@@ -200,19 +209,19 @@ function hideInCupboard() {
                                 walking towards the door as she passes the cupboard your in she quietly whispers 'get help' your eyes flick over to the woman in the lab coat but shes distracted with the device and \
                                 thankfully didnt hear...";
     
-    let fate = Math.floor(Math.random() * 3)
-
+    let fate = Math.floor(Math.random() * 4)
+    
     if (fate <1) {
         setTimeout(function(){
             option1.innerText = "Continue.."
             option1.classList.remove("hidden")
             console.log(fate)
-        },17000)
+        },1000)
     } else {
         setTimeout(function(){
             option2.innerText = "Continue.."
             option2.classList.remove("hidden")
-        },17000)
+        },1000)
     }
 
     
@@ -243,32 +252,56 @@ function labCoatDecision() {
 }
 
 function chooseLabCoat() {
+    removeBtn()
+    createNewBtn()
+
     option1.classList.add("hidden")
     option2.classList.add("hidden")
 
     if (labCoat === true) {
         gameParagraph.innerText = "You put the lab coat on, its heavier than you expected and the material is slightly itchy against your skin. You put your hands in the pockets on either side but they \
         are both empty..."; 
+        option1.classList.remove("hidden")
+        op1ion1.innerText="Continue.."
     }
     else {
         gameParagraph.innerText = "You decide to leave the labcoat where it is, who knows if whoever left it there and and will happen if they come back and its missing.."; 
+        option1.classList.remove("hidden")
+        option1.innerText = "Continue.."
+
     }
 
-    setTimeout(function(){
+    option1.addEventListener("click", function(){
         gameParagraph.innerText = "You walk over to the door and rest your ear against the cool metal surface, you strain your hearing to see if you can hear anyone in the corridor outside but you cant hear anything \
                             Your not sure if the reason is because they have left or if the metal is too thick to let sounds through but you figure you cant stay where you are so you have no choice but to go out \
                             there. \n\n You reach out and grab the handle, taking a few deep breaths to settle your nerves you then quickly push the handle down and fling the door open before you can chicken out... The corridor is empty.. ";
+
+        option1.classList.add("hidden")
+        option2.classList.remove("hidden")
+
+        option2.innerText = "Continue.."
+        option2.addEventListener("click", goLeft)
+    })
+    // setTimeout(function(){
+    //     gameParagraph.innerText = "You walk over to the door and rest your ear against the cool metal surface, you strain your hearing to see if you can hear anyone in the corridor outside but you cant hear anything \
+    //                         Your not sure if the reason is because they have left or if the metal is too thick to let sounds through but you figure you cant stay where you are so you have no choice but to go out \
+    //                         there. \n\n You reach out and grab the handle, taking a few deep breaths to settle your nerves you then quickly push the handle down and fling the door open before you can chicken out... The corridor is empty.. ";
                             
-            setTimeout(function(){
-                goLeft()    
-            }, 20000)                    
-    }, 6000)
+    //         setTimeout(function(){
+    //             goLeft()    
+    //         }, 20000)                    
+    // }, 6000)
 
 }
 
 
 function getCaught(){
     removeBtn()
+    createNewBtn()
+
+    option1.classList.add("hidden")
+    option2.classList.add("hidden")
+
     gameParagraph.innerText = "Luck mustnt be on your side because next thing you know your standing face to face with the person who just walked in.. \n 'Now what do we have here' she says smiling menacingly down at\
                                 you. Your completely frozen, your not sure you could move even if you wanted to.. 'Your somewhere you shouldnt be' She says in an almost sing song voice as she reaches to grab a radio \
                                 that is clipped to the waistband of her trousers. 'Hello boss, we have a subject out of containment...' She says into it as she reaches out one finger and strokes it down the side of your face \n\n \
@@ -282,15 +315,23 @@ function getCaught(){
                                 and your vision is going blurry... someone grabs your arm just before your start to fall and the world turns black..";
 
     setTimeout(function(){
-    window.location.reload();
-    }, 55000) 
-}
+        option1.classList.remove("hidden")
+        option1.innerText = "Game over.. Click to restart"
 
+        option1.addEventListener("click", function(){
+            window.location.reload();
+        });
+    }, 2000) 
+
+}
 
 function keepGoing() {
     console.log("run")
-
     removeBtn()
+    createNewBtn()
+
+    option1.classList.add("hidden")
+    option2.classList.add("hidden")
     
     gameParagraph.innerText = "You decide that your top priority right now is getting the hell out of here. \n You walk down the planning what to do next, if you could just find a phone maybe you could call for \
                                 help?.. but you dont know where you are.. maybe find a computer then? You could then find out where you are.. As your planning your next moves you realise that you can hear a noise \
@@ -307,7 +348,12 @@ function keepGoing() {
                                 your head around and realise that while you were busy trying to get away it gave the other lab coat person the opportunity to come behind you and inject you with something.. Your not sure\
                                 what it was but it acts fast, the corridor begins to spin and the lab coats faces start to swirl and blur and before you know it all you see is darkness.."; 
 
-    setTimeout(function(){
-        window.location.reload();
-    }, 80000) 
+        setTimeout(function(){
+            option1.classList.remove("hidden")
+            option1.innerText = "Game over.. Click to restart"
+
+            option1.addEventListener("click", function(){
+                window.location.reload();
+            });
+        }, 2000) 
 }
