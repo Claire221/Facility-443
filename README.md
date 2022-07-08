@@ -52,19 +52,40 @@ My first step for this project was to sketch out a basic plan for what I wanted 
 
 #### Load Screen Wireframes
 
-![Load page wireframes](/documentation/wireframes/loadScreen_Wireframe.jpg).
+![Load page wireframes](/documentation/wireframes/loadScreen_Wireframe.jpg)
 
 #### Game Screen Wireframes
 
-![Load page wireframes](/documentation/wireframes/gameScreen_Wireframe.jpg).
+![Load page wireframes](/documentation/wireframes/gameScreen_Wireframe.jpg)
 
 ## Features
 
 The aim of this project was to make a fully immersive choose your own adventure game. I wanted to incorporate both visual and audio elements to help bring the story to life and make the player feel like they are living through the story.
 
-### Existing Features
+### Game Loading Screen
 
-list out all of your project's features, and make sure to include a screenshot of each!!
+For the landing page I wanted to keep the design simple because I wanted the story of the game to be a mystery. For the background I used a dimly lit hallway with open doors leading into dark rooms, I wanted to give the impression that the player doesnt know whats awaiting around each corner. 
+
+![Game Loading Screen](/documentation/testing/load_screen.jpg)
+
+### Game Pages
+
+For the game pages I wanted the focus to be on the story so I kept them simple and minimal. Each one has a background that reflects the environment that the storyline is portraying.
+
+![Game Pages](/documentation/testing/game_pages.jpg)
+
+For the storyline text I enclosed it into a container which a semi transparent background so that you could still see the image in the background but you could also read the text easily. 
+
+![Game Paragraph](/documentation/testing/game_paragraph.jpg)
+
+For the options button on the page I wanted to encorporate the blue colour that is used throughout the story and also on the loading screen background. To do this I added a thin border to each button and also styled the text in the same colour. 
+For the hover state I changed the background colour from black to a semi transparent version of the game theme colour. 
+
+![Game Buttons](/documentation/testing/game_buttons.jpg)
+
+When the player gets the option to search different areas I wanted a screen to pop up with the options. For the design I used a black box with the items inside, I used a dark backgrounds so that the inventory items stood out. 
+
+![Inventory Items](/documentation/testing/items_image.jpg)
 
 ### Features Left to Implement
 
@@ -72,7 +93,14 @@ have ideas on what you'd like to add in the future? add them here!! assessors LO
 
 ## Technologies Used
 
-explain various tech used, such as HTML, CSS, Gitpod, GitHub, Git, etc. - add a link to each respective site as well, if possible
+Throughout the project I used a variety of technologies.
+
+- I used HTML and CSS to create and style the website.
+- I used Javascript to create the interactive elements of the website
+- I used github to create a repository for my project.[Github Website](https://github.com/)
+- I used gitpod as the development environment.[Gitpod Website](https://gitpod.io/)
+- I used github pages to host the website [Github Pages Website](https://github.com/)
+- I used Balsamiq to design my wireframes [Balsamiq Website](https://balsamiq.com/)
 
 ## Testing
 
@@ -81,21 +109,21 @@ explain various tech used, such as HTML, CSS, Gitpod, GitHub, Git, etc. - add a 
 ## Deployment
 
 The site was deployed to GitHub pages. The steps to deploy are as follows: 
- - In the [GitHub repository](https://github.com/Claire221/Code-Institute-Milestone-Project-1), navigate to the Settings tab 
+ - In the [GitHub repository](https://claire221.github.io/Facility-443/), navigate to the Settings tab 
  - From the source section drop-down menu, select the **Main** Branch, then click "Save".
  - The page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
 
-The live link can be found [here](https://claire221.github.io/Code-Institute-Milestone-Project-1)
+The live link can be found [here](https://github.com/Claire221/Facility-443)
 
 ### Local Deployment
 
 In order to make a local copy of this project, you can clone it. In your IDE Terminal, type the following command to clone my repository:
 
-- `git clone https://github.com/Claire221/Code-Institute-Milestone-Project-1.git`
+- `git clone https://claire221.github.io/Facility-443/`
 
 Alternatively, if using Gitpod, you can click below to create your own workspace using this repository.
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Claire221/Code-Institute-Milestone-Project-1)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://claire221.github.io/Facility-443/)
 
 
 ### Content
@@ -106,8 +134,4 @@ list out any URLs or links where you might've borrowed a snippet of code, or ele
 
 list out any URLs for images/videos/audios you've borrowed from online (Markdown Table works best here!)
 
-### Acknowledgements
-
-list out any acknowledgements you have, if any... tutor support? fellow Slack student help? spouse, loved one, family member, etc.
-​
 ​
