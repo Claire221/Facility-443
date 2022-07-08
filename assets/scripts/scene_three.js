@@ -342,11 +342,15 @@ function searchPc () {
     removeBtn();
     createNewBtn();
 
-    gameParagraph.innerHTML = `The computer finally comes to life, on the desktop is some software icons and a folder labelled subjects.. you click on it and as you wait for 
-                                the folder to open you quickly glance over your shoulder to make sure nobody is trying to sneak up on you. The file opens and you gasp in horror
-                                as you see hundreds of sub folders each labelled subject -  with an identifying number. You start to scroll down until one of the numbers jumped out 
-                                amongst the rest, you move your mouse and hover it over the folder labelled Subject 443. You take a steadying breath before double clicking on the folder. 
-                                It opens up and inside are various document files <br> Which do you open first?`; 
+    gameParagraph.innerHTML = `The computer finally comes to life, on the desktop is some software icons and a folder labelled subjects.. you click on it and as you wait for the folder to open you quickly 
+                                glance over your shoulder to make sure nobody is trying to sneak up on you. The file opens and you gasp in horror as you see hundreds of sub folders each labelled subject - 
+                                with an identifying number. You start to scroll down until one of the numbers jumped out amongst the rest, you move your mouse and hover it over the folder labelled subject 443. 
+                                You take a steadying breath before double clicking on the folder. It opens up and inside are various document files, you click the first one labelled Subject 441 - Info. It 
+                                opens up into a document containing a small picture of yourself along with other information such as your height and weight age. there is also a section labelled powers and but 
+                                there is no text in the box. You continue down the page and come to a small paragraph of text 'Subject 443 has been in the facility for the last 3 years and has seemed to make
+                                little to no progress despite out best efforts. They seem unwilling to help our cause and often lash out and become combative resulting in them needing sedating as to not put 
+                                the staff in risk.
+    `; 
 
     option1.innerText = "Subject 443 - Info";
     option3.innerText = "Subject 443 - Treatment";
