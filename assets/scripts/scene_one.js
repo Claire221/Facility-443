@@ -451,6 +451,7 @@ function checkWardrobe() {
     
     option1.innerText= "Inspect the items";
     option1.addEventListener("click", wardrobeItems, {once : true});
+    option2.classList.add("hidden")
 
 }
 

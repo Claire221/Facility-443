@@ -85,7 +85,7 @@ function followLabCoat(){
                                         a short pause it lets of a high pitched beep before turning green and the doors start to slide open. You bounce on the balls of your feet and adrenaline fills your veins as your 
                                         prepared to be confunted with whatever is on the other side, getting ready to fight if needbe..`
 
-            option1.class.remove("hidden");
+            option1.classList.remove("hidden");
             option1.innerText = "Continue.."
             option1.addEventListener("click", keyCardDoor)
 
@@ -102,8 +102,70 @@ function followLabCoat(){
 }
 
 function keyCardDoor() {
-    gameParagraph.innerHTML = `Deciding to follow him you slowly creep towards the doors which have closed by the time you get there, you push on them but they dont move.. You scan around the doorway and notice 
-    a small keypad to the side it has a section for you to scan a keycard..`
+    removeBtn()
+    createNewBtn()
+    const paragraphArray = [`The doors slide open you find yourself in a room that is a cross between a science lab and an operating theatre. Down the left sided there is a long metal counter top with two metal 
+                            inks at either end.. Down the right-hand side are work stations with stools placed neatly under them. On top of the stations are various sized microscopes with jars and dishes placed 
+                            next to them. You walk forward slightly and see that they each contain a jell like substance. You see the man you followed walk through a door at the back of the room and you slowly 
+                            creep after him. You manage to catch the door as is closing and peek round into a dimly lit room, there are chairs set out in rows all facing a large class window. Your not sure whats 
+                            on the other side because the view is currently obscured by a thick black curtain. Your heart rate increases as you realize that a few of the chairs are occupied by more people in lab 
+                            coats but they dont seem to have noticed you.. their focus is on the window. Not wanting the light thats creeping in through the open door to alert the others of your presence you 
+                            creep in the room letting the door close softly behind you and sit in the chair closest to the door, you hunch down trying to make yourself as small as possible..`, 
+
+                            `Suddenly you hear a small squeaking noise and your attention is directed to the curtain thats covering the window, its slowly raising to give you your first glimpse into the room beyond.
+                            The room is set up like an operating theatre. The walls and floors are covered in a light blue tile and you can see there is a drain in the centre of the floor. Along the walls are 
+                            various medical instruments and machines and in the centre of the room is an operating bed. The room is currently empty but it doesnt take long for a set of double doors to swing 
+                            open and in comes two people wearing light green scrubs. Followed closely behind them are two people wearing military gear, between them is a man.. the military people are gripping him 
+                            by his upper arms and walking him into the room despite his protests. He is kicking and trying to lash out at them attempting to exit the room.. As the military people move the man over 
+                            to the hospital bed the people in scrubs walk over to one of the sinks and start to wash their hands… The military people lift the man up by his arms as if he weighs nothing and put him
+                            onto the operating bed, one of them pins him down by his shoulders while the other uses the straps attached to the bed to secure him to the table, one over his chest and one around his
+                            upper thighs. They then move onto the straps that attach his wrists to the bed, while the military men move around each other securing the man to the bed like a well oiled machine and
+                            you get the impression this isnt the first time theyve done this. 
+                             `,
+
+                             `It doesnt take long for the man to be secured to the bed and be unable to move, stepping away from the bed, they line up shoulder to shoulder and look at the surgeons. 
+                             The surgeons have finished washing their hands and have now placed on rubber gloves and aprons, they look to the military people and nod… this causes the military people to turn on their 
+                             heal and walk out from the room.. obviously their jobs here is done..You cant take your eyes of the scene playing out in front of you and without realising what your doing you have 
+                             raised out of your chair slightly and gripped the back of the chair in front with white knuckles. A static noise enters the room and you quickly whip your head around searching for the 
+                             source and spot speakers lining the ceiling. 'Ok everyone, thanks for joining us today. Today we will be demonstrating how to insert an implant into the subjects' one of the surgeons 
+                             says, its hard to know which one because they both have masks on. As they talk they both move into position so one is stood at either side of the bed. The man laying on it is still 
+                             thrashing attempting to break free of his restraints, his head is whipping back and forth as he tries to keep an eye on what both doctors are doing. 
+                             `,
+
+                             `You look around the room at the people in lab coats who are sat around you expecting to see the same horror that is on your face reflected back at you but instead they just sit blank 
+                             faced staring straight a head. A couple of them are even whispering amongst themselves, but nobody seems to be shocked at what going on in front of them. You want to scream how can this 
+                             be normal and how can they just sit back and let it happen. 'This subject arrived a couple of days ago and you can see that he is particularly riled up so its important we get the 
+                             implant in as soon as possible to protect everyone here' one of the doctors reaches his hand out and the other one places a mask into it. The doctor then places it over the mans face 
+                             and holds it there and a few seconds later the man stops struggling and goes limp..'For those of you who havent seen it this is what the implant looks like As the surgeon is talking he 
+                             holds up a rectangle device no bigger than 5 cm long, it has a long wire tail coming off the end 'It gets inserted just above the ear and this wire here' he says pointing to the tail 
+                             section 'This moves through the scull and attaches to the brain stem. This then allows us to control the chip and by effect the subject. It contains the translator technology so we can 
+                             communicate, we can also remotely activate it so if they become unruly we can either cause a small shock or knock them out keeping the situation under control' As hes talking he has 
+                             taken out a razor and has starting to shave the side of the mans head just above his ear.`,
+
+                            `  'Its completely painless and the subject will recover enough withing a few hours to being their
+                            testing, ok lets start shall we? Scalpel please' He says and once again holds out his hand for the other surgeon to place a scalpel in..
+                            You think you might pass out, or throw up.. or both. Sliding of the chair you creep to the door and exit back into the room you just left. You crouch down and place your forehead to 
+                            the cool tile floor and take a few deep breaths. Is this what they did to you? What sort of people are they? 
+                            Wanting to get as far away as possible from the situation happening behind you, you run back through the door and out into the atrium`
+                        ]
+    option2.classList.add("hidden")
+    option1.innerText = "Continue.."; 
+
+    let textIndex = 0;
+
+    option1.addEventListener("click", function(){
+        gameParagraph.innerText = paragraphArray[textIndex];
+        textIndex++;
+
+        if(textIndex === paragraphArray.length) {
+            console.log("last")
+            option1.classList.add("hidden")
+            option2.classList.remove("hidden")
+            option2.innerText = "Continue.."; 
+            option2.addEventListener("click", lab01)
+        }
+    });
+
 }
 
 function dontfollowLabCoat(){
@@ -162,12 +224,14 @@ function trainingRooms() {
                                 'Again' You jump as the man at the computer barks out an order 'And dont take so long this time' he says to her barely glancing away from his screen. You see the womans shoulders drop and she\
                                 takes in a deep breath as if getting ready to preform again. Her eyes then flick to you, her eyes go widw with shock and your not sure if you hear her gasp or if you imagined ita \
                                 Her eyes flick back to the labcoat person seemingly checkign he isnt paying attention before quickly looking back at you and mouthing at you to run, you dont need telling twice you quickly \
-                                turn on your heel and sprint back down the corridor, you fly through the doors which causes them to slap against the wall.."
+                                turn on your heel and sprint back down the corridor, you fly through the doors which causes them to slap against the wall..You run through the cafeteria area and straight to the lift, and \
+                                repeatedly press the button on the wall as if that will help it arrive quicker.. After what feels like forever, but couldnt have been more than a couple of seconds the lift finally arrives. z\
+                                You charge into the lift before the doors have finished opening and repeatedly press the button for the atrium. "
    
     option1.innerText = "Continue"
     option2.classList.add("hidden")
                             
-    option1.addEventListener("click", liftUpOption, {once : true});
+    option1.addEventListener("click", lab01, {once : true});
 }
 
 function ward() {
@@ -187,37 +251,25 @@ function ward() {
                                 a way to help and spot a glass of water on the table beside his bed, you pick it up and press it to his lips allowing him to take a small sip.. He turns his head to the side \
                                 indicating that hes had enough so you put it back on the table. 'You need to leave now, they only left to go check something.. they could be back any second' As he says this \
                                 you hear a door bang from somewhere further into the building 'Run!' He says.. you dont need telling twice, you turn around and run out the the cubicle pushing the curtain \
-                                aside as you go… You run back down the corridor where you just came from."
+                                aside as you go… You run back down the corridor where you just came from. You run through the cafeteria area and straight to the lift, and repeatedly press the button on the wall \
+                                as if that will help it arrive quicker..After what feels like forever, but couldnt have been more than a couple of seconds the lift finally arrives. You charge into the lift \
+                                before the doors have finished opening and repeatedly press the button for the atrium. "
 
     setTimeout(function(){
         console.log("ward")
         option1.classList.remove("hidden")
         option1.innerText = "Continue.."
-        option1.addEventListener("click", liftUpOption, {once : true});
+        option1.addEventListener("click", lab01, {once : true});
     }, 2000)                          
 
 }
 
-function basementOption() {
-    
-    // you step out into a canteen looking room - a sign says ward one way and training rooms the other
 
-
-    // Ward - liftUpOption()
-        // You follow the corridor and enter a room that’s set up like a hospital ward, there are beds down each side some have 
-        // curtains pulled around them but others don’t. you start walking down the centre between the beds and stop when you hear a 
-        // noise coming from behind the curtain.  You decide to look so slowly pull the curtain back. In bed in a person … they tell 
-        // you that if you know whats good for you youll run 
-}
-
-function liftUpOption() {
+function lab01() {
     removeBtn()
     createNewBtn()
 
-    gameParagraph.innerHTML = `You run through the cafeteria area and straight to the lift, and repeatedly press the button on the wall as if that will help it arrive quicker.. 
-                                After what feels like forever, but couldnt have been more than a couple of seconds the lift finally arrives. You charge into the lift before the 
-                                doors have finished opening and repeatedly press the button for the atrium. The lift arrives at the atrium with a ding and you scan the room figuring 
-                                out your next move. You see door tucked away in the corner that you hadnt seen before, There is a small metal sign next to the door labelled 'lab 1'
+    gameParagraph.innerHTML = `Arriving ack in the atrium you scan the room figuring out your next move. You see door tucked away in the corner that you hadnt seen before, There is a small metal sign next to the door labelled 'lab 1'
                                 Rushing over you open the door and slip inside, overhead lights flicker on as you enter and your met by a cool breeze of air conditioning. There are 
                                 4 different stations set up with various vial and microscopes on top of them.  You spot a computer desk tucked into the corner to the left of your room
                                 and you rush over to it. You reach out and wiggle the mouse hoping to bring it to life, you hear a fan kick in and tap your foot impatiently as you wait 
