@@ -7,7 +7,7 @@ let gameContainer = document.getElementById("game-section");
 let gameParagraph = document.getElementById("game-paragraph");
 let startTitle = document.getElementById("title");
 let subTitle = document.getElementById("sub-title");
-let mobileScreen = document.getElementById("small_screen")
+let mobileScreen = document.getElementById("small_screen");
 let inventoryScreen;
 let labCoat = false;
 let doorPass = false;
@@ -25,7 +25,7 @@ let option1;
 let option2;
 
 let glitch = document.getElementsByClassName("box");
-let volumeUp = document.getElementsByClassName("volume-container")[0]
+let volumeUp = document.getElementsByClassName("volume-container")[0];
 
 // Player variables
 let healthBar = document.getElementById("health-info");
@@ -35,9 +35,9 @@ let pockets = [""];
 
 // Function that runs on page load to check if screen is too small and if not set game page
 window.onload= function(){
-    newGame()
-    checkScreenSize()
-}
+    newGame();
+    checkScreenSize();
+};
 
 
 // Function to check if screen is too small to play
@@ -45,10 +45,10 @@ function checkScreenSize(){
     let width = window.innerWidth;
 
     if (width < 900) {
-        mobileScreen.classList.remove("hidden")
-        startScreen.classList.add("hidden")
-        audioContainer.classList.add("hidden")
-        gameParagraph.classList.add("hidden")
+        mobileScreen.classList.remove("hidden");
+        startScreen.classList.add("hidden");
+        audioContainer.classList.add("hidden");
+        gameParagraph.classList.add("hidden");
     }
 }
 
@@ -58,8 +58,8 @@ function removeBtn(){
     let oldbtn1 = document.getElementsByClassName("option1")[0];
     let oldbtn2 = document.getElementsByClassName("option2")[0];
 
-    oldbtn1.remove()
-    oldbtn2.remove()
+    oldbtn1.remove();
+    oldbtn2.remove();
 }
 
 // Function to create new buttons
@@ -67,40 +67,39 @@ function createNewBtn(){
     option1 = document.createElement("button");
     option2 = document.createElement("button");
 
-    gameContainer.appendChild(option1)
-    // gameContainer.appendChild(option2)
+    gameContainer.appendChild(option1);
 
-    option1.classList.add("option1", "game-btn", "btn-fade")
-    option2.classList.add("option2", "game-btn")
+    option1.classList.add("option1", "game-btn", "btn-fade");
+    option2.classList.add("option2", "game-btn");
 
     setTimeout(function(){
-        option2.classList.add("btn-fade")
-        gameContainer.appendChild(option2)
-    },500)
+        option2.classList.add("btn-fade");
+        gameContainer.appendChild(option2);
+    },500);
 
-    option1.innerText = "test"
-    option2.innerText = "test"
+    option1.innerText = "test";
+    option2.innerText = "test";
 
 }
 
 // Function to allow the player to toggle the sound on and off
 function soundToggle(){
-    let audio = document.getElementsByTagName("audio")
+    let audio = document.getElementsByTagName("audio");
     let soundToggle = document.getElementById("sound-toggle");
 
     for (sound in audio) {
-        audioMute = audio.muted = false
+        audioMute = audio.muted = false;
     }
 
     soundToggle.addEventListener("click", function() {
         if (this.classList.contains("fa-volume-mute")) {
             this.classList.remove("fa-volume-mute");
             this.classList.add("fa-volume-up");
-            audioMute = audio.muted = false
+            audioMute = audio.muted = false;
         } else {
             this.classList.add("fa-volume-mute");
             this.classList.remove("fa-volume-up");
-            audioMute = audio.muted = true
+            audioMute = audio.muted = true;
         }
     });
 }
@@ -111,9 +110,9 @@ let count = 10;
 // Function to set the scene for a new game
 function newGame() {
     loadScreen.style.backgroundImage="url(assets/img/background_01.jpg)";
-    startScreen.classList.remove("hidden")
-    soundToggle()
-    healthBar.classList.add("hidden")
+    startScreen.classList.remove("hidden");
+    soundToggle();
+    healthBar.classList.add("hidden");
 
     // Link for glitch effect tutorial used https://www.youtube.com/watch?v=CtmHKGX754s
     if (window.innerWidth > 900) {
@@ -131,21 +130,21 @@ function newGame() {
                 glitch[i].style.height = Math.floor(Math.random() * 50) + "px";
                 glitch[i].style.backgroundPosition = Math.floor(Math.random() * 50) + "px";
             }
-            }, 200)
+            }, 200);
     }
-};
+}
 
 // Fuction to start the game
 startBtn.addEventListener("click", function(){
     for (let i = 0; i < glitch.length; i++){
-        glitch[i].classList.add("hidden")
+        glitch[i].classList.add("hidden");
     }
     glitch = 0;
-    startScreen.classList.add("hidden")
+    startScreen.classList.add("hidden");
     loadScreen.style.backgroundImage="url(assets/img/starting_room.jpg)";
-    audioContainer.classList.add("hidden")
-    gameParagraph.classList.add("game-paragraph-background")
-    startGame()
+    audioContainer.classList.add("hidden");
+    gameParagraph.classList.add("game-paragraph-background");
+    startGame();
 });
 
 // First game scene - gives the player a choice wether to try to escape or wait and see what happens
@@ -166,24 +165,24 @@ function startGame(){
                                 Turning to your left you see a counter top with a sink similar to what you would find in a kitchen and to the right a wardrobe is tucked away in the corner. You notice there 
                                 is a small metal trolly next to the bed on it there is a small pad of paper, a pen, a scalpel and a pair of tweezers. As your taking in the room a sick feeling settles in your
                                 stomach as you realize you have no idea where you are or how you got here. 
-                                \n\n What do you do?`
+                                \n\n What do you do?`;
 
     createNewBtn();
 
-    option1.innerText = "Stay where you are, what if your here for a reason?"
-    option2.innerText = "This doesnt feel right, try and break out."
+    option1.innerText = "Stay where you are, what if your here for a reason?";
+    option2.innerText = "This doesnt feel right, try and break out.";
 
-    option1.addEventListener("click", stay)
-    option2.addEventListener("click", leave)
+    option1.addEventListener("click", stay);
+    option2.addEventListener("click", leave);
 }
 
 //stay function - after the player decides to wait this is the first chance they get to chaine their mind and still leave
 function stay() {
-    removeBtn()
-    createNewBtn()
+    removeBtn();
+    createNewBtn();
 
-    option1.classList.add("hidden")
-    option2.classList.add("hidden")
+    option1.classList.add("hidden");
+    option2.classList.add("hidden");
     
 
     gameParagraph.innerhTML = `You decide to stay where you are, after all who knows if whats outside this room is any better than being here.  You sit there and take a few deep breaths to compose 
@@ -192,19 +191,19 @@ function stay() {
                                 couple of minutes, you hear a sound, your ears peak up and it feels like you just took an electric shock to the spine. Slowly you turn your head, so your ear is in the 
                                 direction of the sound so you can try and figure out what the noise is…<br>
                                 You realize its footsteps and they sound like they are coming in this direction…You freeze.. <br>
-                                What do you do?`
+                                What do you do?`;
      
 
     if (audioMute === false) {
         setTimeout(function(){
             heelsShort.play();
             heelsShort.volume = 0.3;
-        },6500)
+        },6500);
     }
     
     setTimeout(function(){
-        option1.classList.remove("hidden")
-        option2.classList.remove("hidden")
+        option1.classList.remove("hidden");
+        option2.classList.remove("hidden");
 
         
         option1.innerText= "Wait and see who it is, You might get answers";
@@ -212,16 +211,16 @@ function stay() {
 
         option1.addEventListener("click", finalStay);
         option2.addEventListener("click", leave);
-    }, 6500)
+    }, 6500);
 
-};
+}
 
 //Final stay function - function runs when the player has decided to stay for the final time, ends the game
 function finalStay() {
-    heelsShort.pause()
-    console.log("final stay")
-    removeBtn()
-    createNewBtn()
+    heelsShort.pause();
+    console.log("final stay");
+    removeBtn();
+    createNewBtn();
     gameParagraph.innerhTML = `You sit up and get ready to face whatever is coming through that door.  The footsteps get louder until they stop outside your door, theres a jingling sound then a 
                                 key is inserted into a lock. You cant take your eyes away from the door, theyre stinging, screaming at you to blink but you cant make yourself do it. With a click of
                                 a lock the door starts to open…`;
@@ -284,7 +283,7 @@ function finalStay() {
 
     ];
 
-    option2.classList.add("hidden")
+    option2.classList.add("hidden");
     option1.innerText = "Continue.."; 
 
     let textIndex = 0;
@@ -294,13 +293,13 @@ function finalStay() {
         textIndex++;
 
         if(textIndex === paragraphArray.length) {
-            console.log("last")
-            option1.classList.add("hidden")
-            option2.classList.remove("hidden")
+            console.log("last");
+            option1.classList.add("hidden");
+            option2.classList.remove("hidden");
             option2.innerText = "Restart Game"; 
             option2.addEventListener("click", function(){
                 window.location.reload();
-            })
+            });
         }
     });
 
@@ -308,23 +307,23 @@ function finalStay() {
 
     if (audioMute === false) {
         setTimeout(function(){
-            doorCreek.play()
+            doorCreek.play();
             doorCreek.volume = 0.4;
-        }, 2000)
+        }, 2000);
         setTimeout(function(){
-            doorUnlock.play()
+            doorUnlock.play();
             doorUnlock.volume = 0.2;
-        }, 2400)
+        }, 2400);
     }
 
-};
+}
 
 
 //leave room function - allows the player to decide if want to cut the straps or try and break free
 function leave() {
-    heelsShort.pause()
-    removeBtn()
-    createNewBtn()
+    heelsShort.pause();
+    removeBtn();
+    createNewBtn();
 
     gameParagraph.innerHTML = `As you sit there something in your gut is screaming at you to get out, not one to ignore your instincts,
                           You frantically look around the room in search of anything that can help you. Your eyes land on the metal tray next to you and
@@ -341,24 +340,23 @@ function leave() {
 
 //Function that runs to determine if the player gets an injury from trying to escape or not
 function injuryRoll(){
-    removeBtn()
-    createNewBtn()
+    removeBtn();
+    createNewBtn();
 
 
-    let roll = Math.random() 
-    // health.classList.remove("hidden")
+    let roll = Math.random() ;
 
     if(roll < 0.5) {
-        injuries.push("No injury")
-        healthBar.innerText=injuries
-        healthBar.classList.remove("hidden")
+        injuries.push("No injury");
+        healthBar.innerText=injuries;
+        healthBar.classList.remove("hidden");
         setTimeout(function(){
-            healthBar.classList.add("hidden")
-        }, 2000)
+            healthBar.classList.add("hidden");
+        }, 2000);
     } else {
-        injuries.push("Left Hand - Sprained wrist ")
-        healthBar.innerText=injuries
-        healthBar.classList.remove("hidden")
+        injuries.push("Left Hand - Sprained wrist ");
+        healthBar.innerText=injuries;
+        healthBar.classList.remove("hidden");
     }
     
 
@@ -367,7 +365,7 @@ function injuryRoll(){
                           somewhere and it only takes you a few minutes to free your hand from the strap. Once free you quickly untie your other hand
                           and are able to finally stand up from the bed. Taking a look at your left hand you inspect for an inury <br> ${injuries}`;
                           
-    option1.classList.add("hidden")
+    option1.classList.add("hidden");
     option2.innerText= "Move on";
 
     option2.addEventListener("click", searchRoom, {once : true});
@@ -375,8 +373,8 @@ function injuryRoll(){
 
 //Function that runs if the player chooses to cut the strap, adds time to countdown
 function cutStrap() {
-    removeBtn()
-    createNewBtn()
+    removeBtn();
+    createNewBtn();
 
     time = Math.floor(Math.random() * 10) + 2 ;
     
@@ -391,7 +389,7 @@ function cutStrap() {
                          You slowly start moving the knife back and forth along the strap, you can hear the leather creaking as the blade runs 
                          along it and after a few minutes you start to see a grove appear. <br> It took ${time} minutes's`; 
 
-    option1.classList.add("hidden")
+    option1.classList.add("hidden");
     option2.innerText= "Move on";
                      
     option2.addEventListener("click", searchRoom, {once : true});
@@ -400,8 +398,8 @@ function cutStrap() {
 
 //Search room function - alows the player to decide if they want to search the room theyre in or leave to move on
 function searchRoom() {
-    removeBtn()
-    createNewBtn()
+    removeBtn();
+    createNewBtn();
 
     // gameScreen.style.backgroundImage="url(assets/img/room1_search.jpg)";
 
@@ -409,8 +407,8 @@ function searchRoom() {
                           was from when you were lying down. You now need to decide if your going to search the room for anything useful
                           or get out of there as fast as you can?`; 
 
-    option1.classList.remove("hidden")
-    option2.classList.remove("hidden")
+    option1.classList.remove("hidden");
+    option2.classList.remove("hidden");
 
     option1.innerText= "Search the room, you dont know what you might find";
     option2.innerText= "You've waisted long enough, lets get out of here";
@@ -419,12 +417,12 @@ function searchRoom() {
 
     option2.addEventListener("click", leaveRoomOne, {once : true});
 
-};
+}
 
 //Look for supplies function - Lets the player choose where they want to search for supplies
 function lookForSupplies() {
-    removeBtn()
-    createNewBtn()
+    removeBtn();
+    createNewBtn();
 
     gameParagraph.innerText = `You scan the room, its pretty empty and only contains the two beds, a wardrobe, a counter with cupboards
                                underneath and the trolley next to your bed where you found the scalpel.You know you dont have enough time
@@ -452,19 +450,19 @@ function checkWardrobe() {
     
     option1.innerText= "Inspect the items";
     option1.addEventListener("click", wardrobeItems, {once : true});
-    option2.classList.add("hidden")
+    option2.classList.add("hidden");
 
 }
 
 //Wardrobe items function - Adds 3 images to the screen, the player can click on them to run the "inventory-add" function
 function wardrobeItems() {
-    removeBtn()
-    createNewBtn()
+    removeBtn();
+    createNewBtn();
 
     gameParagraph.innerHTML = `Inside you find an old shoe, and a Key Card, handing up one the back of one of the doors is an old labcoat. `; 
 
     option1.innerText= "Leave Room";
-    option1.addEventListener("click", leaveRoomOne)
+    option1.addEventListener("click", leaveRoomOne);
 
 
     let itemsContainer = document.createElement("div");
@@ -474,92 +472,91 @@ function wardrobeItems() {
 
     shoeItem.src="assets/img/shoe.jpg";
     keyCardItem.src="assets/img/keycard.jpg";
-    labCoatItem.src = "assets/img/labcoat.jpg"
+    labCoatItem.src = "assets/img/labcoat.jpg";
     
     shoeItem.alt="Shoe";
     keyCardItem.alt="Key Card";
     labCoatItem.alt="Lab Coar";
 
-    itemsContainer.classList.add("items-container")
-    shoeItem.classList.add("wardrobe-items-img", "shoe")
-    keyCardItem.classList.add("wardrobe-items-img", "key-card")
-    labCoatItem.classList.add("wardrobe-items-img", "labcoat")
+    itemsContainer.classList.add("items-container");
+    shoeItem.classList.add("wardrobe-items-img", "shoe");
+    keyCardItem.classList.add("wardrobe-items-img", "key-card");
+    labCoatItem.classList.add("wardrobe-items-img", "labcoat");
 
 
 
-    itemsContainer.appendChild(shoeItem)
-    itemsContainer.appendChild(keyCardItem)
-    // itemsContainer.appendChild(PaperItem)
-    itemsContainer.appendChild(labCoatItem)
-    loadScreen.appendChild(itemsContainer)
+    itemsContainer.appendChild(shoeItem);
+    itemsContainer.appendChild(keyCardItem);
+    itemsContainer.appendChild(labCoatItem);
+    loadScreen.appendChild(itemsContainer);
 
     shoeItem.addEventListener("click", function(){
-        this.classList.toggle("inventory-add")
-        addToInventory("Shoe")
-        inventoryScreen.classList.add("hidden")
-        showInventory()
+        this.classList.toggle("inventory-add");
+        addToInventory("Shoe");
+        inventoryScreen.classList.add("hidden");
+        showInventory();
     });
     keyCardItem.addEventListener("click", function(){
-        this.classList.toggle("inventory-add")
-        addToInventory("Key Card")
-        inventoryScreen.classList.add("hidden")
-        showInventory()
+        this.classList.toggle("inventory-add");
+        addToInventory("Key Card");
+        inventoryScreen.classList.add("hidden");
+        showInventory();
         doorPass = true;
     });
     labCoatItem.addEventListener("click", function(){
-        this.classList.toggle("inventory-add")
-        addToInventory("Lab Coat")
-        inventoryScreen.classList.add("hidden")
+        this.classList.toggle("inventory-add");
+        addToInventory("Lab Coat");
+        inventoryScreen.classList.add("hidden");
         labCoat = true;
-        showInventory()
+        showInventory();
     });
 
-    option2.classList.add("hidden")
+    option2.classList.add("hidden");
 }
 /* Basic inventory system - If a player clicks on an eligible item it will change colour and a message will display saying its been added to inventory. If they click it again it will go back to
 its normal display and be removed from the inventory */ 
 function addToInventory(item) {
     if (pockets.length > 0){
         if (pockets.includes(item)){
-            pockets.pop(item)
-            gameParagraph.innerText = `${item} removed to your inventory`
+            pockets.pop(item);
+            gameParagraph.innerText = `${item} removed to your inventory`;
         } else {
-            pockets.push(item)
-            gameParagraph.innerText = `${item} added to your inventory, Press B to view inventory`
+            pockets.push(item);
+            gameParagraph.innerText = `${item} added to your inventory, Press B to view inventory`;
         }
     } 
 
-};
+}
 
 // Adds event listener to B key to open and close inventory
 window.addEventListener("keydown", function(event) {
     if (event.key == "i" && pockets.length > 0){
-        inventoryScreen.classList.toggle("hidden")
+        inventoryScreen.classList.toggle("hidden");
     } else {
-        console.log("no inventory")
+        console.log("no inventory");
     }
 });
-showInventory()
+showInventory();
 
 // function that creates the invnetory list
 function showInventory(){
     inventoryScreen = document.createElement("div");
-    inventoryScreen.classList.add("inventory-screen")
+    inventoryScreen.classList.add("inventory-screen");
     for (let i = 0; i < pockets.length; i++) {
         let inventoryList = document.createElement("ul");
-        let inventoryItem = document.createElement("li")
+        let inventoryItem = document.createElement("li");
         
-        inventoryItem.innerText = pockets[i]
+        inventoryItem.innerText = pockets[i];
 
-        inventoryList.classList.add("inventory-list")
-        inventoryItem.classList.add("inventory-item")
+        inventoryList.classList.add("inventory-list");
+        inventoryItem.classList.add("inventory-item");
 
-        inventoryList.appendChild(inventoryItem)
-        inventoryScreen.appendChild(inventoryList)
-        loadScreen.appendChild(inventoryScreen)
+        inventoryList.appendChild(inventoryItem);
+        inventoryScreen.appendChild(inventoryList);
+        loadScreen.appendChild(inventoryScreen);
     }
 
-    inventoryScreen.classList.add("hidden")
+    inventoryScreen.classList.add("hidden");
 }
 
 function clearScreen() {
@@ -567,8 +564,8 @@ function clearScreen() {
 }
 
 function checkCupboard() {
-    removeBtn()
-    createNewBtn()
+    removeBtn();
+    createNewBtn();
 
     loadScreen.style.backgroundImage="url(assets/img/kitchen.jpg)";
 
@@ -581,23 +578,22 @@ function checkCupboard() {
     option1.innerText= "Inspect the items";
     option1.addEventListener("click", checkCupboardItems, {once : true});
 
-    // option1.classList.add("hidden")
-    option2.classList.add("hidden")
+    option2.classList.add("hidden");
                           
 }
 
 
 function checkCupboardItems() {
-    removeBtn()
-    createNewBtn()
+    removeBtn();
+    createNewBtn();
 
     gameParagraph.innerHTML = `Inside you find on old bent key and a protien bar.. their is also what looks to be a pile of cloths folded on one of the shelves
                                 pulling them out to take a closer look you see that its infact an old labcoat.`; 
 
     option1.innerText= "Leave Room";
-    option1.addEventListener("click", leaveRoomOne)
+    option1.addEventListener("click", leaveRoomOne);
 
-    option2.classList.add("hidden")
+    option2.classList.add("hidden");
 
     let itemsContainer = document.createElement("div");
     let keyItem = document.createElement("img");
@@ -612,36 +608,36 @@ function checkCupboardItems() {
     labCoatItem.alt="Lab Coat";
     protienBarItem.alt="Protien Bar";
 
-    itemsContainer.classList.add("items-container")
-    keyItem.classList.add("cupboard-items-img", "key")
-    labCoatItem.classList.add("cupboard-items-img", "lab-coat")
-    protienBarItem.classList.add("cupboard-items-img", "protien-bar")
+    itemsContainer.classList.add("items-container");
+    keyItem.classList.add("cupboard-items-img", "key");
+    labCoatItem.classList.add("cupboard-items-img", "lab-coat");
+    protienBarItem.classList.add("cupboard-items-img", "protien-bar");
 
 
 
-    itemsContainer.appendChild(protienBarItem)
-    itemsContainer.appendChild(keyItem)
-    itemsContainer.appendChild(labCoatItem)
-    loadScreen.appendChild(itemsContainer)
+    itemsContainer.appendChild(protienBarItem);
+    itemsContainer.appendChild(keyItem);
+    itemsContainer.appendChild(labCoatItem);
+    loadScreen.appendChild(itemsContainer);
 
     keyItem.addEventListener("click", function(){
-        this.classList.toggle("inventory-add")
-        addToInventory("Key")
-        inventoryScreen.classList.add("hidden")
-        showInventory()
+        this.classList.toggle("inventory-add");
+        addToInventory("Key");
+        inventoryScreen.classList.add("hidden");
+        showInventory();
     });
     labCoatItem.addEventListener("click", function(){
-        this.classList.toggle("inventory-add")
-        addToInventory("Lab Coat")
-        inventoryScreen.classList.add("hidden")
-        showInventory()
+        this.classList.toggle("inventory-add");
+        addToInventory("Lab Coat");
+        inventoryScreen.classList.add("hidden");
+        showInventory();
         labCoat = true;
     });
     protienBarItem.addEventListener("click", function(){
-        this.classList.toggle("inventory-add")
-        addToInventory("Protien Bar")
-        inventoryScreen.classList.add("hidden")
-        showInventory()
+        this.classList.toggle("inventory-add");
+        addToInventory("Protien Bar");
+        inventoryScreen.classList.add("hidden");
+        showInventory();
     });
 
 }
