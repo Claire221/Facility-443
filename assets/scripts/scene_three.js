@@ -77,12 +77,13 @@ function keyCardDoor() {
 }
 
 function dontfollowLabCoat(){
+    removeBtn()
+    createNewBtn()
     gameParagraph.innerText = "You decide not to follow him and instead make your way across the atrium towards the lift. The doors have closed so you reach out and press the button on the wall to the left of the doors \
                                 You start biting your nails as you wait for the lift to open, Scanning the room from left to right you keep an eye out for anyone else coming this way... With a ding the lift arrives and the \
                                 doors open letting out a slight cool breeze. You walk inside and the lift dips slightly, you look at the panel on the wall and see that for most of the floors you need a key in order to activate \
                                 the button, the only two which dont require a key is the atrium where you currently are and the last button labeled B, which you figure should be basement. \n\n Which option do you choose?"
 
-    createNewBtn()
     
     option1.innerText = "Go and check out the basement?"
     option2.innerText = "Youve changed your mind, follow the guy in the lab coat"
@@ -105,10 +106,10 @@ function liftDownOption() {
     
         
     option1.innerText = "Go to the Ward"
-    option2.innerText = "Go to the Trainign rooms"
+    option2.innerText = "Go to the Training rooms"
                             
-    option1.addEventListener("click", liftDownOption, {once : true});
-    option2.addEventListener("click", followLabCoat, {once : true});
+    option1.addEventListener("click", ward, {once : true});
+    option2.addEventListener("click", trainingRooms, {once : true});
     // all the floors need a special key but the basement 
 
     // if player picked up key they can insert it, before they pick a number the lift starts to move - specialKeyOption()
@@ -132,11 +133,9 @@ function trainingRooms() {
                                 takes in a deep breath as if getting ready to preform again. Her eyes then flick to you, her eyes go widw with shock and your not sure if you hear her gasp or if you imagined ita \
                                 Her eyes flick back to the labcoat person seemingly checkign he isnt paying attention before quickly looking back at you and mouthing at you to run, you dont need telling twice you quickly \
                                 turn on your heel and sprint back down the corridor, you fly through the doors which causes them to slap against the wall.."
-    removeBtn()
-    createNewBtn()
    
     option1.innerText = "Continue"
-    option2.classList.Add("Hidden")
+    option2.classList.add("hidden")
                             
     option1.addEventListener("click", liftUpOption, {once : true});
 }
@@ -144,6 +143,9 @@ function trainingRooms() {
 function ward() {
     removeBtn()
     createNewBtn()
+
+    option1.classList.add("hidden")
+    option2.classList.add("hidden")
 
     gameParagraph.innerText = "You turn right down the corridor and enter a room thats set up like a hospital ward. There are beds down each side, some have curtains pulled around them obscuring the view. \
                                 You start to walk down the centre isle between the beds, you dont get very far when you hear a noise coming from behind one of the curtains. You reach out and grab the fabric,\
@@ -156,6 +158,13 @@ function ward() {
                                 indicating that hes had enough so you put it back on the table. 'You need to leave now, they only left to go check something.. they could be back any second' As he says this \
                                 you hear a door bang from somewhere further into the building 'Run!' He says.. you dont need telling twice, you turn around and run out the the cubicle pushing the curtain \
                                 aside as you go… You run back down the corridor where you just came from."
+
+    setTimeout(function(){
+        console.log("ward")
+        option1.classList.remove("hidden")
+        option1.innerText = "Continue.."
+        option1.addEventListener("click", liftUpOption, {once : true});
+    }, 2000)                          
 
 }
 
@@ -175,11 +184,23 @@ function liftUpOption() {
     removeBtn()
     createNewBtn()
 
-    gameParagraph.innerText = "You run through the cafeteria area and straight to the lift, and repeatedly press the button on the wall as if that will help it arrive quicker..";
+    gameParagraph.innerHTML = `You run through the cafeteria area and straight to the lift, and repeatedly press the button on the wall as if that will help it arrive quicker.. 
+                                After what feels like forever, but couldnt have been more than a couple of seconds the lift finally arrives. You charge into the lift before the 
+                                doors have finished opening and repeatedly press the button for the atrium. The lift arrives at the atrium with a ding and you scan the room figuring 
+                                out your next move. You see door tucked away in the corner that you hadnt seen before, There is a small metal sign next to the door labelled 'lab 1'
+                                Rushing over you open the door and slip inside, overhead lights flicker on as you enter and your met by a cool breeze of air conditioning. There are 
+                                4 different stations set up with various vial and microscopes on top of them.  You spot a computer desk tucked into the corner to the left of your room
+                                and you rush over to it. You reach out and wiggle the mouse hoping to bring it to life, you hear a fan kick in and tap your foot impatiently as you wait 
+                                for the screen to turn on. As your waiting you see that under the desk is a set of 3 draws, do you look inside?  `;
 
-   
-    option1.innerText = "Continue"
-    option2.classList.Add("Hidden")
+    setTimeout(function(){
+        option1.innerText = "Search the draws for anything useful"
+        option2.innerText = "Foucs on the computer"
+
+        option1.addEventListener("click", checkDraws, {once : true});
+        option2.addEventListener("click", searchPc, {once : true});
+    }, 2000)  
+
 
     // You run back up the stairs and are back in the atrium building. You see a door that you had missed before with a sign above it saying labs,
     //  you go through and enter into a big room that’s set with different work stations. You find a pc and try to turn it on..
@@ -198,6 +219,86 @@ function liftUpOption() {
     // You see a door at the far end of the lab that you run to and go through, There is a staircase leading up or down.
 }
 
+function checkDraws() {
+    removeBtn()
+    createNewBtn()
+
+    gameParagraph.innerText = "Inside you find an ID Badge, a Keycard and a vial of blue iridescent liquid.. "; 
+
+    option1.innerText= "Check back to the computer";
+    option1.addEventListener("click", searchPc)
+
+
+    let itemsContainer = document.createElement("div");
+    let vialItem = document.createElement("img");
+    let idItem = document.createElement("img");
+    let keyCardItem = document.createElement("img");
+
+    vialItem.src="assets/img/vial.jpg";
+    idItem.src="assets/img/id_card.jpg";
+    keyCardItem.src = "assets/img/key_card2.jpg"
+    
+    vialItem.alt="Vial";
+    idItem.alt="Id Card";
+    keyCardItem.alt="Key Card";
+
+    itemsContainer.classList.add("items-container")
+    vialItem.classList.add("draw-items-img", "vial")
+    idItem.classList.add("draw-items-img", "idCard")
+    keyCardItem.classList.add("draw-items-img", "keyCard")
+
+
+
+    itemsContainer.appendChild(vialItem)
+    itemsContainer.appendChild(idItem)
+    itemsContainer.appendChild(keyCardItem)
+    loadScreen.appendChild(itemsContainer)
+
+    vialItem.addEventListener("click", function(){
+        this.classList.toggle("inventory-add")
+        addToInventory("Vial")
+        inventoryScreen.classList.add("hidden")
+        showInventory()
+    });
+    idItem.addEventListener("click", function(){
+        this.classList.toggle("inventory-add")
+        addToInventory("ID Card")
+        inventoryScreen.classList.add("hidden")
+        showInventory()
+    });
+    keyCardItem.addEventListener("click", function(){
+        this.classList.toggle("inventory-add")
+        addToInventory("Key Card")
+        inventoryScreen.classList.add("hidden")
+
+        showInventory()
+    });
+
+    option2.classList.add("hidden")
+}
+
+function searchPc () {
+    removeBtn()
+    createNewBtn()
+
+    gameParagraph.innerHTML = `The computer finally comes to life, on the desktop is some software icons and a folder labelled subjects.. you click on it and as you wait for 
+                                the folder to open you quickly glance over your shoulder to make sure nobody is trying to sneak up on you. The file opens and you gasp in horror
+                                as you see hundreds of sub folders each labelled subject -  with an identifying number. You start to scroll down until one of the numbers jumped out 
+                                amongst the rest, you move your mouse and hover it over the folder labelled Subject 443. You take a steadying breath before double clicking on the folder. 
+                                It opens up and inside are various document files <br> Which do you open first?`; 
+
+    option1.innerText = "Subject 443 - Info"
+    option1.innerText = "Subject 443 - Treatment"
+
+    option1.addEventListener("click", characterInfo)
+}
+
+function characterInfo() {
+    let characterSheet = document.getElementById("character-info ")
+    characterSheet.classList.remove("hidden")
+    gameContainer.classList.add("hidden")
+}
+
 function stairsUp() {
     // You run upstairs but it only leads to the roof, the guards chase you up there and corner you..
 }   
@@ -210,3 +311,4 @@ function stairsDown() {
     // if you didnt pick up the keycard it gives you the option to go back and get it otherwise you cant escape 
         // you run to head out but get caught by the guards
 }
+
