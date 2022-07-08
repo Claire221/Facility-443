@@ -154,19 +154,19 @@ function startGame(){
     injuries = [];
     time = 0;
 
-    gameParagraph.innerText = "You wake up with a sudden start your heart racing, you were having a bad dream but the minute you opened your eyes you forget what the dream was about.. \
-                                You think you were getting chased by something but you cant remember what or who it was. You go to sit up only for your head to start spinning so you quickly \
-                                like back down and look up at the white ceiling tiles.. well you assume they use to be white but they are now more of a grey colour with some mould growing in \
-                                the cracks, taking in a deep breath your nostrils fill with an antiseptic smell making them burn slightly. Once your headache has cleared you slowly sit up, you\
-                                go to move your hand to wipe your forehead and realize that you cant move them, Slightly scared now you look down and see that your wrists are tied down on the\
-                                bed by thick leather straps… \n\n\
-                                You thought your heart was beating fast before but it suddenly gets a lot faster. You look around the room your in. Your sat on one of two single size beds, the other \
-                                is empty but the covers arent made, as if someone has recently left. You take in the walls and floor and note that the tiles are the same kind that on the ceiling giving \
-                                the room a sterile feel. In the middle of the wall opposite you is a solid metal door… \n\n\
-                                Turning to your left you see a counter top with a sink similar to what you would find in a kitchen and to the right a wardrobe is tucked away in the corner. You notice there \
-                                is a small metal trolly next to the bed on it there is a small pad of paper, a pen, a scalpel and a pair of tweezers. As your taking in the room a sick feeling settles in your\
-                                stomach as you realize you have no idea where you are or how you got here. \
-                                \n\n What do you do?"
+    gameParagraph.innerHTML = `You wake up with a sudden start your heart racing, you were having a bad dream but the minute you opened your eyes you forget what the dream was about.. 
+                                You think you were getting chased by something but you cant remember what or who it was. You go to sit up only for your head to start spinning so you quickly
+                                like back down and look up at the white ceiling tiles.. well you assume they use to be white but they are now more of a grey colour with some mould growing in
+                                the cracks, taking in a deep breath your nostrils fill with an antiseptic smell making them burn slightly. Once your headache has cleared you slowly sit up, you
+                                go to move your hand to wipe your forehead and realize that you cant move them, Slightly scared now you look down and see that your wrists are tied down on the
+                                bed by thick leather straps… <br>
+                                You thought your heart was beating fast before but it suddenly gets a lot faster. You look around the room your in. Your sat on one of two single size beds, the other 
+                                is empty but the covers arent made, as if someone has recently left. You take in the walls and floor and note that the tiles are the same kind that on the ceiling giving
+                                the room a sterile feel. In the middle of the wall opposite you is a solid metal door… <br>
+                                Turning to your left you see a counter top with a sink similar to what you would find in a kitchen and to the right a wardrobe is tucked away in the corner. You notice there 
+                                is a small metal trolly next to the bed on it there is a small pad of paper, a pen, a scalpel and a pair of tweezers. As your taking in the room a sick feeling settles in your
+                                stomach as you realize you have no idea where you are or how you got here. 
+                                \n\n What do you do?`
 
     createNewBtn();
 
@@ -186,13 +186,13 @@ function stay() {
     option2.classList.add("hidden")
     
 
-    gameParagraph.innerText = "You decide to stay where you are, after all who knows if whats outside this room is any better than being here.  You sit there and take a few deep breaths to compose \
-                                yourself and figure out what your next plan is. Through sheer stubbornness you manage to slow your heart rate back down and bring your breathing under control… \n\n\
-                                You try and remember where you are and how you got here but every time you try you get a sharp intense pain in the side of your head, so you soon stop trying. After a \
-                                couple of minutes, you hear a sound, your ears peak up and it feels like you just took an electric shock to the spine. Slowly you turn your head, so your ear is in the \
-                                direction of the sound so you can try and figure out what the noise is…\n\n \
-                                You realize its footsteps and they sound like they are coming in this direction…You freeze.. \n\n \
-                                What do you do?"
+    gameParagraph.innerhTML = `You decide to stay where you are, after all who knows if whats outside this room is any better than being here.  You sit there and take a few deep breaths to compose 
+                                yourself and figure out what your next plan is. Through sheer stubbornness you manage to slow your heart rate back down and bring your breathing under control… <br>
+                                You try and remember where you are and how you got here but every time you try you get a sharp intense pain in the side of your head, so you soon stop trying. After a 
+                                couple of minutes, you hear a sound, your ears peak up and it feels like you just took an electric shock to the spine. Slowly you turn your head, so your ear is in the 
+                                direction of the sound so you can try and figure out what the noise is…<br>
+                                You realize its footsteps and they sound like they are coming in this direction…You freeze.. <br>
+                                What do you do?`
      
 
     if (audioMute === false) {
@@ -222,65 +222,65 @@ function finalStay() {
     console.log("final stay")
     removeBtn()
     createNewBtn()
-    gameParagraph.innerText = "You sit up and get ready to face whatever is coming through that door.  The footsteps get louder until they stop outside your door, theres a jingling sound then a \
-                                key is inserted into a lock. You cant take your eyes away from the door, theyre stinging, screaming at you to blink but you cant make yourself do it. With a click of \
-                                a lock the door starts to open…" 
+    gameParagraph.innerhTML = `You sit up and get ready to face whatever is coming through that door.  The footsteps get louder until they stop outside your door, theres a jingling sound then a 
+                                key is inserted into a lock. You cant take your eyes away from the door, theyre stinging, screaming at you to blink but you cant make yourself do it. With a click of
+                                a lock the door starts to open…`;
     
     const paragraphArray = [
-        "In comes a Woman. Shes wearing a black skirt suit with a white lab coat over the top, her ginger hair is pulled up in a bun on top of her head, you scan your eyes downward and see that she is \
-        wearing black high heels, and think to yourself that the sound of them hitting the tile floor will haunt your nightmares for years to come. Scanning back to her face her lips part and she gives \
-        you an almost feral looking smile... \n\n\
-        'Your awake, finally! Ive been waiting for hours' She says, she has some kind of accent but you dont recognise it. You stare blankly back at her, your not sure if your too scared to talk or your \
-        so frozen your physically unable to.. \n\n \
-        'What cat got your tongue? Normally I cant get you to shut up, forever asking questions.... its quite annoying actually' she says the last sentence under her breath but you still catch it, as shes \
-        talking to you shes tapping away at some kind of electronic device thats in her hand... \n\n \
-        'Ive never seen you before..  why am I here?' You ask her, maybe shes got the wrong person and thinks your someone else? This could all be a massive misunderstanding and once she realises that she \
-        will let you go and youll be home in time for dinner.. What time is it anyway? You quickly scan the room but there isnt a clock in sight.",
+        `In comes a Woman. Shes wearing a black skirt suit with a white lab coat over the top, her ginger hair is pulled up in a bun on top of her head, you scan your eyes downward and see that she is 
+        wearing black high heels, and think to yourself that the sound of them hitting the tile floor will haunt your nightmares for years to come. Scanning back to her face her lips part and she gives
+        you an almost feral looking smile... <br>
+        'Your awake, finally! Ive been waiting for hours' She says, she has some kind of accent but you dont recognise it. You stare blankly back at her, your not sure if your too scared to talk or your
+        so frozen your physically unable to.. 
+        'What cat got your tongue? Normally I cant get you to shut up, forever asking questions.... its quite annoying actually' she says the last sentence under her breath but you still catch it, as shes
+        talking to you shes tapping away at some kind of electronic device thats in her hand... <br>
+        'Ive never seen you before..  why am I here?' You ask her, maybe shes got the wrong person and thinks your someone else? This could all be a massive misunderstanding and once she realises that she
+        will let you go and youll be home in time for dinner.. What time is it anyway? You quickly scan the room but there isnt a clock in sight.`,
 
-        "She frowns at you, moving from the end of the bed to stand in front of the cupboards to the left of it. She glances behind her to check that there isnt anything on the side before leaning back \
-        against it.\n\n\
-        'I assure you there is no mistake, you are exactly where your meant to be.. I dont think youve ever had memory loss before though.. let me make a note of that on your chart' Shes frowning slightly \
-        as she starts pressing more buttons on the device in her hand..\n\n\
-        'Do you know what dosage they gave you?' as soon as she says the sentence she lets out a short bark of a laugh\n\n\
-        'Never mind that' she says slashing her hand through the air as if she can physically erase the sentence 'If youve got amnesia im sure you dont remember' she says as she looks up through her eyebrows at you..\n\
-        You stare blankly at her and she raises her eyebrows indicating she wants you to answer that question.\
-        'No.. I dont remember anything' you reply a lump forming in your throat.",
+        `She frowns at you, moving from the end of the bed to stand in front of the cupboards to the left of it. She glances behind her to check that there isnt anything on the side before leaning back
+        against it.<br>
+        'I assure you there is no mistake, you are exactly where your meant to be.. I dont think youve ever had memory loss before though.. let me make a note of that on your chart' Shes frowning slightly
+        as she starts pressing more buttons on the device in her hand..<br>
+        'Do you know what dosage they gave you?' as soon as she says the sentence she lets out a short bark of a laugh <br>
+        'Never mind that' she says slashing her hand through the air as if she can physically erase the sentence 'If youve got amnesia im sure you dont remember' she says as she looks up through her eyebrows at you..<br>
+        You stare blankly at her and she raises her eyebrows indicating she wants you to answer that question.
+        'No.. I dont remember anything' you reply a lump forming in your throat.`,
 
-        "'Well never mind hey! Im sure it will all come back after a good sleep.. probably' she says with a shrug. Giving the indication that she doesnt actually care either way if your memory does come back or not... \n\n\
-        She then reaches down into her lab coat pocket and pulls out a needle and syringe containing a purple iridescent liquid. She starts walking over towards the bed and your heart rate picks up as your realise \
-        whats about to happen, You move back to the edge of your bed, your wrists screaming in protest as the leather digs in \n\n\
-        'Wait! Wait!' You shout at her in panic,Your not sure whether its because you caught her of guard or shes just interested in what you have to say but she comes to a stop..\n\n\
-        'What now?' she asks with a sigh. \n\
-        'What am I doing here? who are you?' You say as you frantically look around the room hoping to spot an escape route that you missed before, but you know its too late maybe you should have taken the chance while\
-        you had it...",
+        `'Well never mind hey! Im sure it will all come back after a good sleep.. probably' she says with a shrug. Giving the indication that she doesnt actually care either way if your memory does come back or not... <br>
+        She then reaches down into her lab coat pocket and pulls out a needle and syringe containing a purple iridescent liquid. She starts walking over towards the bed and your heart rate picks up as your realise
+        whats about to happen, You move back to the edge of your bed, your wrists screaming in protest as the leather digs in <br>
+        'Wait! Wait!' You shout at her in panic,Your not sure whether its because you caught her of guard or shes just interested in what you have to say but she comes to a stop..<br>
+        'What now?' she asks with a sigh. <br>
+        'What am I doing here? who are you?' You say as you frantically look around the room hoping to spot an escape route that you missed before, but you know its too late maybe you should have taken the chance while
+        you had it...`,
 
-        "The woman looks down at you and for a moment you see something flash across her face, compassion? Empathy? Regret? Your not sure but its gone before you can figure it out...\n\n\
-        'Fine' She says letting out another small huff, lowering the syringe she moves to sit on the edge of the bed. 'I dont know why Im explaining this since youll remember everything again once youve had a \
-        little nap..' she says as she reaches out and gives the top of your head two small pats.Maybe you should have let her put you to sleep, this lady seems like shes spent a bit too long.. where ever it is \
-        you are and not enough time outside with other people… \n\n\
-        'I guess I have time to kill and you seem to think im the bad guy so…' As she talks she wiggles the needle and syringe between her fingers… 'Its a long story so ill give you the abbreviated version.. \
-        So the government from my planet, this one your on.. right now.. They sent out a spaceship to look for life on other planets. It was supposed to be a routine mission, one that they conduct a couple of times\
-        each year you know? just to explore the galaxy… see whats out there all that fun stuff ...Well on this one particular mission they ended up finding something new.. your home planet. The astronauts landed \
-        and were instructed to try and make contact with your people, well that went about as well as you can figure when none of us speak the same language'\n\n You frown at her because obviously you do because your \
-        talking right now, but your dont interrupt her.. your to desperate to hear the end of the story and you dont want her going off on a tangent...",
+        `The woman looks down at you and for a moment you see something flash across her face, compassion? Empathy? Regret? Your not sure but its gone before you can figure it out...<br>
+        'Fine' She says letting out another small huff, lowering the syringe she moves to sit on the edge of the bed. 'I dont know why Im explaining this since youll remember everything again once youve had a
+        little nap..' she says as she reaches out and gives the top of your head two small pats.Maybe you should have let her put you to sleep, this lady seems like shes spent a bit too long.. where ever it is
+        you are and not enough time outside with other people… <br>
+        'I guess I have time to kill and you seem to think im the bad guy so…' As she talks she wiggles the needle and syringe between her fingers… 'Its a long story so ill give you the abbreviated version..
+        So the government from my planet, this one your on.. right now.. They sent out a spaceship to look for life on other planets. It was supposed to be a routine mission, one that they conduct a couple of times
+        each year you know? just to explore the galaxy… see whats out there all that fun stuff ...Well on this one particular mission they ended up finding something new.. your home planet. The astronauts landed 
+        and were instructed to try and make contact with your people, well that went about as well as you can figure when none of us speak the same language'<br> You frown at her because obviously you do because your 
+        talking right now, but your dont interrupt her.. your to desperate to hear the end of the story and you dont want her going off on a tangent...`,
 
-        "'The story goes though that your people became hostile and started trying to attack our people so they were given orders to fight back. Thats when they discovered that your people are different, while you \
-        look like us you and seem to act like us we are not the same at all.. you guys are special you see..' She leaned in closer so her face was only a few inches from yours \n\n 'You guys have powers' she \
-        whisperers… \n\n \
-        She straightens back up and you let out a sigh of relief as there is now some distance between you two. 'So they were given orders to take a few of you back home with them, the government couldnt just leave \
-        a potential weapon like that behind right?' She asks you and you can tell from her face that she expects you to agree with her, that she isnt being totally ridiculous right now by wanting you to side with her \
-        on the fact that they took your people as prisoners to be used as some sort of weapon…\n\n 'Your crazy, I dont know what game your trying to play.. but your lying, I can understand you and we are the same .. \
-        I want to get out of here right now' you reply as you pull on your wrist straps praying that they come lose.", 
+        `'The story goes though that your people became hostile and started trying to attack our people so they were given orders to fight back. Thats when they discovered that your people are different, while you
+        look like us you and seem to act like us we are not the same at all.. you guys are special you see..' She leaned in closer so her face was only a few inches from yours <br> 'You guys have powers' she
+        whisperers… <br>
+        She straightens back up and you let out a sigh of relief as there is now some distance between you two. 'So they were given orders to take a few of you back home with them, the government couldnt just leave
+        a potential weapon like that behind right?' She asks you and you can tell from her face that she expects you to agree with her, that she isnt being totally ridiculous right now by wanting you to side with her
+        on the fact that they took your people as prisoners to be used as some sort of weapon…<br> 'Your crazy, I dont know what game your trying to play.. but your lying, I can understand you and we are the same ..
+        I want to get out of here right now' you reply as you pull on your wrist straps praying that they come lose.`, 
 
-        "'Crazy!' she laughs 'Youre the one that can move things with your mind and im crazy! I dont care if you believe, youll see for yourself once you wake up' As she talks she starts to stand up dusting the \
-        invisible dirt of her lab coat as she does so. \n'And for the record you we can only understand eachother because of your implant' She says tapping the side of her head 'its translating our whole conversasion\
-        right now.. Weve had the technology for ages, we use a version to communicate between the different languages.. obviously we dont have the implanted version though' she says as if the thought of having one is \
-        completely ridiculous.. \n\n\
-        'We just have to be close enough together and it translates everything for us, saves us having to study you know? Since weve got more important jobs to do' \nAs shes talking you lift one hand up to the side of \
-        your head, the side that you felt the pain when you tried to remember why you were here. Touching it is slightly tender and you can feel a rough scar running down the side of it, about 3 inches in length.\n \
-        'More important jobs like unlocking the key to whatever it is that grants you guys your powers so that we can replicate it and give it to our people..' She says under her breath 'Right im bored' she \
-        says suddenly 'Storytimes over, and anyway youll remember it all once you wake up, Night night' She says as she brings the syringe toward you. You try to move out of the way but its useless and you feel the \
-        prick of the needle in your arm. The room goes slightly fuzzy and then everything turns black.."
+        `'Crazy!' she laughs 'Youre the one that can move things with your mind and im crazy! I dont care if you believe, youll see for yourself once you wake up' As she talks she starts to stand up dusting the
+        invisible dirt of her lab coat as she does so. \n'And for the record you we can only understand eachother because of your implant' She says tapping the side of her head 'its translating our whole conversasion
+        right now.. Weve had the technology for ages, we use a version to communicate between the different languages.. obviously we dont have the implanted version though' she says as if the thought of having one is
+        completely ridiculous.. <br>
+        'We just have to be close enough together and it translates everything for us, saves us having to study you know? Since weve got more important jobs to do' \nAs shes talking you lift one hand up to the side of
+        your head, the side that you felt the pain when you tried to remember why you were here. Touching it is slightly tender and you can feel a rough scar running down the side of it, about 3 inches in length.<br>
+        'More important jobs like unlocking the key to whatever it is that grants you guys your powers so that we can replicate it and give it to our people..' She says under her breath 'Right im bored' she 
+        says suddenly 'Storytimes over, and anyway youll remember it all once you wake up, Night night' She says as she brings the syringe toward you. You try to move out of the way but its useless and you feel the
+        prick of the needle in your arm. The room goes slightly fuzzy and then everything turns black..`
 
     ];
 
@@ -326,10 +326,10 @@ function leave() {
     removeBtn()
     createNewBtn()
 
-    gameParagraph.innerText = "As you sit there something in your gut is screaming at you to get out, not one to ignore your instincts, \
-                          You frantically look around the room in search of anything that can help you. Your eyes land on the metal tray next to you and \
-                          the scalpel thats on there, it doesnt look very sharp but it might just be sharp enough to cut through the leather. \
-                          \n\nWhat do you do?"; 
+    gameParagraph.innerHTML = `As you sit there something in your gut is screaming at you to get out, not one to ignore your instincts,
+                          You frantically look around the room in search of anything that can help you. Your eyes land on the metal tray next to you and
+                          the scalpel thats on there, it doesnt look very sharp but it might just be sharp enough to cut through the leather.
+                          <br> What do you do?`; 
     
     option1.innerText= "The restraints might just be lose enough for you to squeeze your hand through, It might hurt ";
     option2.innerText= "Use the scaple to cut through, it will take longer though.";
@@ -362,10 +362,10 @@ function injuryRoll(){
     }
     
 
-    gameParagraph.innerText = `You decide to free your left hand first, thinking that once you’ve done that you can undo the restrains on your right one. \
-                          You twist, pull and bend your hand trying to get it through the strap. After some tugging you realise your slowly getting \
-                          somewhere and it only takes you a few minutes to free your hand from the strap. Once free you quickly untie your other hand \
-                          and are able to finally stand up from the bed. Taking a look at your left hand you inspect for an inury \n\n ${injuries}`;
+    gameParagraph.innerText = `You decide to free your left hand first, thinking that once youve done that you can undo the restrains on your right one.
+                          You twist, pull and bend your hand trying to get it through the strap. After some tugging you realise your slowly getting
+                          somewhere and it only takes you a few minutes to free your hand from the strap. Once free you quickly untie your other hand
+                          and are able to finally stand up from the bed. Taking a look at your left hand you inspect for an inury <br> ${injuries}`;
                           
     option1.classList.add("hidden")
     option2.innerText= "Move on";
@@ -380,16 +380,17 @@ function cutStrap() {
 
     time = Math.floor(Math.random() * 10) + 2 ;
     
-    gameParagraph.innerText = `You decide to avoid potential injury and cut through the straps restraining your wrists. Using your right hand, \
-                         you reach towards the tray your fingertips brush against the scalpel handle. You try and extend your arm as far \
-                         as it can go, the leather straps biting into your wrists. Managing to gain an extra crucial few millimetre your \
-                         fingertips just extend over the handle of the scalpel. A sweat has broken out over your brow you start to move \
-                         your fingers and try and roll the scalpel closer towards you, the first time your fingers just slip of the handle. \
-                         Letting out a huff you wipe your fingers on the bed to clean of any sweat or grime that might be there and try again. \
-                         This time you are gentler and try and coax the handle closer, and slowly it starts to roll towards you. \
-                         Finally, you have it in your hand, you flip it around and slot the blade along your wrist inside of the restraint. \
-                         You slowly start moving the knife back and forth along the strap, you can hear the leather creaking as the blade runs \
-                         along it and after a few minutes you start to see a grove appear. \n\n It took ${time} minutes's`; 
+    gameParagraph.innerText = `You decide to avoid potential injury and cut through the straps restraining your wrists. Using your right hand,
+                         you reach towards the tray your fingertips brush against the scalpel handle. You try and extend your arm as far
+                         as it can go, the leather straps biting into your wrists. Managing to gain an extra crucial few millimetre your
+                         fingertips just extend over the handle of the scalpel. A sweat has broken out over your brow you start to move
+                         your fingers and try and roll the scalpel closer towards you, the first time your fingers just slip of the handle.
+                         Letting out a huff you wipe your fingers on the bed to clean of any sweat or grime that might be there and try again. 
+                         This time you are gentler and try and coax the handle closer, and slowly it starts to roll towards you. 
+                         Finally, you have it in your hand, you flip it around and slot the blade along your wrist inside of the restraint. 
+                         You slowly start moving the knife back and forth along the strap, you can hear the leather creaking as the blade runs 
+                         along it and after a few minutes you start to see a grove appear. <br> It took ${time} minutes's`; 
+
     option1.classList.add("hidden")
     option2.innerText= "Move on";
                      
@@ -404,9 +405,9 @@ function searchRoom() {
 
     // gameScreen.style.backgroundImage="url(assets/img/room1_search.jpg)";
 
-    gameParagraph.innerText = "Standing up you finally get to look at the room from a vertical position and its just as grubby and grimy as it \
-                          was from when you were lying down. You now need to decide if your going to search the room for anything useful \
-                          or get out of there as fast as you can?"; 
+    gameParagraph.innerHTML = `Standing up you finally get to look at the room from a vertical position and its just as grubby and grimy as it
+                          was from when you were lying down. You now need to decide if your going to search the room for anything useful
+                          or get out of there as fast as you can?`; 
 
     option1.classList.remove("hidden")
     option2.classList.remove("hidden")
@@ -425,9 +426,9 @@ function lookForSupplies() {
     removeBtn()
     createNewBtn()
 
-    gameParagraph.innerText = "You scan the room, its pretty empty and only contains the two beds, a wardrobe, a counter with cupboards \
-                               underneath and the trolley next to your bed where you found the scalpel.You know you dont have enough time \
-                               to search both the wardrobe and cupboard so must choose one. \n\nWhich do you pick??"; 
+    gameParagraph.innerText = `You scan the room, its pretty empty and only contains the two beds, a wardrobe, a counter with cupboards
+                               underneath and the trolley next to your bed where you found the scalpel.You know you dont have enough time
+                               to search both the wardrobe and cupboard so must choose one. <br> Which do you pick??`; 
     
 
     option1.innerText= "Look inside the wardrobe for anything userful";
@@ -441,13 +442,13 @@ function lookForSupplies() {
 function checkWardrobe() {
     loadScreen.style.backgroundImage="url(assets/img/wardrobe_open.jpg)";
 
-    gameParagraph.innerText = "You walk over to the wardrobe, its rusted from the years spent in this damp room.. \
-                            there is a faint metalic scent radiating from it..You reach out and slowly pull the wardrobe door open,\
-                            the hinge gives out a low wine as you do so, the \
-                            wardrobe consitst of a metal railing with a shelf underneath on the railing there are a few metal hangers \
-                            and one white lab coat, you not how striking the white is against the grubbiness of the surrounding area. \
-                            on the shelf below is an old cardboard box, the lid warbed from water damage and thers a small hole in the \
-                            left corner from what you presume is mice"; 
+    gameParagraph.innerHTML = `You walk over to the wardrobe, its rusted from the years spent in this damp room..
+                            there is a faint metalic scent radiating from it..You reach out and slowly pull the wardrobe door open,
+                            the hinge gives out a low wine as you do so, the
+                            wardrobe consitst of a metal railing with a shelf underneath on the railing there are a few metal hangers
+                            and one white lab coat, you not how striking the white is against the grubbiness of the surrounding area.
+                            on the shelf below is an old cardboard box, the lid warbed from water damage and thers a small hole in the
+                            left corner from what you presume is mice`; 
     
     option1.innerText= "Inspect the items";
     option1.addEventListener("click", wardrobeItems, {once : true});
@@ -460,7 +461,7 @@ function wardrobeItems() {
     removeBtn()
     createNewBtn()
 
-    gameParagraph.innerText = "Inside you find an old shoe, and a Key Card, handing up one the back of one of the doors is an old labcoat. "; 
+    gameParagraph.innerHTML = `Inside you find an old shoe, and a Key Card, handing up one the back of one of the doors is an old labcoat. `; 
 
     option1.innerText= "Leave Room";
     option1.addEventListener("click", leaveRoomOne)
@@ -571,11 +572,11 @@ function checkCupboard() {
 
     loadScreen.style.backgroundImage="url(assets/img/kitchen.jpg)";
 
-    gameParagraph.innerText = "You make your way over to side of the room where the counter and cupboards are, you quickly\
-                               scan the top of the counter but appart from a bit of dust its empty. Moving onto the cupboards\
-                               below you start opening them, the first few are empty. Fearing that anyone could walk in at any\
-                               minute you pick up the pace and search with increased urgency, your just giving up hope when you\
-                               open the last cupboard"; 
+    gameParagraph.innerHTML = `ou make your way over to side of the room where the counter and cupboards are, you quickly
+                               scan the top of the counter but appart from a bit of dust its empty. Moving onto the cupboards
+                               below you start opening them, the first few are empty. Fearing that anyone could walk in at any
+                               minute you pick up the pace and search with increased urgency, your just giving up hope when you
+                               open the last cupboard`; 
     
     option1.innerText= "Inspect the items";
     option1.addEventListener("click", checkCupboardItems, {once : true});
@@ -590,8 +591,8 @@ function checkCupboardItems() {
     removeBtn()
     createNewBtn()
 
-    gameParagraph.innerText = "Inside you find on old bent key and a protien bar.. their is also what looks to be a pile of cloths folded on one of the shelves \
-                                pulling them out to take a closer look you see that its infact an old labcoat.  "; 
+    gameParagraph.innerHTML = `Inside you find on old bent key and a protien bar.. their is also what looks to be a pile of cloths folded on one of the shelves
+                                pulling them out to take a closer look you see that its infact an old labcoat.`; 
 
     option1.innerText= "Leave Room";
     option1.addEventListener("click", leaveRoomOne)
