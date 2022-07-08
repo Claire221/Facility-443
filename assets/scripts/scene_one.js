@@ -36,11 +36,11 @@ let pockets = [""];
 // Function that runs on page load to check if screen is too small and if not set game page
 window.onload= function(){
     newGame();
-    checkScreenSize();
 };
 
 
 // Function to check if screen is too small to play
+addEventListener('resize', checkScreenSize)
 function checkScreenSize(){
     let width = window.innerWidth;
 
@@ -49,7 +49,7 @@ function checkScreenSize(){
         startScreen.classList.add("hidden");
         audioContainer.classList.add("hidden");
         gameParagraph.classList.add("hidden");
-    }
+    } 
 }
 
 
