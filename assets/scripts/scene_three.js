@@ -39,7 +39,7 @@ function goLeft() {
                                         double metal doors which are now slowly closing behind the man. Looking around the room you see you have two options, follow the man through the door or go into the lift...\
                                          \n\n What do you do?"
             createNewBtn()   
-            option1.innerText = "Do you follow the man.."
+            option1.innerText = "Follow the man"
             option2.innerText = "Go into the lift"
         
             option1.addEventListener("click", followLabCoat, {once : true});
@@ -69,17 +69,47 @@ function chaseFunction() {
 }
 
 function followLabCoat(){
-// -	You sneak behind them and follow them they lead you down a staircase you otherwise would have missed, it goes on for a while. At the bottom of the stairs is a set of double doors, you follow them through and it leads you into a viewing area with a glass wall at the front which looks into what looks like an operating theatre. The person walks through and goes through a door to the left of the glass wall.  You stay and watch as they bring out someone and strap them to the bed..
+    removeBtn()
+    createNewBtn()
+
+    option1.classList.add("hidden")
+    option2.classList.add("hidden")
+
+    gameParagraph.innerHTML = `Deciding to follow him you slowly creep towards the doors which have closed by the time you get there, you push on them but they dont move.. You scan around the doorway and notice 
+                                a small keypad to the side it has a section for you to scan a keycard..`
+
+    
+    setTimeout(function(){
+        if(doorPass) {
+            gameParagraph.innerHTML = `After frowning at the doors for a second you remember the keycard that you picked up and are thankful to past you for deciding to pick it up. You bring it up to the panel and after 
+                                        a short pause it lets of a high pitched beep before turning green and the doors start to slide open. You bounce on the balls of your feet and adrenaline fills your veins as your 
+                                        prepared to be confunted with whatever is on the other side, getting ready to fight if needbe..`
+
+            option1.class.remove("hidden");
+            option1.innerText = "Continue.."
+            option1.addEventListener("click", keyCardDoor)
+
+        } else {
+            gameParagraph.innerHTML = `You press your hand to the panel and press some of the buttons hoping to accidently stumble the right combination but since you dont have a key card the door doesnt budge.
+                                        since you cant get through the door you spin on your heal and and decide to try the lift isntead.`
+
+            option2.classList.remove("hidden");
+            option2.innerText = "Continue.."
+            option2.addEventListener("click", dontfollowLabCoat)
+        }
+    })
+    
 }
 
 function keyCardDoor() {
-
+    gameParagraph.innerHTML = `Deciding to follow him you slowly creep towards the doors which have closed by the time you get there, you push on them but they dont move.. You scan around the doorway and notice 
+    a small keypad to the side it has a section for you to scan a keycard..`
 }
 
 function dontfollowLabCoat(){
     removeBtn()
     createNewBtn()
-    gameParagraph.innerText = "You decide not to follow him and instead make your way across the atrium towards the lift. The doors have closed so you reach out and press the button on the wall to the left of the doors \
+    gameParagraph.innerText = "You make your way across the atrium towards the lift, The doors have closed so you reach out and press the button on the wall to the left of the doors \
                                 You start biting your nails as you wait for the lift to open, Scanning the room from left to right you keep an eye out for anyone else coming this way... With a ding the lift arrives and the \
                                 doors open letting out a slight cool breeze. You walk inside and the lift dips slightly, you look at the panel on the wall and see that for most of the floors you need a key in order to activate \
                                 the button, the only two which dont require a key is the atrium where you currently are and the last button labeled B, which you figure should be basement. \n\n Which option do you choose?"

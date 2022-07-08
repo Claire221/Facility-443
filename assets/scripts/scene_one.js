@@ -10,6 +10,7 @@ let subTitle = document.getElementById("sub-title");
 let mobileScreen = document.getElementById("small_screen")
 let inventoryScreen;
 let labCoat = false;
+let doorPass = false;
 
 // Audio file variables
 let audioContainer = document.getElementById("volume-container");
@@ -501,13 +502,8 @@ function wardrobeItems() {
         addToInventory("Key Card")
         inventoryScreen.classList.add("hidden")
         showInventory()
+        doorPass = true;
     });
-    // PaperItem.addEventListener("click", function(){
-    //     this.classList.toggle("inventory-add")
-    //     addToInventory("Paper")
-    //     inventoryScreen.classList.add("hidden")
-    //     showInventory()
-    // });
     labCoatItem.addEventListener("click", function(){
         this.classList.toggle("inventory-add")
         addToInventory("Lab Coat")
