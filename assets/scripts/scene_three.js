@@ -21,7 +21,7 @@ function goLeft() {
                                            to the chase. <br> You feel helpless, you dont know where your going you just know you dont want to get caught.. you skid round a corner into a new corridor which
                                            is empty appart from a set of doors at the end. Your pray that they are unlocked and you dont slow down as you go bareling into them.. Only to be knocked to the floor dazed 
                                            and winded, you dont take a second to get your breath back before jumping up and grabing the handle. You push the door but nothing.. You pull the door and nothing happens,
-                                           you then use all your strength to shoulder barge them but they dont move. Locked.`
+                                           you then use all your strength to shoulder barge them but they dont move. Locked.`;
                 setTimeout(function(){
                     chaseFunction();
                     console.log("chase");
@@ -31,8 +31,8 @@ function goLeft() {
             gameParagraph.innerHTML = `Out walks a man hes wearing a white lab coat and is holding a device in his hand which he is tapping away at, as he steps into the atrium he lifts his head and looks at 
                                         you before quickly dismissing you and walking across the floor and disapearing behind a wall. You poke your head around and see that to the left of the room is a set of 
                                         double metal doors which are now slowly closing behind the man. Looking around the room you see you have two options, follow the man through the door or go into the lift...
-                                        <br> What do you do?`
-            createNewBtn()   
+                                        <br> What do you do?`;
+            createNewBtn(); 
             option1.innerText = "Follow the man";
             option2.innerText = "Go into the lift";
         
@@ -70,14 +70,14 @@ function followLabCoat(){
     option2.classList.add("hidden");
 
     gameParagraph.innerHTML = `Deciding to follow him you slowly creep towards the doors which have closed by the time you get there, you push on them but they dont move.. You scan around the doorway and notice 
-                                a small keypad to the side it has a section for you to scan a keycard..`
+                                a small keypad to the side it has a section for you to scan a keycard..`;
 
     
     setTimeout(function(){
         if(doorPass) {
             gameParagraph.innerHTML = `After frowning at the doors for a second you remember the keycard that you picked up and are thankful to past you for deciding to pick it up. You bring it up to the panel and after 
                                         a short pause it lets of a high pitched beep before turning green and the doors start to slide open. You bounce on the balls of your feet and adrenaline fills your veins as your 
-                                        prepared to be confunted with whatever is on the other side, getting ready to fight if needbe..`
+                                        prepared to be confunted with whatever is on the other side, getting ready to fight if needbe..`;
 
             option1.classList.remove("hidden");
             option1.innerText = "Continue..";
@@ -85,13 +85,13 @@ function followLabCoat(){
 
         } else {
             gameParagraph.innerHTML = `You press your hand to the panel and press some of the buttons hoping to accidently stumble the right combination but since you dont have a key card the door doesnt budge.
-                                        since you cant get through the door you spin on your heal and and decide to try the lift isntead.`
+                                        since you cant get through the door you spin on your heal and and decide to try the lift isntead.`;
 
             option2.classList.remove("hidden");
             option2.innerText = "Continue..";
             option2.addEventListener("click", dontfollowLabCoat);
         }
-    })
+    });
     
 }
 
@@ -141,7 +141,7 @@ function keyCardDoor() {
                             You think you might pass out, or throw up.. or both. Sliding of the chair you creep to the door and exit back into the room you just left. You crouch down and place your forehead to 
                             the cool tile floor and take a few deep breaths. Is this what they did to you? What sort of people are they? 
                             Wanting to get as far away as possible from the situation happening behind you, you run back through the door and out into the atrium`
-                        ]
+                        ];
     option2.classList.add("hidden");
     option1.innerText = "Continue.."; 
 
@@ -168,7 +168,7 @@ function dontfollowLabCoat(){
     gameParagraph.innerHTML = `You make your way across the atrium towards the lift, The doors have closed so you reach out and press the button on the wall to the left of the doors 
                                 You start biting your nails as you wait for the lift to open, Scanning the room from left to right you keep an eye out for anyone else coming this way... With a ding the lift arrives and the 
                                 doors open letting out a slight cool breeze. You walk inside and the lift dips slightly, you look at the panel on the wall and see that for most of the floors you need a key in order to activate 
-                                the button, the only two which dont require a key is the atrium where you currently are and the last button labeled B, which you figure should be basement. <br> Which option do you choose?`
+                                the button, the only two which dont require a key is the atrium where you currently are and the last button labeled B, which you figure should be basement. <br> Which option do you choose?`;
 
     
     option1.innerText = "Go and check out the basement?";
@@ -188,7 +188,7 @@ function liftDownOption() {
                                 entered what looks like a cafeteria.. its not very big, there are 4 tables each eith 4 white plastic chairs around them. To the left is a kitchen area with a fridge, some counter top and a sink
                                 abover the coutner are some cabinets.  to the right are a couple of vending machines and another potted plant.. On the walls are posters and notices. Directly ahead of you is am archway you cross
                                 the room to take a closer look and you see it leads to another corridor you look both ways and see that its only a short corridor, just a few feet. on the wall there is a sign on the wall with two
-                                arrows, the left arrow is labled training rooms and the right arrow is labeled Ward <br> Which do you Choose?`
+                                arrows, the left arrow is labled training rooms and the right arrow is labeled Ward <br> Which do you Choose?`;
     
         
     option1.innerText = "Go to the Ward";
@@ -220,7 +220,7 @@ function trainingRooms() {
                                 Her eyes flick back to the labcoat person seemingly checkign he isnt paying attention before quickly looking back at you and mouthing at you to run, you dont need telling twice you quickly 
                                 turn on your heel and sprint back down the corridor, you fly through the doors which causes them to slap against the wall..You run through the cafeteria area and straight to the lift, and 
                                 repeatedly press the button on the wall as if that will help it arrive quicker.. After what feels like forever, but couldnt have been more than a couple of seconds the lift finally arrives. 
-                                You charge into the lift before the doors have finished opening and repeatedly press the button for the atrium. `
+                                You charge into the lift before the doors have finished opening and repeatedly press the button for the atrium. `;
    
     option1.innerText = "Continue";
     option2.classList.add("hidden");
@@ -247,14 +247,14 @@ function ward() {
                                 you hear a door bang from somewhere further into the building 'Run!' He says.. you dont need telling twice, you turn around and run out the the cubicle pushing the curtain 
                                 aside as you go… You run back down the corridor where you just came from. You run through the cafeteria area and straight to the lift, and repeatedly press the button on the wall 
                                 as if that will help it arrive quicker..After what feels like forever, but couldnt have been more than a couple of seconds the lift finally arrives. You charge into the lift 
-                                before the doors have finished opening and repeatedly press the button for the atrium. `
+                                before the doors have finished opening and repeatedly press the button for the atrium. `;
 
     setTimeout(function(){
         console.log("ward");
         option1.classList.remove("hidden");
         option1.innerText = "Continue..";
         option1.addEventListener("click", lab01, {once : true});
-    }, 2000)                          
+    }, 2000);                      
 
 }
 
@@ -275,7 +275,7 @@ function lab01() {
 
         option1.addEventListener("click", checkDraws, {once : true});
         option2.addEventListener("click", searchPc, {once : true});
-    }, 2000)  
+    }, 2000);
 
 
 }
