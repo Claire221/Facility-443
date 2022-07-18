@@ -27,10 +27,16 @@ I tested my game against the top 3 web browsers - Google chrome, Firefox and Mic
 ### HTML testing
 
 Once I had finished my game I ran my code through a HTML validator to ensure that it was correct.
+![HTML Validator ](/documentation/testing/html_validator.jpg)
 
 ### CSS testing
 
-Once I had finished my game I ran my CSS code through a CSS validator to ensure that it was correct.
+Once I had finished my game I ran my CSS code through a CSS validator to ensure that it was correct. When I first ran my code through the validator my code failed because I had an error with one of my positioning styles.
+
+![HTML Validator ](/documentation/testing/css_validator_error.jpg)
+
+I then fixed the issue and re ran my code through the validator to make sure that it was all correct.
+![HTML Validator ](/documentation/testing/css_validator.jpg)
 
 ### JavaScript testing
 
@@ -56,4 +62,4 @@ Once I had finished my game I ran each of my JavaScript script files through a J
 
 
 ## Unfixed Bugs
-    list out any unfinished bugs you might have, where applicable... if none, don't just put "I have no bugs"... put something like: "There are no remaining bugs that I am aware of."
+list out any unfinished bugs you might have, where applicable... if none, don't just put "I have no bugs"... put something like: "There are no remaining bugs that I am aware of."
