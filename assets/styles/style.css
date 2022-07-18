@@ -299,7 +299,7 @@ li.inventory-item:hover {
 
 /* Media Queries */
 
-@media screen and (max-width: 400px) { 
+@media screen and (max-width: 300px) { 
     #small_screen{
         max-width: 95%;
         top: 0;
