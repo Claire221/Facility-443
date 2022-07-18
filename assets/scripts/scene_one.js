@@ -368,7 +368,7 @@ function injuryRoll(){
     }
     
 
-    gameParagraph.innerText = `You decide to free your left hand first, thinking that once youve done that you can undo the restrains on your right one.
+    gameParagraph.innerHTML = `You decide to free your left hand first, thinking that once youve done that you can undo the restrains on your right one.
                           You twist, pull and bend your hand trying to get it through the strap. After some tugging you realise your slowly getting
                           somewhere and it only takes you a few minutes to free your hand from the strap. Once free you quickly untie your other hand
                           and are able to finally stand up from the bed. Taking a look at your left hand you inspect for an inury <br> ${injuries}`;
@@ -386,7 +386,7 @@ function cutStrap() {
 
     time = Math.floor(Math.random() * 10) + 2 ;
     
-    gameParagraph.innerText = `You decide to avoid potential injury and cut through the straps restraining your wrists. Using your right hand,
+    gameParagraph.innerHTML = `You decide to avoid potential injury and cut through the straps restraining your wrists. Using your right hand,
                          you reach towards the tray your fingertips brush against the scalpel handle. You try and extend your arm as far
                          as it can go, the leather straps biting into your wrists. Managing to gain an extra crucial few millimetre your
                          fingertips just extend over the handle of the scalpel. A sweat has broken out over your brow you start to move
@@ -432,7 +432,7 @@ function lookForSupplies() {
     removeBtn();
     createNewBtn();
 
-    gameParagraph.innerText = `You scan the room, its pretty empty and only contains the two beds, a wardrobe, a counter with cupboards
+    gameParagraph.innerHTML = `You scan the room, its pretty empty and only contains the two beds, a wardrobe, a counter with cupboards
                                underneath and the trolley next to your bed where you found the scalpel.You know you dont have enough time
                                to search both the wardrobe and cupboard so must choose one. <br> Which do you pick??`; 
     
@@ -527,10 +527,10 @@ function addToInventory(item) {
     if (pockets.length > 0){
         if (pockets.includes(item)){
             pockets.pop(item);
-            gameParagraph.innerText = `${item} removed to your inventory`;
+            gameParagraph.innerHTML = `${item} removed to your inventory`;
         } else {
             pockets.push(item);
-            gameParagraph.innerText = `${item} added to your inventory, Press B to view inventory`;
+            gameParagraph.innerHTML = `${item} added to your inventory, Press B to view inventory`;
         }
     } 
 

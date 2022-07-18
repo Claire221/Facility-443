@@ -151,7 +151,7 @@ function keyCardDoor() {
     let textIndex = 0;
 
     option1.addEventListener("click", function(){
-        gameParagraph.innerText = paragraphArray[textIndex];
+        gameParagraph.innerHTML = paragraphArray[textIndex];
         textIndex++;
 
         if(textIndex === paragraphArray.length) {
