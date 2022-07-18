@@ -89,7 +89,10 @@ When the player gets the option to search different areas I wanted a screen to p
 
 ### Features Left to Implement
 
-have ideas on what you'd like to add in the future? add them here!! assessors LOVE seeing future concepts!
+I would like to add a feature where players could design their character at the beginning of the game. They would be able to chose their gender, basic appearance ect which would then change some of the narrative in the game to reflect their character. Currently I have kept narrative gender neutral to try and reflect all players so the game uses gender neutral pronouns and descriptions, But this would change depending on how the player created their character.
+Also when the character is looking through the PC at the documentation relating to them with their information on the information would then change to describe the character that they have created.
+I would also like to add a play mode where you can choose to play as either the person trying to escape from the facility or the guard trying to track them down. For the story I wanted to portray that both characters feel like they are the good guy but the other character sees them as the villain so I think that being able to play as either side would give you a look into why that particular character sees themselves as the good guy and the opposing character the villain. 
+
 
 ## Technologies Used
 
@@ -128,10 +131,20 @@ Alternatively, if using Gitpod, you can click below to create your own workspace
 
 ### Content
 
-list out any URLs or links where you might've borrowed a snippet of code, or element
+For the glitch effect on the game landing page I followed a youtube video that can be found [Here](https://www.youtube.com/watch?v=CtmHKGX754s)
 
 ### Media
+Throughout the game I used various different background images.
+- [Landing Page Background](https://www.oneyoufeed.net/dark-hallways/)
+- [Cupboard Background](https://free3d.com/3d-model/horror-lab-2547.html)
+- [Lab Coat](https://www.turbosquid.com/3d-models/3d-lab-coat-1808406)
+​- [Hangar Background](https://www.deviantart.com/axeman3d/art/Vehicle-Hangar-300754670)
+​- [Lab Background](https://americasfrontlinenews.com/post/are-randomized-controlled-trials-really-the-gold-standard)
+​- [Lift Background](https://www.regenbogen.de/nachrichten/regional/baden-pfalz/20180725/hausmeister-verpruegelt)
+​- [Padlock](https://shopsonline.cheapsales2022.ru/category?name=3d%20lock)
+​- [Protien Bar](https://www.turbosquid.com/Search/3D-Models/protein)
+​- [Viewing Area Background](https://choice.npr.org/index.html?origin=https://www.npr.org/transcripts/522783564)
+​- [Ward Background](https://www.irishtimes.com/news/health/first-death-from-coronavirus-recorded-in-northern-ireland-1.4206780)
+- [Atrium Page Background](https://www.nfpa.org/-/media/Images/Blog-Images/Blog-Post-Attachments/NFPA-Today/Atrium.ashx?h=400&w=800&la=en&hash=D209DBDBD58742A3FAEBE382605DF342)
+- [Corridor Page Background](https://www.turbosquid.com/pl/3d-models/hallway-doors-3d-model/918331)
 
-list out any URLs for images/videos/audios you've borrowed from online (Markdown Table works best here!)
-
-​
