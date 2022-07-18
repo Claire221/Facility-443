@@ -69,6 +69,7 @@ function followLabCoat(){
 
     option1.classList.add("hidden");
     option2.classList.add("hidden");
+    loadScreen.style.backgroundImage="url(assets/img/hospital_doors)";
 
     gameParagraph.innerHTML = `Deciding to follow him you slowly creep towards the doors which have closed by the time you get there, you push on them but they dont move.. You scan around the doorway and notice 
                                 a small keypad to the side it has a section for you to scan a keycard..`;
@@ -99,6 +100,7 @@ function followLabCoat(){
 function keyCardDoor() {
     removeBtn();
     createNewBtn();
+    loadScreen.style.backgroundImage="url(assets/img/lab.jpg)";
     const paragraphArray = [`The doors slide open you find yourself in a room that is a cross between a science lab and an operating theatre. Down the left sided there is a long metal counter top with two metal 
                             inks at either end.. Down the right-hand side are work stations with stools placed neatly under them. On top of the stations are various sized microscopes with jars and dishes placed 
                             next to them. You walk forward slightly and see that they each contain a jell like substance. You see the man you followed walk through a door at the back of the room and you slowly 
@@ -159,6 +161,10 @@ function keyCardDoor() {
             option2.innerText = "Continue.."; 
             option2.addEventListener("click", lab01);
         }
+
+        if(textIndex === 1) {
+            loadScreen.style.backgroundImage="url(assets/img/viewing_area.jpg)";
+        }
     });
 
 }
@@ -166,6 +172,7 @@ function keyCardDoor() {
 function dontfollowLabCoat(){
     removeBtn();
     createNewBtn();
+    loadScreen.style.backgroundImage="url(assets/img/lift.jpg)";
     gameParagraph.innerHTML = `You make your way across the atrium towards the lift, The doors have closed so you reach out and press the button on the wall to the left of the doors 
                                 You start biting your nails as you wait for the lift to open, Scanning the room from left to right you keep an eye out for anyone else coming this way... With a ding the lift arrives and the 
                                 doors open letting out a slight cool breeze. You walk inside and the lift dips slightly, you look at the panel on the wall and see that for most of the floors you need a key in order to activate 
@@ -183,6 +190,7 @@ function dontfollowLabCoat(){
 function liftDownOption() {
     removeBtn();
     createNewBtn();
+    loadScreen.style.backgroundImage="url(assets/img/lift.jpg)";
     gameParagraph.innerHTML = `You reach out and press the button labeled B, the doors start to close and an anouncement states that the lifts going down.. As you stand there you start to think about what might be waiting for
                                 you at the end of this lift. Will it open up into a room of lab coat guys and youll be trapped? or will you finally get some answers to what the hell is going on here. As the lift is movign
                                 you start to tapp your foot in anticipation of the answer. It doesnt take long before the lift comes to a stop and the doors open with a ding. You step out of the lift and see that you have
@@ -208,7 +216,7 @@ function trainingRooms() {
     removeBtn();
     createNewBtn();
 
-    gameParagraph.innerHTML = `Turning left you walk down the corridor and through the double doors the corridor on the other side looks idential to all the others youve been through and you wonder how the people 
+    gameParagraph.innerHTML = `Turning left you walk down the corridor and through the double doors, the corridor on the other side looks idential to all the others youve been through and you wonder how the people 
                                 here dont get lost. As you walk down you see there are rooms on either side each has a large glass viewing window. Each room seems to be laid out the same, there is a desk to the left
                                 of the room and then in the centre of the room is an empty table. The first few are empty and your starting to think that down here might be deserted but but you hear noise from 
                                 further down the corridor. You go down to investigate and see that one of the rooms isnt empyt, theres a person in a labcoat sat at a computer with their back to you, they have what looks 
@@ -235,6 +243,8 @@ function ward() {
 
     option1.classList.add("hidden");
     option2.classList.add("hidden");
+
+    loadScreen.style.backgroundImage="url(assets/img/ward.jpg)";
 
     gameParagraph.innerhTML = `You turn right down the corridor and enter a room thats set up like a hospital ward. There are beds down each side, some have curtains pulled around them obscuring the view. 
                                 You start to walk down the centre isle between the beds, you dont get very far when you hear a noise coming from behind one of the curtains. You reach out and grab the fabric,
@@ -263,12 +273,16 @@ function ward() {
 function lab01() {
     removeBtn();
     createNewBtn();
+    loadScreen.style.backgroundImage="url(assets/img/atrium.jpg)";
 
-    gameParagraph.innerHTML = `Arriving ack in the atrium you scan the room figuring out your next move. You see door tucked away in the corner that you hadnt seen before, There is a small metal sign next to the door labelled 'lab 1'
+    gameParagraph.innerHTML = `Arriving back in the atrium you scan the room figuring out your next move. You see door tucked away in the corner that you hadnt seen before, There is a small metal sign next to the door labelled 'lab 1'
                                 Rushing over you open the door and slip inside, overhead lights flicker on as you enter and your met by a cool breeze of air conditioning. There are 
                                 4 different stations set up with various vial and microscopes on top of them.  You spot a computer desk tucked into the corner to the left of your room
                                 and you rush over to it. You reach out and wiggle the mouse hoping to bring it to life, you hear a fan kick in and tap your foot impatiently as you wait 
                                 for the screen to turn on. As your waiting you see that under the desk is a set of 3 draws, do you look inside?  `;
+    setTimeout(function(){
+        loadScreen.style.backgroundImage="url(assets/img/lab.jpg)";
+    }, 500)
 
     setTimeout(function(){
         option1.innerText = "Search the draws for anything useful";
@@ -401,6 +415,7 @@ function subjectTreatment() {
 function escape() {
     removeBtn();
     createNewBtn();
+    loadScreen.style.backgroundImage="url(assets/img/staircase.jpg)";
 
     gameParagraph.innerHTML = `As you push open the door a cool breeze fans over your face, your greeted by a small stairway with a metal staircase going down. Leaning over the banister your try to see how far it 
                                 goes down but you can only see darkness. As you go down the air becomes cooler and your wrap your arms around yourself to try and stay warm. You keep your head down focusing taking 
@@ -421,6 +436,10 @@ function escape() {
 
     option1.innerText = "Continue";
     option2.classList.add("hidden")
+
+    setTimeout(function(){
+        loadScreen.style.backgroundImage="url(assets/img/hangar.jpg)";
+    },2000)
     // You go down a long way.. you end up in what appears to be an underground cargo area with a garage doors on one end
     // You run over if you picked up the keycard you can open the doors
         // You have escaped - if you also picked up the vial the text changes to say you can hand it over as evidence
