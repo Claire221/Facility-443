@@ -1,4 +1,5 @@
 /* jshint esversion: 11 */
+
 function goLeft() {
     removeBtn();
 
@@ -271,7 +272,7 @@ function lab01() {
 
     setTimeout(function(){
         option1.innerText = "Search the draws for anything useful";
-        option2.innerText = "Foucs on the computer";
+        option2.innerText = "Focus on the computer";
 
         option1.addEventListener("click", checkDraws, {once : true});
         option2.addEventListener("click", searchPc, {once : true});
@@ -287,7 +288,10 @@ function checkDraws() {
     gameParagraph.innerText = "Inside you find an ID Badge, a Keycard and a vial of blue iridescent liquid.. "; 
 
     option1.innerText= "Check back to the computer";
-    option1.addEventListener("click", searchPc);
+    option1.addEventListener("click", function(){
+        itemsContainer.style.display = "none";
+        searchPc()
+    });
 
 
     let itemsContainer = document.createElement("div");
@@ -331,7 +335,7 @@ function checkDraws() {
         this.classList.toggle("inventory-add");
         addToInventory("Key Card");
         inventoryScreen.classList.add("hidden");
-
+        doorPass = true;
         showInventory();
     });
 
@@ -339,6 +343,8 @@ function checkDraws() {
 }
 
 function searchPc () {
+   
+
     removeBtn();
     createNewBtn();
 
@@ -349,24 +355,72 @@ function searchPc () {
                                 opens up into a document containing a small picture of yourself along with other information such as your height and weight age. there is also a section labelled powers and but 
                                 there is no text in the box. You continue down the page and come to a small paragraph of text 'Subject 443 has been in the facility for the last 3 years and has seemed to make
                                 little to no progress despite out best efforts. They seem unwilling to help our cause and often lash out and become combative resulting in them needing sedating as to not put 
-                                the staff in risk.
-    `; 
+                                the staff in risk.`; 
 
-    option1.innerText = "Subject 443 - Info";
-    option3.innerText = "Subject 443 - Treatment";
+    option1.innerText = "Subject 443 - Known Associates";
+    option2.innerText = "Subject 443 - Medical";
 
-    option1.addEventListener("click", characterInfo);
+    option1.addEventListener("click", subjectInfo);
 }
 
-function characterInfo() {
-    let characterSheet = document.getElementById("character-info ");
-    characterSheet.classList.remove("hidden");
-    gameContainer.classList.add("hidden");
+function subjectInfo() {
+    removeBtn();
+    createNewBtn();
+
+    
+    gameParagraph.innerHTML = `Subject 443 entered the program with no known associates.
+                                <br>
+                                note - Subject 443 has started interacting with other subejcts, staff have described that subjects have been seen `; 
+
+    option1.innerText = "Subject 443 - Medical";
+    option2.innerText = "Move on";
+
+    option2.addEventListener("click", escape);
+
+}
+
+function subjectTreatment() {
+    removeBtn();
+    createNewBtn();
+
+    gameParagraph.innerHTML = `Initial Health Tests 05/04/56
+                               <br> Subject 443 seems to be in imaculate health, all blood tests have come back clear and the results are better than we could hope for. I believe that subject 443 is a prime subject for
+                               the project.
+                               <br> Note 1 15/06/56- Subject 443 has started showing some resistance to the program and has started reacting hostile to staff members during testing. Not incidents to report but something
+                               to keep an eye on.
+                               <br> Note 2 20/06/56 - Subject 443 refused to participate in testing today despite the doctors best efforts, they became agitated when the doctor tried to talk them round. Subject 443 was given
+                               3mg of Miazatron in order to calm them down and return them to their room. Effects only lasted 20 minutes, subejct 443 showed no negative side effects.
+                               <br> Note 3 - 22/06/56 - During testing Subject 443 became highly distressed during testing and refused to participate. Subject 443 started throwing equipment round the room so in order to protect
+                               all staff members Subject 443 was given 6mg of Miazatron to sedate them and return them to their room. Effects lasted 1 hour, subejct 443 showed no negative side effects. 
+                               <br> Note 4 - 30/06/56 - Subject 443 once again became combatitive during testing, Subject 443 was seen interacting with other subjects trying to get them to refuse testing too. Despite security
+                               being called subject 443 refused to participate and was given 12mg of Miazatron to protect all staff involved.Effects  lasted 1 hour 30 minutes, subejct 443 showed no negative side effects and 
+                               was returned to testing once they came round. `
 }
 
 
-function stairsDown() {
-    gameParagraph.innerHTML = `You go down a long way.. you end up in what appears to be an underground cargo area with a garage doors on one end`; 
+function escape() {
+    removeBtn();
+    createNewBtn();
+
+    gameParagraph.innerHTML = `As you push open the door a cool breeze fans over your face, your greeted by a small stairway with a metal staircase going down. Leaning over the banister your try to see how far it 
+                                goes down but you can only see darkness. As you go down the air becomes cooler and your wrap your arms around yourself to try and stay warm. You keep your head down focusing taking 
+                                one step at a time so you dont accidentally trip and fall into the void below, the sound of your feet hitting the metal steps soon becomes a soundtrack and you start to make a rhythm 
+                                out of the sound to distract you from what might be at the bottom. 
+                                <br> Eventually your reach the last step and are confronted by another door you grasp the cool metal handle and pull it towards you, the door gives a small suction sound as you pull 
+                                it open and more cool air hits your face cooling the sweat that has appeared on your brown. The room beyond looks like a big air hanger the harsh lights above are reflected in the 
+                                sleek white floor tiles, just by looking at the tiles you know that if you had shoes on they would squeak against them as you walked across. There are eight long lines of military 
+                                vehicles all lined up running the length of the hanger. The left wall seems to be made up of a row of 6 garage type doors and at either end of the row is a doorway, your eyes go 
+                                wide and your heartrate picks up as you realize that the only thing standing between you and freedom is one more door. 
+                                <br>
+                                You can hear people talking and you notice there is a group of people standing around one of the vehicles about halfway down the hanger. You quickly crouch down hide behind the 
+                                vehicle infront of you. It seems to be a truck of some kind, the wheels coming up to your hips. You sit back on your heels and make a quick plan, you just need to cross the room and 
+                                make it to that door without the people noticing you.. cant be too hard right? You slowly crawl to the front of it so your inline with the front tire and peer around the bonnet, the
+                                walk way between this vehicle and the next row is clear. Quickly darting out you keep low and run across the walkway and take cover behind the next car, you repeat this process until 
+                                your one row of cars away from the door. 
+                                `; 
+
+    option1.innerText = "Continue";
+    option2.classList.add("hidden")
     // You go down a long way.. you end up in what appears to be an underground cargo area with a garage doors on one end
     // You run over if you picked up the keycard you can open the doors
         // You have escaped - if you also picked up the vial the text changes to say you can hand it over as evidence
@@ -374,5 +428,49 @@ function stairsDown() {
 
     // if you didnt pick up the keycard it gives you the option to go back and get it otherwise you cant escape 
         // you run to head out but get caught by the guards
+
+
+    option1.addEventListener("click", function(){
+        if (doorPass) {
+            gameParagraph.innerHTML = `You quickly slip out from behind the car and move to the final car that will provide you cover, you take a look at the door and notice that there is a small square next to it 
+                                       and realize that you need some type of key to exit. Your spirits are just about to drop when you remember the keycard you took from the desk and pray that it matches, you reach 
+                                       into your pocket and grip the cool plastic and hold it in your palm so tight the edges dig in but you dont care. 
+                                       <br>Doing one more check of the walkway you creep out and stand in front of the door you reach up and press the plastic card against the box and wait.. after a couple of seconds
+                                       theirs a faint beep and the sound of the lock being released fills your ears. You let out the breath you were holding and cand stop the grin taking over your face you push the 
+                                       door and it opens.  Your hit by a wave of dry heat, not hanging around you leap up and run through the door..  and dont stop running. Your not sure where your heading but you 
+                                       know that you need to find help, you need to rescue the other people in the facility and bring down the people in charge.. but who do you trust? Your all alone on an alien 
+                                       planet, your not sure how you will do it but determination settles in your gut as you realize that you will do whatever it takes to free the rest of your people. `
+
+                
+                setTimeout(function(){
+                    option2.classList.remove("hidden")
+                    option1.classList.add("hidden")
+                    option2.innerText = "New Game";
+    
+                    option2.addEventListener("click", function(){
+                        window.location.reload();
+                    });
+                }, 2000)
+            
+        } else {
+            gameParagraph.innerHTML = `You quickly slip out from behind the car and move to the final car that will provide you cover, you take a look at the door and notice that there is a small square next to it 
+                                        and your pray that you dont need some type of key to exit. Doing one more check of the walkway you creep out and stop in front of the door you place a hand against the cool 
+                                        metal and push but the door doesnt move, a sinking feeling fills your gut as you realize the door is locked. Of course it is, why would they just leave the front door wide 
+                                        open you think. You lean forward and place your forehead against the cool metal, and you take some deep breaths as your only hope of getting out of here was just squashed. 
+                                        Not wanting to give up your only hope is to try and make it back to the office and get the keycard, you have no other choice. You spin on your heel and start making you way 
+                                        back across the air hanger….`
+        }
+
+        setTimeout(function(){
+            option2.classList.remove("hidden")
+            option1.classList.add("hidden")
+            option2.innerText = "Game Over";
+
+            option2.addEventListener("click", function(){
+                window.location.reload();
+            });
+        }, 2000)
+    }) 
+
 }
 
