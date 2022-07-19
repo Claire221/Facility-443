@@ -14,11 +14,16 @@ let doorPass = false;
 
 // Audio file variables
 let audioContainer = document.getElementById("volume-container");
+let backgroundMusic = document.getElementById("background");
 let doorCreek = document.getElementById("door_creek");
 let doorUnlock = document.getElementById("door_unlock");
 let heels = document.getElementById("heels");
 let heelsLong = document.getElementById("heels_long");
 let heelsShort = document.getElementById("heels_short");
+let bareFeetShort = document.getElementById("bare_feet_short");
+let doorHandle = document.getElementById("door_handle");
+let heartBeat = document.getElementById("heart_beat");
+
 let audioMute = false;
 
 let option1; 
@@ -144,6 +149,13 @@ startBtn.addEventListener("click", function(){
     loadScreen.style.backgroundImage="url(assets/img/starting_room.jpg)";
     audioContainer.classList.add("hidden");
     gameParagraph.classList.add("game-paragraph-background");
+
+    if (audioMute === false) {
+        backgroundMusic.play()
+        backgroundMusic.volume = 0.1;
+        console.log("playing")
+    }
+
     startGame();
 });
 
@@ -197,7 +209,7 @@ function stay() {
     if (audioMute === false) {
         setTimeout(function(){
             heelsShort.play();
-            heelsShort.volume = 0.3;
+            heelsShort.volume = 0.6;
         },6500);
     }
     
@@ -577,7 +589,7 @@ function checkCupboard() {
 
     loadScreen.style.backgroundImage="url(assets/img/kitchen.jpg)";
 
-    gameParagraph.innerHTML = `ou make your way over to side of the room where the counter and cupboards are, you quickly
+    gameParagraph.innerHTML = `You make your way over to side of the room where the counter and cupboards are, you quickly
                                scan the top of the counter but appart from a bit of dust its empty. Moving onto the cupboards
                                below you start opening them, the first few are empty. Fearing that anyone could walk in at any
                                minute you pick up the pace and search with increased urgency, your just giving up hope when you

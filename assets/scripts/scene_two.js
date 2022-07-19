@@ -32,6 +32,12 @@ function goRight() {
     removeBtn();
     createNewBtn();
 
+    if (audioMute === false) {
+        setTimeout(function(){
+            bareFeetShort.play();
+            bareFeetShort.volume = 0.4;
+        }, 200);
+    }
     
     gameParagraph.innerHTML = `Chosing right you leave the room and slowly shut the door behind you trying to make as little noise as possible
                                 you creep down the corridor straining your ears for any sounds of people but its completely scilent. You notice 
@@ -42,6 +48,7 @@ function goRight() {
 
     option1.addEventListener("click", tryDoors, {once : true});
     option2.addEventListener("click", keepGoing, {once : true});
+
 }
 
 function tryDoors() {
@@ -49,6 +56,12 @@ function tryDoors() {
     removeBtn();
     createNewBtn();
 
+    if (audioMute === false) {
+        setTimeout(function(){
+            doorHandle.play();
+            doorHandle.volume = 0.4;
+        }, 200);
+    }
     
     gameParagraph.innerHTML = `As you walk past the next door you grab the handle and give one quick downward tug.. it doesnt budge. You quickly move to the
                                 next door and do the same but its also locked. You let out a huff but dont let it dishearten you, moveing from one door to the next
@@ -72,6 +85,18 @@ function run(){
     option1.classList.add("hidden");
     option2.classList.add("hidden");
 
+    
+    if (audioMute === false) {
+        setTimeout(function(){
+            heartBeat.play();
+            heartBeat.volume = 0.4;
+        }, 200);
+        setTimeout(function(){
+            heartBeat.play();
+            heartBeat.volume = 0.4;
+        }, 700);
+    }
+
     gameParagraph.innerHTML = `You decide to run because who knows whats in that room and it could lead to you getting cornered. you take off down the corridor at a full sprint, You come to a corner and skid
                                 round it and bump into something solid. You fall back and land on your back, the impact taking the wind out of you. Dazed you look up and see two people in lab coats staring down
                                 at you. <br> 'What the hell' the smaller of the two shouts in shock stumbling slight 'Where are you meant to be right now' The bigger asks sternly 'Doesnt Mike have transport duties now?'
@@ -86,11 +111,11 @@ function run(){
 
     setTimeout(function(){
         option1.classList.remove("hidden");
-        option1.innerText = "Game over.. Click to researt";
+        option1.innerText = "Game over.. Click to restart";
         option1.addEventListener("click", function(){
             window.location.reload();
         });
-    }, 30000);
+    }, 10000);
 }
 
 function lookInside() {
@@ -171,12 +196,27 @@ function hideUnderBed() {
     option1.classList.add("hidden");
     option2.classList.add("hidden");
 
-    gameParagraph.innerHMTL = `Heart pounding you run and drop to the floor and manage to squeeze yourself into the small gap under the bed and with barely a second to spare you hear the door opening. <br> Someone walks
+    console.log("hide")
+
+    gameParagraph.innerHTML = `Heart pounding you run and drop to the floor and manage to squeeze yourself into the small gap under the bed and with barely a second to spare you hear the door opening. <br> Someone walks
                                 and stops at the end of the bed. You cant see what they look like the only thing you can see is a pair of shiny black high heel shoes. <br> 'Good morning subject 530 I hope you had a good 
                                 sleep because youve got a busy day ahead of you' You hear the woman on the bed reply something but you cant quite make out what she says. Your so scared you think you might throw up, 
                                 you close your eyes and send a silent prayer out to the universe begging  for person to just leave again… `; 
 
-    
+                                
+    if (audioMute === false) {
+        setTimeout(function(){
+            heartBeat.play();
+            heartBeat.volume = 0.4;
+            heartBeat.playbackRate = 1.5
+        }, 100);
+        setTimeout(function(){
+            heartBeat.play();
+            heartBeat.volume = 0.4;
+            heartBeat.playbackRate = 1.5
+        }, 700);
+    }
+
     let fate = Math.floor(Math.random() * 3);
 
     if (fate >= 0 && fate <1) {
