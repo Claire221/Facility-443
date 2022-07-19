@@ -182,6 +182,7 @@ body {
     border-radius: 10px;
     background-color: #000;
     color: rgb(41, 223, 255);
+    text-align: center;
     border: solid 2px rgb(41, 223, 255);
     cursor: pointer;
     margin: 0.5% auto;
