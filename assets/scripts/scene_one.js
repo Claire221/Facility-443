@@ -11,8 +11,7 @@ let mobileScreen = document.getElementById("small_screen");
 let inventoryScreen;
 let labCoat = false;
 let doorPass = false;
-// let countDown = Math.floor(Math.random() * 480000);
-let countDown =5;
+let countDown = Math.floor(Math.random() * 480000);
 
 // Audio file variables
 let audioContainer = document.getElementById("volume-container");
@@ -401,6 +400,8 @@ function cutStrap() {
     removeBtn();
     createNewBtn();
 
+    countDown = countdown + time;
+    let aditionalTime = time * 60000;
     time = Math.floor(Math.random() * 10) + 2 ;
     
     gameParagraph.innerHTML = `You decide to avoid potential injury and cut through the straps restraining your wrists. Using your right hand,

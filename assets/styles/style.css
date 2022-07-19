@@ -13,8 +13,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-
-    overflow: hidden;  
+ 
 }
 
 /* index page styles */
@@ -35,6 +34,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow: hidden; 
 
     background: url("../img/background_01.jpg");
     background-position:  center;
