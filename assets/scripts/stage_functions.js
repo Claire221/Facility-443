@@ -65,7 +65,9 @@ function timer() {
                     
             createElements();
 
-            alertParagraph.innerHTML = `Your blood turns to ace in your veins as you hear a voice shout out from behind you
+            alertParagraph.innerHTML = `(The guards have caught up with you)
+                                        <br>
+                                        Your blood turns to ace in your veins as you hear a voice shout out from behind you
                                         <br>
                                         'Freeze! Put your hands in the air and slowly turn around!'
                                         <br>
@@ -88,7 +90,7 @@ function timer() {
                                         and then you suddenly find is very hard to stand, it feels like the whole building is spinning. You reach out trying to steady yourself but your hand only finds empty air...
                                         you start to fall. Just before your vision goes black you feel a jolt of someone holding onto your wrists which stops you from hitting the ground face first....
                                         `;
-                                        
+
             closeAlertBtn.innerText = "Game Over";
 
             gameParagraph.classList.add("hidden");
