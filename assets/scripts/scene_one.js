@@ -11,6 +11,8 @@ let mobileScreen = document.getElementById("small_screen");
 let inventoryScreen;
 let labCoat = false;
 let doorPass = false;
+// let countDown = Math.floor(Math.random() * 480000);
+let countDown =5;
 
 // Audio file variables
 let audioContainer = document.getElementById("volume-container");
@@ -23,6 +25,7 @@ let heelsShort = document.getElementById("heels_short");
 let bareFeetShort = document.getElementById("bare_feet_short");
 let doorHandle = document.getElementById("door_handle");
 let heartBeat = document.getElementById("heart_beat");
+let alert = document.getElementById("alert");
 
 let audioMute = false;
 
@@ -159,8 +162,10 @@ startBtn.addEventListener("click", function(){
     startGame();
 });
 
+
 // First game scene - gives the player a choice wether to try to escape or wait and see what happens
 function startGame(){
+    timer()
     glitch = 0;
     injuries = [];
     time = 0;
