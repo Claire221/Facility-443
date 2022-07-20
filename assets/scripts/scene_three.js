@@ -440,14 +440,6 @@ function escape() {
     setTimeout(function(){
         loadScreen.style.backgroundImage="url(assets/img/hangar.jpg)";
     },2000)
-    // You go down a long way.. you end up in what appears to be an underground cargo area with a garage doors on one end
-    // You run over if you picked up the keycard you can open the doors
-        // You have escaped - if you also picked up the vial the text changes to say you can hand it over as evidence
-        // or if you looked at the code on the map 
-
-    // if you didnt pick up the keycard it gives you the option to go back and get it otherwise you cant escape 
-        // you run to head out but get caught by the guards
-
 
     option1.addEventListener("click", function(){
         if (doorPass) {
@@ -474,10 +466,18 @@ function escape() {
         } else {
             gameParagraph.innerHTML = `You quickly slip out from behind the car and move to the final car that will provide you cover, you take a look at the door and notice that there is a small square next to it 
                                         and your pray that you dont need some type of key to exit. Doing one more check of the walkway you creep out and stop in front of the door you place a hand against the cool 
-                                        metal and push but the door doesnt move, a sinking feeling fills your gut as you realize the door is locked. Of course it is, why would they just leave the front door wide 
-                                        open you think. You lean forward and place your forehead against the cool metal, and you take some deep breaths as your only hope of getting out of here was just squashed. 
-                                        Not wanting to give up your only hope is to try and make it back to the office and get the keycard, you have no other choice. You spin on your heel and start making you way 
-                                        back across the air hanger….`
+                                        metal and push but the door doesnt move, a sinking feeling fills your gut as you realize the door is locked. <br>
+                                        Of course it is, why would they just leave the front door wide open you think. You lean forward and place your forehead against the cool metal, and you take some deep breaths
+                                        as your only hope of getting out of here was just squashed. Not wanting to give up your only hope is to try and make it back to the office and get the key card, you have no 
+                                        other choice. You spin on your heel and start making you way back across the air hanger.. you slip from car to car each move that is undetected causes hope to build slightly 
+                                        in your gut. <br>
+                                        It doesnt take too long before your back at the stairwell you keep your head down and focus on putting one foot infront of the other. Suddenly you hear a bang and realize 
+                                        that someone has just opened the door at the top of the stairs causing it to smack against the wall. You freeze, turn on your heel and start running down the stairs.. your 
+                                        feet slap against the cool metal stairs. <br>
+                                        You keep glancing over your shoulder to see how far behind they are when you miss a step, you lurch forward arms flying out to try 
+                                        and grab the banister to steady yourself but you just grasp air.. You start tumbling down the stairs unable to stop, all you can do is close your eyes and pray that it ends 
+                                        soon as your body bounces from one step to the next. Your head hits against one of the stairs causing an intense pain to radiate throughout your skill, you can feel warm 
+                                        liquid dripping down your neck. Your vision begins to fade, you will yourself to stay awake but its useless.. everything fades to darkness.`
         }
 
         setTimeout(function(){
