@@ -541,20 +541,7 @@ function wardrobeItems() {
 
     option2.classList.add("hidden");
 }
-/* Basic inventory system - If a player clicks on an eligible item it will change colour and a message will display saying its been added to inventory. If they click it again it will go back to
-its normal display and be removed from the inventory */ 
-function addToInventory(item) {
-    if (pockets.length > 0){
-        if (pockets.includes(item)){
-            pockets.pop(item);
-            gameParagraph.innerHTML = `${item} removed to your inventory`;
-        } else {
-            pockets.push(item);
-            gameParagraph.innerHTML = `${item} added to your inventory, Press I to view inventory`;
-        }
-    } 
 
-}
 
 // Adds event listener to B key to open and close inventory
 window.addEventListener("keydown", function(event) {
