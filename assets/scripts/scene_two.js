@@ -99,13 +99,13 @@ function run(){
 
     gameParagraph.innerHTML = `You decide to run because who knows whats in that room and it could lead to you getting cornered. you take off down the corridor at a full sprint, You come to a corner and skid
                                 round it and bump into something solid. You fall back and land on your back, the impact taking the wind out of you. Dazed you look up and see two people in lab coats staring down
-                                at you. <br> 'What the hell' the smaller of the two shouts in shock stumbling slight 'Where are you meant to be right now' The bigger asks sternly 'Doesnt Mike have transport duties now?'
+                                at you. <br><br> 'What the hell' the smaller of the two shouts in shock stumbling slight 'Where are you meant to be right now' The bigger asks sternly 'Doesnt Mike have transport duties now?'
                                 He says dissmissing you and looking at his watch. Ignoring their questions You quickly scramble to get your arms and legs under you so you can stand up and run in the opposite direction
-                                causing the two scientists to jump back in fright.. <br> Only to be confronted by another group of people. This time they are wearing what looks to be military uniforms and are holding weapons
+                                causing the two scientists to jump back in fright.. <br><br> Only to be confronted by another group of people. This time they are wearing what looks to be military uniforms and are holding weapons
                                 you dont want to be introduced to, you turn back around to face the lab coats again figuring you have a better chance of getting past them. You try to rush past them but they are stronger than
                                 they look, one of them grabs you by your upper arm… <br> You try to pull your arm free, not caring if your hurting yourself in the process you just want to get free because you know if they 
                                 send you back to that room you might never get out. Your struggling with all your might, you use your other hand to try and pry the lab coats fingers from your arm but their grip is like
-                                steel.. <br> You feel a sharp prick in your neck and you whip your head around and realise that while you were busy trying to get away, it gave the other scientist the opportunity to come behind
+                                steel.. <br><br> You feel a sharp prick in your neck and you whip your head around and realise that while you were busy trying to get away, it gave the other scientist the opportunity to come behind
                                 you and inject you with something.. Your not sure what it was but it acts fast, the corridor begins to spin and the lab coats faces start to swirl and blur and before you know it all you see
                                 is darkness..`; 
 
@@ -304,7 +304,7 @@ function chooseLabCoat() {
         gameParagraph.innerHTML = `You put the lab coat on, its heavier than you expected and the material is slightly itchy against your skin. You put your hands in the pockets on either side but they 
         are both empty...`;
         option1.classList.remove("hidden");
-        op1ion1.innerText="Continue..";
+        option1.innerText = "Continue..";
     }
     else {
         gameParagraph.innerHTML = `You decide to leave the labcoat where it is, who knows if whoever left it there and and will happen if they come back and its missing..`; 
@@ -367,14 +367,14 @@ function keepGoing() {
     
     gameParagraph.innerHTML = `You decide that your top priority right now is getting the hell out of here. <br> You walk down the planning what to do next, if you could just find a phone maybe you could call for 
                                 help?.. but you dont know where you are.. maybe find a computer then? You could then find out where you are.. As your planning your next moves you realise that you can hear a noise 
-                                in the distance. <br> You freeze and ice runs down your spine as you realise that you can hear people and they are heading in this direction. Throwing your plan out the window you 
+                                in the distance. <br><br> You freeze and ice runs down your spine as you realise that you can hear people and they are heading in this direction. Throwing your plan out the window you 
                                 take off down the corridor at a full sprint, you come to a corner and skid round it and bump into something solid. You fall back and land on your back, the impact taking the wind 
                                 out of you. <br>Dazed you look up and see two people in lab coats staring down at you 'Hey watch…'They start to say but then shock takes over their face as they realize that they didnt 
                                 bump into another lab coat person 'Hey what are you doing!' They shout as you quickly scramble to get your arms and legs under you so you can stand up and run in the opposite direction
-                                only to be confronted by another group of people who are stood in the corridor talking amongst themselves. <br> They are wearing what looks to be military uniforms at the sound of your 
+                                only to be confronted by another group of people who are stood in the corridor talking amongst themselves. <br><br> They are wearing what looks to be military uniforms at the sound of your 
                                 approaching steps one of them has turned in your direction 'Hey!' They shout and raise their weapon in your direction.. This alerts the others to your presents and they quickly follow 
                                 suit filling the corridor with the sounds of weapons being pointed in your direction. Not hanging around you turn back around to face the lab coats again figuring you have a better chance
-                                of getting past them. <br> You try to rush past them but they are stronger than they look, one of them grabs you by your upper arm as you try to get past… You try to pull your arm free, not 
+                                of getting past them. <br><br> You try to rush past them but they are stronger than they look, one of them grabs you by your upper arm as you try to get past… You try to pull your arm free, not 
                                 caring if your hurting yourself in the process you just want to get free because you know if they send you back to that room you might never get out.<br> You can hear a commotion behind
                                 you but your too focused on trying to get away to listen to what theyre saying.. Your struggling with all your might, you use your other hand to try and pry the lab coats fingers from your 
                                 arm but their grip is like steel.. You feel a sharp prick in your neck and you whip
