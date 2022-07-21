@@ -218,20 +218,23 @@ function trainingRooms() {
     removeBtn();
     createNewBtn();
 
-    gameParagraph.innerHTML = `Turning left you walk down the corridor and through the double doors, the corridor on the other side looks idential to all the others youve been through and you wonder how the people 
-                                here dont get lost. As you walk down you see there are rooms on either side each has a large glass viewing window. Each room seems to be laid out the same, there is a desk to the left
-                                of the room and then in the centre of the room is an empty table. The first few are empty and your starting to think that down here might be deserted but but you hear noise from 
-                                further down the corridor. You go down to investigate and see that one of the rooms isnt empyt, theres a person in a labcoat sat at a computer with their back to you, they have what looks 
-                                like a document on the screen but there is too much text for you to pick out what its saying. A young woman who is stood in the center of the room her head is down so you cant see her face.
-                                She has wires connected to her head and is staring at a can that has been placed on the table infront of her.  All of a sudden the can flys across the room and hits into the viewing window
-                                you jump back in suprise barely containing the scream thats threatening to escape. The woman slowly raises her haid and looks up at the person in the labcoat and her eyes are glowing blue. 
-                                You notice that She is breathing hard and she looks exhasted, your eyes are then drawn down to see that the floor is covered in crumpled up cans.. How long has she been doing this you think? 
-                                'Again' You jump as the man at the computer barks out an order 'And dont take so long this time' he says to her barely glancing away from his screen. You see the womans shoulders drop and she
-                                takes in a deep breath as if getting ready to preform again. Her eyes then flick to you, her eyes go widw with shock and your not sure if you hear her gasp or if you imagined ita 
-                                Her eyes flick back to the labcoat person seemingly checkign he isnt paying attention before quickly looking back at you and mouthing at you to run, you dont need telling twice you quickly 
-                                turn on your heel and sprint back down the corridor, you fly through the doors which causes them to slap against the wall..You run through the cafeteria area and straight to the lift, and 
-                                repeatedly press the button on the wall as if that will help it arrive quicker.. After what feels like forever, but couldnt have been more than a couple of seconds the lift finally arrives. 
-                                You charge into the lift before the doors have finished opening and repeatedly press the button for the atrium. `;
+    gameParagraph.innerHTML = `Turning left you walk down the corridor and through the double doors, the corridor on the other side looks identical to all the others youve been through and you wonder how the people                               here dont get lost. 
+                                <br> As you walk down you see there are rooms on either side each has a large glass viewing window. Each room seems to be laid out the same, there is a desk to the left  of the room 
+                                and then in the centre of the room is an empty table. The first few are empty and your starting to think that down here might be deserted but but you hear noise from further down the 
+                                corridor.
+                                <br>  You go down to investigate and in one of the rooms theres a person in a labcoat sat at a computer with their back to you, they have what looks  like a document on the screen but 
+                                there is too much text for you to pick out what its saying. A young woman who is stood in the center of the room her head is down so you cant see her face.  She has wires connected to 
+                                her head and is staring at a can that has been placed on the table infront of her.  
+                                <br> All of a sudden the can flys across the room and hits into the viewing window  you jump back in surprise barely containing the scream thats threatening to escape. The woman 
+                                slowly raises her head and looks up at the person in the labcoat and her eyes are glowing blue.   You notice that She is breathing hard and she looks exhasted, your eyes are then 
+                                drawn down to see that the floor is covered in crumpled up cans.. 
+                                <br> 'Again' You jump as the man at the computer barks out an order 'And dont take so long this time' he says to her barely glancing away from his screen. You see the womans shoulders 
+                                drop and she takes in a deep breath as if getting ready to preform again. Her eyes then flick to you, her eyes go wide with shock , she glaces back to the labcoat person seemingly
+                                checking he isnt paying attention before quickly looking back at you and mouthing at you to run, you dont need telling twice you quickly  turn on your heel and sprint back down the 
+                                corridor.
+                                <br> You fly through the doors which causes them to slap against the wall..You run through the cafeteria area and straight to the lift, and   repeatedly press the button on the wall 
+                                as if that will help it arrive quicker.. when the lift finally arrives you charge into the lift before the doors have finished opening and repeatedly press the button for the atrium.
+    `;
    
     option1.innerText = "Continue";
     option2.classList.add("hidden");
