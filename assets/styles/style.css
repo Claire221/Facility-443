@@ -344,11 +344,9 @@ li.inventory-item:hover {
         width: 90%;
     }
 
-    .wardrobe-items-img {
-        height: 150px;
-        border-radius: 10px;
-        margin: 1%;
-    }
+    /* .wardrobe-items-img {
+        height: 125px;
+    } */
     
 }
 
@@ -356,6 +354,24 @@ li.inventory-item:hover {
     p#game-paragraph {
         font-size: 16px;
     }
+    .draw-items-img {
+        height: 125px;
+    }
+
+}
+
+@media screen and (max-width: 1500px) { 
+    .wardrobe-items-img {
+        height: 125px;
+    }
+
+}
+
+@media screen and (max-width: 1600px) { 
+    .cupboard-items-img {
+        height: 175px;
+    }
+
 }
 
 @media screen and (max-width: 1700px) { 
