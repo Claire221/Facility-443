@@ -366,17 +366,13 @@ li.inventory-item:hover {
     }
 
 }
-
-@media screen and (max-width: 1600px) { 
-    .cupboard-items-img {
-        height: 175px;
-    }
-
-}
-
 @media screen and (max-width: 1700px) { 
     #game-paragraph {
-        font-size: 1.3rem;
+        font-size: 1rem;
+    }
+
+    .cupboard-items-img {
+        height: 175px;
     }
 }
 
