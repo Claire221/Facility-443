@@ -11,6 +11,7 @@ let mobileScreen = document.getElementById("small_screen");
 let inventoryScreen;
 let labCoat = false;
 let doorPass = false;
+let exitDoorPass = false;
 let countDown = Math.floor(Math.random() * 480000);
 
 // Audio file variables
@@ -43,6 +44,7 @@ let pockets = [""];
 // Function that runs on page load to check if screen is too small and if not set game page
 window.onload= function(){
     newGame();
+    console.log(exitDoorPass)
 };
 
 
@@ -387,7 +389,7 @@ function injuryRoll(){
     gameParagraph.innerHTML = `You decide to free your left hand first, thinking that once youve done that you can undo the restrains on your right one.
                           You twist, pull and bend your hand trying to get it through the strap. After some tugging you realise your slowly getting
                           somewhere and it only takes you a few minutes to free your hand from the strap. Once free you quickly untie your other hand
-                          and are able to finally stand up from the bed. Taking a look at your left hand you inspect for an inury <br> ${injuries}`;
+                          and are able to finally stand up from the bed. Taking a look at your left hand you inspect for an inury <br><br> ${injuries}`;
                           
     option1.classList.add("hidden");
     option2.innerText= "Move on";
@@ -397,10 +399,11 @@ function injuryRoll(){
 
 //Function that runs if the player chooses to cut the strap, adds time to countdown
 function cutStrap() {
+    console.log("cut strap")
     removeBtn();
     createNewBtn();
 
-    countDown = countdown + time;
+    countDown = countDown - time;
     let aditionalTime = time * 60000;
     time = Math.floor(Math.random() * 10) + 2 ;
     
@@ -413,7 +416,7 @@ function cutStrap() {
                          This time you are gentler and try and coax the handle closer, and slowly it starts to roll towards you. 
                          Finally, you have it in your hand, you flip it around and slot the blade along your wrist inside of the restraint. 
                          You slowly start moving the knife back and forth along the strap, you can hear the leather creaking as the blade runs 
-                         along it and after a few minutes you start to see a grove appear. <br> It took ${time} minutes's`; 
+                         along it and after a few minutes you start to see a grove appear. <br><br> It took ${time} minutes's`; 
 
     option1.classList.add("hidden");
     option2.innerText= "Move on";
@@ -485,6 +488,8 @@ function wardrobeItems() {
     removeBtn();
     createNewBtn();
 
+    console.log(labCoat)
+
     gameParagraph.innerHTML = `Inside you find an old shoe, and a Key Card, handing up one the back of one of the doors is an old labcoat. `; 
 
     option1.innerText= "Leave Room";
@@ -533,7 +538,13 @@ function wardrobeItems() {
         this.classList.toggle("inventory-add");
         addToInventory("Lab Coat");
         inventoryScreen.classList.add("hidden");
-        labCoat = true;
+        if (labCoat){
+            labCoat = false;
+            console.log(labCoat)
+        } else {
+            labCoat = true;
+            console.log(labCoat)
+        }
         showInventory();
     });
 
@@ -548,7 +559,7 @@ function addToInventory(item) {
             gameParagraph.innerHTML = `${item} removed to your inventory`;
         } else {
             pockets.push(item);
-            gameParagraph.innerHTML = `${item} added to your inventory, Press B to view inventory`;
+            gameParagraph.innerHTML = `${item} added to your inventory, Press I to view inventory`;
         }
     } 
 
