@@ -67,9 +67,11 @@ function followLabCoat(){
     removeBtn();
     createNewBtn();
 
+    console.log("follow")
     option1.classList.add("hidden");
     option2.classList.add("hidden");
-    loadScreen.style.backgroundImage="url(assets/img/hospital_doors)";
+
+    loadScreen.style.backgroundImage="url(assets/img/hospital_doors.jpg)";
 
     gameParagraph.innerHTML = `Deciding to follow him you slowly creep towards the doors which have closed by the time you get there, you push on them but they dont move.. You scan around the doorway and notice 
                                 a small keypad to the side it has a section for you to scan a keycard..`;
@@ -93,7 +95,7 @@ function followLabCoat(){
             option2.innerText = "Continue..";
             option2.addEventListener("click", dontfollowLabCoat);
         }
-    });
+    }, 3000);
     
 }
 
@@ -246,7 +248,7 @@ function ward() {
 
     loadScreen.style.backgroundImage="url(assets/img/ward.jpg)";
 
-    gameParagraph.innerhTML = `You turn right down the corridor and enter a room thats set up like a hospital ward. There are beds down each side, some have curtains pulled around them obscuring the view. 
+    gameParagraph.innerHTML = `You turn right down the corridor and enter a room thats set up like a hospital ward. There are beds down each side, some have curtains pulled around them obscuring the view. 
                                 You start to walk down the centre isle between the beds, you dont get very far when you hear a noise coming from behind one of the curtains. You reach out and grab the fabric,
                                 and slowly pull the curtain to the side so you can peak inside. Lying in one of the beds is a man, he has a bandage around the top of his head and over one eye.. He is hooked 
                                 up to a machine on the wall that is giving of a steady beep noise. You pull the curtain open more and step forward slightly so you can get a better view. As you do this the man 
@@ -274,6 +276,8 @@ function lab01() {
     removeBtn();
     createNewBtn();
     loadScreen.style.backgroundImage="url(assets/img/atrium.jpg)";
+    option1.classList.add("hidden")
+    option2.classList.add("hidden")
 
     gameParagraph.innerHTML = `Arriving back in the atrium you scan the room figuring out your next move. You see door tucked away in the corner that you hadnt seen before, There is a small metal sign next to the door labelled 'lab 1'
                                 Rushing over you open the door and slip inside, overhead lights flicker on as you enter and your met by a cool breeze of air conditioning. There are 
@@ -282,7 +286,7 @@ function lab01() {
                                 for the screen to turn on. As your waiting you see that under the desk is a set of 3 draws, do you look inside?  `;
     setTimeout(function(){
         loadScreen.style.backgroundImage="url(assets/img/lab.jpg)";
-    }, 500)
+    }, 1500)
 
     setTimeout(function(){
         option1.innerText = "Search the draws for anything useful";
@@ -290,6 +294,9 @@ function lab01() {
 
         option1.addEventListener("click", checkDraws, {once : true});
         option2.addEventListener("click", searchPc, {once : true});
+
+        option1.classList.remove("hidden")
+        option2.classList.remove("hidden")
     }, 2000);
 
 
@@ -298,7 +305,7 @@ function lab01() {
 function checkDraws() {
     removeBtn();
     createNewBtn();
-
+    console.log(exitDoorPass)
     gameParagraph.innerText = "Inside you find an ID Badge, a Keycard and a vial of blue iridescent liquid.. "; 
 
     option1.innerText= "Check back to the computer";
@@ -311,26 +318,26 @@ function checkDraws() {
     let itemsContainer = document.createElement("div");
     let vialItem = document.createElement("img");
     let idItem = document.createElement("img");
-    let keyCardItem = document.createElement("img");
+    let exitKey = document.createElement("img");
 
     vialItem.src="assets/img/vial.jpg";
     idItem.src="assets/img/id_card.jpg";
-    keyCardItem.src = "assets/img/key_card2.jpg";
+    exitKey.src = "assets/img/key_card2.jpg";
     
     vialItem.alt="Vial";
     idItem.alt="Id Card";
-    keyCardItem.alt="Key Card";
+    exitKey.alt="Key Card";
 
     itemsContainer.classList.add("items-container");
     vialItem.classList.add("draw-items-img", "vial");
     idItem.classList.add("draw-items-img", "idCard");
-    keyCardItem.classList.add("draw-items-img", "keyCard");
+    exitKey.classList.add("draw-items-img", "keyCard");
 
 
 
     itemsContainer.appendChild(vialItem);
     itemsContainer.appendChild(idItem);
-    itemsContainer.appendChild(keyCardItem);
+    itemsContainer.appendChild(exitKey);
     loadScreen.appendChild(itemsContainer);
 
     vialItem.addEventListener("click", function(){
@@ -345,11 +352,17 @@ function checkDraws() {
         inventoryScreen.classList.add("hidden");
         showInventory();
     });
-    keyCardItem.addEventListener("click", function(){
+    exitKey.addEventListener("click", function(){
         this.classList.toggle("inventory-add");
-        addToInventory("Key Card");
+        addToInventory("Key Pass");
         inventoryScreen.classList.add("hidden");
-        doorPass = true;
+        if (exitDoorPass === true){
+            exitDoorPass = false;
+            console.log(exitDoorPass)
+        } else {
+            exitDoorPass = true;
+            console.log(exitDoorPass)
+        }
         showInventory();
     });
 
@@ -357,8 +370,6 @@ function checkDraws() {
 }
 
 function searchPc () {
-   
-
     removeBtn();
     createNewBtn();
 
@@ -368,13 +379,14 @@ function searchPc () {
                                 You take a steadying breath before double clicking on the folder. It opens up and inside are various document files, you click the first one labelled Subject 441 - Info. It 
                                 opens up into a document containing a small picture of yourself along with other information such as your height and weight age. there is also a section labelled powers and but 
                                 there is no text in the box. You continue down the page and come to a small paragraph of text 'Subject 443 has been in the facility for the last 3 years and has seemed to make
-                                little to no progress despite out best efforts. They seem unwilling to help our cause and often lash out and become combative resulting in them needing sedating as to not put 
-                                the staff in risk.`; 
+                                little to no progress despite out best efforts. They seem unwilling to help our cause and often lash out and become combative resulting Miazatron haveint to be administered  as to 
+                                not put the staff in risk.`; 
 
     option1.innerText = "Subject 443 - Known Associates";
     option2.innerText = "Subject 443 - Medical";
 
     option1.addEventListener("click", subjectInfo);
+    option2.addEventListener("click", subjectTreatment);
 }
 
 function subjectInfo() {
@@ -383,12 +395,20 @@ function subjectInfo() {
 
     
     gameParagraph.innerHTML = `Subject 443 entered the program with no known associates.
-                                <br>
-                                note - Subject 443 has started interacting with other subejcts, staff have described that subjects have been seen `; 
+                            <br>
+                            Note - Staff have seen Subject 443 acting strangely around other test subjects. They have observed Subject 443 exchanging glances with the test subjects and are wary that Subject 
+                            443 might be trying to communicate something. All staff have been advised to keep an eye out for any strange behaviours and alert team leaders if they witness anything
+                            <br>
+                            Note 2 - During training one of the subjects received punishment which caused Subject 443 to stop participating in their training session, they refused to continue until the 
+                            punishment was over. Staff havent noted that the two subjects were acquaintances prior to the incident. 
+                            \tNote - Having spoken to the lead doctors they have advised that if the behaviour continues Subject 443 might need to be isolated from the other test subjects.
+                            <br>
+                            `; 
 
     option1.innerText = "Subject 443 - Medical";
     option2.innerText = "Move on";
 
+    option1.addEventListener("click", subjectTreatment);
     option2.addEventListener("click", escape);
 
 }
@@ -409,6 +429,12 @@ function subjectTreatment() {
                                <br> Note 4 - 30/06/56 - Subject 443 once again became combatitive during testing, Subject 443 was seen interacting with other subjects trying to get them to refuse testing too. Despite security
                                being called subject 443 refused to participate and was given 12mg of Miazatron to protect all staff involved.Effects  lasted 1 hour 30 minutes, subejct 443 showed no negative side effects and 
                                was returned to testing once they came round. `
+
+    option1.innerText = "Subject 443 - Known Associates";
+    option2.innerText = "Move on";
+
+    option1.addEventListener("click", subjectInfo);
+    option2.addEventListener("click", escape);
 }
 
 
@@ -442,7 +468,7 @@ function escape() {
     },2000)
 
     option1.addEventListener("click", function(){
-        if (doorPass) {
+        if (exitDoorPass) {
             gameParagraph.innerHTML = `You quickly slip out from behind the car and move to the final car that will provide you cover, you take a look at the door and notice that there is a small square next to it 
                                        and realize that you need some type of key to exit. Your spirits are just about to drop when you remember the keycard you took from the desk and pray that it matches, you reach 
                                        into your pocket and grip the cool plastic and hold it in your palm so tight the edges dig in but you dont care. 
@@ -453,15 +479,15 @@ function escape() {
                                        planet, your not sure how you will do it but determination settles in your gut as you realize that you will do whatever it takes to free the rest of your people. `
 
                 
-                setTimeout(function(){
-                    option2.classList.remove("hidden")
-                    option1.classList.add("hidden")
-                    option2.innerText = "New Game";
+            setTimeout(function(){
+                option2.classList.remove("hidden")
+                option1.classList.add("hidden")
+                option2.innerText = "New Game";
     
-                    option2.addEventListener("click", function(){
-                        window.location.reload();
+                option2.addEventListener("click", function(){
+                    window.location.reload();
                     });
-                }, 2000)
+            }, 2000)
             
         } else {
             gameParagraph.innerHTML = `You quickly slip out from behind the car and move to the final car that will provide you cover, you take a look at the door and notice that there is a small square next to it 
@@ -478,18 +504,103 @@ function escape() {
                                         and grab the banister to steady yourself but you just grasp air.. You start tumbling down the stairs unable to stop, all you can do is close your eyes and pray that it ends 
                                         soon as your body bounces from one step to the next. Your head hits against one of the stairs causing an intense pain to radiate throughout your skill, you can feel warm 
                                         liquid dripping down your neck. Your vision begins to fade, you will yourself to stay awake but its useless.. everything fades to darkness.`
-        }
-
-        setTimeout(function(){
+            setTimeout(function(){
             option2.classList.remove("hidden")
             option1.classList.add("hidden")
             option2.innerText = "Game Over";
-
+                                
             option2.addEventListener("click", function(){
                 window.location.reload();
-            });
-        }, 2000)
+                });
+            }, 2000)
+            
+        }
+
     }) 
 
 }
+
+
+
+
+// function escape() {
+//     removeBtn();
+//     createNewBtn();
+//     loadScreen.style.backgroundImage="url(assets/img/staircase.jpg)";
+
+//     gameParagraph.innerHTML = `As you push open the door a cool breeze fans over your face, your greeted by a small stairway with a metal staircase going down. Leaning over the banister your try to see how far it 
+//                                 goes down but you can only see darkness. As you go down the air becomes cooler and your wrap your arms around yourself to try and stay warm. You keep your head down focusing taking 
+//                                 one step at a time so you dont accidentally trip and fall into the void below, the sound of your feet hitting the metal steps soon becomes a soundtrack and you start to make a rhythm 
+//                                 out of the sound to distract you from what might be at the bottom. 
+//                                 <br> Eventually your reach the last step and are confronted by another door you grasp the cool metal handle and pull it towards you, the door gives a small suction sound as you pull 
+//                                 it open and more cool air hits your face cooling the sweat that has appeared on your brown. The room beyond looks like a big air hanger the harsh lights above are reflected in the 
+//                                 sleek white floor tiles, just by looking at the tiles you know that if you had shoes on they would squeak against them as you walked across. There are eight long lines of military 
+//                                 vehicles all lined up running the length of the hanger. The left wall seems to be made up of a row of 6 garage type doors and at either end of the row is a doorway, your eyes go 
+//                                 wide and your heartrate picks up as you realize that the only thing standing between you and freedom is one more door. 
+//                                 <br>
+//                                 You can hear people talking and you notice there is a group of people standing around one of the vehicles about halfway down the hanger. You quickly crouch down hide behind the 
+//                                 vehicle infront of you. It seems to be a truck of some kind, the wheels coming up to your hips. You sit back on your heels and make a quick plan, you just need to cross the room and 
+//                                 make it to that door without the people noticing you.. cant be too hard right? You slowly crawl to the front of it so your inline with the front tire and peer around the bonnet, the
+//                                 walk way between this vehicle and the next row is clear. Quickly darting out you keep low and run across the walkway and take cover behind the next car, you repeat this process until 
+//                                 your one row of cars away from the door. 
+//                                 `; 
+
+//     option1.innerText = "Continue";
+//     option2.classList.add("hidden")
+
+//     setTimeout(function(){
+//         loadScreen.style.backgroundImage="url(assets/img/hangar.jpg)";
+//     },2000)
+
+//     option1.addEventListener("click", function(){
+//         if (!exitDoorPass) {
+//             gameParagraph.innerHTML = `You quickly slip out from behind the car and move to the final car that will provide you cover, you take a look at the door and notice that there is a small square next to it 
+//                                        and realize that you need some type of key to exit. Your spirits are just about to drop when you remember the keycard you took from the desk and pray that it matches, you reach 
+//                                        into your pocket and grip the cool plastic and hold it in your palm so tight the edges dig in but you dont care. 
+//                                        <br>Doing one more check of the walkway you creep out and stand in front of the door you reach up and press the plastic card against the box and wait.. after a couple of seconds
+//                                        theirs a faint beep and the sound of the lock being released fills your ears. You let out the breath you were holding and cand stop the grin taking over your face you push the 
+//                                        door and it opens.  Your hit by a wave of dry heat, not hanging around you leap up and run through the door..  and dont stop running. Your not sure where your heading but you 
+//                                        know that you need to find help, you need to rescue the other people in the facility and bring down the people in charge.. but who do you trust? Your all alone on an alien 
+//                                        planet, your not sure how you will do it but determination settles in your gut as you realize that you will do whatever it takes to free the rest of your people. `
+
+                
+//             setTimeout(function(){
+//                 option2.classList.remove("hidden")
+//                 option1.classList.add("hidden")
+//                 option2.innerText = "New Game";
+    
+//                 option2.addEventListener("click", function(){
+//                     window.location.reload();
+//                     });
+//                 }, 2000)
+            
+//         } else {
+//             gameParagraph.innerHTML = `You quickly slip out from behind the car and move to the final car that will provide you cover, you take a look at the door and notice that there is a small square next to it 
+//                                         and your pray that you dont need some type of key to exit. Doing one more check of the walkway you creep out and stop in front of the door you place a hand against the cool 
+//                                         metal and push but the door doesnt move, a sinking feeling fills your gut as you realize the door is locked. <br>
+//                                         Of course it is, why would they just leave the front door wide open you think. You lean forward and place your forehead against the cool metal, and you take some deep breaths
+//                                         as your only hope of getting out of here was just squashed. Not wanting to give up your only hope is to try and make it back to the office and get the key card, you have no 
+//                                         other choice. You spin on your heel and start making you way back across the air hanger.. you slip from car to car each move that is undetected causes hope to build slightly 
+//                                         in your gut. <br>
+//                                         It doesnt take too long before your back at the stairwell you keep your head down and focus on putting one foot infront of the other. Suddenly you hear a bang and realize 
+//                                         that someone has just opened the door at the top of the stairs causing it to smack against the wall. You freeze, turn on your heel and start running down the stairs.. your 
+//                                         feet slap against the cool metal stairs. <br>
+//                                         You keep glancing over your shoulder to see how far behind they are when you miss a step, you lurch forward arms flying out to try 
+//                                         and grab the banister to steady yourself but you just grasp air.. You start tumbling down the stairs unable to stop, all you can do is close your eyes and pray that it ends 
+//                                         soon as your body bounces from one step to the next. Your head hits against one of the stairs causing an intense pain to radiate throughout your skill, you can feel warm 
+//                                         liquid dripping down your neck. Your vision begins to fade, you will yourself to stay awake but its useless.. everything fades to darkness.`
+//         }
+
+//         setTimeout(function(){
+//             option2.classList.remove("hidden")
+//             option1.classList.add("hidden")
+//             option2.innerText = "Game Over";
+
+//             option2.addEventListener("click", function(){
+//                 window.location.reload();
+//             });
+//         }, 2000)
+//     }) 
+
+// }
 
