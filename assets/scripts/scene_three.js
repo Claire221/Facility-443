@@ -4,7 +4,6 @@ function goLeft() {
     removeBtn();
 
     loadScreen.style.backgroundImage="url(assets/img/atrium.jpg)";
-    console.log("go left");
     
     gameParagraph.innerHTML = `Turning left you walk down the corridor which opens up into a large atrium style room. It seems to be set up as a waiting or reception area with benches in
                                 neat rows going down each side. In the centre there is a small garden with bushes and flowers. The other side of the flower bed a lift, the doors of which
@@ -25,7 +24,6 @@ function goLeft() {
                                            you then use all your strength to shoulder barge them but they dont move. Locked.`;
                 setTimeout(function(){
                     chaseFunction();
-                    console.log("chase");
                 },35000);
             }, 5000);
         } else {
@@ -67,7 +65,6 @@ function followLabCoat(){
     removeBtn();
     createNewBtn();
 
-    console.log("follow")
     option1.classList.add("hidden");
     option2.classList.add("hidden");
 
@@ -157,7 +154,6 @@ function keyCardDoor() {
         textIndex++;
 
         if(textIndex === paragraphArray.length) {
-            console.log("last");
             option1.classList.add("hidden");
             option2.classList.remove("hidden");
             option2.innerText = "Continue.."; 
@@ -266,7 +262,6 @@ function ward() {
                                 before the doors have finished opening and repeatedly press the button for the atrium. `;
 
     setTimeout(function(){
-        console.log("ward");
         option1.classList.remove("hidden");
         option1.innerText = "Continue..";
         option1.addEventListener("click", lab01, {once : true});
@@ -308,7 +303,6 @@ function lab01() {
 function checkDraws() {
     removeBtn();
     createNewBtn();
-    console.log(exitDoorPass)
     gameParagraph.innerText = "Inside you find an ID Badge, a Keycard and a vial of blue iridescent liquid.. "; 
 
     option1.innerText= "Check back to the computer";
@@ -361,10 +355,8 @@ function checkDraws() {
         inventoryScreen.classList.add("hidden");
         if (exitDoorPass === true){
             exitDoorPass = false;
-            console.log(exitDoorPass)
         } else {
             exitDoorPass = true;
-            console.log(exitDoorPass)
         }
         showInventory();
     });

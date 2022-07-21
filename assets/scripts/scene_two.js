@@ -1,8 +1,6 @@
 /* jshint esversion: 11 */
 
 function leaveRoomOne() {
-    console.log("leave");
-
     let itemsContainer = document.getElementsByClassName("items-container")[0];
     if (itemsContainer) {
         itemsContainer.style.display = "none";
@@ -27,7 +25,6 @@ function leaveRoomOne() {
 }
 
 function goRight() {
-    console.log("goRight");
     loadScreen.style.backgroundImage="url(assets/img/corridor_doors.jpg)";
     removeBtn();
     createNewBtn();
@@ -52,7 +49,6 @@ function goRight() {
 }
 
 function tryDoors() {
-    console.log("Try Doors");
     removeBtn();
     createNewBtn();
 
@@ -119,7 +115,6 @@ function run(){
 }
 
 function lookInside() {
-    console.log("Look Inside");
     loadScreen.style.backgroundImage="url(assets/img/starting_room.jpg)";
     removeBtn();
     createNewBtn();
@@ -196,8 +191,6 @@ function hideUnderBed() {
     option1.classList.add("hidden");
     option2.classList.add("hidden");
 
-    console.log("hide")
-
     gameParagraph.innerHTML = `Heart pounding you run and drop to the floor and manage to squeeze yourself into the small gap under the bed and with barely a second to spare you hear the door opening. <br> Someone walks
                                 and stops at the end of the bed. You cant see what they look like the only thing you can see is a pair of shiny black high heel shoes. <br> 'Good morning subject 530 I hope you had a good 
                                 sleep because youve got a busy day ahead of you' You hear the woman on the bed reply something but you cant quite make out what she says. Your so scared you think you might throw up, 
@@ -223,7 +216,6 @@ function hideUnderBed() {
         setTimeout(function(){
             option1.innerText = "Continue..";
             option1.classList.remove("hidden");
-            console.log(fate);
         },1000);
     } else {
         setTimeout(function(){
@@ -257,7 +249,6 @@ function hideInCupboard() {
         setTimeout(function(){
             option1.innerText = "Continue..";
             option1.classList.remove("hidden");
-            console.log(fate);
         },1000);
     } else {
         setTimeout(function(){
@@ -358,7 +349,6 @@ function getCaught(){
 }
 
 function keepGoing() {
-    console.log("run");
     removeBtn();
     createNewBtn();
 

@@ -44,7 +44,6 @@ let pockets = [""];
 // Function that runs on page load to check if screen is too small and if not set game page
 window.onload= function(){
     newGame();
-    console.log(exitDoorPass)
 };
 
 
@@ -157,7 +156,6 @@ startBtn.addEventListener("click", function(){
     if (audioMute === false) {
         backgroundMusic.play()
         backgroundMusic.volume = 0.1;
-        console.log("playing")
     }
 
     startGame();
@@ -236,7 +234,6 @@ function stay() {
 //Final stay function - function runs when the player has decided to stay for the final time, ends the game
 function finalStay() {
     heelsShort.pause();
-    console.log("final stay");
     removeBtn();
     createNewBtn();
     gameParagraph.innerHTML = `You sit up and get ready to face whatever is coming through that door.  The footsteps get louder until they stop outside your door, theres a jingling sound then a 
@@ -319,7 +316,6 @@ function finalStay() {
         textIndex++;
 
         if(textIndex === paragraphArray.length) {
-            console.log("last");
             option1.classList.add("hidden");
             option2.classList.remove("hidden");
             option2.innerText = "Restart Game"; 
@@ -399,7 +395,6 @@ function injuryRoll(){
 
 //Function that runs if the player chooses to cut the strap, adds time to countdown
 function cutStrap() {
-    console.log("cut strap")
     removeBtn();
     createNewBtn();
 
@@ -488,8 +483,6 @@ function wardrobeItems() {
     removeBtn();
     createNewBtn();
 
-    console.log(labCoat)
-
     gameParagraph.innerHTML = `Inside you find an old shoe, and a Key Card, handing up one the back of one of the doors is an old labcoat. `; 
 
     option1.innerText= "Leave Room";
@@ -540,10 +533,8 @@ function wardrobeItems() {
         inventoryScreen.classList.add("hidden");
         if (labCoat){
             labCoat = false;
-            console.log(labCoat)
         } else {
             labCoat = true;
-            console.log(labCoat)
         }
         showInventory();
     });
@@ -569,8 +560,6 @@ function addToInventory(item) {
 window.addEventListener("keydown", function(event) {
     if (event.key == "i" && pockets.length > 0){
         inventoryScreen.classList.toggle("hidden");
-    } else {
-        console.log("no inventory");
     }
 });
 showInventory();
