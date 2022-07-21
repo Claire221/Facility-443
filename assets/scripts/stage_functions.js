@@ -7,9 +7,7 @@ function timer() {
 
     let setTimer =  setInterval(function() {
         countDown--;
-        console.log(`Alert in ${countDown}`)
         if (countDown === 0) {
-            console.log("Time Out")
             clearInterval(setTimer) 
             if (audioMute === false) {
                     alert.play();
@@ -53,9 +51,7 @@ function timer() {
 
     let setGuardTimer =  setInterval(function() {
         guardTimer--;
-        console.log(`Alert in ${guardTimer}`)
         if (guardTimer === 0) {
-            console.log("Time Out")
             clearInterval(setGuardTimer) 
 
             // if (audioMute === false) {
