@@ -1,4 +1,168 @@
 /* jshint esversion: 11 */
+
+let loadScreen = document.getElementById("container");
+let startScreen = document.getElementById("title-page");
+let startBtn = document.getElementById("start-btn");
+let gameContainer = document.getElementById("game-section");
+let gameParagraph = document.getElementById("game-paragraph");
+let startTitle = document.getElementById("title");
+let subTitle = document.getElementById("sub-title");
+let mobileScreen = document.getElementById("small_screen");
+let inventoryScreen;
+let labCoat = false;
+let doorPass = false;
+let exitDoorPass = false;
+let countDown = Math.floor(Math.random() * 480000);
+
+// Audio file variables
+let audioContainer = document.getElementById("volume-container");
+let backgroundMusic = document.getElementById("background");
+let doorCreek = document.getElementById("door_creek");
+let doorUnlock = document.getElementById("door_unlock");
+let heels = document.getElementById("heels");
+let heelsLong = document.getElementById("heels_long");
+let heelsShort = document.getElementById("heels_short");
+let bareFeetShort = document.getElementById("bare_feet_short");
+let doorHandle = document.getElementById("door_handle");
+let heartBeat = document.getElementById("heart_beat");
+let alert = document.getElementById("alert");
+
+let audioMute = false;
+
+let option1; 
+let option2;
+
+let glitch = document.getElementsByClassName("box");
+let volumeUp = document.getElementsByClassName("volume-container")[0];
+
+// Player variables
+let healthBar = document.getElementById("health-info");
+let time = 0;
+let injuries = [];
+let pockets = [""];
+
+// Function that runs on page load to check if screen is too small and if not set game page
+window.onload= function(){
+    newGame();
+};
+
+
+// Function to check if screen is too small to play
+addEventListener('resize', checkScreenSize)
+function checkScreenSize(){
+    let width = window.innerWidth;
+
+    if (width < 900) {
+        mobileScreen.classList.remove("hidden");
+        startScreen.classList.add("hidden");
+        audioContainer.classList.add("hidden");
+        gameParagraph.classList.add("hidden");
+    } 
+}
+
+
+// Function to remove old buttons
+function removeBtn(){
+    let oldbtn1 = document.getElementsByClassName("option1")[0];
+    let oldbtn2 = document.getElementsByClassName("option2")[0];
+
+    oldbtn1.remove();
+    oldbtn2.remove();
+}
+
+// Function to create new buttons
+function createNewBtn(){
+    option1 = document.createElement("button");
+    option2 = document.createElement("button");
+
+    gameContainer.appendChild(option1);
+
+    option1.classList.add("option1", "game-btn", "btn-fade");
+    option2.classList.add("option2", "game-btn");
+
+    setTimeout(function(){
+        option2.classList.add("btn-fade");
+        gameContainer.appendChild(option2);
+    },500);
+
+    option1.innerText = "test";
+    option2.innerText = "test";
+
+}
+
+// Function to allow the player to toggle the sound on and off
+function soundToggle(){
+    let audio = document.getElementsByTagName("audio");
+    let soundToggle = document.getElementById("sound-toggle");
+
+    for (sound in audio) {
+        audioMute = audio.muted = false;
+    }
+
+    soundToggle.addEventListener("click", function() {
+        if (this.classList.contains("fa-volume-mute")) {
+            this.classList.remove("fa-volume-mute");
+            this.classList.add("fa-volume-up");
+            audioMute = audio.muted = false;
+        } else {
+            this.classList.add("fa-volume-mute");
+            this.classList.remove("fa-volume-up");
+            audioMute = audio.muted = true;
+        }
+    });
+}
+
+
+let count = 10;
+
+// Function to set the scene for a new game
+function newGame() {
+    loadScreen.style.backgroundImage="url(assets/img/background_01.jpg)";
+    startScreen.classList.remove("hidden");
+    soundToggle();
+    healthBar.classList.add("hidden");
+
+    // Link for glitch effect tutorial used https://www.youtube.com/watch?v=CtmHKGX754s
+    if (window.innerWidth > 900) {
+        for (let i = 0; i < count; i++){
+            let glitchBox = document.createElement("div");
+                glitchBox.className = "box";
+                loadScreen.appendChild(glitchBox);
+            }
+        
+            setInterval(function(){
+            for (let i = 0; i < glitch.length; i++){
+                glitch[i].style.left = Math.floor(Math.random() * 50) + "vw";
+                glitch[i].style.top = Math.floor(Math.random() * 75) + "vh";
+                glitch[i].style.width = Math.floor(Math.random() * 200) + "px";
+                glitch[i].style.height = Math.floor(Math.random() * 50) + "px";
+                glitch[i].style.backgroundPosition = Math.floor(Math.random() * 50) + "px";
+            }
+            }, 200);
+    }
+}
+
+// Fuction to start the game
+startBtn.addEventListener("click", function(){
+    for (let i = 0; i < glitch.length; i++){
+        glitch[i].classList.add("hidden");
+    }
+    glitch = 0;
+    startScreen.classList.add("hidden");
+    loadScreen.style.backgroundImage="url(assets/img/starting_room.jpg)";
+    audioContainer.classList.add("hidden");
+    gameParagraph.classList.add("game-paragraph-background");
+
+    if (audioMute === false) {
+        backgroundMusic.play()
+        backgroundMusic.volume = 0.1;
+    }
+
+    startGame();
+});
+
+
+
 let alertContainer;
 let alertParagraph;
 let closeAlertBtn;
