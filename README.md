@@ -104,6 +104,8 @@ Throughout the project I used a variety of technologies.
 - I used gitpod as the development environment.[Gitpod Website](https://gitpod.io/)
 - I used github pages to host the website [Github Pages Website](https://github.com/)
 - I used Balsamiq to design my wireframes [Balsamiq Website](https://balsamiq.com/)
+- I used photoshop to edit some of my images [Photoshop Website](https://www.adobe.com/uk/products/photoshop.html)
+- I used Jest to conduct my testing  [Jest Website](https://jestjs.io/)
 
 ## Testing
 
