@@ -48,7 +48,7 @@ window.onload= function(){
 
 
 // Function to check if screen is too small to play
-addEventListener('resize', checkScreenSize)
+addEventListener('resize', checkScreenSize);
 function checkScreenSize(){
     let width = window.innerWidth;
 
@@ -154,7 +154,7 @@ startBtn.addEventListener("click", function(){
     gameParagraph.classList.add("game-paragraph-background");
 
     if (audioMute === false) {
-        backgroundMusic.play()
+        backgroundMusic.play();
         backgroundMusic.volume = 0.1;
     }
 
@@ -172,13 +172,13 @@ function timer() {
     let setTimer =  setInterval(function() {
         countDown--;
         if (countDown === 0) {
-            clearInterval(setTimer) 
+            clearInterval(setTimer); 
             if (audioMute === false) {
                     alert.play();
                     alert.volume = 0.5;
             }
 
-            createElements()
+            createElements();
 
             alertParagraph.innerHTML = `Alert! Alert! All staff be aware we have a subject out of containment..  Alert! Alert! All staff be aware we have a subject out of containment.. 
                                         <br> <br>
@@ -202,9 +202,9 @@ function timer() {
                 option2.classList.remove("hidden");
 
                 guardSearch();
-            })
+            });
         }
-    },1000)
+    },1000);
 
 
 }
@@ -216,7 +216,7 @@ function timer() {
     let setGuardTimer =  setInterval(function() {
         guardTimer--;
         if (guardTimer === 0) {
-            clearInterval(setGuardTimer) 
+            clearInterval(setGuardTimer);
 
             // if (audioMute === false) {
             //         alert.play();
@@ -259,9 +259,9 @@ function timer() {
 
             closeAlertBtn.addEventListener("click", function(){
                 window.location.reload();
-            })
+            });
         }
-    },1000)
+    },1000);
 
 
  }
@@ -273,7 +273,7 @@ function timer() {
 
     alertContainer.setAttribute("id","game-section");
     alertParagraph.setAttribute("id","game-paragraph");
-    alertParagraph.classList.add("game-paragraph-background")
+    alertParagraph.classList.add("game-paragraph-background");
     closeAlertBtn.classList.add("game-btn");
 
     alertContainer.appendChild(alertParagraph);
