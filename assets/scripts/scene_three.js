@@ -274,8 +274,8 @@ function lab01() {
     removeBtn();
     createNewBtn();
     loadScreen.style.backgroundImage="url(assets/img/atrium.jpg)";
-    option1.classList.add("hidden")
-    option2.classList.add("hidden")
+    option1.classList.add("hidden");
+    option2.classList.add("hidden");
 
     gameParagraph.innerHTML = `Arriving back in the atrium you scan the room figuring out your next move. You see door tucked away in the corner that you hadnt seen before, There is a small metal sign next to the door labelled 'lab 1'
                                 Rushing over you open the door and slip inside, overhead lights flicker on as you enter and your met by a cool breeze of air conditioning. There are 
@@ -284,7 +284,7 @@ function lab01() {
                                 for the screen to turn on. As your waiting you see that under the desk is a set of 3 draws, do you look inside?  `;
     setTimeout(function(){
         loadScreen.style.backgroundImage="url(assets/img/lab.jpg)";
-    }, 1500)
+    }, 1500);
 
     setTimeout(function(){
         option1.innerText = "Search the draws for anything useful";
@@ -293,8 +293,8 @@ function lab01() {
         option1.addEventListener("click", checkDraws, {once : true});
         option2.addEventListener("click", searchPc, {once : true});
 
-        option1.classList.remove("hidden")
-        option2.classList.remove("hidden")
+        option1.classList.remove("hidden");
+        option2.classList.remove("hidden");
     }, 2000);
 
 
@@ -308,7 +308,7 @@ function checkDraws() {
     option1.innerText= "Check back to the computer";
     option1.addEventListener("click", function(){
         itemsContainer.style.display = "none";
-        searchPc()
+        searchPc();
     });
 
 
@@ -423,7 +423,7 @@ function subjectTreatment() {
                                all staff members Subject 443 was given 6mg of Miazatron to sedate them and return them to their room. Effects lasted 1 hour, subejct 443 showed no negative side effects. 
                                <br> Note 4 - 30/06/56 - Subject 443 once again became combatitive during testing, Subject 443 was seen interacting with other subjects trying to get them to refuse testing too. Despite security
                                being called subject 443 refused to participate and was given 12mg of Miazatron to protect all staff involved.Effects  lasted 1 hour 30 minutes, subejct 443 showed no negative side effects and 
-                               was returned to testing once they came round. `
+                               was returned to testing once they came round. `;
 
     option1.innerText = "Subject 443 - Known Associates";
     option2.innerText = "Move on";
@@ -456,11 +456,11 @@ function escape() {
                                 `; 
 
     option1.innerText = "Continue";
-    option2.classList.add("hidden")
+    option2.classList.add("hidden");
 
     setTimeout(function(){
         loadScreen.style.backgroundImage="url(assets/img/hangar.jpg)";
-    },2000)
+    },2000);
 
     option1.addEventListener("click", function(){
         if (exitDoorPass) {
@@ -471,18 +471,18 @@ function escape() {
                                        theirs a faint beep and the sound of the lock being released fills your ears. You let out the breath you were holding and cand stop the grin taking over your face you push the 
                                        door and it opens.  Your hit by a wave of dry heat, not hanging around you leap up and run through the door..  and dont stop running. Your not sure where your heading but you 
                                        know that you need to find help, you need to rescue the other people in the facility and bring down the people in charge.. but who do you trust? Your all alone on an alien 
-                                       planet, your not sure how you will do it but determination settles in your gut as you realize that you will do whatever it takes to free the rest of your people. `
+                                       planet, your not sure how you will do it but determination settles in your gut as you realize that you will do whatever it takes to free the rest of your people. `;
 
                 
             setTimeout(function(){
-                option2.classList.remove("hidden")
-                option1.classList.add("hidden")
+                option2.classList.remove("hidden");
+                option1.classList.add("hidden");
                 option2.innerText = "New Game";
     
                 option2.addEventListener("click", function(){
                     window.location.reload();
                     });
-            }, 2000)
+            }, 2000);
             
         } else {
             gameParagraph.innerHTML = `You quickly slip out from behind the car and move to the final car that will provide you cover, you take a look at the door and notice that there is a small square next to it 
@@ -498,20 +498,20 @@ function escape() {
                                         You keep glancing over your shoulder to see how far behind they are when you miss a step, you lurch forward arms flying out to try 
                                         and grab the banister to steady yourself but you just grasp air.. You start tumbling down the stairs unable to stop, all you can do is close your eyes and pray that it ends 
                                         soon as your body bounces from one step to the next. Your head hits against one of the stairs causing an intense pain to radiate throughout your skill, you can feel warm 
-                                        liquid dripping down your neck. Your vision begins to fade, you will yourself to stay awake but its useless.. everything fades to darkness.`
+                                        liquid dripping down your neck. Your vision begins to fade, you will yourself to stay awake but its useless.. everything fades to darkness.`;
             setTimeout(function(){
-            option2.classList.remove("hidden")
-            option1.classList.add("hidden")
+            option2.classList.remove("hidden");
+            option1.classList.add("hidden");
             option2.innerText = "Game Over";
                                 
             option2.addEventListener("click", function(){
                 window.location.reload();
                 });
-            }, 2000)
+            }, 2000);
             
         }
 
-    }) 
+    });
 
 }
 
