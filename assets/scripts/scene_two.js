@@ -72,7 +72,6 @@ function tryDoors() {
     option1.innerText = "Go inside the room, you might find answers in there and if not atlease you can hide.";
     option2.innerText = "Run! forget whats in the room, those people might be heading there and you dont want to get cornered. ";
  
-
     option1.addEventListener("click", lookInside, {once : true});
     option2.addEventListener("click", run, {once : true});
 }
@@ -84,7 +83,6 @@ function run(){
 
     option1.classList.add("hidden");
     option2.classList.add("hidden");
-
     
     if (audioMute === false) {
         setTimeout(function(){
@@ -242,7 +240,6 @@ function hideInCupboard() {
     createNewBtn();
     option1.classList.add("hidden");
     option2.classList.add("hidden");
-
 
     gameParagraph.innerHTML = `Heart pounding you cross the room and throw the cupboard doors open, not caring about the mold growing inside the cupboard you cram yourself inside and pull the door closed behind you
                                 leaving a small gap that you can look out through. <br> You see the door open and in walks a Woman, she cant be much older than the one sat on the bed. Shes wearing light green scrubs and a

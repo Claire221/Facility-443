@@ -38,7 +38,6 @@ function stay() {
     option1.classList.add("hidden");
     option2.classList.add("hidden");
     
-
     gameParagraph.innerHTML = `You decide to stay where you are, after all who knows if whats outside this room is any better than being here.  You sit there and take a few deep breaths to compose 
                                 yourself and figure out what your next plan is. Through sheer stubbornness you manage to slow your heart rate back down and bring your breathing under control… <br><br>
                                 You try and remember where you are and how you got here but every time you try you get a sharp intense pain in the side of your head, so you soon stop trying. After a 
@@ -46,8 +45,7 @@ function stay() {
                                 direction of the sound so you can try and figure out what the noise is…<br><br>
                                 You realize its footsteps and they sound like they are coming in this direction…You freeze.. <br><br>
                                 What do you do?`;
-     
-
+    
     if (audioMute === false) {
         setTimeout(function(){
             heelsShort.play();
@@ -163,8 +161,6 @@ function finalStay() {
         }
     });
 
-
-
     if (audioMute === false) {
         setTimeout(function(){
             doorCreek.play();
@@ -175,7 +171,6 @@ function finalStay() {
             doorUnlock.volume = 0.2;
         }, 2400);
     }
-
 }
 
 
@@ -195,14 +190,12 @@ function leave() {
 
     option1.addEventListener("click", injuryRoll, {once : true});
     option2.addEventListener("click", cutStrap, {once : true});
-
 }
 
 //Function that runs to determine if the player gets an injury from trying to escape or not
 function injuryRoll(){
     removeBtn();
     createNewBtn();
-
 
     let roll = Math.random() ;
 
@@ -219,7 +212,6 @@ function injuryRoll(){
         healthBar.classList.remove("hidden");
     }
     
-
     gameParagraph.innerHTML = `You decide to free your left hand first, thinking that once youve done that you can undo the restrains on your right one.
                           You twist, pull and bend your hand trying to get it through the strap. After some tugging you realise your slowly getting
                           somewhere and it only takes you a few minutes to free your hand from the strap. Once free you quickly untie your other hand
@@ -264,7 +256,6 @@ function searchRoom() {
     createNewBtn();
 
     // gameScreen.style.backgroundImage="url(assets/img/room1_search.jpg)";
-
     gameParagraph.innerHTML = `Standing up you finally get to look at the room from a vertical position and its just as grubby and grimy as it
                           was from when you were lying down. You now need to decide if your going to search the room for anything useful
                           or get out of there as fast as you can?`; 
@@ -276,7 +267,6 @@ function searchRoom() {
     option2.innerText= "You've waisted long enough, lets get out of here";
 
     option1.addEventListener("click", lookForSupplies, {once : true});
-
     option2.addEventListener("click", leaveRoomOne, {once : true});
 
 }
@@ -293,7 +283,6 @@ function lookForSupplies() {
 
     option1.innerText= "Look inside the wardrobe for anything userful";
     option2.innerText= "The cupboards might have something in them, check there";
-
 
     option1.addEventListener("click", checkWardrobe, {once : true});
     option2.addEventListener("click", checkCupboard, {once : true});
@@ -326,7 +315,6 @@ function wardrobeItems() {
     option1.innerText= "Leave Room";
     option1.addEventListener("click", leaveRoomOne);
 
-
     let itemsContainer = document.createElement("div");
     let shoeItem = document.createElement("img");
     let keyCardItem = document.createElement("img");
@@ -344,8 +332,6 @@ function wardrobeItems() {
     shoeItem.classList.add("wardrobe-items-img", "shoe");
     keyCardItem.classList.add("wardrobe-items-img", "key-card");
     labCoatItem.classList.add("wardrobe-items-img", "labcoat");
-
-
 
     itemsContainer.appendChild(shoeItem);
     itemsContainer.appendChild(keyCardItem);
@@ -406,7 +392,6 @@ function showInventory(){
         inventoryScreen.appendChild(inventoryList);
         loadScreen.appendChild(inventoryScreen);
     }
-
     inventoryScreen.classList.add("hidden");
 }
 
@@ -426,8 +411,7 @@ function checkCupboard() {
     option1.innerText= "Inspect the items";
     option1.addEventListener("click", checkCupboardItems, {once : true});
 
-    option2.classList.add("hidden");
-                          
+    option2.classList.add("hidden");                   
 }
 
 
@@ -460,8 +444,6 @@ function checkCupboardItems() {
     keyItem.classList.add("cupboard-items-img", "key");
     labCoatItem.classList.add("cupboard-items-img", "lab-coat");
     protienBarItem.classList.add("cupboard-items-img", "protien-bar");
-
-
 
     itemsContainer.appendChild(protienBarItem);
     itemsContainer.appendChild(keyItem);

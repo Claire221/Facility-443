@@ -213,7 +213,6 @@ function liftDownOption() {
                             
     option1.addEventListener("click", ward, {once : true});
     option2.addEventListener("click", trainingRooms, {once : true});
-
 }
 
 // Function that shows the story line if the player selected training rooms
@@ -320,7 +319,6 @@ function checkDraws() {
         searchPc();
     });
 
-
     let itemsContainer = document.createElement("div");
     let vialItem = document.createElement("img");
     let idItem = document.createElement("img");
@@ -338,8 +336,6 @@ function checkDraws() {
     vialItem.classList.add("draw-items-img", "vial");
     idItem.classList.add("draw-items-img", "idCard");
     exitKey.classList.add("draw-items-img", "keyCard");
-
-
 
     itemsContainer.appendChild(vialItem);
     itemsContainer.appendChild(idItem);
@@ -416,7 +412,6 @@ function subjectInfo() {
 
     option1.addEventListener("click", subjectTreatment);
     option2.addEventListener("click", escape);
-
 }
 
 // Function that shows player information
@@ -521,10 +516,7 @@ function escape() {
             option2.addEventListener("click", function(){
                     gameOver();
                 });
-            }, 2000);
-            
+            }, 2000); 
         }
-
     });
-
 }

@@ -46,7 +46,6 @@ window.onload= function(){
     newGame();
 };
 
-
 // Function to check if screen is too small to play
 addEventListener('resize', checkScreenSize);
 function checkScreenSize(){
@@ -63,7 +62,6 @@ function checkScreenSize(){
 
     }
 }
-
 
 // Function to remove old buttons
 function removeBtn(){
@@ -310,5 +308,4 @@ function addToInventory(item) {
             gameParagraph.innerHTML = `${item} added to your inventory, Press I to view inventory`;
         }
     } 
-
 }
