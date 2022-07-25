@@ -107,7 +107,7 @@ Throughout the project I used a variety of technologies.
 
 ## Testing
 
-"For all testing, please refer to the [TESTING.md](TESTING.md) file."
+For all testing, please refer to the [TESTING.md](TESTING.md) file.
 
 ## Deployment
 
@@ -122,7 +122,7 @@ The live link can be found [here](https://github.com/Claire221/Facility-443)
 
 In order to make a local copy of this project, you can clone it. In your IDE Terminal, type the following command to clone my repository:
 
-- `git clone https://claire221.github.io/Facility-443/`
+- `git clone https://claire221.github.io/Facility-443.git`
 
 Alternatively, if using Gitpod, you can click below to create your own workspace using this repository.
 
@@ -134,17 +134,19 @@ Alternatively, if using Gitpod, you can click below to create your own workspace
 For the glitch effect on the game landing page I followed a youtube video that can be found [Here](https://www.youtube.com/watch?v=CtmHKGX754s)
 
 ### Media
+
 Throughout the game I used various different background images.
+
 - [Landing Page Background](https://www.oneyoufeed.net/dark-hallways/)
 - [Cupboard Background](https://free3d.com/3d-model/horror-lab-2547.html)
 - [Lab Coat](https://www.turbosquid.com/3d-models/3d-lab-coat-1808406)
-​- [Hangar Background](https://www.deviantart.com/axeman3d/art/Vehicle-Hangar-300754670)
-​- [Lab Background](https://americasfrontlinenews.com/post/are-randomized-controlled-trials-really-the-gold-standard)
-​- [Lift Background](https://www.regenbogen.de/nachrichten/regional/baden-pfalz/20180725/hausmeister-verpruegelt)
-​- [Padlock](https://shopsonline.cheapsales2022.ru/category?name=3d%20lock)
-​- [Protien Bar](https://www.turbosquid.com/Search/3D-Models/protein)
-​- [Viewing Area Background](https://choice.npr.org/index.html?origin=https://www.npr.org/transcripts/522783564)
-​- [Ward Background](https://www.irishtimes.com/news/health/first-death-from-coronavirus-recorded-in-northern-ireland-1.4206780)
+- [Hangar Background](https://www.deviantart.com/axeman3d/art/Vehicle-Hangar-300754670)
+- [Lab Background](https://americasfrontlinenews.com/post/are-randomized-controlled-trials-really-the-gold-standard)
+- [Lift Background](https://www.regenbogen.de/nachrichten/regional/baden-pfalz/20180725/hausmeister-verpruegelt)
+- [Padlock](https://shopsonline.cheapsales2022.ru/category?name=3d%20lock)
+- [Protien Bar](https://www.turbosquid.com/Search/3D-Models/protein)
+- [Viewing Area Background](https://choice.npr.org/index.html?origin=https://www.npr.org/transcripts/522783564)
+- [Ward Background](https://www.irishtimes.com/news/health/first-death-from-coronavirus-recorded-in-northern-ireland-1.4206780)
 - [Atrium Page Background](https://www.nfpa.org/-/media/Images/Blog-Images/Blog-Post-Attachments/NFPA-Today/Atrium.ashx?h=400&w=800&la=en&hash=D209DBDBD58742A3FAEBE382605DF342)
 - [Corridor Page Background](https://www.turbosquid.com/pl/3d-models/hallway-doors-3d-model/918331)
 
