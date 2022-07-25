@@ -87,6 +87,80 @@ When the player gets the option to search different areas I wanted a screen to p
 
 ![Inventory Items](/documentation/testing/items_image.jpg)
 
+### Interactive Features
+
+#### Sound Toggle
+
+I wanted to add sound effects and background music to my game to make it more immersive but I know that not everyone enjoys playing games with sound so I added a sound toggle feature that allows the player to decide if they would like to play with sound or not. If the player doesnt want to play with sound all they have to do it press the sound icon on the game start screen to turn it off.
+
+![Sound toggle on](/documentation/testing/sound_toggle.jpg)
+![Sound toggle off](/documentation/testing/sound_toggle_off.jpg)
+
+#### Guard Timer
+
+As part of the gameplay I decided to add a feature where at the start of the game a random time is chosen and starts counting down. Once it reaches zero a pop up comes up warning the player that the guards have realized they have escaped and have started looking for them. Another random time is generated which starts another count down, once that timer reaches zero the player gets a pop up telling them that the guards have found them and its game over.
+
+![Guard Alert](/documentation/testing/guard_alert.jpg)
+
+#### Inventory
+
+Throughout the game there are various areas which players can search for items that might help them as they progress through the game. For each area I created a div that will show the different items that they can pick up.
+
+Wardrobe item options
+
+![Wardrobe item](/documentation/testing/inventory_options.jpg)
+
+Cupboard item options
+
+![Cupboard item](/documentation/testing/cupboard_inventory.jpg)
+
+Lab office item options
+
+![Lab item](/documentation/testing/labs_inventory.jpg)
+
+When the player selects an item the item gets a border around so that the player knows its been selected, the text paragraph then changes to say that the item has been added to the players inventory. 
+
+![Inventory Select](/documentation/testing/selected_item.jpg)
+
+If the player clicks on the same item again the border will dissapear and the text paragrah will say that the item has been removed from the players inventory.
+
+![Inventory Select](/documentation/testing/deselect_item.jpg)
+
+
+If the player presses i at any time then a list will pop up showing them what they currently have in their inventory. 
+
+![Inventory List](/documentation/testing/inventory_list.jpg)
+
+#### Lab Coat
+
+I added a mechanic where when the player enters one of the rooms there is a enemy in the same room, if the player picked up a labcoat prior to entering the room then the enemy ignores them and assumes that they are on the same side but if the player didnt pick up the labocat then the enemy realises that they are an escaped subject and catches them, returning them to their room and ending the game. 
+
+If you have the labcoat.
+
+![Labcoat Text](/documentation/testing/labcoat_paragraph.jpg)
+
+
+If you dont have the labcoat.
+
+![No Labcoat Text](/documentation/testing/no_labcoat_paragraph.jpg)
+
+#### Key Cards
+
+Another mechanic I added was that the player has an option to follow someone through a door but the door is locked and they are only able to get through if they picked up a keycard which they can use to unlock the door. 
+
+If you have the key card.
+
+![Labcoat Text](/documentation/testing/has_keypass.jpg)
+
+
+If you dont have the key card.
+
+![No Labcoat Text](/documentation/testing/no_keycard.jpg)
+
+
+#### Screen Sizing
+
+
 ### Features Left to Implement
 
 I would like to add a feature where players could design their character at the beginning of the game. They would be able to chose their gender, basic appearance ect which would then change some of the narrative in the game to reflect their character. Currently I have kept narrative gender neutral to try and reflect all players so the game uses gender neutral pronouns and descriptions, But this would change depending on how the player created their character.
