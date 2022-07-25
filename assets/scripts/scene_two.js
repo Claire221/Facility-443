@@ -201,12 +201,12 @@ function hideUnderBed() {
         setTimeout(function(){
             heartBeat.play();
             heartBeat.volume = 0.4;
-            heartBeat.playbackRate = 1.5
+            heartBeat.playbackRate = 1.5;
         }, 100);
         setTimeout(function(){
             heartBeat.play();
             heartBeat.volume = 0.4;
-            heartBeat.playbackRate = 1.5
+            heartBeat.playbackRate = 1.5;
         }, 700);
     }
 
