@@ -52,11 +52,11 @@ My first step for this project was to sketch out a basic plan for what I wanted 
 
 #### Load Screen Wireframes
 
-![Load page wireframes](/documentation/wireframes/loadScreen_Wireframe.jpg)
+![Load page wireframes](/documentation/wireframes/loadScreen_wireframe.jpg)
 
 #### Game Screen Wireframes
 
-![Load page wireframes](/documentation/wireframes/gameScreen_Wireframe.jpg)
+![Load page wireframes](/documentation/wireframes/gameScreen_wireframe.jpg)
 
 ## Features
 
