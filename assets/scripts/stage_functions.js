@@ -96,7 +96,7 @@ function createNewBtn(){
 
 // Function to allow the player to toggle the sound on and off
 function soundToggle(){
-    let audio = document.getElementsByTagName("audio");
+    let audio = document.querySelectorAll("audio")
     let soundToggle = document.getElementById("sound-toggle");
 
     audio.forEach(sound => {
