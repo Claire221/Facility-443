@@ -25,7 +25,7 @@ let heelsShort = document.getElementById("heels_short");
 let bareFeetShort = document.getElementById("bare_feet_short");
 let doorHandle = document.getElementById("door_handle");
 let heartBeat = document.getElementById("heart_beat");
-let alert = document.getElementById("alert");
+let alertAlarm = document.getElementById("alert");
 
 let audioMute = false;
 
@@ -58,6 +58,10 @@ function checkScreenSize(){
         audioContainer.classList.add("hidden");
         gameParagraph.classList.add("hidden");
     } 
+
+    else {
+
+    }
 }
 
 
@@ -95,9 +99,9 @@ function soundToggle(){
     let audio = document.getElementsByTagName("audio");
     let soundToggle = document.getElementById("sound-toggle");
 
-    for (sound in audio) {
-        audioMute = audio.muted = false;
-    }
+    audio.forEach(sound => {
+        audioMute = sound.muted = false;
+    });
 
     soundToggle.addEventListener("click", function() {
         if (this.classList.contains("fa-volume-mute")) {
@@ -174,8 +178,8 @@ function timer() {
         if (countDown === 0) {
             clearInterval(setTimer); 
             if (audioMute === false) {
-                    alert.play();
-                    alert.volume = 0.5;
+                alertAlarm.play();
+                alertAlarm.volume = 0.5;
             }
 
             createElements();
@@ -191,7 +195,7 @@ function timer() {
             closeAlertBtn.innerText = "Close";
 
             closeAlertBtn.addEventListener("click", function(){
-                alert.pause();
+                alertAlarm.pause();
                 
                 alertContainer.removeChild(alertParagraph);
                 alertContainer.removeChild(closeAlertBtn);
@@ -212,15 +216,14 @@ function timer() {
  function guardSearch() {
     let guardTimer = Math.floor(Math.random() * 180000);
 
-
     let setGuardTimer =  setInterval(function() {
         guardTimer--;
         if (guardTimer === 0) {
             clearInterval(setGuardTimer);
 
             if (audioMute === false) {
-                    alert.play();
-                    alert.volume = 0.5;
+                alertAlarm.play();
+                alertAlarm.volume = 0.5;
             }
                     
             createElements();
@@ -266,6 +269,7 @@ function timer() {
 
  }
 
+ // Function to create 
  function createElements() {
     alertContainer = document.createElement("div");
     alertParagraph = document.createElement("p");
