@@ -210,18 +210,18 @@ function timer() {
 }
 // Countdown Function to see if guards find you
  function guardSearch() {
-    // let guardTimer = Math.floor(Math.random() * 180000);
-    let guardTimer = 4;
+    let guardTimer = Math.floor(Math.random() * 180000);
+
 
     let setGuardTimer =  setInterval(function() {
         guardTimer--;
         if (guardTimer === 0) {
             clearInterval(setGuardTimer);
 
-            // if (audioMute === false) {
-            //         alert.play();
-            //         alert.volume = 0.5;
-            // }
+            if (audioMute === false) {
+                    alert.play();
+                    alert.volume = 0.5;
+            }
                     
             createElements();
 
