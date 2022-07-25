@@ -1,5 +1,6 @@
 /* jshint esversion: 11 */
 
+// Function that runs if the player decides to go left during the leaveRoomOne function
 function goLeft() {
     removeBtn();
 
@@ -9,7 +10,9 @@ function goLeft() {
                                 neat rows going down each side. In the centre there is a small garden with bushes and flowers. The other side of the flower bed a lift, the doors of which
                                 start to slowly open.. `; 
 
+    // Checks if the player has a lab coat in their inventory
     setTimeout(function(){
+        // If the player doesnt have a labcoat they are caught and its game over
         if (!labCoat) {
             setTimeout(function(){
                 gameParagraph.innerHMLT = `Out walks a man hes wearing a white lab coat and is holding a device in his hand which he is tapping away at, he steps out of the lift and into the atrium
@@ -26,6 +29,7 @@ function goLeft() {
                     chaseFunction();
                 },35000);
             }, 5000);
+                // If the player has a labocat they are allowed to continue
         } else {
             gameParagraph.innerHTML = `Out walks a man hes wearing a white lab coat and is holding a device in his hand which he is tapping away at, as he steps into the atrium he lifts his head and looks at 
                                         you before quickly dismissing you and walking across the floor and disapearing behind a wall. You poke your head around and see that to the left of the room is a set of 
@@ -41,6 +45,7 @@ function goLeft() {
     }, 4000);
 }
 
+// If the player doesnt have the lab coat for the goLeft function this function is called and its game over
 function chaseFunction() {
     
     gameParagraph.innerHTML = ` You spin on your heal and are about to double back but the path is blocked, for the first time your come face to face with whoever it was that was hunting you down 
@@ -61,6 +66,7 @@ function chaseFunction() {
     }, 60000);
 }
 
+// Function that runs if the player chooses to follow the person in the labcoat
 function followLabCoat(){
     removeBtn();
     createNewBtn();
@@ -75,6 +81,7 @@ function followLabCoat(){
 
     
     setTimeout(function(){
+        // Checks if the player has picked up the door pass and if so they can progress
         if(doorPass) {
             gameParagraph.innerHTML = `After frowning at the doors for a second you remember the keycard that you picked up and are thankful to past you for deciding to pick it up. You bring it up to the panel and after 
                                         a short pause it lets of a high pitched beep before turning green and the doors start to slide open. You bounce on the balls of your feet and adrenaline fills your veins as your 
@@ -84,6 +91,7 @@ function followLabCoat(){
             option1.innerText = "Continue..";
             option1.addEventListener("click", keyCardDoor);
 
+        // Checks if the player has picked up the door pass if they have it they cant access this part of the game
         } else {
             gameParagraph.innerHTML = `You press your hand to the panel and press some of the buttons hoping to accidently stumble the right combination but since you dont have a key card the door doesnt budge.
                                         since you cant get through the door you spin on your heal and and decide to try the lift isntead.`;
@@ -96,6 +104,7 @@ function followLabCoat(){
     
 }
 
+// Function that runs if the player has the keycard and is allowed through the door
 function keyCardDoor() {
     removeBtn();
     createNewBtn();
@@ -167,6 +176,7 @@ function keyCardDoor() {
 
 }
 
+// Function that runs if the player decides not to follow the person in the labocat and instead goes into the lift
 function dontfollowLabCoat(){
     removeBtn();
     createNewBtn();
@@ -184,7 +194,7 @@ function dontfollowLabCoat(){
     option2.addEventListener("click", followLabCoat, {once : true});
 }
 
-
+// Function that allows the player to choose which area they want to go to 
 function liftDownOption() {
     removeBtn();
     createNewBtn();
@@ -206,6 +216,7 @@ function liftDownOption() {
 
 }
 
+// Function that shows the story line if the player selected training rooms
 function trainingRooms() {
     removeBtn();
     createNewBtn();
@@ -234,6 +245,7 @@ function trainingRooms() {
     option1.addEventListener("click", lab01, {once : true});
 }
 
+// Function that shows the story line if the player selected the ward
 function ward() {
     removeBtn();
     createNewBtn();
@@ -265,7 +277,7 @@ function ward() {
 
 }
 
-
+// Lab function that teaches the player more about the storuline 
 function lab01() {
     removeBtn();
     createNewBtn();
@@ -296,6 +308,7 @@ function lab01() {
 
 }
 
+// Allows the player to pick up aditional items
 function checkDraws() {
     removeBtn();
     createNewBtn();
@@ -360,6 +373,7 @@ function checkDraws() {
     option2.classList.add("hidden");
 }
 
+// Function that allows the player to search the pc to find more information
 function searchPc () {
     removeBtn();
     createNewBtn();
@@ -380,6 +394,7 @@ function searchPc () {
     option2.addEventListener("click", subjectTreatment);
 }
 
+// Function that shows player information
 function subjectInfo() {
     removeBtn();
     createNewBtn();
@@ -404,6 +419,7 @@ function subjectInfo() {
 
 }
 
+// Function that shows player information
 function subjectTreatment() {
     removeBtn();
     createNewBtn();
@@ -428,7 +444,7 @@ function subjectTreatment() {
     option2.addEventListener("click", escape);
 }
 
-
+// Function that starts the end phase of the game
 function escape() {
     removeBtn();
     createNewBtn();
@@ -458,6 +474,7 @@ function escape() {
         loadScreen.style.backgroundImage="url(assets/img/hangar.jpg)";
     },2000);
 
+    // Checks if the player picked up the keycard , if they did the door opens and they can escape
     option1.addEventListener("click", function(){
         if (exitDoorPass) {
             gameParagraph.innerHTML = `You quickly slip out from behind the car and move to the final car that will provide you cover, you take a look at the door and notice that there is a small square next to it 
@@ -479,7 +496,8 @@ function escape() {
                     gameOver() 
                 });
             }, 2000);
-            
+        
+        // If the player didnt pick up they keycard then its game over.
         } else {
             gameParagraph.innerHTML = `You quickly slip out from behind the car and move to the final car that will provide you cover, you take a look at the door and notice that there is a small square next to it 
                                         and your pray that you dont need some type of key to exit. Doing one more check of the walkway you creep out and stop in front of the door you place a hand against the cool 

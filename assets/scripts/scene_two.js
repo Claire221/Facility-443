@@ -1,5 +1,6 @@
 /* jshint esversion: 11 */
 
+// Function to start stage two allows the player to choose whether they want to go left ro right down a corridor
 function leaveRoomOne() {
     let itemsContainer = document.getElementsByClassName("items-container")[0];
     if (itemsContainer) {
@@ -24,6 +25,7 @@ function leaveRoomOne() {
     option2.addEventListener("click", goRight, {once : true});
 }
 
+// Function that is called if the player chooses to go right down the corridor
 function goRight() {
     loadScreen.style.backgroundImage="url(assets/img/corridor_doors.jpg)";
     removeBtn();
@@ -48,6 +50,7 @@ function goRight() {
 
 }
 
+// Function that gives the player the option to try doors as they are walking down the corridor to see if they are open
 function tryDoors() {
     removeBtn();
     createNewBtn();
@@ -74,6 +77,7 @@ function tryDoors() {
     option2.addEventListener("click", run, {once : true});
 }
 
+// Function that is called if the player chooses not to go into the room during the tryDoors funciton - results in game over
 function run(){
     removeBtn();
     createNewBtn();
@@ -114,6 +118,8 @@ function run(){
     }, 10000);
 }
 
+
+// Function that lets the player hide in one of the rooms and learn more about the storyline
 function lookInside() {
     loadScreen.style.backgroundImage="url(assets/img/starting_room.jpg)";
     removeBtn();
@@ -185,6 +191,7 @@ function lookInside() {
 
 }
 
+// Function that gives the player the option to hide from the staff member under the bed 
 function hideUnderBed() {
     removeBtn();
     createNewBtn();
@@ -210,6 +217,7 @@ function hideUnderBed() {
         }, 700);
     }
 
+    // Randomly generates a number to decide if the player is caught or not
     let fate = Math.floor(Math.random() * 3);
 
     if (fate >= 0 && fate <1) {
@@ -228,6 +236,7 @@ function hideUnderBed() {
     option2.addEventListener("click", labCoatDecision);
 }
 
+// Function that gives the player the option to hide from the staff member in the cupboard
 function hideInCupboard() {
     removeBtn();
     createNewBtn();
@@ -245,6 +254,7 @@ function hideInCupboard() {
     
     let fate = Math.floor(Math.random() * 4);
     
+    // Randomly generates a number to decide if the player is caught or not
     if (fate <1) {
         setTimeout(function(){
             option1.innerText = "Continue..";
@@ -262,7 +272,7 @@ function hideInCupboard() {
     option2.addEventListener("click", labCoatDecision);
 }
 
-
+// Function that allows the player to decide if they want to pick up a labcoat or not
 function labCoatDecision() {
     removeBtn();
     createNewBtn();
@@ -284,6 +294,7 @@ function labCoatDecision() {
     });
 }
 
+// function that runs depending what the player chooses to do with the labocat
 function chooseLabCoat() {
     removeBtn();
     createNewBtn();
@@ -291,12 +302,14 @@ function chooseLabCoat() {
     option1.classList.add("hidden");
     option2.classList.add("hidden");
 
+    // If the player picks up the labocat the text changes to reflect the decision and labCoat is set to true
     if (labCoat === true) {
         gameParagraph.innerHTML = `You put the lab coat on, its heavier than you expected and the material is slightly itchy against your skin. You put your hands in the pockets on either side but they 
         are both empty...`;
         option1.classList.remove("hidden");
         option1.innerText = "Continue..";
     }
+     // If the player doiest pick up the labocat the text changes to reflect the decision and labCoat is set to false
     else {
         gameParagraph.innerHTML = `You decide to leave the labcoat where it is, who knows if whoever left it there and and will happen if they come back and its missing..`; 
         option1.classList.remove("hidden");
@@ -317,7 +330,7 @@ function chooseLabCoat() {
     });
 }
 
-
+// Function that runs if the roll during the functions hideInCupboard or hideInWardrobe determins the player gets caught.
 function getCaught(){
     removeBtn();
     createNewBtn();
@@ -348,6 +361,7 @@ function getCaught(){
 
 }
 
+// Function that runs if during the goRight function the player decides not to try to open any doors.
 function keepGoing() {
     removeBtn();
     createNewBtn();

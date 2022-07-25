@@ -274,7 +274,7 @@ function timer() {
 
  }
 
- // Function to create 
+ // Function to create alert div
  function createElements() {
     alertContainer = document.createElement("div");
     alertParagraph = document.createElement("p");
