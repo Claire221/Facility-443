@@ -156,7 +156,7 @@ function finalStay() {
             option2.classList.remove("hidden");
             option2.innerText = "Restart Game"; 
             option2.addEventListener("click", function(){
-                gameOver() 
+                gameOver();
             });
         }
     });

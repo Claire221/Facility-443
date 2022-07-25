@@ -27,7 +27,7 @@ function goLeft() {
                                            you then use all your strength to shoulder barge them but they dont move. Locked.`;
                 setTimeout(function(){
                     chaseFunction();
-                },35000);
+                },4000);
             }, 5000);
                 // If the player has a labocat they are allowed to continue
         } else {
@@ -62,7 +62,7 @@ function chaseFunction() {
                                 been working their way down the corridor and only stand a few feet away from you now 'Get them back to their room, and make sure sure they dont get out again'.. thats the last thing you hear before everything goes black... `;
 
     setTimeout(function(){
-        gameOver() 
+        gameOver();
     }, 60000);
 }
 
@@ -488,7 +488,7 @@ function escape() {
                 option2.innerText = "New Game";
     
                 option2.addEventListener("click", function(){
-                    gameOver() 
+                    gameOver();
                 });
             }, 2000);
         
