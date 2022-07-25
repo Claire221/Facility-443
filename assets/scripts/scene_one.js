@@ -158,7 +158,7 @@ function finalStay() {
             option2.classList.remove("hidden");
             option2.innerText = "Restart Game"; 
             option2.addEventListener("click", function(){
-                window.location.reload();
+                gameOver() 
             });
         }
     });
@@ -410,9 +410,6 @@ function showInventory(){
     inventoryScreen.classList.add("hidden");
 }
 
-function clearScreen() {
-
-}
 
 function checkCupboard() {
     removeBtn();

@@ -109,7 +109,7 @@ function run(){
         option1.classList.remove("hidden");
         option1.innerText = "Game over.. Click to restart";
         option1.addEventListener("click", function(){
-            window.location.reload();
+            gameOver() 
         });
     }, 10000);
 }
@@ -342,7 +342,7 @@ function getCaught(){
         option1.innerText = "Game over.. Click to restart";
 
         option1.addEventListener("click", function(){
-            window.location.reload();
+            gameOver() 
         });
     }, 2000);
 
@@ -376,7 +376,7 @@ function keepGoing() {
             option1.innerText = "Game over.. Click to restart";
 
             option1.addEventListener("click", function(){
-                window.location.reload();
+                gameOver() 
             });
         }, 2000);
 }

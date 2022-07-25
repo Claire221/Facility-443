@@ -57,7 +57,7 @@ function chaseFunction() {
                                 been working their way down the corridor and only stand a few feet away from you now 'Get them back to their room, and make sure sure they dont get out again'.. thats the last thing you hear before everything goes black... `;
 
     setTimeout(function(){
-        window.location.reload();
+        gameOver() 
     }, 60000);
 }
 
@@ -203,11 +203,7 @@ function liftDownOption() {
                             
     option1.addEventListener("click", ward, {once : true});
     option2.addEventListener("click", trainingRooms, {once : true});
-    // all the floors need a special key but the basement 
 
-    // if player picked up key they can insert it, before they pick a number the lift starts to move - specialKeyOption()
-
-    // else player can go to the basement - basementOption()
 }
 
 function trainingRooms() {
@@ -480,8 +476,8 @@ function escape() {
                 option2.innerText = "New Game";
     
                 option2.addEventListener("click", function(){
-                    window.location.reload();
-                    });
+                    gameOver() 
+                });
             }, 2000);
             
         } else {
@@ -505,7 +501,7 @@ function escape() {
             option2.innerText = "Game Over";
                                 
             option2.addEventListener("click", function(){
-                window.location.reload();
+                    gameOver();
                 });
             }, 2000);
             
