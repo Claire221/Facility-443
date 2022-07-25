@@ -149,10 +149,28 @@ Finally I checked that if the player removed an item from their inventory it was
 
 ### Key Cards
 
+During the game the player encounters a locked door, if they have a keycard they can open the door but if they dont have it then they have to continue the story down a different path. I wanted to check that this feature was working corectly.
+
+I began by testing that if the player got to the door and didnt have the key they wouldnt be able to open it.
+
+![No door card](/documentation/testing/no_keycard.jpg)
+
+I then checked that if the player has the key in their inventory and they go to the door it would open and they could go through.
+
+![Player has door card](/documentation/testing/has_keypass.jpg)
+
+### Lab Coat
+
+At one point in the game the player enters a room and as they enter an enemy also enters from the oposit end and glances over to the player. If the player has a labcoat in their inventory then the enemy ignores the player and assumes they are both on the same side. If the player doesnt have the labcoat the enemy sees that they are an escaped subejct and captures them, returning them to their room and ending the game. 
+
+I started by checking that if the player doesnt have the lab coat in their inventory the enemy captures them, returning them to their room and ending the game.
+
+![Player doesnt have the labcoat](/documentation/testing/no_labcoat_paragraph.jpg)
 
 
+I then checked that if the player had the lab coat in their inventory the enemy would ignore them and they are then free to continue the game.
 
-## show screenshot of door not opening if you dont have the keycard 
+![Player has the labcoat](/documentation/testing/labcoat_paragraph.jpg)
 
 ### atomated jest testing
 
