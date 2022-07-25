@@ -264,7 +264,7 @@ function searchRoom() {
     option2.classList.remove("hidden");
 
     option1.innerText= "Search the room, you dont know what you might find";
-    option2.innerText= "You've waisted long enough, lets get out of here";
+    option2.innerText= "You've wasted long enough, lets get out of here";
 
     option1.addEventListener("click", lookForSupplies, {once : true});
     option2.addEventListener("click", leaveRoomOne, {once : true});
