@@ -119,6 +119,11 @@ function soundToggle(){
 
 let count = 10;
 
+// Function to restart game when its game over
+function gameOver() {
+    window.location.reload();
+}
+
 // Function to set the scene for a new game
 function newGame() {
     loadScreen.style.backgroundImage="url(assets/img/background_01.jpg)";
@@ -261,7 +266,7 @@ function timer() {
             option2.classList.add("hidden");
 
             closeAlertBtn.addEventListener("click", function(){
-                window.location.reload();
+                gameOver() 
             });
         }
     },1000);
