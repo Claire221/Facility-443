@@ -12,7 +12,7 @@ let inventoryScreen;
 let labCoat = false;
 let doorPass = false;
 let exitDoorPass = false;
-let countDown = Math.floor(Math.random() * 480000);
+let countDown = Math.floor(Math.random() * 5000);
 
 // Audio file variables
 let audioContainer = document.getElementById("volume-container");
@@ -178,6 +178,7 @@ function timer() {
 
     let setTimer =  setInterval(function() {
         countDown--;
+        console.log(countDown)
         if (countDown === 0) {
             clearInterval(setTimer); 
             if (audioMute === false) {
@@ -217,7 +218,7 @@ function timer() {
 }
 // Countdown Function to see if guards find you
  function guardSearch() {
-    let guardTimer = Math.floor(Math.random() * 180000);
+    let guardTimer = Math.floor(Math.random() * 5000);
 
     let setGuardTimer =  setInterval(function() {
         guardTimer--;
