@@ -57,7 +57,7 @@ Once I had finished my game I ran each of my JavaScript script files through a J
 
 #### Stage Functions
 
-
+![Stage Functions JavaScript Validator](/documentation/testing/stage_functions.jpg)
 
 ## User Story Testing
 - As a user I want the UI to be simple and intuitive, so I don’t need instructions on how to play
@@ -74,13 +74,11 @@ Once I had finished my game I ran each of my JavaScript script files through a J
 
 
 ## Unfixed Bugs
-list out any unfinished bugs you might have, where applicable... if none, don't just put "I have no bugs"... put something like: "There are no remaining bugs that I am aware of."
+There is a small bug where if you click through the options too fast when their is a sound effect linked you dont give the sound effect enough time to play so it plays out of time
 
 ## Mechanics Testing
 
 Throughout the game I have various mechanisms in place such as an inventory system and also areas where the player cant access unless they have certain items so I wanted to check that they were all working correctly.
-
-### Inventory
 
 #### Wardrobe Items
 
@@ -172,9 +170,11 @@ I then checked that if the player had the lab coat in their inventory the enemy 
 
 ![Player has the labcoat](/documentation/testing/labcoat_paragraph.jpg)
 
-### atomated jest testing
+### Jest testing
 
-### screenshopt of jest terminal
 
-## screenshots of tests and description
+![Jest Test](/documentation/testing/jest_test.jpg)
 
+I used Jest to conduct some simple tests on my project to make sure they were working correctly. I checked that the labcoat variable is set to false when the game loads as this will prevent the player from accessing areas of the game they shouldnt be able to until they pick up a labcoat. 
+
+I understand that in a working environment more extensive tests would need to be conducted. 
