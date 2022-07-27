@@ -317,5 +317,9 @@ let pockets = [""];
 
 // });
 
-module.exports = labCoat;
-
+// module.exports is required to export the objects and functions to the Jest testing file.
+// The if statement prevents this from logging an error in the browser console.
+// https://stackoverflow.com/a/68671391
+if (typeof module !== "undefined") module.exports = {
+    labCoat
+};
