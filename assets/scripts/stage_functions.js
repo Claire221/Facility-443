@@ -182,7 +182,6 @@ let pockets = [""];
 
         let setTimer =  setInterval(function() {
             countDown--;
-            console.log(countDown)
             if (countDown === 0) {
                 clearInterval(setTimer); 
                 if (audioMute === false) {
