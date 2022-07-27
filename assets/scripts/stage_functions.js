@@ -98,7 +98,7 @@ let pockets = [""];
 
     // Function to allow the player to toggle the sound on and off
     function soundToggle(){
-        let audio = document.querySelectorAll("audio")
+        let audio = document.querySelectorAll("audio");
         let soundToggle = document.getElementById("sound-toggle");
 
         audio.forEach(sound => {
@@ -268,7 +268,7 @@ let pockets = [""];
                 option2.classList.add("hidden");
 
                 closeAlertBtn.addEventListener("click", function(){
-                    gameOver() 
+                    gameOver();
                 });
             }
         },1000);
