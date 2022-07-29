@@ -170,11 +170,15 @@ I then checked that if the player had the lab coat in their inventory the enemy 
 
 ![Player has the labcoat](/documentation/testing/labcoat_paragraph.jpg)
 
+## Automated Testing
+
 ### Jest testing
 
+I used Jest to conduct some automated testing on my project to make sure that everything was working correctly. I decided to test that my labCoat variable defined in stage_functions was set to false when the game was loaded. I decided to test this variable because as part of the gameplay a part of the story is locked off from the player until they pick up a labCoat which will then set the labCoat variable to true allowing them to progress. I wanted to make sure that the player wouldn’t be able to access that part of the storyline until the right conditions were met.
+
+When I ran my test the test passed meaning the labCoat variable was set to false when the game loads.
 
 ![Jest Test](/documentation/testing/jest_test.jpg)
 
-I used Jest to conduct some simple tests on my project to make sure they were working correctly. I checked that the labcoat variable is set to false when the game loads as this will prevent the player from accessing areas of the game they shouldnt be able to until they pick up a labcoat. 
 
 I understand that in a working environment more extensive tests would need to be conducted. 
